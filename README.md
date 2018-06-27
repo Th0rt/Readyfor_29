@@ -1,4 +1,4 @@
-# データベース設計
+# DB設計
 
-## ER図
+## ER diagram
 https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
