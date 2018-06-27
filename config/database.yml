@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: Readyfor_29_production
-  username: Readyfor_29
-  password: <%= ENV['READYFOR_29_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
