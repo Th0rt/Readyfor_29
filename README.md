@@ -121,6 +121,9 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |------|----|-------|
 |name|string|null: false|
 
+### Association
+- has_many :area_tags_projects
+
 -------------------------------------------------------
 
 ## content_tags
