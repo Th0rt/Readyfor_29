@@ -92,7 +92,6 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |limit|datetime|null: false, index: true|
 |goal|int|null:false, index :true|
 |type|string|
-|area|string|null:false|
 
 ### Association
 - has_many :likes
@@ -107,19 +106,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :articles
 - has_many :returns
 
-
-##areas_tags
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many :project_area_tags
-- has_many  :projects , through: :project_area_tags
-
-
-##project_area_tags
+## project_area_tags
 
 |Column|Type|Options|
 |------|----|-------|
@@ -131,7 +118,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :area_tags
 
 
-##content_tags
+## content_tags
+
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false,  index: true|
@@ -141,7 +129,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :projects, througj: :project_content_tags
 
 
-##project_content_tags
+## project_content_tags
 
 |Column|Type|Options|
 |------|----|-------|
@@ -171,7 +159,6 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 ### Association
 - belongs_to : projects
-
 
 ## returnsテーブル
 
