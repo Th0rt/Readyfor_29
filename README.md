@@ -14,8 +14,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - has_many :projects
 - has_many :send_messages
-- has_many :user_payments
-- has_many :payments, through: :user_payments
+- has_many :user_returns
+- has_many :returns, through: :user_returns
 - has_many :likes
 - has_many :projects, through: :likes
 - has_many :comments
@@ -58,29 +58,16 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :project
 
 
-## user_payments
+## user_returns
 
 |Column|Type|Options|
 |------|----|-------|
+|return_id|reference|foreign_key: true|
 |user_id|reference|foreign_key: true|
-|payment_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :payment
-
-
-## payments
-
-|Column|Type|Options|
-|------|----|-------|
-|number|int|null: false|
-|return_id|reference|foreign_key: true|
-
-### Association
 - belongs_to :return
-- has_many :user_payments
-- has_many :users, through: :user_payments
 
 
 ## projects
@@ -155,6 +142,16 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :article_images
 - belongs_to :projects
 
+## article_images
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string|
+|article_id|reference|foreign_key: true|
+
+### Association
+- belongs_to :article
+
 
 ## project_images
 
@@ -176,7 +173,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - has_many :return_images
 - belongs_to :projects
-- has_many :payments
+- has_many :user_returns
+- has_many :users, througj: :user_returns
 
 
 ## return_images
