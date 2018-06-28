@@ -1,6 +1,6 @@
-# DB設計
+# DB design
 
-## ER diagram
+## ER diagram(image)
 https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 ## users
@@ -13,10 +13,13 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 ### Association
 - has_many :projects
-- has_many :user_payments
 - has_many :send_messages
-- has_many :likes
 - has_many :comments
+- has_many :user_payments
+- has_many :likes
+- has_many :payments, through: :user_payments
+- has_many :projects, through: :likes
+- has_many :projects, through: :comments
 
 ------------------------------------------
 
@@ -80,8 +83,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |return_id|reference|
 
 ### Association
-- has_many :user_payments
 - belongs_to :return
+- has_many :user_payments
+- has_many :users, through: :user_payments
 
 ------------------------------------------
-<!-- - has_many :groups, through: :members -->
