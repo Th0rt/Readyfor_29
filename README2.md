@@ -2,10 +2,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|title|string|null: false, index:|
+|title|string|null: false, index: true|
 |content|text|null: false|
-|limit|datetime|null :false|
-|goal|int|null:false|
+|limit|datetime|null: false, index: true|
+|goal|int|null:false, index :true|
 |type|string|
 |area|string|null:false|
 
@@ -14,63 +14,58 @@
 - has_many :users, through: :likes
 - has_many :comments
 - has_many :users, through: :comments
-- has_many :project_tags
-- has_many :tags, through: :project_tags
+- has_many :project_content_tags
+- has_many :content_tags, through: :project_content_tags
+- has_many :project_area_tags
+- has_many :area_tags, through: :project_area_tags
 - has_many :project_images
 - has_many :articles
 - has_many :returns
 
-
-## project_tagsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|project_id| reference |foreign_key :true|
-|tag_id|reference|foreign_key :true|
-
-### Association
-
-- belongs_to :projects
-- belongs_to :tags
-
-
-## tagsテーブル
+##areas_tags
 
 |Column|Type|Options|
 |------|----|-------|
-|content_tag_id|string|
-|area_tag_id|string|
-
+|name|string|null: false|
 
 ### Association
-- has_many :content_tags
-- has_many :area_tags
+- has_many :project_area_tags
+- has_many  :projects , through: :project_area_tags
 
-## content_tagsテーブル
+
+##project_area_tags
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|
+|area_tags_id|reference|foreign_key: true|
+|project_id|reference|foreign_key: true |
 
 ### Association
-- belongs_to :tag
+- belongs_to :project
+- belongs_to :area_tags
 
 
-## area_tagsテーブル
+##content_tags
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false,  index: true|
+
+### Association
+- has_many :project_contet_tags
+- has_many :projects, througj: :project_content_tags
+
+##project_content_tags
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|
-
-### Association
-- belongs_to :tag
-
+|project_id|reference|foreign_key: true|
+|content_tags_id|reference|foreign_key: true |
 
 ## articlesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|content|text|null: false|
+|content|text|null: false, index: true|
 
 ### Association
 - has_many :article_images
@@ -91,8 +86,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|type|string|null: false, unique: true, index: true|
-|price|string|null: false
+|type|string|null: false|
+|price|string|null: false|
 |project_id|reference|foreign_key: true|
 
 ### Association
