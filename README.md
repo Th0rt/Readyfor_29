@@ -14,14 +14,13 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - has_many :projects
 - has_many :send_messages
-- has_many :comments
 - has_many :user_payments
-- has_many :likes
 - has_many :payments, through: :user_payments
+- has_many :likes
 - has_many :projects, through: :likes
+- has_many :comments
 - has_many :projects, through: :comments
 
-------------------------------------------
 
 ## send_messages
 
@@ -33,7 +32,6 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - belongs_to :user
 
-------------------------------------------
 
 ## comments
 
@@ -47,7 +45,6 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :user
 - belongs_to :project
 
-------------------------------------------
 
 ## likes
 
@@ -60,7 +57,6 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :user
 - belongs_to :project
 
-------------------------------------------
 
 ## user_payments
 
@@ -73,7 +69,6 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :user
 - belongs_to :payment
 
-------------------------------------------
 
 ## payments
 
@@ -86,5 +81,3 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :return
 - has_many :user_payments
 - has_many :users, through: :user_payments
-
-------------------------------------------
