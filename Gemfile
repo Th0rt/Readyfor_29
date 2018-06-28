@@ -47,9 +47,6 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 
-  # development-tools
-  gem 'dotenv-rails'
-
   # Test-tools
   gem 'rspec-rails'
   gem 'factory_bot_rails'
