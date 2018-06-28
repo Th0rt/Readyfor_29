@@ -83,7 +83,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :users, through: :user_payments
 
 
-## projectsテーブル
+## projects
 
 |Column|Type|Options|
 |------|----|-------|
@@ -140,7 +140,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :project
 - belongs_to :content_tag
 
-## articlesテーブル
+## articles
 
 |Column|Type|Options|
 |------|----|-------|
@@ -151,7 +151,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :projects
 
 
-## project_imagesテーブル
+## project_images
 
 |Column|Type|Options|
 |------|----|-------|
@@ -160,7 +160,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - belongs_to : projects
 
-## returnsテーブル
+## returns
 
 |Column|Type|Options|
 |------|----|-------|
@@ -174,7 +174,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :payments
 
 
-## return_imagesテーブル
+## return_images
 
 |Column|Type|Options|
 |------|----|-------|
