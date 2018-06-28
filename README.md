@@ -38,8 +38,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |content|text|null: false|
-|user_id|reference|
-|project_id|reference|
+|user_id|reference|foreign_key: true|
+|project_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -50,8 +50,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|
-|project_id|reference|
+|user_id|reference|foreign_key: true|
+|project_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -62,8 +62,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|
-|payment_id|reference|
+|user_id|reference|foreign_key: true|
+|payment_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -75,7 +75,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |number|int|null: false|
-|return_id|reference|
+|return_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :return
