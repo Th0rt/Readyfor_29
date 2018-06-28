@@ -25,12 +25,13 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 -------------------------------------------------------
 
-## send_messages
+## messages
 
 |Column|Type|Options|
 |------|----|-------|
 |content|text|null: false|
-|user_id|int|null: false|
+|send_user_id|int|null: false|
+|receive_user_id|int|null: false|
 
 ### Association
 - belongs_to :user
@@ -84,8 +85,10 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |title|string|null: false, index: true|
 |content|text|null: false|
 |limit|datetime|null: false, index: true|
-|goal|int|null:false, index :true|
 |type|string|
+|limit_date|datetime|null: false|
+|goal|int|
+|next_goal|int|null:false, index :true|
 
 ### Association
 - has_many :likes
@@ -192,6 +195,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |------|----|-------|
 |type|string|null: false|
 |price|string|null: false|
+|stock|int|
+|arrival_date|datetime|foreign_key: true|
 |project_id|reference|foreign_key: true|
 
 ### Association
