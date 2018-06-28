@@ -3,6 +3,8 @@
 ## ER diagram(image)
 https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
+-------------------------------------------------------
+
 ## users
 
 |Column|Type|Options|
@@ -21,6 +23,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :comments
 - has_many :projects, through: :comments
 
+-------------------------------------------------------
 
 ## send_messages
 
@@ -32,6 +35,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - belongs_to :user
 
+-------------------------------------------------------
 
 ## comments
 
@@ -45,6 +49,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :user
 - belongs_to :project
 
+-------------------------------------------------------
 
 ## likes
 
@@ -57,6 +62,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :user
 - belongs_to :project
 
+-------------------------------------------------------
 
 ## user_returns
 
@@ -69,6 +75,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :user
 - belongs_to :return
 
+-------------------------------------------------------
 
 ## projects
 
@@ -93,6 +100,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :articles
 - has_many :returns
 
+-------------------------------------------------------
+
 ## project_area_tags
 
 |Column|Type|Options|
@@ -104,11 +113,15 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :project
 - belongs_to :area_tags
 
+-------------------------------------------------------
+
 ## area_tags
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+
+-------------------------------------------------------
 
 ## content_tags
 
@@ -120,6 +133,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :project_contet_tags
 - has_many :projects, througj: :project_content_tags
 
+-------------------------------------------------------
 
 ## project_content_tags
 
@@ -132,6 +146,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :project
 - belongs_to :content_tag
 
+-------------------------------------------------------
+
 ## articles
 
 |Column|Type|Options|
@@ -141,6 +157,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - has_many :article_images
 - belongs_to :projects
+
+-------------------------------------------------------
 
 ## article_images
 
@@ -152,6 +170,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - belongs_to :article
 
+-------------------------------------------------------
 
 ## project_images
 
@@ -161,6 +180,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 ### Association
 - belongs_to : projects
+
+-------------------------------------------------------
 
 ## returns
 
@@ -176,6 +197,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :user_returns
 - has_many :users, througj: :user_returns
 
+-------------------------------------------------------
 
 ## return_images
 
