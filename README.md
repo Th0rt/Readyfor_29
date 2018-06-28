@@ -148,6 +148,9 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |project_id|reference|foreign_key: true|
 |content_tags_id|reference|foreign_key: true |
 
+### Association
+- belongs_to :project
+- belongs_to :content_tag
 
 ## articlesテーブル
 
@@ -192,6 +195,4 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |return_id|reference|foreign_key: true|
 
 ### Association
-- has_many :members
-- has_many :groups, through: :members
-- has_many :messages
+- belongs_to :return
