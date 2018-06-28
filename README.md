@@ -117,7 +117,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - belongs_to :project
 - belongs_to :area_tags
 
-##areas_tags
+## area_tags
 
 |Column|Type|Options|
 |------|----|-------|
