@@ -8,7 +8,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true, index: true|
-|profile|string|
+|profile|text|
 |image|string|
 
 ### Association
