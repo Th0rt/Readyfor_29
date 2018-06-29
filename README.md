@@ -10,12 +10,17 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true, index: true|
+|email|string|
+|password|string|
 |profile|text|
 |image|string|
 
+
+
+
 ### Association
 - has_many :projects
-- has_many :send_messages
+- has_many :messages
 - has_many :user_returns
 - has_many :returns, through: :user_returns
 - has_many :likes
@@ -84,11 +89,10 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |------|----|-------|
 |title|string|null: false, index: true|
 |content|text|null: false|
-|limit|datetime|null: false, index: true|
+|limit_date|datetime|null: false, index: true|
+|goal|int|null:false, index :true|
+|next_goal|int
 |type|string|
-|limit_date|datetime|null: false|
-|goal|int|
-|next_goal|int|null:false, index :true|
 
 ### Association
 - has_many :likes
@@ -109,8 +113,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
-|area_tags_id|reference|foreign_key: true|
 |project_id|reference|foreign_key: true |
+|area_tag_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :project
@@ -125,7 +129,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |name|string|null: false|
 
 ### Association
-- has_many :area_tags_projects
+- has_many :project_area_tags
 
 -------------------------------------------------------
 
@@ -137,7 +141,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 ### Association
 - has_many :project_contet_tags
-- has_many :projects, througj: :project_content_tags
+- has_many :projects, through: :project_content_tags
 
 -------------------------------------------------------
 
@@ -183,6 +187,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |image|string|
+|project_id|reference|foreign_key: true
 
 ### Association
 - belongs_to : projects
@@ -196,6 +201,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |type|string|null: false|
 |price|string|null: false|
 |stock|int|
+|content|text|null: false|
 |arrival_date|datetime|foreign_key: true|
 |project_id|reference|foreign_key: true|
 
