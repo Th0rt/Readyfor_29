@@ -10,8 +10,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, index: true|
-|email|string|
-|password|string|
+|email|string|null: false, unique: true|
+|password|string|null: false|
 |profile|text|
 |image|string|
 
