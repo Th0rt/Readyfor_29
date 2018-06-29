@@ -9,7 +9,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true, index: true|
+|nickname|string|null: false, index: true|
 |email|string|
 |password|string|
 |profile|text|
@@ -116,7 +116,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 ### Association
 - belongs_to :project
-- belongs_to :area_tags
+- belongs_to :area_tag
 
 -------------------------------------------------------
 
@@ -163,8 +163,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |content|text|null: false, index: true|
 
 ### Association
+- belongs_to :project
 - has_many :article_images
-- belongs_to :projects
 
 -------------------------------------------------------
 
@@ -188,7 +188,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |project_id|reference|foreign_key: true
 
 ### Association
-- belongs_to : projects
+- belongs_to : project
 
 -------------------------------------------------------
 
@@ -204,8 +204,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |project_id|reference|foreign_key: true|
 
 ### Association
+- belongs_to :project
 - has_many :return_images
-- belongs_to :projects
 - has_many :user_returns
 - has_many :users, through: :user_returns
 
