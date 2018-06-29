@@ -71,6 +71,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
+|count|int|null: false|
 |return_id|reference|foreign_key: true|
 |user_id|reference|foreign_key: true|
 
