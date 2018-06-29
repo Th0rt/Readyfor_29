@@ -10,8 +10,8 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true, index: true|
-|email|string|
-|password|string|
+|email|string|null: false|
+|password|string|null: false|
 |profile|text|
 |image|string|
 
@@ -88,8 +88,9 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |content|text|null: false|
 |limit_date|datetime|null: false, index: true|
 |goal|int|null:false, index :true|
-|next_goal|int
+|next_goal|int|
 |type|string|
+|image|string|null: false|
 
 ### Association
 - has_many :likes
@@ -115,7 +116,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 ### Association
 - belongs_to :project
-- belongs_to :area_tags
+- belongs_to :area_tag
 
 -------------------------------------------------------
 
@@ -134,10 +135,10 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,  index: true|
+|name|string|null: false|
 
 ### Association
-- has_many :project_contet_tags
+- has_many :project_content_tags
 - has_many :projects, through: :project_content_tags
 
 -------------------------------------------------------
@@ -147,7 +148,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |project_id|reference|foreign_key: true|
-|content_tags_id|reference|foreign_key: true |
+|content_tag_id|reference|foreign_key: true |
 
 ### Association
 - belongs_to :project
@@ -159,11 +160,11 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
-|content|text|null: false, index: true|
+|content|text|null: false|
 
 ### Association
 - has_many :article_images
-- belongs_to :projects
+- belongs_to :project
 
 -------------------------------------------------------
 
@@ -171,23 +172,11 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
-|image|string|
+|image|string|null: false|
 |article_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :article
-
--------------------------------------------------------
-
-## project_images
-
-|Column|Type|Options|
-|------|----|-------|
-|image|string|
-|project_id|reference|foreign_key: true
-
-### Association
-- belongs_to : projects
 
 -------------------------------------------------------
 
@@ -196,15 +185,15 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |Column|Type|Options|
 |------|----|-------|
 |type|string|null: false|
-|price|string|null: false|
+|price|int|null: false|
 |stock|int|
 |content|text|null: false|
-|arrival_date|datetime|foreign_key: true|
+|arrival_date|datetime|
 |project_id|reference|foreign_key: true|
 
 ### Association
 - has_many :return_images
-- belongs_to :projects
+- belongs_to :project
 - has_many :user_returns
 - has_many :users, through: :user_returns
 
@@ -214,7 +203,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 |Column|Type|Options|
 |------|----|-------|
-|image|string|
+|image|string|null :false|
 |return_id|reference|foreign_key: true|
 
 ### Association
