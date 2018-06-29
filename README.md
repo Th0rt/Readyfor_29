@@ -91,6 +91,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |goal|int|null:false, index :true|
 |next_goal|int
 |type|string|
+|like_count|int|null: false|
 
 ### Association
 - has_many :likes
