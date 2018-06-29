@@ -206,7 +206,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 - has_many :return_images
 - belongs_to :projects
 - has_many :user_returns
-- has_many :users, througj: :user_returns
+- has_many :users, through: :user_returns
 
 -------------------------------------------------------
 
