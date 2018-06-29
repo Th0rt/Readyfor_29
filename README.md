@@ -90,7 +90,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |limit_date|datetime|null: false, index: true|
 |goal|int|null:false, index :true|
 |next_goal|int|
-|type|string|
+|type|string|null: false|
 |image|string|null: false|
 |like_count|int|null: false|
 
