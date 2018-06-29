@@ -15,9 +15,6 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 |profile|text|
 |image|string|
 
-
-
-
 ### Association
 - has_many :projects
 - has_many :messages
