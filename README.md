@@ -123,7 +123,6 @@ http://18.191.118.146/
 |goal|int|null:false, index :true|
 |next_goal|int|
 |type|string|null: false|
-|image|string|null: false|
 |likes_count|int|null: false|
 
 
