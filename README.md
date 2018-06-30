@@ -124,14 +124,13 @@ http://18.191.118.146/
 |next_goal|int|
 |type|string|null: false|
 |image|string|null: false|
-|like_count|int|null: false|
+|likes_count|int|null: false|
 
 
 ### Association
 - has_many :likes
 - has_many :users, through: :likes
 - has_many :comments
-- has_many :users, through: :comments
 - has_many :project_content_tags
 - has_many :content_tags, through: :project_content_tags
 - has_many :project_area_tags
