@@ -2,6 +2,8 @@
 
 ## ER diagram(image)
 https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
+## HP
+https://readyfor.jp/
 
 -------------------------------------------------------
 
@@ -28,6 +30,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## messages
+####　ユーザー間のメッセージ送信機能
 
 |Column|Type|Options|
 |------|----|-------|
@@ -41,6 +44,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## comments
+#### プロジェクトページでコメントを行う機能
 
 |Column|Type|Options|
 |------|----|-------|
@@ -55,6 +59,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## likes
+####  ユーザーが各プロジェクトに対してお気に入りをする機能
 
 |Column|Type|Options|
 |------|----|-------|
@@ -67,7 +72,30 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 
 -------------------------------------------------------
 
+## returns
+####　プロジェクトへの寄付の内容　複数の金額設定ができる
+
+|Column|Type|Options|
+|------|----|-------|
+|type|string|null: false|
+|price|int|null: false|
+|stock|int|
+|content|text|null: false|
+|arrival_date|datetime|
+|image|string|null: false|
+|project_id|reference|foreign_key: true|
+
+### Association
+- has_many :return_images
+- has_many :user_returns
+- has_many :users, through: :user_returns
+- belongs_to :project
+
+-------------------------------------------------------
+
 ## user_returns
+####  ユーザーとリターンを結ぶ中間テーブル
+
 
 |Column|Type|Options|
 |------|----|-------|
@@ -82,6 +110,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## projects
+####  投稿内容
 
 |Column|Type|Options|
 |------|----|-------|
@@ -111,6 +140,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## project_area_tags
+#### 地域タグとの中間テーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -124,6 +154,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## area_tags
+####  都道府県、国名などのプロジェクトにつけるタグ
 
 |Column|Type|Options|
 |------|----|-------|
@@ -135,6 +166,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## content_tags
+####  上記以外のタグ
 
 |Column|Type|Options|
 |------|----|-------|
@@ -147,6 +179,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## project_content_tags
+####  コンテンツタグとプロジェクトの中間テーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -160,6 +193,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## articles
+####  プロジェクトの所有者が投稿できる記事（ブログのような機能）
 
 |Column|Type|Options|
 |------|----|-------|
@@ -172,6 +206,7 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 -------------------------------------------------------
 
 ## article_images
+####  上記の記事に添付する画像（複数の画像を添付できる）
 
 |Column|Type|Options|
 |------|----|-------|
@@ -181,33 +216,4 @@ https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
 ### Association
 - belongs_to :article
 
--------------------------------------------------------
 
-## returns
-
-|Column|Type|Options|
-|------|----|-------|
-|type|string|null: false|
-|price|int|null: false|
-|stock|int|
-|content|text|null: false|
-|arrival_date|datetime|
-|project_id|reference|foreign_key: true|
-
-### Association
-- has_many :return_images
-- has_many :user_returns
-- has_many :users, through: :user_returns
-- belongs_to :project
-
--------------------------------------------------------
-
-## return_images
-
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null :false|
-|return_id|reference|foreign_key: true|
-
-### Association
-- belongs_to :return
