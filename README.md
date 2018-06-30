@@ -28,6 +28,7 @@ https://readyfor.jp/
 - has_many :projects, through: :comments
 
 -------------------------------------------------------
+
 #####  ユーザー間のメッセージ送信機能
 ## messages
 
@@ -42,6 +43,7 @@ https://readyfor.jp/
 - belongs_to :user
 
 -------------------------------------------------------
+
 ##### プロジェクトページでコメントを行う機能
 ## comments
 
@@ -56,6 +58,7 @@ https://readyfor.jp/
 - belongs_to :project
 
 -------------------------------------------------------
+
 #####  ユーザーが各プロジェクトに対してお気に入りをする機能
 ## likes
 
@@ -69,6 +72,7 @@ https://readyfor.jp/
 - belongs_to :project
 
 -------------------------------------------------------
+
 #####  プロジェクトへの寄付の内容　複数の金額設定ができる
 ## returns
 
@@ -90,6 +94,7 @@ https://readyfor.jp/
 - belongs_to :project
 
 -------------------------------------------------------
+
 #####  ユーザーとリターンを結ぶ中間テーブル
 ## user_returns
 
@@ -105,6 +110,7 @@ https://readyfor.jp/
 - belongs_to :return
 
 -------------------------------------------------------
+
 #####  投稿内容
 ## projects
 
@@ -134,6 +140,7 @@ https://readyfor.jp/
 - has_many :returns
 
 -------------------------------------------------------
+
 #####  areaタグとprojectの中間テーブル
 ## project_area_tags
 
@@ -147,6 +154,7 @@ https://readyfor.jp/
 - belongs_to :area_tag
 
 -------------------------------------------------------
+
 #####  都道府県、国名などのプロジェクトにつけるタグ
 ## area_tags
 
@@ -158,6 +166,7 @@ https://readyfor.jp/
 - has_many :project_area_tags
 
 -------------------------------------------------------
+
 #####  上記以外のタグ
 ## content_tags
 
@@ -170,6 +179,7 @@ https://readyfor.jp/
 - has_many :projects, through: :project_content_tags
 
 -------------------------------------------------------
+
 #####  コンテンツタグとプロジェクトの中間テーブル
 ## project_content_tags
 
@@ -184,6 +194,7 @@ https://readyfor.jp/
 - belongs_to :content_tag
 
 -------------------------------------------------------
+
 #####  プロジェクトの所有者が投稿できる記事（ブログのような機能）
 ## articles
 
