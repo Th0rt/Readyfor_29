@@ -30,7 +30,7 @@ https://readyfor.jp/
 -------------------------------------------------------
 
 ## messages
-####　ユーザー間のメッセージ送信機能
+####  ユーザー間のメッセージ送信機能
 
 |Column|Type|Options|
 |------|----|-------|
@@ -73,7 +73,7 @@ https://readyfor.jp/
 -------------------------------------------------------
 
 ## returns
-####　プロジェクトへの寄付の内容　複数の金額設定ができる
+####  プロジェクトへの寄付の内容　複数の金額設定ができる
 
 |Column|Type|Options|
 |------|----|-------|
@@ -124,7 +124,7 @@ https://readyfor.jp/
 |like_count|int|null: false|
 
 
-### Association
+### 　Association
 - has_many :likes
 - has_many :users, through: :likes
 - has_many :comments
@@ -140,7 +140,7 @@ https://readyfor.jp/
 -------------------------------------------------------
 
 ## project_area_tags
-#### 地域タグとの中間テーブル
+####  地域タグとの中間テーブル
 
 |Column|Type|Options|
 |------|----|-------|
