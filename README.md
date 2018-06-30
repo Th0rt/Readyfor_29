@@ -89,7 +89,6 @@ http://18.191.118.146/
 |project_id|reference|foreign_key: true|
 
 ### Association
-- has_many :return_images
 - has_many :user_returns
 - has_many :users, through: :user_returns
 - belongs_to :project
@@ -123,7 +122,6 @@ http://18.191.118.146/
 |goal|int|null:false, index :true|
 |next_goal|int|
 |type|string|null: false|
-|image|string|null: false|
 |like_count|int|null: false|
 
 
@@ -139,6 +137,19 @@ http://18.191.118.146/
 - has_many :project_images
 - has_many :articles
 - has_many :returns
+
+-------------------------------------------------------
+
+######  プロジェクトの内容に添付する画像（複数の画像を添付できる）
+## project_images　
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|project_id|reference|foreign_key: true|
+
+### Association
+- belongs_to :project
 
 -------------------------------------------------------
 
