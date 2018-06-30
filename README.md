@@ -2,8 +2,10 @@
 
 ## ER diagram(image)
 https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
-## HP
+## Original Servise
 https://readyfor.jp/
+## コピーサイト
+http://18.191.118.146/
 
 -------------------------------------------------------
 
@@ -25,11 +27,10 @@ https://readyfor.jp/
 - has_many :likes
 - has_many :projects, through: :likes
 - has_many :comments
-- has_many :projects, through: :comments
 
 -------------------------------------------------------
 
-#####  ユーザー間のメッセージ送信機能
+##### ユーザー間のメッセージ送信機能
 ## messages
 
 
@@ -59,7 +60,7 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-#####  ユーザーが各プロジェクトに対してお気に入りをする機能
+##### ユーザーが各プロジェクトに対してお気に入りをする機能
 ## likes
 
 |Column|Type|Options|
@@ -73,17 +74,17 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-#####  プロジェクトへの寄付の内容　複数の金額設定ができる
+##### プロジェクトへの寄付の内容　複数の金額設定ができる
 ## returns
 
 
 |Column|Type|Options|
 |------|----|-------|
-|type|string|null: false|
+|title|string|null: false|
 |price|int|null: false|
 |stock|int|
 |content|text|null: false|
-|arrival_date|datetime|
+|arrival_date|date|
 |image|string|null: false|
 |project_id|reference|foreign_key: true|
 
@@ -95,7 +96,7 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-#####  ユーザーとリターンを結ぶ中間テーブル
+##### ユーザーとリターンを結ぶ中間テーブル
 ## user_returns
 
 
@@ -111,7 +112,7 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-#####  投稿内容
+##### プロジェクトの内容を格納するテーブル
 ## projects
 
 |Column|Type|Options|
@@ -126,7 +127,7 @@ https://readyfor.jp/
 |like_count|int|null: false|
 
 
-### 　Association
+### Association
 - has_many :likes
 - has_many :users, through: :likes
 - has_many :comments
@@ -141,12 +142,12 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-#####  areaタグとprojectの中間テーブル
+##### areaタグとprojectの中間テーブル
 ## project_area_tags
 
 |Column|Type|Options|
 |------|----|-------|
-|project_id|reference|foreign_key: true |
+|project_id|reference|foreign_key: true|
 |area_tag_id|reference|foreign_key: true|
 
 ### Association
@@ -155,24 +156,24 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-#####  都道府県、国名などのプロジェクトにつけるタグ
+##### 都道府県、国名などのプロジェクトにつけるタグ
 ## area_tags
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :project_area_tags
 
 -------------------------------------------------------
 
-#####  上記以外のタグ
+##### 上記以外のタグ
 ## content_tags
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :project_content_tags
@@ -180,14 +181,14 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-#####  コンテンツタグとプロジェクトの中間テーブル
+##### コンテンツタグとプロジェクトの中間テーブル
 ## project_content_tags
 
 
 |Column|Type|Options|
 |------|----|-------|
 |project_id|reference|foreign_key: true|
-|content_tag_id|reference|foreign_key: true |
+|content_tag_id|reference|foreign_key: true|
 
 ### Association
 - belongs_to :project
@@ -195,7 +196,7 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-#####  プロジェクトの所有者が投稿できる記事（ブログのような機能）
+##### プロジェクトの所有者が投稿できる記事（ブログのような機能）
 ## articles
 
 |Column|Type|Options|
@@ -208,7 +209,7 @@ https://readyfor.jp/
 
 -------------------------------------------------------
 
-######  上記の記事に添付する画像（複数の画像を添付できる）
+###### 上記の記事に添付する画像（複数の画像を添付できる）
 ## article_images　
 
 |Column|Type|Options|
@@ -218,5 +219,3 @@ https://readyfor.jp/
 
 ### Association
 - belongs_to :article
-
-
