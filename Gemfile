@@ -83,4 +83,6 @@ gem 'mini_magick'
 
 # aws-tools
 gem 'fog-aws'
+
+# user-manegement
 gem 'devise'
