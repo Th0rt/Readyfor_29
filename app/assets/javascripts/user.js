@@ -2,7 +2,6 @@ $(function(){
   $('.filter-item').click(function(){
     $('.filter-list').children().removeClass('selected');
     $(this).addClass('selected')
-    console.log(this)
   })
 
   $('#send-contributor').click(function(){

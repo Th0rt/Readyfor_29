@@ -4,14 +4,14 @@
       %h1 ログイン
       .left-content__input
         .left-content__email
-          %input.user_email.font-awesome{ name: "email", placeholder: "メールアドレスを入力", type: "text"}
+          %input.user_email.font-awesome{ name: "email", placeholder: "メールアドレスを入力", type: "text" }
         .left-content__password
-          %input.user_password.font-awesome{ name: "password", placeholder: "パスワードを入力", type:"password"}
+          %input.user_password.font-awesome{ name: "password", placeholder: "パスワードを入力", type:"password" }
       .left-content__submit
         .left-content__checkbox
-          %input#login-checkbox{ type: "checkbox"} ログイン情報を保存する
+          %input#login-checkbox{ type: "checkbox" } ログイン情報を保存する
         .left-content__button
-          %button#login-button{ type: "submit"} ログイン
+          %button#login-button{ type: "submit" } ログイン
       %h2 Facebookアカウントで登録した方はこちら
       %button
         %i.fa.fa-facebook.fa-2x
@@ -32,17 +32,17 @@
         .email-receive-option メール受信制限をされている方は、@readyfor.jpからのメール受信を許可してください。
       %a すでにアカウントをお持ちでパスワードを忘れた方
 
-  #user-right-second.user-right.hidden
+  .user-right.hidden#user-right-second
     .right-content
       %h1　新規登録
       .right-content__input
         .left-content__password
-          %input.right-form.font-awesome{ name: "nickname", placeholder: "お名前(ニックネーム)", type: "text"}
+          %input.right-form.font-awesome{ name: "nickname", placeholder: "お名前(ニックネーム)", type: "text" }
         .left-content__password
-          %input.right-form.font-awesome{ name: "email", placeholder:"メールアドレスを入力", type: "text"}
+          %input.right-form.font-awesome{ name: "email", placeholder:"メールアドレスを入力", type: "text" }
         .left-content__submit
-          %input.right-form.font-awesome{ name: "password", placeholder: "パスワードを入力",type: "password"}
+          %input.right-form.font-awesome{ name: "password", placeholder: "パスワードを入力",type: "password" }
         .left-content__submit
-          %input.right-form.font-awesome{ name: "password", placeholder: "パスワードの確認", type: "password"}
+          %input.right-form.font-awesome{ name: "password", placeholder: "パスワードの確認", type: "password" }
       .right-content__button
-        %button#signin-button{ type: "submit"} 新規登録
+        %button#signin-button{ type: "submit" } 新規登録
