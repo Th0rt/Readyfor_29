@@ -73,6 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # html-tools
 gem 'haml-rails'
+gem 'erb2haml'
 
 # image-uploader
 gem 'carrierwave'
