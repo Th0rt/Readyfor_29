@@ -84,5 +84,8 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 
- # aws-tools
+# aws-tools
 gem 'fog-aws'
+
+# user-manegement
+gem 'devise'
