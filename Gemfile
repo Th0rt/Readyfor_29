@@ -83,3 +83,4 @@ gem 'mini_magick'
 
  # aws-tools
 gem 'fog-aws'
+gem 'devise'
