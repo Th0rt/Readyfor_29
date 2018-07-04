@@ -5,8 +5,8 @@ $(function(){
     console.log(this)
   })
 
-  $('#send-contributer').click(function(){
-    $('.select-contributer').slideToggle();
+  $('#send-contributor').click(function(){
+    $('.select-contributor').slideToggle();
   })
   $('#send-orner').click(function(){
     $('.select-orner').slideToggle();
