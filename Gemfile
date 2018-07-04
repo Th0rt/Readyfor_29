@@ -76,6 +76,9 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'kaminari'
 
+# css-rails
+gem 'font-awesome-rails'
+
 # image-uploader
 gem 'carrierwave'
 gem 'mini_magick'
