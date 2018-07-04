@@ -6,17 +6,17 @@
           .portorate
         .mypage-profile
           .mypage-name 関谷　佑斗
-          %a.mypage-edit
+          %a.mypage-edit{href: "/users/1/edit"}
             %i.fa.fa-cog プロフィール編集
       %ul.filter-list
-        %a.filter-item.selected 購入履歴
+        %a.filter-item.selected{href: "/users/1"} 購入履歴
         %a.filter-item 購入履歴（月額）
         %a.filter-item お気に入りリスト
         .message-list
           %i.fa.fa-inbox メッセージ
-        %a.filter-item
+        %a.filter-item{href: "/users/1/messages"}
           %i.fa.fa-user  メッセージ一覧
-        %a.filter-item
+        %a.filter-item{href: "/users/1/messages/new"}
           %i.fa.fa-envelope  新規メッセージ作成
         .answer-list
           %i.fa.fa-question-circle ヘルプ・問い合わせ

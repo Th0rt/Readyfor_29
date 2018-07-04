@@ -4,6 +4,10 @@ $(function(){
     $(this).addClass('selected')
   })
 
+  $('.mypage-edit').click(function(){
+    $('.filter-list').children().removeClass('selected');
+  })
+
   $('#send-contributor').click(function(){
     $('.select-contributor').slideToggle();
   })
