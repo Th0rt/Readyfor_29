@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Image:
+  = image_tag @image_upload_test.image.url
+= link_to 'Edit', edit_image_upload_test_path(@image_upload_test)
+|
+= link_to 'Back', image_upload_tests_path
