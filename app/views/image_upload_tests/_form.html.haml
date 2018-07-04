@@ -1,6 +1,6 @@
 = form_with(model: image_upload_test, local: true) do |form|
   - if image_upload_test.errors.any?
-    #error_explanation
+    #error-explanation
       %h2
         = pluralize(image_upload_test.errors.count, "error")
         prohibited this image_upload_test from being saved:
