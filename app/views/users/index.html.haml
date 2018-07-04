@@ -1,0 +1,48 @@
+.user-container
+  .user-left
+    .left-content
+      %h1 ログイン
+      .left-content__input
+        .left-content__email
+          %input.user_email.font-awesome{:name => "email", :placeholder => "メールアドレスを入力", :type => "text"}
+        .left-content__password
+          %input.user_password.font-awesome{:name => "password", :placeholder => "パスワードを入力", :type => "password"}
+      .left-content__submit
+        .left-content__checkbox
+          %input#login-checkbox{:type => "checkbox"}ログイン情報を保存する
+        .left-content__button
+          %button#login-button{:type => "submit"} ログイン
+      %h2 Facebookアカウントで登録した方はこちら
+      %button
+        %i.fa.fa-facebook.fa-2x
+        Facebookでログイン
+
+
+
+  .user-right#user-right-first
+    .right-content
+      %h1　新規登録
+      #right-content__email メールアドレスで登録
+      %h2 Facebookアカウントをお持ちの方におすすめ
+      %button.right-content-fb
+        %i.fa.fa-facebook.fa-2x
+        Facebookで登録する
+      .warning-notice
+        .contract アカウントを作成することにより、利用規約およびプライバシーポリシーに同意されたものとさせていただきます。
+        .email-receive-option メール受信制限をされている方は、@readyfor.jpからのメール受信を許可してください。
+      %a すでにアカウントをお持ちでパスワードを忘れた方
+
+  .user-right#user-right-second.hidden
+    .right-content
+      %h1　新規登録
+      .right-content__input
+        .left-content__password
+          %input.right-form.font-awesome{:name => "nickname", :placeholder => "お名前(ニックネーム)", :type => "text"}
+        .left-content__password
+          %input.right-form.font-awesome{:name => "email", :placeholder => "メールアドレスを入力", :type => "text"}
+        .left-content__submit
+          %input.right-form.font-awesome{:name => "password", :placeholder => "パスワードを入力", :type => "password"}
+        .left-content__submit
+          %input.right-form.font-awesome{:name => "password", :placeholder => "パスワードの確認", :type => "password"}
+      .right-content__button
+        %button#signin-button{:type => "submit"} 新規登録
