@@ -35,14 +35,18 @@
     line-height: 40px;
     opacity: 0.8  ;
   }
-  .user_email,.user_password{
+  #user_email,#user_password{
     width:232px;
     height: 17px;
-    font-size: 14px;
+    font-size: 12px;
     padding: 10px;
+    color: black;
   }
 
-  .user_password {
+  #user_email{
+    margin-top:40px;
+  }
+  #user_password {
     margin-top: 10px;
   }
   .left-content__button {
@@ -55,13 +59,27 @@
     margin-right: 20px;
   }
 
+
   .left-content__submit{
     margin-left:15px;
+    margin-top:20px;
+    width: 300px;
+    height: 40px;
+    #user_remember_me {
+      float: left;
+    }
+    #login-checkbox {
+      font-size: 12px;
+      float: left;
+    }
     #login-button{
       background-color: red;
       width: 102px;
       height: 36px;
       opacity: 1;
+      border-color: red;
+      float: left;
+      margin-left: 15px;
     }
   }
   h1 {
@@ -138,6 +156,8 @@
       background-color: red;
       margin:0 auto;
       margin-top: 20px;
+      margin-left: 60px;
+      color: white;
     }
   }
 }

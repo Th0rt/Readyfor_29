@@ -17,7 +17,7 @@ $(function(){
 })
 
 $(function(){
-  $('#right-content__email').click(function(){
+  $('#right-content-email').click(function(){
     $('#user-right-first').addClass('hidden')
     $('#user-right-second').removeClass('hidden')
   })

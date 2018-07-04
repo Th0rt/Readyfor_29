@@ -16,9 +16,6 @@
       %button
         %i.fa.fa-facebook.fa-2x
         Facebookでログイン
-
-
-
   .user-right#user-right-first
     .right-content
       %h1　新規登録
@@ -35,14 +32,21 @@
   .user-right.hidden#user-right-second
     .right-content
       %h1　新規登録
-      .right-content__input
-        .left-content__password
-          %input.right-form.font-awesome{ name: "nickname", placeholder: "お名前(ニックネーム)", type: "text" }
-        .left-content__password
-          %input.right-form.font-awesome{ name: "email", placeholder:"メールアドレスを入力", type: "text" }
-        .left-content__submit
-          %input.right-form.font-awesome{ name: "password", placeholder: "パスワードを入力",type: "password" }
-        .left-content__submit
-          %input.right-form.font-awesome{ name: "password", placeholder: "パスワードの確認", type: "password" }
-      .right-content__button
-        %button#signin-button{ type: "submit" } 新規登録
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .field
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        .field
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          = f.submit "Sign up"
