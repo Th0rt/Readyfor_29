@@ -78,6 +78,7 @@ gem 'kaminari'
 
 # css-rails
 gem 'font-awesome-rails'
+gem 'bootstrap-sass'
 
 # image-uploader
 gem 'carrierwave'
