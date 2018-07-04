@@ -26,5 +26,3 @@
 /config/master.key
 
 # secret files
-/.env
-/config/secrets.yml
