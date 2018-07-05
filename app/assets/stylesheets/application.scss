@@ -10,3 +10,13 @@
 @import 'global';
 @import 'scaffolds';
 
+// components
+@import 'navbar';
+@import 'layouts/entry-type2';
+
+// toppage
+@import 'toppage/Top-Entry';
+@import 'toppage/PcTopVisual';
+@import 'toppage/PcTopProjectArea';
+@import 'toppage/slick-slider';
+@import 'toppage/project-list'
