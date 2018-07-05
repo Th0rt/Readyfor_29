@@ -1,0 +1,9 @@
+.overview{
+    overflow: hidden;
+    &__image{
+      width: 550px;
+      height: 400px;
+      background-color: burlywood;
+      float: left;
+    }
+  }
