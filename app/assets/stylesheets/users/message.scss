@@ -1,68 +1,70 @@
-.mypage-message{
-  width: 740px;
-  height:58px;
-  .user-search{
-    width: 310px;
-    height: 38px;
-    float: left;
-    border-radius: 10px;
+.mypage-container {
+  .mypage-message{
+    width: 740px;
+    height:58px;
+    .user-search{
+      width: 310px;
+      height: 38px;
+      float: left;
+      border-radius: 10px;
+    }
+    .new-message{
+      float: right;
+      margin-left: 50px;
+      font-size: 14px;
+      font-weight: bold;
+    }
   }
-  .new-message{
-    float: right;
-    margin-left: 50px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-}
 
-.mypage-message-list{
-  width: 176px;
-  height: 38px;
-  background-color:#898;
-  border-radius: 10px;
-  line-height: 38px;
-  text-align: center;
-  border:solid 2px #666;
-  color: white;
-}
-
-/* メッセージのnewする */
-.right-wrapper{
-  h3{
-    font-size: 14px;
-    display: block;
-    width: 720px;
+  .mypage-message-list{
+    width: 176px;
     height: 38px;
-    background-color: #dadada;
+    background-color:#898;
     border-radius: 10px;
-    padding-left: 20px;
-  }
-}
-.message-tree-nav{
-  width: 100%;
-  height: 20px;
-  font-size: 14px;
-  margin: 10px 0;
-  padding-bottom: 30px;
-  border-bottom: solid 1px #898;
-  .index-message{
-    font-size: 20px;
-  }
-  .fa-arrow-circle-left{
+    line-height: 38px;
+    text-align: center;
+    border:solid 2px #666;
     color: white;
-    background-color: red;
   }
-}
 
-.project-selection-header{
-  padding-bottom: 10px;
-  border-bottom: 1px solid #898;
-}
+  /* メッセージのnewする */
+  .right-wrapper{
+    h3{
+      font-size: 14px;
+      display: block;
+      width: 720px;
+      height: 38px;
+      background-color: #dadada;
+      border-radius: 10px;
+      padding-left: 20px;
+    }
+  }
+  .message-tree-nav{
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+    margin: 10px 0;
+    padding-bottom: 30px;
+    border-bottom: solid 1px #898;
+    .index-message{
+      font-size: 20px;
+    }
+    .fa-arrow-circle-left{
+      color: white;
+      background-color: red;
+    }
+  }
 
-.select-orner, .select-contributor{
-  padding-left:20px 20px 20px 30px;
-  font-size: 12px;
-  font-weight: bold;
-  display: none;
+  .project-selection-header{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #898;
+  }
+
+  .select-orner, .select-contributor{
+    padding-left:20px 20px 20px 30px;
+    font-size: 12px;
+    font-weight: bold;
+    display: none;
+  }
 }
 

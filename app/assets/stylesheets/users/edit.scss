@@ -1,55 +1,57 @@
 /* edit画面の右側 */
-.user-edit-wrapper{
-  width: 740px;
-}
-
-.user-edit-contents{
-  height: 40px;
-  width:700px;
-  margin-bottom: 30px;
-  p{
-    font-size: 14px;
-    margin: 0;
-    padding:0;
+.mypage-container{
+  .user-edit-wrapper{
+    width: 740px;
   }
 
-  .user-edit-main{
-    width: 600px;
-    height: 20px;
-    border-bottom: solid 1px #F0F8FF;
+  .user-edit-contents{
+    height: 40px;
+    width:700px;
+    margin-bottom: 30px;
     p{
-      float: left;
-    }
-    a{
-      float: right;
-      line-height: 20px;
       font-size: 14px;
-      font-weight: bold;
+      margin: 0;
+      padding:0;
     }
-    .name{
-      margin-left: 10px;
-      line-height: 20px;
-      font-weight: bold;
-    }
-    .explain{
-      font-size: 10px;
-      margin-left: 30px;
-      line-height: 20px;
-      color:#A9A9A9;
-    }
-  }
-  .user-edit-sub{
-    width: 600px;
-    height: 20px;
-    .nickname{
-      float: left;
-      margin-left: 10px;
-      color: #A9A9A9
-    }
-    .user-name{
-      float: right;
-      line-height: 20px;
 
+    .user-edit-main{
+      width: 600px;
+      height: 20px;
+      border-bottom: solid 1px #F0F8FF;
+      p{
+        float: left;
+      }
+      a{
+        float: right;
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .name{
+        margin-left: 10px;
+        line-height: 20px;
+        font-weight: bold;
+      }
+      .explain{
+        font-size: 10px;
+        margin-left: 30px;
+        line-height: 20px;
+        color:#A9A9A9;
+      }
+    }
+    .user-edit-sub{
+      width: 600px;
+      height: 20px;
+      .nickname{
+        float: left;
+        margin-left: 10px;
+        color: #A9A9A9
+      }
+      .user-name{
+        float: right;
+        line-height: 20px;
+
+      }
     }
   }
 }
