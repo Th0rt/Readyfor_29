@@ -4,7 +4,9 @@
     %meta{ content:    "text/html",
            charset:    "UTF-8",
            http_equiv: "Content-Type" }/
-
+    %link{ rel:  "stylesheet",
+           type: "text/css",
+           href: "http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css" }
     %title Readyfor29
     = csrf_meta_tags
     = csp_meta_tag
@@ -12,5 +14,5 @@
                              'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application',
                              'data-turbolinks-track': 'reload'
-  %body
+  %body.Site-container
     = yield

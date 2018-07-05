@@ -1,14 +1,14 @@
-// reset
-@import 'reset';
-
 // addons
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
 
+// reset
+@import 'reset';
+
 // global
 @import 'global';
-@import 'scaffolds';
+// @import 'scaffolds';
 
 // components
 @import 'navbar';
@@ -19,4 +19,4 @@
 @import 'toppage/PcTopVisual';
 @import 'toppage/PcTopProjectArea';
 @import 'toppage/slick-slider';
-@import 'toppage/project-list'
+@import 'toppage/project-list';
