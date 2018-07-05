@@ -37,7 +37,7 @@
   }
   #user_email,#user_password{
     width:232px;
-    height: 17px;
+    height: 30px;
     font-size: 12px;
     padding: 10px;
     color: black;
@@ -61,7 +61,6 @@
 
 
   .left-content__submit{
-    margin-left:15px;
     margin-top:20px;
     width: 300px;
     height: 40px;
@@ -79,7 +78,7 @@
       opacity: 1;
       border-color: red;
       float: left;
-      margin-left: 15px;
+      margin-left: 10px;
     }
   }
   h1 {
@@ -144,11 +143,10 @@
     }
     .right-form{
       width: 230px;
-      height: 20px;
+      height: 30px;
       margin-top:5px;
-      margin-bottom:10px;
       padding: 8px;
-      font-size: 14px;
+      font-size: 12px;
     }
     #signin-button {
       width:102px;
