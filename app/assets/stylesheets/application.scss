@@ -1,10 +1,12 @@
-
-// global
-
-@import './scaffolds';
+// reset
+@import 'reset';
 
 // addons
-
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+
+// global
+@import 'global';
+@import 'scaffolds';
+
