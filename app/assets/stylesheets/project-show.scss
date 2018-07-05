@@ -1,0 +1,188 @@
+.project-contents{
+  width: 1125px;
+  margin: 0 auto;
+  &__top-content{
+    width: 1000px;
+    margin: 0 auto;
+    &__category{
+      height: 16px;
+    }
+    &__title{
+      margin-top: 10px;
+      h1{
+        font-size: 36px;
+        text-align: center;
+      }
+    }
+    &__tag{
+      margin: 5px 0 10px 0;
+      a{
+        margin-right: 10px;
+        border : solid 1px #333333;
+        color: black;
+      }
+    }
+    &__overview{
+      overflow: hidden;
+      &__image{
+        width: 550px;
+        height: 400px;
+        background-color: burlywood;
+        float: left;
+      }
+      &__info{
+        width: 450px;
+        float: left;
+        &__profile{
+          width: 400px;
+          height: 80px;
+          margin: 0 auto;
+          &__icon{
+            width: 80px;
+            height: 80px;
+            background-color: burlywood;
+            float: left;
+          }
+          &__name{
+            height: 80px;
+            float: left;
+            margin-left: 30px;
+            display: table;
+            p{
+              font-size: 20px;
+              display: table-cell;
+              vertical-align: middle;
+            }
+          }
+        }
+        &__big-text{
+          width: 400px;
+          height: 50px;
+          margin: 10px auto 0px;
+          clear: both;
+        }
+        &__text{
+          width: 400px;
+          height: 30px;
+          margin: 5px auto 0px;
+        }
+        &__progress{
+          width: 400px;
+          margin: 30px auto 0px;
+          .progress-level-of-achievement{
+            width: 80%;
+          }
+        }
+        &__button{
+          width: 400px;
+          height: 60px;
+          margin: 20px auto 0px;
+          display: table;
+          p{
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 20px;
+          }
+        }
+        .span-project{
+          &__title-big{
+            line-height: 50px;
+            margin-left: 20px;
+            font-size: 20px;
+            float: left;
+          }
+          &__data-big{
+            line-height: 50px;
+            margin-right: 20px;
+            font-size: 36px;
+            float: right;
+          }
+          &__title{
+            line-height: 30px;
+            margin-left: 20px;
+            font-size: 16px;
+            float: left;
+          }
+          &__data{
+            line-height: 30px;
+            margin-right: 20px;
+            font-size: 16px;
+            float: right;
+          }
+        }
+      }
+    }
+    &__info-footer{
+      height: 50px;
+      margin-top: 10px;
+      clear: both;
+      span{
+        height: 30px;
+        font-size: 12px;
+        margin: 10px 0 0 10px;
+      }
+      p{
+        width: 400px;
+        font-size: 12px;
+        float: right;
+        margin: 10px 30px 0 0;
+      }
+    }
+  }
+  &__bottom-content{
+    width: 1000px;
+    margin: 10px auto 0;
+    overflow:hidden;
+    &__tab-btm{
+      height: 59px;
+    }
+    &__tab-content{
+      width: 610px;
+      margin-top: 50px;
+      float: left;
+    }
+    &__return-content{
+      width: 350px;
+      margin-top: 30px;
+      float: right;
+      &__link-btm{
+        p{
+          text-align: center;
+          margin-top: 10px;
+        }
+        .like-count-text{
+          color: #D77976;
+        }
+        .like-count-btm{
+          width: 300px;
+          height: 50px;
+          font-size: 22px;
+          color: black;
+          border : solid 1px #333333;
+          margin: 10px 0 0 25px;
+        }
+      }
+      &__returns{
+        height: 500px;
+        background-color: whitesmoke;
+        margin-top: 20px;
+      }
+    }
+    &__projects{
+      &__lists{
+        clear: both;
+        &__list{
+          width: 300px;
+          height: 150px;
+          background-color: whitesmoke;
+          margin: 30px 0 0 10px;
+          float: left;
+        }
+        p{
+          font-size: 20px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
