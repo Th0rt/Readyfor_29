@@ -19,9 +19,9 @@
     .overview
       .overview__image
       .project-info
-        .project-info__profile
-          .project-info__profile__icon
-          .project-info__profile__name
+        .user-profile
+          .user-profile__icon
+          .user-profile__name
             %p エキスパート
         .project-info__big-text
           %span.span-project.span-project__title-big 支援総額
@@ -71,27 +71,27 @@
       これまで15年ほど、自分の大好きな食べ物の世界で生活してきました。
       今までいろんな食事に出合い、ジャンルを問わず、
       興味を持ったものを本能が赴くままに味わい、自分の経験値として蓄積してきました。
-    .bottom-content__return-content
-      .bottom-content__return-content__link-btm
+    .return-content
+      .return-content__link-btm
         %p.like-count-text 7人がお気に入りしています
         = link_to root_path, class: "btn btn-light like-count-btm" do
           お気に入りに追加する
         %p お気に入りリストに追加され、新着情報を受け取れます
-      .bottom-content__return-content__returns
+      .return-content__returns
         %p 各リターンの部分テンプレート
-    .bottom-content__projects
-      .bottom-content__projects__lists
+    .show-projects
+      .show-projects__lists
         %p あなたにオススメのプロジェクト
-        .bottom-content__projects__lists__list
-        .bottom-content__projects__lists__list
-        .bottom-content__projects__lists__list
-      .bottom-content__projects__lists
+        .show-projects__lists__list
+        .show-projects__lists__list
+        .show-projects__lists__list
+      .show-projects__lists
         %p 注目のプロジェクト
-        .bottom-content__projects__lists__list
-        .bottom-content__projects__lists__list
-        .bottom-content__projects__lists__list
-      .bottom-content__projects__lists
+        .show-projects__lists__list
+        .show-projects__lists__list
+        .show-projects__lists__list
+      .show-projects__lists
         %p 新着プロジェクト
-        .bottom-content__projects__lists__list
-        .bottom-content__projects__lists__list
-        .bottom-content__projects__lists__list
+        .show-projects__lists__list
+        .show-projects__lists__list
+        .show-projects__lists__list
