@@ -1,0 +1,56 @@
+.bottom-content{
+  width: 1000px;
+  margin: 10px auto 0;
+  overflow:hidden;
+  &__tab-btm{
+    height: 59px;
+  }
+  &__tab-content{
+    width: 610px;
+    margin-top: 50px;
+    float: left;
+  }
+  &__return-content{
+    width: 350px;
+    margin-top: 30px;
+    float: right;
+    &__link-btm{
+      p{
+        text-align: center;
+        margin-top: 10px;
+      }
+      .like-count-text{
+        color: #D77976;
+      }
+      .like-count-btm{
+        width: 300px;
+        height: 50px;
+        font-size: 22px;
+        color: black;
+        border : solid 1px #333333;
+        margin: 10px 0 0 25px;
+      }
+    }
+    &__returns{
+      height: 500px;
+      background-color: whitesmoke;
+      margin-top: 20px;
+    }
+  }
+  &__projects{
+    &__lists{
+      clear: both;
+      &__list{
+        width: 300px;
+        height: 150px;
+        background-color: whitesmoke;
+        margin: 30px 0 0 10px;
+        float: left;
+      }
+      p{
+        font-size: 20px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
