@@ -14,12 +14,10 @@
               = f.label :ログイン情報を保存する, id: "login-checkbox"
               .actions
                 = f.submit "ログイン", id: "login-button", class: "button"
-
       %h2 Facebookアカウントで登録した方はこちら
       %button
         %i.fa.fa-facebook.fa-2x
         Facebookでログイン
-
   .user-right#user-right-first
     .right-content
       %h1　新規登録
@@ -39,8 +37,6 @@
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
           .field.left-content__password
-            = f.text_field :nickname, autofocus: true, class: "right-form", placeholder: "名前（ニックネーム）"
-          .field.left-content__password
             = f.email_field :email, autofocus: true, autocomplete: "email" , class: "right-form", placeholder: "メールアドレスを入力してください"
           .field.left-content__password
             = f.password_field :password, autocomplete: "off", class: "right-form", placeholder: "パスワードを入力してください。"
@@ -48,5 +44,3 @@
             = f.password_field :password_confirmation, autocomplete: "off", class: "right-form", placeholder: "パスワードの確認"
           .actions
             = f.submit "新規登録" ,id: "signin-button"
-/*        = render "devise/shared/links" */
-

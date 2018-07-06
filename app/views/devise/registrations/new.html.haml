@@ -14,12 +14,10 @@
               = f.label :ログイン情報を保存する, id: "login-checkbox"
               .actions
                 = f.submit "ログイン", id: "login-button", class: "button"
-
       %h2 Facebookアカウントで登録した方はこちら
       %button
         %i.fa.fa-facebook.fa-2x
         Facebookでログイン
-
   .user-right#user-right-first
     .right-content
       %h1　新規登録
@@ -46,4 +44,3 @@
             = f.password_field :password_confirmation, autocomplete: "off", class: "right-form", placeholder: "パスワードの確認"
           .actions
             = f.submit "新規登録" ,id: "signin-button"
-/*        = render "devise/shared/links" */
