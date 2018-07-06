@@ -62,7 +62,7 @@
           %p.title パスワード
           %p.information
           #password-edit-button 編集
-        .user-edit-sub#user-email-explain
+        .user-edit-sub#user-password-explain
           %p.explain ログインに利用するパスワードです。
           %p.content
         .hidden#user-edit-password
@@ -99,7 +99,7 @@
               %p プロフィールを入力:
               %br
               .field-input
-                %input{ type: "textarea" , placeholder:"プロフィールの内容を入力してください", class: "content-form" }
+                %input.content-form{ type: "textarea" , placeholder:"プロフィールの内容を入力してください" }
               .actions
                 %input.button{ value: "更新する", type: "submit" }
 
@@ -137,21 +137,21 @@
               %p twitter    URL：　http(s)://twitter.com/
               %br
               .field-input
-                %input{ type: "url"}
+                %input{ type: "url" }
               %p facebook    URL：　http(s)://facebook.com/
               %br
               .field-input
-                %input{ type: "url"}
+                %input{ type: "url" }
               %br
               %p Webサイト
               %br
               .field-input
                 %p  URL　　
-                %input{ type: "url"}
+                %input{ type: "url" }
               %br
               .field-input
                 %p サイト名
-                %input{ type: "text"}
+                %input{ type: "text" }
               .actions
                 %input.button{ value: "更新する", type: "submit" }
       .user-edit-contents
@@ -166,7 +166,7 @@
           = form_for(current_user) do |f|
             .field
               .field-input
-                %input{ type: "checkbox"} 支援プロジェクト数や支援プロジェクト情報を公開する
+                %input{ type: "checkbox" } 支援プロジェクト数や支援プロジェクト情報を公開する
               .actions
                 %input.button{ value: "保存", type: "submit" }
 
