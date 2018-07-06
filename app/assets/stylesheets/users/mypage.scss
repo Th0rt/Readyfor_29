@@ -27,6 +27,7 @@
     }
     .message-list, .answer-list{
       margin: 10px 0 10px 0;
+      border-bottom: 1px solid gray;
     }
     .filter-item {
       width: 180px;
@@ -48,15 +49,9 @@
     .mypage-edit {
       margin-top: 3px;
     }
-    a {
-      display: block;
-    }
     .mypage-list {
       margin-left: 10px;
       color: gray;
-    }
-    .message-list, .answer-list{
-      border-bottom: 1px solid gray
     }
   }
   .left-wrapper .selected{
