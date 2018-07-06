@@ -101,8 +101,7 @@
               .field-input
                 %input.content-form{ type: "textarea" , placeholder:"プロフィールの内容を入力してください" }
               .actions
-                %input.button{ value: "更新する", type: "submit" }
-
+                %input.btn{ value: "更新する", type: "submit" }
       .user-edit-contents
         .user-edit-main
           %p.title プロフィール画像
@@ -121,8 +120,7 @@
                   %i.fa.fa-picture-o クリックして画像を投稿
                   = f.file_field :image, class: "hidden"
               .actions
-                %input.button{ value: "画像を更新する", type: "submit" }
-        　
+                %input.btn{ value: "画像を更新する", type: "submit" }
       .user-edit-contents
         .user-edit-main
           %p.title 表示するWebサイト
@@ -153,7 +151,7 @@
                 %p サイト名
                 %input{ type: "text" }
               .actions
-                %input.button{ value: "更新する", type: "submit" }
+                %input.btn{ value: "更新する", type: "submit" }
       .user-edit-contents
         .user-edit-main
           %p.title 支援情報の公開
@@ -168,8 +166,7 @@
               .field-input
                 %input{ type: "checkbox" } 支援プロジェクト数や支援プロジェクト情報を公開する
               .actions
-                %input.button{ value: "保存", type: "submit" }
-
+                %input.btn{ value: "保存", type: "submit" }
       .user-edit-contents
         .user-edit-main
           %p.title メール通知設定
@@ -190,7 +187,6 @@
                 %br
               .actions
                 %input.button{ value: "保存", type: "submit" }
-
       .user-edit-contents
         .user-edit-main
           %p.title Facebookアカウント
