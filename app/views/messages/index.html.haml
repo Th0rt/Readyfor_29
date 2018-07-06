@@ -1,31 +1,28 @@
 .mypage-container
   .mypage-left
     .left-wrapper
-      .mypage-top
-        .mypage-image
-          .portorate
-        .mypage-profile
-          .mypage-name 関谷　佑斗
-          %a.mypage-edit{ href: "/users/1/edit" }
-            %i.fa.fa-cog プロフィール編集
+      = render 'shared/mypage_left'
       %ul.filter-list
-        %a.filter-item{ href: "/users/1" } 購入履歴
-        %a.filter-item 購入履歴（月額）
-        %a.filter-item お気に入りリスト
+        .filter-item
+          = link_to "購入履歴" ,user_path(id: 1)
+        .filter-item
+          = link_to "購入履(月額)" ,user_path(id: 1)
+        .filter-item
+          = link_to "お気に入りリスト" ,user_path(id: 1)
         .message-list
           %i.fa.fa-inbox メッセージ
-        %a.filter-item.selected{ href: "/users/1/messages" }
-          %i.fa.fa-user  メッセージ一覧
-        %a.filter-item{ href: "/users/1/messages/new" }
-          %i.fa.fa-envelope  新規メッセージ作成
+        .filter-item.selected
+          = link_to "メッセージ一覧" ,user_messages_path(user_id: 1)
+        .filter-item
+          = link_to "新規メッセージ作成" , new_user_message_path(user_id:1)
         .answer-list
           %i.fa.fa-question-circle ヘルプ・問い合わせ
-        %a.filter-item
-          %i.fa.fa-question-circle よくある質問リスト
+        .filter-item
+          = link_to "よくある質問リスト" , href: "#"
   .mypage-right
     .right-wrapper
       .mypage-message
         %input.user-search{ type:"search", placeholder: "ユーザー名を検索する" }
-        %a.new-message
-          %i.fa.fa-envelope 新規メッセージ作成
+        .new-message
+          = link_to "新規メッセージ作成" , new_user_message_path(user_id:1)
       .mypage-message-list まだ誰もいません
