@@ -3,17 +3,17 @@
   .user-edit-wrapper{
     width: 740px;
   }
-
   .user-edit-contents{
-    height: 40px;
-    width:700px;
+    width: 700px;
     margin-bottom: 30px;
     p{
       font-size: 14px;
       margin: 0;
-      padding:0;
+      padding: 0;
     }
-
+    .hidden{
+      display: none;
+    }
     .user-edit-main{
       width: 600px;
       height: 20px;
@@ -23,34 +23,72 @@
       }
       a{
         float: right;
+      }
+      #nickname-edit-button, #email-edit-button, #password-edit-button, #content-edit-button
+       ,#image-edit-button, #website-edit-button, #return-edit-button, #alertmail-edit-button{
+        float: right;
         line-height: 20px;
         font-size: 14px;
         font-weight: bold;
       }
-      .name{
+      .title{
         margin-left: 10px;
         line-height: 20px;
         font-weight: bold;
       }
-      .explain{
+      .information{
         font-size: 10px;
         margin-left: 30px;
         line-height: 20px;
-        color:#A9A9A9;
+        color: #A9A9A9;
       }
     }
     .user-edit-sub{
       width: 600px;
       height: 20px;
-      .nickname{
+      .explain{
         float: left;
         margin-left: 10px;
         color: #A9A9A9
       }
-      .user-name{
+      .content{
         float: right;
         line-height: 20px;
-
+      }
+    }
+    #user-edit-nickname, #user-edit-email, #user-edit-password, #user-edit-content
+      ,#user-edit-image, #user-edit-website, #user-edit-return, #user-edit-alertmail{
+      margin: 10px 0 0 150px;
+      p{
+        float: left;
+        font-size: 12px;
+        margin-right: 10px
+      }
+      .field_input{
+        float: left;
+        input{
+          padding: 0 30px ;
+        }
+      }
+      .picture-image{
+          margin-left: 80px;
+        }
+      .alertmail-checkboxes{
+        margin-left: 100px;
+      }
+      .content-form{
+        height: 50px;
+        width: 380px;
+      }
+      .btn{
+        display: block;
+        background-color: green;
+        width:120px;
+        height:28px;
+        color: white;
+        margin-left: 100px;
+        font-size: 12px;
+        margin-top: 20px;
       }
     }
   }
