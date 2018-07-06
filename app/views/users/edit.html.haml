@@ -33,7 +33,7 @@
         .user-edit-sub#user-nickname-explain
           %p.explain あなたの名前(ニックネーム)です。
           %p.content 関谷佑斗
-        #user-edit-nickname.hidden
+        .hidden#user-edit-nickname
           = form_for(current_user) do |f|
             .field
               %p 新しい名前を入力:
@@ -99,9 +99,9 @@
               %p プロフィールを入力:
               %br
               .field-input
-                %input{type: "textarea" , placeholder:"プロフィールの内容を入力してください", class: "content-form"}
+                %input{ type: "textarea" , placeholder:"プロフィールの内容を入力してください", class: "content-form" }
               .actions
-                %input{ value: "更新する", type: "submit" ,class: 'btn'}
+                %input.button{ value: "更新する", type: "submit" }
 
       .user-edit-contents
         .user-edit-main
@@ -121,7 +121,7 @@
                   %i.fa.fa-picture-o クリックして画像を投稿
                   = f.file_field :image, class: "hidden"
               .actions
-                %input{ value: "画像を更新する", type: "submit" ,class: 'btn'}
+                %input.button{ value: "画像を更新する", type: "submit" }
         　
       .user-edit-contents
         .user-edit-main
@@ -137,23 +137,23 @@
               %p twitter    URL：　http(s)://twitter.com/
               %br
               .field-input
-                %input{type: "url"}
+                %input{ type: "url"}
               %p facebook    URL：　http(s)://facebook.com/
               %br
               .field-input
-                %input{type: "url"}
+                %input{ type: "url"}
               %br
               %p Webサイト
               %br
               .field-input
                 %p  URL　　
-                %input{type: "url"}
+                %input{ type: "url"}
               %br
               .field-input
                 %p サイト名
-                %input{type: "text"}
+                %input{ type: "text"}
               .actions
-                %input{ value: "更新する", type: "submit" ,class: 'btn'}
+                %input.button{ value: "更新する", type: "submit" }
       .user-edit-contents
         .user-edit-main
           %p.title 支援情報の公開
@@ -166,9 +166,9 @@
           = form_for(current_user) do |f|
             .field
               .field-input
-                %input{type: "checkbox"} 支援プロジェクト数や支援プロジェクト情報を公開する
+                %input{ type: "checkbox"} 支援プロジェクト数や支援プロジェクト情報を公開する
               .actions
-                %input{ value: "保存", type: "submit" ,class: 'btn'}
+                %input.button{ value: "保存", type: "submit" }
 
       .user-edit-contents
         .user-edit-main
@@ -182,14 +182,14 @@
           = form_for(current_user) do |f|
             .field
               .field-input.alertmail-checkboxes
-                %input{type: "checkbox"} 新着情報通知を受け取る
+                %input{ type: "checkbox" } 新着情報通知を受け取る
                 %br
-                %input{type: "checkbox"} メールマガジンを受け取る
+                %input{ type: "checkbox" } メールマガジンを受け取る
                 %br
-                %input{type: "checkbox"} お気に入り情報通知を受け取る
+                %input{ type: "checkbox" } お気に入り情報通知を受け取る
                 %br
               .actions
-                %input{ value: "保存", type: "submit" ,class: 'btn'}
+                %input{ value: "保存", type: "submit" ,class: 'btn' }
 
       .user-edit-contents
         .user-edit-main
