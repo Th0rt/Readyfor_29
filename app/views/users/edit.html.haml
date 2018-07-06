@@ -179,14 +179,14 @@
           = form_for(current_user) do |f|
             .field
               .field-input.alertmail-checkboxes
-                %input{ type: "checkbox" } 新着情報通知を受け取る
+                %input.alertmail-input{ type: "checkbox" } 新着情報通知を受け取る
                 %br
-                %input{ type: "checkbox" } メールマガジンを受け取る
+                %input.alertmail-input{ type: "checkbox" } メールマガジンを受け取る
                 %br
-                %input{ type: "checkbox" } お気に入り情報通知を受け取る
+                %input.alertmail-input{ type: "checkbox" } お気に入り情報通知を受け取る
                 %br
               .actions
-                %input.button{ value: "保存", type: "submit" }
+                %input.btn{ value: "保存", type: "submit" }
       .user-edit-contents
         .user-edit-main
           %p.title Facebookアカウント
