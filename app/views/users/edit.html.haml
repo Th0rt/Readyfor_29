@@ -17,7 +17,7 @@
           = link_to user_messages_path(user_id: current_user.id) do
             メッセージ一覧
         .filter-item
-          = link_to "新規メッセージ作成" , new_user_message_path(user_id: current_user.id)
+          = link_to "新規メッセージ作成",new_user_message_path(user_id: current_user.id)
         .answer-list
           %i.fa.fa-question-circle ヘルプ・問い合わせ
         .filter-item
@@ -30,7 +30,7 @@
           %p.title お名前
           %p.information ※プロフィールページやコメント欄に表示されます
           #nickname-edit-button 編集
-        #user-nickname-explain.user-edit-sub
+        .user-edit-sub#user-nickname-explain
           %p.explain あなたの名前(ニックネーム)です。
           %p.content 関谷佑斗
         #user-edit-nickname.hidden
@@ -46,10 +46,10 @@
           %p.title メールアドレス
           %p.information
           #email-edit-button 編集
-        #user-email-explain.user-edit-sub
+        .user-edit-sub#user-email-explain
           %p.explain 連絡先のメールアドレスです。
           %p.content　yhk3165t@gmail.com
-        #user-edit-email.hidden
+        .hidden#user-edit-email
           = form_for(current_user) do |f|
             .field
               %p メールアドレスを入力:
@@ -62,10 +62,10 @@
           %p.title パスワード
           %p.information
           #password-edit-button 編集
-        #user-email-explain.user-edit-sub
+        .user-edit-sub#user-email-explain
           %p.explain ログインに利用するパスワードです。
           %p.content
-        #user-edit-password.hidden
+        .hidden#user-edit-password
           = form_for(current_user) do |f|
             .field
               %p パスワードを入力:
@@ -90,10 +90,10 @@
           %p.title プロフィール
           %p.information ※※プロフィールページに表示されます
           #content-edit-button 編集
-        #user-content-explain.user-edit-sub
+        .user-edit-sub#user-content-explain
           %p.explain
           %p.content 未設定
-        #user-edit-content.hidden
+        .hidden#user-edit-content
           = form_for(current_user) do |f|
             .field
               %p プロフィールを入力:
@@ -108,10 +108,10 @@
           %p.title プロフィール画像
           %p.information ※プロフィールページやコメント欄に表示されます
           #image-edit-button 編集
-        #user-image-explain.user-edit-sub
+        .user-edit-sub#user-image-explain
           %p.explain
           %p.content 設定済み
-        #user-edit-image.hidden
+        .hidden#user-edit-image
           = form_for(current_user) do |f|
             .field
               %p 画像を挿入:
@@ -128,10 +128,10 @@
           %p.title 表示するWebサイト
           %p.information ※プロフィールページにリンクが表示されます
           #website-edit-button 編集
-        #user-website-explain.user-edit-sub
+        .user-edit-sub#user-website-explain
           %p.explain
           %p.content 設定済み
-        #user-edit-website.hidden
+        .hidden#user-edit-website
           = form_for(current_user) do |f|
             .field
               %p twitter    URL：　http(s)://twitter.com/
@@ -159,10 +159,10 @@
           %p.title 支援情報の公開
           %p.information ※応援コメントに支援数が、プロフィールページに支援プロジェクトが表示されます
           #return-edit-button 編集
-        #user-return-explain.user-edit-sub
+        .user-edit-sub#user-return-explain
           %p.explain
           %p.content 設定済み
-        #user-edit-return.hidden
+        .hidden#user-edit-return
           = form_for(current_user) do |f|
             .field
               .field-input
@@ -175,10 +175,10 @@
           %p.title メール通知設定
           %p.information ※応援コメントに支援数が、プロフィールページに支援プロジェクトが表示されます
           #alertmail-edit-button 編集
-        #user-alertmail-explain.user-edit-sub
+        .user-edit-sub#user-alertmail-explain
           %p.explain
           %p.content 設定済み
-        #user-edit-alertmail.hidden
+        .hidden#user-edit-alertmail
           = form_for(current_user) do |f|
             .field
               .field-input.alertmail-checkboxes
