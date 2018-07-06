@@ -6,6 +6,10 @@ $(function(){
   $('.mypage-edit').click(function(){
     $('.filter-list').children().removeClass('selected');
   })
+})
+
+// メッセージ作成の送信先の表示切り替え
+$(function(){
   $('#send-contributor').click(function(){
     $('.select-contributor').slideToggle();
   })
@@ -27,7 +31,7 @@ $(function(){
   $("#nickname-edit-button").click(function(){
     $("#user-nickname-explain").toggleClass('hidden');
     $("#user-edit-nickname").toggleClass('hidden');
-    var result = document.getElementById("nickname-edit-button").textContent
+    var result = $("#nickname-edit-button")[0].innerText
     if (result  === "編集" ){
       $("#nickname-edit-button").text('キャンセル')
     }
@@ -42,7 +46,7 @@ $(function(){
   $("#email-edit-button").click(function(){
     $("#user-email-explain").toggleClass('hidden');
     $("#user-edit-email").toggleClass('hidden');
-    var result = document.getElementById("email-edit-button").textContent
+    var result = $("#email-edit-button")[0].innerText;
     if (result  === "編集" ){
       $("#email-edit-button").text('キャンセル')
     }
@@ -57,7 +61,7 @@ $(function(){
   $("#password-edit-button").click(function(){
     $("#user-password-explain").toggleClass('hidden');
     $("#user-edit-password").toggleClass('hidden');
-    var result = document.getElementById("password-edit-button").textContent
+    var result = $("#password-edit-button")[0].innerText
     if (result  === "編集" ){
       $("#password-edit-button").text('キャンセル')
     }
@@ -72,7 +76,7 @@ $(function(){
   $("#content-edit-button").click(function(){
     $("#user-content-explain").toggleClass('hidden');
     $("#user-edit-content").toggleClass('hidden');
-    var result = document.getElementById("content-edit-button").textContent
+    var result = $("#content-edit-button")[0].innerText
     if (result  === "編集" ){
       $("#content-edit-button").text('キャンセル')
     }
@@ -88,7 +92,7 @@ $(function(){
   $("#image-edit-button").click(function(){
     $("#user-image-explain").toggleClass('hidden');
     $("#user-edit-image").toggleClass('hidden');
-    var result = document.getElementById("image-edit-button").textContent
+    var result = $("#image-edit-button")[0].innerText
     if (result  === "編集" ){
       $("#image-edit-button").text('キャンセル')
     }
@@ -103,7 +107,7 @@ $(function(){
   $("#website-edit-button").click(function(){
     $("#website-image-explain").toggleClass('hidden');
     $("#user-edit-website").toggleClass('hidden');
-    var result = document.getElementById("website-edit-button").textContent
+    var result = $("#website-edit-button")[0].innerText
     if (result  === "編集" ){
       $("#website-edit-button").text('キャンセル')
     }
@@ -118,7 +122,7 @@ $(function(){
   $("#return-edit-button").click(function(){
     $("#user-return-explain").toggleClass('hidden');
     $("#user-edit-return").toggleClass('hidden');
-    var result = document.getElementById("return-edit-button").textContent
+    var result = $("#return-edit-button")[0].innerText
     if (result  === "編集" ){
       $("#return-edit-button").text('キャンセル')
     }
@@ -133,7 +137,7 @@ $(function(){
   $("#alertmail-edit-button").click(function(){
     $("#user-alertmail-explain").toggleClass('hidden');
     $("#user-edit-alertmail").toggleClass('hidden');
-    var result = document.getElementById("alertmail-edit-button").textContent
+    var result = $("#alertmail-edit-button")[0].innerText
     if (result  === "編集" ){
       $("#alertmail-edit-button").text('キャンセル')
     }
