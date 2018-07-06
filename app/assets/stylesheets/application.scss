@@ -8,6 +8,8 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+
+// ユーザーページ、メッセージページ
 @import 'users/message';
 @import 'users/mypage';
 @import 'users/edit';

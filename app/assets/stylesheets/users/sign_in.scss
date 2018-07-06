@@ -1,9 +1,9 @@
-.user-container {
+.user-container{
   height: 400px;
   width: 640px;
   margin: 0 auto;
   margin-top: 80px;
-  box-shadow:5px 5px 20px;
+  box-shadow: 5px 5px 20px;
   .user-left{
     width: 314px;
     height: 400px;
@@ -12,16 +12,15 @@
     float: left;
     color: white;
   }
-
   .left-content{
     margin-left: 20px;
-    .left-content__input {
+    .left-content__input{
       height: 100px;
-      width:100%;
-      margin:20px 0 0  15px;
+      width: 100%;
+      margin: 20px 0 0  15px;
       color: black;
     }
-    button {
+    button{
       margin-left: 20px;
       font-size: 14px;
       width : 240px;
@@ -31,23 +30,22 @@
       color: white;
       display: block;
       line-height: 40px;
-      opacity: 0.8  ;
+      opacity: 0.8;
     }
     #user_email,#user_password{
-      width:232px;
+      width: 232px;
       height: 30px;
       font-size: 12px;
       padding: 10px;
       color: black;
     }
-
     #user_email{
-      margin-top:20px;
+      margin-top: 20px;
     }
     #user_password {
       margin-top: 10px;
     }
-    .left-content__button {
+    .left-content__button{
       margin-top: 20px;
     }
     .left-content__checkbox{
@@ -56,16 +54,14 @@
       margin-top: 10px;
       margin-right: 20px;
     }
-
-
     .left-content__submit{
-      margin-top:20px;
+      margin-top: 20px;
       width: 300px;
       height: 40px;
-      #user_remember_me {
+      #user_remember_me{
         float: left;
       }
-      #login-checkbox {
+      #login-checkbox{
         font-size: 12px;
         float: left;
       }
@@ -88,9 +84,6 @@
       margin-top: 20px;
     }
   }
-
-
-
   .user-right{
     width: 326px;
     height: 400px;
@@ -146,23 +139,18 @@
         padding: 8px;
         font-size: 12px;
       }
-      #signin-button {
-        width:102px;
+      #signin-button{
+        width: 102px;
         height: 36px;
         background-color: red;
-        margin:0 auto;
+        margin: 0 auto;
         margin-top: 20px;
         margin-left: 60px;
         color: white;
       }
     }
   }
-
   .hidden{
-    display:none;
+    display: none;
   }
 }
-
-
-
-

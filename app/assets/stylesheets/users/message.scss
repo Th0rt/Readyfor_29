@@ -1,7 +1,7 @@
 .mypage-container {
   .mypage-message{
     width: 740px;
-    height:58px;
+    height: 58px;
     .user-search{
       width: 310px;
       height: 38px;
@@ -15,19 +15,16 @@
       font-weight: bold;
     }
   }
-
   .mypage-message-list{
     width: 176px;
     height: 38px;
-    background-color:#898;
+    background-color: #898;
     border-radius: 10px;
     line-height: 38px;
     text-align: center;
-    border:solid 2px #666;
+    border: solid 2px #666;
     color: white;
   }
-
-  /* メッセージのnewする */
   .right-wrapper{
     h3{
       font-size: 14px;
@@ -54,17 +51,14 @@
       background-color: red;
     }
   }
-
   .project-selection-header{
     padding-bottom: 10px;
     border-bottom: 1px solid #898;
   }
-
   .select-orner, .select-contributor{
-    padding-left:20px 20px 20px 30px;
+    padding-left: 20px 20px 20px 30px;
     font-size: 12px;
     font-weight: bold;
     display: none;
   }
 }
-
