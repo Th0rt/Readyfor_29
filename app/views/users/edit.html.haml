@@ -1,107 +1,212 @@
 .mypage-container
   .mypage-left
     .left-wrapper
-      .mypage-top
-        .mypage-image
-          .portorate
-        .mypage-profile
-          .mypage-name 関谷　佑斗
-          %a.mypage-edit{ href: "/users/1/edit" }
-            %i.fa.fa-cog プロフィール編集
+      = render 'shared/mypage_left'
       %ul.filter-list
-        %a.filter-item{ href: "/users/1" } 購入履歴
-        %a.filter-item 購入履歴（月額）
-        %a.filter-item お気に入りリスト
+        .filter-item
+          = link_to user_path(id: current_user.id) do
+            購入履歴
+        .filter-item
+          = link_to user_path(id: current_user.id) do
+            購入履歴(月額）
+        .filter-item
+          = link_to "お気に入りリスト" ,user_path(id: current_user.id)
         .message-list
           %i.fa.fa-inbox メッセージ
-        %a.filter-item{ href: "/users/1/messages" }
-          %i.fa.fa-user  メッセージ一覧
-        %a.filter-item{ href: "/users/1/messages/new" }
-          %i.fa.fa-envelope  新規メッセージ作成
+        .filter-item
+          = link_to user_messages_path(user_id: current_user.id) do
+            メッセージ一覧
+        .filter-item
+          = link_to "新規メッセージ作成" , new_user_message_path(user_id: current_user.id)
         .answer-list
           %i.fa.fa-question-circle ヘルプ・問い合わせ
-        %a.filter-item
-          %i.fa.fa-question-circle よくある質問リスト
+        .filter-item
+          = link_to  href: "#" do
+            %i.fa.fa-question-circle よくある質問リスト
   .mypage-right
     .user-edit-wrapper
       .user-edit-contents
         .user-edit-main
-          %p.name お名前
-          %p.explain ※プロフィールページやコメント欄に表示されます
-          %a 編集
+          %p.title お名前
+          %p.information ※プロフィールページやコメント欄に表示されます
+          #nickname-edit-button 編集
+        #user-nickname-explain.user-edit-sub
+          %p.explain あなたの名前(ニックネーム)です。
+          %p.content 関谷佑斗
+        #user-edit-nickname.hidden
+          = form_for(current_user) do |f|
+            .field
+              %p 新しい名前を入力:
+              .field-input
+                = f.text_field :nickname, autofocus: true
+              .actions
+                = f.submit "名前を変更", class: 'btn'
+      .user-edit-contents
+        .user-edit-main
+          %p.title メールアドレス
+          %p.information
+          #email-edit-button 編集
+        #user-email-explain.user-edit-sub
+          %p.explain 連絡先のメールアドレスです。
+          %p.content　yhk3165t@gmail.com
+        #user-edit-email.hidden
+          = form_for(current_user) do |f|
+            .field
+              %p メールアドレスを入力:
+              .field-input
+                = f.email_field :email, autofocus: true
+              .actions
+                = f.submit "確認メールを送信", class: 'btn'
+      .user-edit-contents
+        .user-edit-main
+          %p.title パスワード
+          %p.information
+          #password-edit-button 編集
+        #user-email-explain.user-edit-sub
+          %p.explain ログインに利用するパスワードです。
+          %p.content
+        #user-edit-password.hidden
+          = form_for(current_user) do |f|
+            .field
+              %p パスワードを入力:
+              .field-input
+                = f.password_field :password, autocomplete: "off"
+            .field
+              .field-label.hidden
+                = f.label :password_confirmation
+              %p パスワードの確認:
+              .field-input
+                = f.password_field :password_confirmation, autocomplete: "off"
+            .field
+              .field-label.hidden
+                = f.label :current_password
+              %p 新しいパスワード:
+              .field-input
+                = f.password_field :current_password, autocomplete: "off"
+              .actions
+                = f.submit "パスワードを変更", class: "btn"
+      .user-edit-contents
+        .user-edit-main
+          %p.title プロフィール
+          %p.information ※※プロフィールページに表示されます
+          #content-edit-button 編集
+        #user-content-explain.user-edit-sub
+          %p.explain
+          %p.content 未設定
+        #user-edit-content.hidden
+          = form_for(current_user) do |f|
+            .field
+              %p プロフィールを入力:
+              %br
+              .field-input
+                %input{type: "textarea" , placeholder:"プロフィールの内容を入力してください", class: "content-form"}
+              .actions
+                %input{ value: "更新する", type: "submit" ,class: 'btn'}
+
+      .user-edit-contents
+        .user-edit-main
+          %p.title プロフィール画像
+          %p.information ※プロフィールページやコメント欄に表示されます
+          #image-edit-button 編集
+        #user-image-explain.user-edit-sub
+          %p.explain
+          %p.content 設定済み
+        #user-edit-image.hidden
+          = form_for(current_user) do |f|
+            .field
+              %p 画像を挿入:
+              %br
+              .field-input.picture-image
+                = f.label :image do
+                  %i.fa.fa-picture-o クリックして画像を投稿
+                  = f.file_field :image, class: "hidden"
+              .actions
+                %input{ value: "画像を更新する", type: "submit" ,class: 'btn'}
+        　
+      .user-edit-contents
+        .user-edit-main
+          %p.title 表示するWebサイト
+          %p.information ※プロフィールページにリンクが表示されます
+          #website-edit-button 編集
+        #user-website-explain.user-edit-sub
+          %p.explain
+          %p.content 設定済み
+        #user-edit-website.hidden
+          = form_for(current_user) do |f|
+            .field
+              %p twitter    URL：　http(s)://twitter.com/
+              %br
+              .field-input
+                %input{type: "url"}
+              %p facebook    URL：　http(s)://facebook.com/
+              %br
+              .field-input
+                %input{type: "url"}
+              %br
+              %p Webサイト
+              %br
+              .field-input
+                %p  URL　　
+                %input{type: "url"}
+              %br
+              .field-input
+                %p サイト名
+                %input{type: "text"}
+              .actions
+                %input{ value: "更新する", type: "submit" ,class: 'btn'}
+      .user-edit-contents
+        .user-edit-main
+          %p.title 支援情報の公開
+          %p.information ※応援コメントに支援数が、プロフィールページに支援プロジェクトが表示されます
+          #return-edit-button 編集
+        #user-return-explain.user-edit-sub
+          %p.explain
+          %p.content 設定済み
+        #user-edit-return.hidden
+          = form_for(current_user) do |f|
+            .field
+              .field-input
+                %input{type: "checkbox"} 支援プロジェクト数や支援プロジェクト情報を公開する
+              .actions
+                %input{ value: "保存", type: "submit" ,class: 'btn'}
+
+      .user-edit-contents
+        .user-edit-main
+          %p.title メール通知設定
+          %p.information ※応援コメントに支援数が、プロフィールページに支援プロジェクトが表示されます
+          #alertmail-edit-button 編集
+        #user-alertmail-explain.user-edit-sub
+          %p.explain
+          %p.content 設定済み
+        #user-edit-alertmail.hidden
+          = form_for(current_user) do |f|
+            .field
+              .field-input.alertmail-checkboxes
+                %input{type: "checkbox"} 新着情報通知を受け取る
+                %br
+                %input{type: "checkbox"} メールマガジンを受け取る
+                %br
+                %input{type: "checkbox"} お気に入り情報通知を受け取る
+                %br
+              .actions
+                %input{ value: "保存", type: "submit" ,class: 'btn'}
+
+      .user-edit-contents
+        .user-edit-main
+          %p.title Facebookアカウント
+          %p.information
+          = link_to "編集", "#"
         .user-edit-sub
-          %p.nickname あなたの名前(ニックネーム)です。
-          %p.user-name 関谷佑斗
-    .user-edit-contents
-      .user-edit-main
-        %p.name メールアドレス
-        %a 編集
-      .user-edit-sub
-        %p.nickname 連絡先のメールアドレスです。
-        %p.user-name　yhk3165t@gmail.com
-    .user-edit-contents
-      .user-edit-main
-        %p.name パスワード
-        %a 編集
-      .user-edit-sub
-        %p.nickname ログインに利用するパスワードです。
-        %p.user-name
-    .user-edit-contents
-      .user-edit-main
-        %p.name プロフィール
-        %p.explain ※※プロフィールページに表示されます
-        %a 編集
-      .user-edit-sub
-        %p.nickname
-        %p.user-name 未設定
-    .user-edit-contents
-      .user-edit-main
-        %p.name プロフィール画像
-        %p.explain ※プロフィールページやコメント欄に表示されます
-        %a 編集
-      .user-edit-sub
-        %p.nickname
-        %p.user-name 設定済み
-    .user-edit-contents
-      .user-edit-main
-        %p.name 表示するWebサイト
-        %p.explain ※プロフィールページにリンクが表示されます
-        %a 編集
-      .user-edit-sub
-        %p.nickname FacebookやTwitter、自分のブログなどへのリンクを公開できます。
-        %p.user-name 未設定
-    .user-edit-contents
-      .user-edit-main
-        %p.name 支援情報の公開
-        %p.explain ※応援コメントに支援数が、プロフィールページに支援プロジェクトが表示されます
-        %a 編集
-      .user-edit-sub
-        %p.nickname
-        %p.user-name 公開
-    .user-edit-contents
-      .user-edit-main
-        %p.name メール通知設定
-        %p.explain ※応援コメントに支援数が、プロフィールページに支援プロジェクトが表示されます
-        %a 編集
-      .user-edit-sub
-        %p.nickname 新着情報通知やメルマガなどの設定です。
-        %p.user-name
-    .user-edit-contents
-      .user-edit-main
-        %p.name Facebookアカウント
-        %p.explain
-        %a 編集
-      .user-edit-sub
-        %p.nickname 連携するFacebookアカウントです。
-        %p.user-name
-    .user-edit-contents
-      .user-edit-main
-        %p.name 退会手続きへ
-        %p.explain
-        %a 退会
-      .user-edit-sub
-        %p.nickname Readyforを退会します。
-        %p.user-name
+          %p.explain 連携するFacebookアカウントです。
+          %p.content https://www.facebook.com
+      .user-edit-contents
+        .user-edit-main
+          %p.title 退会手続きへ
+          %p.information
+          = link_to "退会", cancel_user_registration_path(user_id: current_user.id)
+        .user-edit-sub
+          %p.explain Readyforを退会します。
+          %p.user-edit-contents
 
 
 

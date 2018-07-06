@@ -1,18 +1,9 @@
 %h1 Toppage#index
 %p Find me in app/views/toppage/index.html.erb
 
-
-
-
-
-
-
-
-
-
 %button
   = link_to "ログアウト", destroy_user_session_path, method: :delete
 %button
   = link_to "ログイン画面/サインアップ画面へ", new_user_registration_path
 %button
-  = link_to "ユーザー画面へ",user_path(id:1)
+  = link_to "ユーザー画面へ",user_path(id:current_user.id)
