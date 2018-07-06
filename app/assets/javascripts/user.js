@@ -28,7 +28,6 @@ $(function(){
     $("#user-nickname-explain").toggleClass('hidden');
     $("#user-edit-nickname").toggleClass('hidden');
     var result = document.getElementById("nickname-edit-button").textContent
-    console.log(result)
     if (result  === "編集" ){
       $("#nickname-edit-button").text('キャンセル')
     }
@@ -44,7 +43,6 @@ $(function(){
     $("#user-email-explain").toggleClass('hidden');
     $("#user-edit-email").toggleClass('hidden');
     var result = document.getElementById("email-edit-button").textContent
-    console.log(result)
     if (result  === "編集" ){
       $("#email-edit-button").text('キャンセル')
     }
@@ -60,7 +58,6 @@ $(function(){
     $("#user-password-explain").toggleClass('hidden');
     $("#user-edit-password").toggleClass('hidden');
     var result = document.getElementById("password-edit-button").textContent
-    console.log(result)
     if (result  === "編集" ){
       $("#password-edit-button").text('キャンセル')
     }
@@ -76,7 +73,6 @@ $(function(){
     $("#user-content-explain").toggleClass('hidden');
     $("#user-edit-content").toggleClass('hidden');
     var result = document.getElementById("content-edit-button").textContent
-    console.log(result)
     if (result  === "編集" ){
       $("#content-edit-button").text('キャンセル')
     }
@@ -93,7 +89,6 @@ $(function(){
     $("#user-image-explain").toggleClass('hidden');
     $("#user-edit-image").toggleClass('hidden');
     var result = document.getElementById("image-edit-button").textContent
-    console.log(result)
     if (result  === "編集" ){
       $("#image-edit-button").text('キャンセル')
     }
@@ -109,7 +104,6 @@ $(function(){
     $("#website-image-explain").toggleClass('hidden');
     $("#user-edit-website").toggleClass('hidden');
     var result = document.getElementById("website-edit-button").textContent
-    console.log(result)
     if (result  === "編集" ){
       $("#website-edit-button").text('キャンセル')
     }
@@ -125,7 +119,6 @@ $(function(){
     $("#user-return-explain").toggleClass('hidden');
     $("#user-edit-return").toggleClass('hidden');
     var result = document.getElementById("return-edit-button").textContent
-    console.log(result)
     if (result  === "編集" ){
       $("#return-edit-button").text('キャンセル')
     }
@@ -141,7 +134,6 @@ $(function(){
     $("#user-alertmail-explain").toggleClass('hidden');
     $("#user-edit-alertmail").toggleClass('hidden');
     var result = document.getElementById("alertmail-edit-button").textContent
-    console.log(result)
     if (result  === "編集" ){
       $("#alertmail-edit-button").text('キャンセル')
     }
