@@ -1,0 +1,70 @@
+
+.Entry.is-type1 {
+  height: 393px;
+}
+
+.Entry.is-type1 .Entry__img .Entry__img-mask {
+  width: 226px;
+  height: 172px;
+}
+
+.Entry.is-type1 .Entry__body {
+  padding: 10px 10px;
+}
+
+.Entry.is-type1 .Entry__body .Entry__project-type-badge {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.Entry.is-type1 .Entry__info-founder .Entry__info-founder-icon {
+  width: 24px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: bottom;
+
+  img {
+    border-radius: 50%;
+    vertical-align: bottom;
+  }
+}
+
+.Entry.is-type1 .Entry__info-founder .Entry__info-founder-name {
+  height: 32px;
+  display: inline-block;
+  width: 160px;
+  line-height: 16px;
+}
+
+.Entry.is-type1 .Entry__condition-sum {
+  text-align: left;
+  width: 100%;
+  padding-left: 0;
+}
+
+.Entry.is-type1 .Entry__condition-remain {
+  text-align: left;
+}
+
+.Entry.is-type1 .Entry__condition-sum-dt,
+.Entry.is-type1 .Entry__condition-remain-dt {
+  color: #666;
+  display: block;
+  font-size: 12px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.Entry.is-type1 .Entry__condition-sum-dd,
+.Entry.is-type1 .Entry__condition-remain-dd {
+  color: #444;
+  font-size: 18px;
+  display: inline-block;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.Entry.is-type1 .Entry__gauge {
+  margin-top: 17px;
+}

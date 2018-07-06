@@ -11,12 +11,17 @@
 // @import 'scaffolds';
 
 // components
-@import 'navbar';
-@import 'layouts/entry-type2';
+@import 'layouts/Entry';
+@import 'layouts/Entry-type1';
+@import 'layouts/Entry-type2';
+@import 'layouts/Entry-type4';
 
 // toppage
+@import 'toppage/navbar';
+@import 'toppage/PcTopContainer';
 @import 'toppage/Top-Entry';
 @import 'toppage/PcTopVisual';
 @import 'toppage/PcTopProjectArea';
 @import 'toppage/slick-slider';
-@import 'toppage/project-list';
+@import 'toppage/TopInfomationList';
+@import 'toppage/PcPublicNews';
