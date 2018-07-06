@@ -1,0 +1,27 @@
+.return-content{
+  width: 350px;
+  margin-top: 30px;
+  float: right;
+  &__link-btm{
+    p{
+      text-align: center;
+      margin-top: 10px;
+    }
+    .like-count-text{
+      color: #D77976;
+    }
+    .like-count-btm{
+      width: 300px;
+      height: 50px;
+      font-size: 22px;
+      color: black;
+      border : solid 1px #333333;
+      margin: 10px 0 0 25px;
+    }
+  }
+  &__returns{
+    height: 500px;
+    background-color: whitesmoke;
+    margin-top: 20px;
+  }
+}

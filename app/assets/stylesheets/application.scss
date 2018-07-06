@@ -1,10 +1,20 @@
-
-// global
-
-@import './scaffolds';
-
 // addons
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+
+// global
+
+@import './scaffolds';
+
+// projects
+
+@import './projects/show';
+@import './projects/show-top-content';
+@import './projects/show-bottom-content';
+@import './projects/show-overview';
+@import './projects/show-info';
+@import './projects/show-user-profile';
+@import './projects/show-return-content';
+@import './projects/show-projects';

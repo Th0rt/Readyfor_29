@@ -1,0 +1,38 @@
+.top-content{
+  width: 1000px;
+  margin: 0 auto;
+  &__category{
+    height: 16px;
+  }
+  &__title{
+    margin-top: 10px;
+    h1{
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+  &__tag{
+    margin: 5px 0 10px 0;
+    a{
+      margin-right: 10px;
+      border : solid 1px #333333;
+      color: black;
+    }
+  }
+  &__info-footer{
+    height: 50px;
+    margin-top: 10px;
+    clear: both;
+    span{
+      height: 30px;
+      font-size: 12px;
+      margin: 10px 0 0 10px;
+    }
+    p{
+      width: 400px;
+      font-size: 12px;
+      float: right;
+      margin: 10px 30px 0 0;
+    }
+  }
+}

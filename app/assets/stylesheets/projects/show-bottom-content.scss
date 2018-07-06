@@ -1,0 +1,13 @@
+.bottom-content{
+  width: 1000px;
+  margin: 10px auto 0;
+  overflow:hidden;
+  &__tab-btm{
+    height: 59px;
+  }
+  &__tab-content{
+    width: 610px;
+    margin-top: 50px;
+    float: left;
+  }
+}
