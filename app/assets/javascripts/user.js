@@ -56,4 +56,3 @@ $(function(){
   editButton("#return-edit-button","#user-return-explain","#user-edit-return");
   editButton("#alertmail-edit-button","#user-alertmail-explain","#user-edit-alertmail");
 })
-
