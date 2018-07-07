@@ -151,6 +151,19 @@ a:link {
   border-radius: 10px;
 }
 
+.Gauge__txt {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  padding-left: 2%;
+  box-sizing: border-box;
+  height: inherit;
+  position: absolute;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4)
+}
+
 .Gauge.is-top .Gauge__txt {
   font-size: 12px;
   line-height: 16px;
@@ -166,17 +179,4 @@ a:link {
 
 .Gauge__obj.is-1 {
   background-color: #DF051C;
-}
-
-.Gauge__txt {
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 20px;
-  padding-left: 2%;
-  box-sizing: border-box;
-  height: inherit;
-  position: absolute;
-  font-family: Arial, sans-serif;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4)
 }
