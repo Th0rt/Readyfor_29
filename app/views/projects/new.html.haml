@@ -1,1 +1,20 @@
-%p こんにちは
+#new-project
+  .col-sm-2
+    %nav.nav-sidebar
+      %ul.nav.tabs
+        %li.active
+          = link_to "#tab1" do
+            ページ1
+        %li
+          = link_to "#tab2" do
+            ページ2
+        %li
+          = link_to "#tab3" do
+            ページ3
+  .tab-content
+    #page1.project-tabpage
+      %h1 ページ1
+    #page2.project-tabpage
+      %h1 ページ2
+    #page3.project-tabpage
+      %h1 ページ3
