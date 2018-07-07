@@ -6,10 +6,6 @@
 // reset
 @import 'reset';
 
-// global
-@import 'global';
-// @import 'scaffolds';
-
 // layouts
 @import 'layouts/Header';
 @import 'layouts/Entry';
@@ -26,6 +22,7 @@
 @import 'toppage/component/slick-slider';
 
 // projects
+@import 'toppage/project/Site-container';
 @import 'toppage/project/PcTopCategoryNavBar';
 @import 'toppage/project/PcTopContainer';
 @import 'toppage/project/Top-Entry';
