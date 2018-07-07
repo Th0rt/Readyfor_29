@@ -8,14 +8,20 @@
 
 // global
 @import 'global';
+@import './scaffolds';
 
-// components
-@import 'navbar';
-@import 'layouts/entry-type2';
+// ユーザーページ、メッセージページ
+@import 'users/message';
+@import 'users/mypage';
+@import 'users/edit';
+@import 'users/sign_in';
 
-// toppage
-@import 'toppage/Top-Entry';
-@import 'toppage/PcTopVisual';
-@import 'toppage/PcTopProjectArea';
-@import 'toppage/slick-slider';
-@import 'toppage/project-list'
+// projects
+@import './projects/show';
+@import './projects/show-top-content';
+@import './projects/show-bottom-content';
+@import './projects/show-overview';
+@import './projects/show-info';
+@import './projects/show-user-profile';
+@import './projects/show-return-content';
+@import './projects/show-projects';
