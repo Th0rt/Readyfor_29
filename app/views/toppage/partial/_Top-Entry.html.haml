@@ -1,54 +1,41 @@
 .Top-Entry__container
   .Grid
-    %section{ class: "Grid__col3 notable"}
-      %header{ class: 'Header' }
-        .Heading.is-s
-          %h2 最近見たプロジェクト
-        = link_to('もっと見る', "#", { class: "u-fl_r Header-more" })
-      = render partial: "layouts/Entry-type2"
 
-    %section{ class: "Grid__col3 almost"}
-      %header{ class: 'Header' }
-        .Heading.is-s
-          %h2 あとひと押し
-        = link_to('もっと見る', "#", { class: "u-fl_r Header-more" })
-      = render partial: "layouts/Entry-type2"
+    -# 最近見たプロジェクト
+    %section.Grid__col3.notable
+      = render_header("最近見たプロジェクト", "Entry-type2")
+      = render(partial: "layouts/Entry-type2")
 
-    %section{ class: "Grid__col3 new_arrival"}
-      %header{ class: 'Header' }
-        .Heading.is-s
-          %h2 新着のプロジェクト
-        = link_to('もっと見る', "#", { class: "u-fl_r Header-more" })
-      = render partial: "layouts/Entry-type2"
+    -# あとひと押し
+    %section.Grid__col3.almost
+      = render_header("あとひと押し", "Entry-type2")
+      = render(partial: "layouts/Entry-type2")
 
-  %section{ class: "Grid amount u-mt_40"}
-    %header{ class: "Header u-mt_30" }
-      .Heading
-        %h2 注目のプロジェクト
-      = link_to('もっと見る', "#", { class: "u-fl_r Header-more" })
+    -# 新着のプロジェクト
+    %section.Grid__col3.new_arrival
+      = render_header("新着のプロジェクト", "Entry-type2")
+      = render(partial: "layouts/Entry-type2")
+
+  -# 注目のプロジェクト
+  %section.Grid.amount.u-mt_40
+    = render_header("注目のプロジェクト", "Entry-type1")
     - 4.times do
       = render partial: "layouts/Entry-type1"
 
+  -# あとひと押し
   %section{ class: "Grid amount u-mt_40"}
-    %header{ class: "Header u-mt_30" }
-      .Heading
-        %h2 あとひと押し
-      = link_to('もっと見る', "#", { class: "u-fl_r Header-more" })
+    = render_header("あとひと押し", "Entry-type1")
     - 4.times do
       = render partial: "layouts/Entry-type1"
 
+  -# 支援総額が多いプロジェクト
   %section{ class: "Grid amount u-mt_40"}
-    %header{ class: "Header u-mt_30" }
-      .Heading
-        %h2 支援総額が多いプロジェクト
-      = link_to('もっと見る', "#", { class: "u-fl_r Header-more" })
+    = render_header("支援総額が多いプロジェクト", "Entry-type1")
     - 4.times do
       = render partial: "layouts/Entry-type1"
 
+  -# 現在募集中のプロジェクト
   .Grid.public
-    %header{ class: "Header u-mt_30 space-top-48 space-bottom-48" }
-      .Heading
-        %h2.u-d_ib 支援総額が多いプロジェクト
-      = link_to('もっと見る', "#", { class: "u-fl_r Header-more" })
+    = render_header("支援総額が多いプロジェクト", "Entry-type1", false)
     - 12.times do
       = render partial: "layouts/Entry-type1"

@@ -41,10 +41,7 @@
 
   / 成功者インタビュー
   .Container.Grid.u-mb_30
-    %header{ class: "Header" }
-      %h2{ class: "Heading" }
-        %span{ class: "Heading__txt" }
-          成功者インタビュー
+    = render_header("成功者インタビュー", "interview", false)
     %div
       - 5.times do
         = render "layouts/Entry-type4"
