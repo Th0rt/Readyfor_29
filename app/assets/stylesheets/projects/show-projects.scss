@@ -1,0 +1,16 @@
+.show-projects{
+  .project-lists{
+    clear: both;
+    &__list{
+      width: 300px;
+      height: 150px;
+      background-color: whitesmoke;
+      margin: 30px 0 0 10px;
+      float: left;
+    }
+    p{
+      font-size: 20px;
+      margin-left: 20px;
+    }
+  }
+}
