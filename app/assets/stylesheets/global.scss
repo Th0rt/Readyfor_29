@@ -29,35 +29,6 @@ a:link {
   letter-spacing: -1px;
 }
 
-.Header {
-  margin-bottom: 20px;
-  line-height: 1;
-}
-
-.Header::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.Heading {
-  color: #6D6D6D;
-  font-size: 19px;
-  float: left;
-  line-height: 1.9;
-}
-
-.Heading.is-s h2 {
-  font-size: 16px;
-  line-height: inherit;
-}
-
-.Header .Header-more {
-  padding: 8px 0;
-  font-size: 16px;
-  color: #DF051C;
-}
-
 .Grid__col2, .Grid__col3, .Grid__col4, .Grid__col5,
 .feature_entry_example, .Grid.is-grid-s {
   float: left;
