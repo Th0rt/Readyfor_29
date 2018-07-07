@@ -1,0 +1,22 @@
+-#
+  内容 :
+    プロジェクト一覧ブロックのヘッダー部分テンプレート。
+
+  オプション :
+    text(string)          : ヘッダーとして表示する文字列。
+    text_size(string)     : ヘッダーの文字サイズ。省略可。
+                              * 省略    => 19px
+                              * "is-s" => 16px
+    has_more_link(boolen) : [もっと見る]リンクの有無。
+
+  使用例 :
+    render("layout/Header", locals: { text: "sample"})
+
+- text_size = "" unless text_size
+
+%header.Header
+  %div{ class: "Heading #{ text_size }" }
+    %h2
+      #{ text }
+  - if has_more_link
+    = link_to('もっと見る', "#", { class: "u-fl_r Header-more" })
