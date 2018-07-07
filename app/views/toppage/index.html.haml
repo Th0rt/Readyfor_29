@@ -1,3 +1,14 @@
+-# debug aria =========================================================
+- unless user_signed_in?
+  %button
+    = link_to "ログイン画面/サインアップ画面へ", new_user_registration_path
+- if user_signed_in?
+  %button
+    = link_to "ユーザー画面へ",user_path(id: current_user.id)
+  %button
+    = link_to "ログアウト", destroy_user_session_path, method: :delete
+-# ====================================================================
+
 - partial_root = 'toppage/partial/'
 
 .Site-container

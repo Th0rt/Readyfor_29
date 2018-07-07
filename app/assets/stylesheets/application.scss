@@ -34,3 +34,19 @@
 // utility
 @import 'toppage/utility/Grid';
 @import 'toppage/utility/utility';
+
+// ユーザーページ、メッセージページ
+@import 'users/message';
+@import 'users/mypage';
+@import 'users/edit';
+@import 'users/sign_in';
+
+// projects
+@import './projects/show';
+@import './projects/show-top-content';
+@import './projects/show-bottom-content';
+@import './projects/show-overview';
+@import './projects/show-info';
+@import './projects/show-user-profile';
+@import './projects/show-return-content';
+@import './projects/show-projects';

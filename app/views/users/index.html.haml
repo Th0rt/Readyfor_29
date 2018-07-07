@@ -1,0 +1,52 @@
+.user-container
+  .user-left
+    .left-content
+      %h1 ログイン
+      .left-content__input
+        .left-content__email
+          %input.user_email.font-awesome{ name: "email", placeholder: "メールアドレスを入力", type: "text" }
+        .left-content__password
+          %input.user_password.font-awesome{ name: "password", placeholder: "パスワードを入力", type:"password" }
+      .left-content__submit
+        .left-content__checkbox
+          %input#login-checkbox{ type: "checkbox" } ログイン情報を保存する
+        .left-content__button
+          %button#login-button{ type: "submit" } ログイン
+      %h2 Facebookアカウントで登録した方はこちら
+      %button
+        %i.fa.fa-facebook.fa-2x
+        Facebookでログイン
+  .user-right#user-right-first
+    .right-content
+      %h1　新規登録
+      #right-content-email メールアドレスで登録
+      %h2 Facebookアカウントをお持ちの方におすすめ
+      %button.right-content-fb
+        %i.fa.fa-facebook.fa-2x
+        Facebookで登録する
+      .warning-notice
+        .contract アカウントを作成することにより、利用規約およびプライバシーポリシーに同意されたものとさせていただきます。
+        .email-receive-option メール受信制限をされている方は、@readyfor.jpからのメール受信を許可してください。
+      %a すでにアカウントをお持ちでパスワードを忘れた方
+
+  .user-right.hidden#user-right-second
+    .right-content
+      %h1　新規登録
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .field
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        .field
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          = f.submit "Sign up"
