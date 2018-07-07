@@ -23,13 +23,13 @@
       = render partial: "layouts/Entry-type1"
 
   -# あとひと押し
-  %section{ class: "Grid amount u-mt_40"}
+  %section.Grid.amount.u-mt_40
     = render_header("あとひと押し", "Entry-type1")
     - 4.times do
       = render partial: "layouts/Entry-type1"
 
   -# 支援総額が多いプロジェクト
-  %section{ class: "Grid amount u-mt_40"}
+  %section.Grid.amount.u-mt_40
     = render_header("支援総額が多いプロジェクト", "Entry-type1")
     - 4.times do
       = render partial: "layouts/Entry-type1"
