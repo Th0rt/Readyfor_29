@@ -1,11 +1,10 @@
 %h1 Toppage#index
 %p Find me in app/views/toppage/index.html.erb
-= link_to('sign_up', new_user_registration_path,
-           class: 'btn btn-default')
-= link_to('sign_in', new_user_session_path,
-           class: 'btn btn-default')
-= link_to('sign_out', destroy_user_session_path,
-           class: 'btn btn-default',
-           method: :delete)
-= link_to('project_show', project_path(1),
-           class: 'btn btn-default')
+- unless user_signed_in?
+  %button
+    = link_to "ログイン画面/サインアップ画面へ", new_user_registration_path
+- if user_signed_in?
+  %button
+    = link_to "ユーザー画面へ",user_path(id: current_user.id)
+  %button
+    = link_to "ログアウト", destroy_user_session_path, method: :delete
