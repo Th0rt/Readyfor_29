@@ -1,21 +1,7 @@
--#
-  内容 :
-    プロジェクト一覧ブロックのヘッダー部分テンプレート。
+-# ブロックのヘッダー部分テンプレート。 topppage_helperのrender_headerで呼び出す。
 
-  オプション :
-    text(string)          : ヘッダーとして表示する文字列。
-    text_size(string)     : ヘッダーの文字サイズ。省略可。
-                              * 省略    => 19px
-                              * "is-s" => 16px
-    has_more_link(boolen) : [もっと見る]リンクの有無。
-
-  使用例 :
-    render("layout/Header", locals: { text: "sample"})
-
-- text_size = "" unless text_size
-
-%header.Header
-  %div{ class: "Heading #{ text_size }" }
+%header{ class: "Header #{ custom_class[:header] }" }
+  %div{ class: "Heading #{ custom_class[:heading] }" }
     %h2
       #{ text }
   - if has_more_link
