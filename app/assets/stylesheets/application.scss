@@ -10,7 +10,7 @@
 @import 'global';
 // @import 'scaffolds';
 
-// components
+// layouts
 @import 'layouts/Header';
 @import 'layouts/Entry';
 @import 'layouts/Entry-type1';
@@ -18,11 +18,22 @@
 @import 'layouts/Entry-type4';
 
 // toppage
-@import 'toppage/navbar';
-@import 'toppage/PcTopContainer';
-@import 'toppage/Top-Entry';
-@import 'toppage/PcTopVisual';
-@import 'toppage/PcTopProjectArea';
-@import 'toppage/slick-slider';
-@import 'toppage/TopInfomationList';
-@import 'toppage/PcPublicNews';
+
+// components
+@import 'toppage/component/Container';
+@import 'toppage/component/Gauge';
+@import 'toppage/component/project-type-badge';
+@import 'toppage/component/slick-slider';
+
+// projects
+@import 'toppage/project/PcTopCategoryNavBar';
+@import 'toppage/project/PcTopContainer';
+@import 'toppage/project/Top-Entry';
+@import 'toppage/project/PcTopVisual';
+@import 'toppage/project/PcTopProjectArea';
+@import 'toppage/project/TopInfomationList';
+@import 'toppage/project/PcPublicNews';
+
+// utility
+@import 'toppage/utility/Grid';
+@import 'toppage/utility/utility'
