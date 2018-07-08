@@ -1,20 +1,26 @@
-#new-project
-  .col-sm-2
-    %nav.nav-sidebar
-      %ul.nav.tabs
-        %li.active
-          = link_to "#tab1" do
-            ページ1
+.new-project
+  .col-sm-3
+    .tab-lists
+      %h1 ページの編集
+      %ul.tabs
+        %li.select
+          基本情報
         %li
-          = link_to "#tab2" do
-            ページ2
+          ストーリー
         %li
-          = link_to "#tab3" do
-            ページ3
-  .tab-content
-    #page1.project-tabpage
-      %h1 ページ1
-    #page2.project-tabpage
-      %h1 ページ2
-    #page3.project-tabpage
-      %h1 ページ3
+          リターン
+    .btn.btn-light.save-btn
+      %p 登録
+  .col-sm-9
+    .tab-content
+      %h1 基本情報
+      .tab-content__form-group
+        %label タイトル
+        = text_field :title, required: true, autofocus: true, placeholder: "タイトルを入力してください。"
+        %label 画像
+    .tab-content.hide
+      %p ページ2
+      %h1 こんばんは
+    .tab-content.hide
+      %p ページ3
+      %h1 おはようございます
