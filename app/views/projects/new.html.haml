@@ -6,7 +6,7 @@
         %li.select
           基本情報
         %li
-          ストーリー
+          概要
         %li
           リターン
     .btn.btn-light.save-btn
@@ -18,20 +18,32 @@
         %label タイトル
         .project-title
           = text_field :title, required: true, autofocus: true, placeholder: "タイトルを入力してください。"
+        %hr
         %label 画像
         #project-image
           = file_field :content, required: true
           = hidden_field :status, value: "main"
-        %label プロジェクト概要(70文字以内)
-        .project-overview
-          = text_area :overview, required: true, maxlength: 70
+        %hr
         %label 募集期間
         .project-period
           = date_select :date, Date.today, use_month_numbers: true
+        %hr
+        %label 目標金額(第一)
+        .project-target-amount
+          = number_field :title, required: true
+          %span 円
+        %hr
+        %label 目標金額(第二)
+        .project-target-amount-next
+          = number_field :title, required: true
+          %span 円
     .tab-content.hide
-      %p ページ2
-      %h1 こんばんは
+      .tab-content__form-group
+        %hr
+        %label プロジェクト概要(仮エディター)
+        .project-overview
+          = text_area :overview, required: true
     .tab-content.hide
-      %p ページ3
-      %h1 おはようございます
+      .tab-content__form-group
+        %h1 あとで実装
 .blank-content

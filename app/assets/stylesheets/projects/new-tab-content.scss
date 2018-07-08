@@ -42,18 +42,53 @@
         cursor: pointer;
       }
     }
-    .project-overview{
-      textarea{
-        width: 70%;
-        height: 300px;
-        font-size: 16px;
-      }
-    }
     .project-period{
-      margin-bottom: 100px;
       select{
         font-size: 30px;
         margin-left: 10px;
+      }
+    }
+    .project-target-amount{
+      input{
+        width: 50%;
+        height: 40px;
+        font-size:16px;
+        border:1px solid #999999;
+        padding:2px;
+        border-radius:3px;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1) inset;
+        margin: 0 auto;
+      }
+      span{
+        font-size: 20px;
+      }
+    }
+    .project-target-amount-next{
+      margin-bottom: 100px;
+      input{
+        width: 50%;
+        height: 40px;
+        font-size:16px;
+        border:1px solid #999999;
+        padding:2px;
+        border-radius:3px;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1) inset;
+        margin: 0 auto;
+      }
+      span{
+        font-size: 20px;
+      }
+    }
+    .project-overview{
+      textarea{
+        width: 100%;
+        height: 500px;
+        font-size:16px;
+        border:1px solid #999999;
+        padding:2px;
+        border-radius:3px;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1) inset;
+        margin: 0 auto;
       }
     }
   }
