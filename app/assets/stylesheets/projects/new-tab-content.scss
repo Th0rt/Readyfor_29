@@ -42,5 +42,19 @@
         cursor: pointer;
       }
     }
+    .project-overview{
+      textarea{
+        width: 70%;
+        height: 300px;
+        font-size: 16px;
+      }
+    }
+    .project-period{
+      margin-bottom: 100px;
+      select{
+        font-size: 30px;
+        margin-left: 10px;
+      }
+    }
   }
 }
