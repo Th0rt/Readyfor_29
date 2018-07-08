@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.date :limit_date, null: false
       t.integer :goal, null: false
       t.integer :next_goal
-      t.string :type, null: false
+      t.string :project_type, null: false
       t.integer :likes_count, null: false
 
       t.timestamps
