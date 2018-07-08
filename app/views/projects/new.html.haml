@@ -19,7 +19,7 @@
           %label タイトル
           = text_field :title, required: true, autofocus: true, placeholder: "タイトルを入力してください。"
         %label 画像
-        .project-image
+        #project-image
           = file_field :content, required: true
           = hidden_field :status, value: "main"
     .tab-content.hide
