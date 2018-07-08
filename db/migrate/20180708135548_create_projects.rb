@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
     create_table :projects do |t|
       t.string :title, null: false
       t.text :content, null: false
-      t.datetime :limit_date, null: false
+      t.date :limit_date, null: false
       t.integer :goal, null: false
       t.integer :next_goal
       t.string :type, null: false
