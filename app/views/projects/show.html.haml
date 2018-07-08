@@ -6,9 +6,11 @@
       %span >
       = link_to root_path do
         地域
-      %span > タイトル
+      %span >
+      = @project.title
     .top-content__title
-      %h1 プロジェクトタイトル
+      %h1
+        = @project.title
     .top-content__tag
       = link_to root_path, class: "btn btn-light" do
         東京
@@ -28,7 +30,8 @@
           %span.span-project.span-project__data-big 1,000,000円
         .project-info__text
           %span.span-project.span-project__title 目標金額
-          %span.span-project.span-project__data 1,500,000円
+          %span.span-project.span-project__data
+            = "#{@project.goal}円"
         .project-info__text
           %span.span-project.span-project__title 支援者数
           %span.span-project.span-project__data 90人
@@ -66,11 +69,7 @@
               = link_to root_path do
                 応援コメント
     .bottom-content__tab-content
-      %p 友人と一念発起！東京でキッチンカーを走らせたい！
-      %p はじめまして、吉澤祐介と申します！
-      これまで15年ほど、自分の大好きな食べ物の世界で生活してきました。
-      今までいろんな食事に出合い、ジャンルを問わず、
-      興味を持ったものを本能が赴くままに味わい、自分の経験値として蓄積してきました。
+      = @project.content
     .return-content
       .return-content__link-btm
         %p.like-count-text 7人がお気に入りしています
