@@ -1,0 +1,71 @@
+.announcement-card {
+  width: 312px;
+  height: 170px;
+  display: block;
+  position: relative;
+}
+
+.announcement-card .thumbnail img {
+  width: 312px;
+  height: 170px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(203, 203, 203, 0.5);
+  filter: brightness(75%);
+}
+
+.announcement-card .body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-shadow: 0px 2px 2px black;
+}
+
+.announcement-card .body .report-label {
+  width: 115px;
+  height: 24px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e60013;
+  text-shadow: none;
+}
+
+.announcement-card .body .announcement-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.announcement-card .body .project-title {
+  font-size: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.announcement-card .body .posted-at {
+  display: flex;
+  align-items: center;
+
+  i {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+}
+
