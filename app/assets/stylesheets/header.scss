@@ -54,17 +54,34 @@
       justify-content: space-around;
       width: 440px;
       align-items: center;
-
       a {
         color: #606060;
         font-size: 14px;
         user-select: none;
       }
-      a.login-botton {
+      .login-botton {
         color: #fff;
         background-color: #df0615;
         border-radius: 3px;
         padding: 5px 7px;
+      }
+      img {
+        width: 25px;
+        border-radius: 50%;
+      }
+    }
+    .header__right-panel {
+      background-color: #fff;
+      width: 200px;
+      top: 53px;
+      height: 190px;
+      display: flex;
+      flex-flow: column nowrap;
+      border: 1px solid #ccc;
+      padding:10px;
+      position: absolute;
+      a{
+       padding: 6px;
       }
     }
   }
