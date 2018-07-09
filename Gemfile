@@ -89,3 +89,6 @@ gem 'fog-aws'
 
 # user-manegement
 gem 'devise'
+
+# jquery
+gem 'jquery-rails'
