@@ -1,1 +1,36 @@
-%div
+.PcTopCategoryProjectArea__container__2Bjhp
+  .PcTopCategoryProjectArea__category-wrapper__7BS-H
+
+    -# カテゴリータイトル
+    .PcTopCategoryProjectArea__visual__1jwLY.PcTopCategoryProjectArea__socialgood__3GYda
+      %span.PcTopCategoryProjectArea__category-name__2WZLV
+        社会にいいこと
+      .top-category-page
+        = link_to('お気に入りにする', "#", class: "favorite-tag")
+    .PcTopCategoryProjectArea__category-message__1zlX2
+      %span
+        社会を良くし誰かのために何かをしたい。そんな想いを持つプロジェクトたち。あなたはどれを実現したいですか。
+
+    -# タグエリア
+    %aside.Project-outline__tags
+      .Project-outline__tags-tags.tags
+        %p tag
+      .u-clr_both
+
+  -# プロジェクトバナーエリア
+  .PcTopCategoryProjectArea__static-banner__2BBlL
+
+  -# プロジェクトリストエリア
+  .PcTopCategoryProjectArea__project-lists
+    = render(partial: 'toppage/partial/PcTopProjectList',
+            locals: { title: "注目のプロジェクト" })
+    = render(partial: 'toppage/partial/PcTopProjectList',
+            locals: { title: "新着のプロジェクト" })
+    = render(partial: 'toppage/partial/PcTopProjectList',
+            locals: { title: "支援総額が多いプロジェクト" })
+
+  -# 活動報告エリア
+  .PcTopCategoryProjectArea__announcements__1cB4R
+    = render(partial: 'toppage/partial/announcement-card')
+    = render(partial: 'toppage/partial/announcement-card')
+    = render(partial: 'toppage/partial/announcement-card')
