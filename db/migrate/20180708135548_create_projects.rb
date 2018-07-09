@@ -9,10 +9,11 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :project_type, null: false
       t.integer :likes_count, null: false
 
+      t.index :title
+      t.index :limit_date
+      t.index :goal
+
       t.timestamps
     end
-    add_index :projects, :title
-    add_index :projects, :limit_date
-    add_index :projects, :goal
   end
 end
