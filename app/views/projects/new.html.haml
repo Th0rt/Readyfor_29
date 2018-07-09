@@ -18,7 +18,8 @@
         .tab-content__form-group
           %label タイトル
           .project-title
-            = f.text_field :title, required: true, autofocus: true, placeholder: "タイトルを入力してください。"
+            = f.text_field :title, required: true, autofocus: true,
+              placeholder: "タイトルを入力してください。"
           %hr
           %label 画像
           #project-image
@@ -27,7 +28,8 @@
           %hr
           %label 募集期間
           .project-period
-            = f.date_select :limit_date, default: Date.today, use_month_numbers: true
+            = f.date_select :limit_date, default: Date.today,
+            use_month_numbers: true
           %hr
           %label 目標金額(第一)
           .project-target-amount
