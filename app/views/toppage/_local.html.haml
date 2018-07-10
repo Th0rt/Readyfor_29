@@ -1,0 +1,46 @@
+.PcTopCategoryProjectArea__container__2Bjhp
+  .PcTopCategoryProjectArea__category-wrapper__7BS-H
+
+    -# カテゴリータイトル
+    .PcTopCategoryProjectArea__visual__1jwLY.PcTopCategoryProjectArea__local
+      .PcTopCategoryProjectArea__category-name__2WZLV
+        %span
+          地域
+        .top-category-page
+          = link_to 'お気に入りにする', "#", class: "favorite-tag"
+      .PcTopCategoryProjectArea__category-message__1zlX2
+        %span
+          いま、地域発プロジェクトのたくさんのお手本が、次々生まれています。さあ、みんなで、地域を盛り上げよう。
+
+    -# タグエリア
+    %aside.Project-outline__tags
+      = render partial: 'layouts/tags',
+               locals:  { adding_class: 'project-outline__tags-tags' }
+      .u-clr_both
+
+  -# プロジェクトバナーエリア
+  .PcTopCategoryProjectArea__static-banner__2BBlL
+    = link_to "#" do
+      = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                    width:  '310px'
+    = link_to "#" do
+      = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                    width:  '310px'
+    = link_to "#" do
+      = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                    width:  '310px'
+
+  -# プロジェクトリストエリア
+  .PcTopCategoryProjectArea__project-lists
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "注目のプロジェクト" }
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "新着のプロジェクト" }
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "支援総額が多いプロジェクト" }
+
+  -# 活動報告エリア
+  .PcTopCategoryProjectArea__announcements__1cB4R
+    = render partial: 'toppage/partial/announcement-card'
+    = render partial: 'toppage/partial/announcement-card'
+    = render partial: 'toppage/partial/announcement-card'
