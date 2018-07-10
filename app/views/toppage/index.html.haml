@@ -17,13 +17,11 @@
     .PcTopContainer__navbar__3erDz
       = render "#{ partial_root }/PcTopCategoryNavBar"
 
-    .PcTopVisual__visual__2BHQD
-      = render "#{ partial_root }/PcTopVisual"
+    #PcTopContentArea
+      .PcTopVisual__visual__2BHQD
+        = render "#{ partial_root }/PcTopVisual"
 
-    .PcTopContainer__container__cjvdu
       .PcTopProjectArea__main__1hv8i
-        / バナーエリア、未実装
-        = render "#{ partial_root }/slick_slider"
         / バナーエリア とりあえず動かないバージョン
         .slick-slider.PcTopCategoryProjectArea__static-banner__2BBlL
           = link_to "#" do
