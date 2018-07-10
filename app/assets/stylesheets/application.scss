@@ -21,14 +21,17 @@
 @import 'toppage/component/project-type-badge';
 @import 'toppage/component/slick-slider';
 @import 'toppage/component/tags';
+@import 'toppage/component/announcement-card';
 
 // projects
 @import 'toppage/project/Site-container';
 @import 'toppage/project/PcTopCategoryNavBar';
+@import 'toppage/project/PcTopCategoryProjectArea';
 @import 'toppage/project/PcTopContainer';
 @import 'toppage/project/Top-Entry';
 @import 'toppage/project/PcTopVisual';
 @import 'toppage/project/PcTopProjectArea';
+@import 'toppage/project/PcTopProjectList';
 @import 'toppage/project/TopInfomationList';
 @import 'toppage/project/PcPublicNews';
 
