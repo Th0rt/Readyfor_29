@@ -17,25 +17,25 @@
       = render(partial: "layouts/Entry-type2")
 
   -# 注目のプロジェクト
-  %section.Grid.amount.u-mt_40
-    = render_header("注目のプロジェクト", "Entry-type1")
-    - 4.times do
-      = render partial: "layouts/Entry-type1"
+  %section.Grid.amount
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "注目のプロジェクト",
+                       max_display_projects: 4 }
 
   -# あとひと押し
-  %section.Grid.amount.u-mt_40
-    = render_header("あとひと押し", "Entry-type1")
-    - 4.times do
-      = render partial: "layouts/Entry-type1"
+  %section.Grid.amount
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "あとひと押し",
+                       max_display_projects: 4 }
 
   -# 支援総額が多いプロジェクト
-  %section.Grid.amount.u-mt_40
-    = render_header("支援総額が多いプロジェクト", "Entry-type1")
-    - 4.times do
-      = render partial: "layouts/Entry-type1"
+  %section.Grid.amount
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "支援総額が多いプロジェクト",
+                       max_display_projects: 4 }
 
   -# 現在募集中のプロジェクト
   .Grid.public
-    = render_header("支援総額が多いプロジェクト", "Entry-type1", false)
-    - 12.times do
-      = render partial: "layouts/Entry-type1"
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "支援総額が多いプロジェクト",
+                       max_display_projects: 12 }

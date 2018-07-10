@@ -34,11 +34,14 @@
   -# プロジェクトリストエリア
   .PcTopCategoryProjectArea__project-lists
     = render partial: 'toppage/partial/PcTopProjectList',
-             locals: { title: "注目のプロジェクト" }
+             locals: { title: "注目のプロジェクト",
+                       max_display_projects: 4 }
     = render partial: 'toppage/partial/PcTopProjectList',
-             locals: { title: "新着のプロジェクト" }
+             locals: { title: "新着のプロジェクト",
+                       max_display_projects: 4 }
     = render partial: 'toppage/partial/PcTopProjectList',
-             locals: { title: "支援総額が多いプロジェクト" }
+             locals: { title: "支援総額が多いプロジェクト",
+                       max_display_projects: 4 }
 
   -# 活動報告エリア
   .PcTopCategoryProjectArea__announcements__1cB4R
