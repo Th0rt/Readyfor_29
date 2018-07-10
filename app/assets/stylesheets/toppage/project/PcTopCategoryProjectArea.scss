@@ -9,19 +9,24 @@
   margin-bottom: 20px;
 }
 
-.PcTopCategoryProjectArea__socialgood__3GYda {
+.PcTopCategoryProjectArea__socialgood {
   color: #df051c;
+}
+
+.PcTopCategoryProjectArea__category-name__2WZLV {
+  padding: 10px;
+}
+
+.PcTopCategoryProjectArea__socialgood
+.PcTopCategoryProjectArea__category-name__2WZLV {
   border-bottom: 1px solid #df051c;
 }
 
-.PcTopCategoryProjectArea__visual__1jwLY {
-  padding: 10px;
-  display: flex;
-  align-items: center;
 }
 
 .PcTopCategoryProjectArea__category-name__2WZLV {
   display: flex;
+  justify-content: space-between;
   flex: 1;
   font-size: 18px;
 }
@@ -35,7 +40,6 @@
 }
 
 .PcTopCategoryProjectArea__category-message__1zlX2 {
-  color: #df051c;
   padding: 10px;
   font-size: 16px;
 }
