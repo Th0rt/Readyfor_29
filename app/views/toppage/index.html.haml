@@ -53,7 +53,9 @@
 
     / 成功者インタビュー
     .Container.Grid.u-mb_30
-      = render_header("成功者インタビュー", "interview", false)
+      .Header
+        .Heading.Heading__txt
+          %h2 成功者インタビュー
       %div
         - 5.times do
           = render "layouts/Entry-type4"

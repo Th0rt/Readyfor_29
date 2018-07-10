@@ -3,18 +3,18 @@
 
     -# 最近見たプロジェクト
     %section.Grid__col3.notable
-      = render_header("最近見たプロジェクト", "Entry-type2")
-      = render(partial: "layouts/Entry-type2")
+      = render partial: 'toppage/partial/PcTopProjectList-s',
+              locals: { title: "最近見たプロジェクト" }
 
     -# あとひと押し
     %section.Grid__col3.almost
-      = render_header("あとひと押し", "Entry-type2")
-      = render(partial: "layouts/Entry-type2")
+      = render partial: 'toppage/partial/PcTopProjectList-s',
+              locals: { title: "あとひと押し" }
 
     -# 新着のプロジェクト
     %section.Grid__col3.new_arrival
-      = render_header("新着のプロジェクト", "Entry-type2")
-      = render(partial: "layouts/Entry-type2")
+      = render partial: 'toppage/partial/PcTopProjectList-s',
+              locals: { title: "新着のプロジェクト" }
 
   -# 注目のプロジェクト
   %section.Grid.amount
