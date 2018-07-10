@@ -13,8 +13,7 @@
 
     -# タグエリア
     %aside.Project-outline__tags
-      .Project-outline__tags-tags.tags
-        %p tag
+      = render partial: 'layouts/tags', locals: { adding_class: 'project-outline__tags-tags' }
       .u-clr_both
 
   -# プロジェクトバナーエリア
