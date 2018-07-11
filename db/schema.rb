@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_08_135548) do
+ActiveRecord::Schema.define(version: 2018_07_11_035841) do
 
   create_table "image_upload_tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_07_08_135548) do
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
-    t.date "limit_date", null: false
+    t.datetime "limit_date", null: false
     t.integer "goal", null: false
     t.integer "next_goal"
     t.string "project_type", null: false
