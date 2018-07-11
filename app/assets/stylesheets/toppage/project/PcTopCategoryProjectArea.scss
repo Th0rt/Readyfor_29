@@ -7,6 +7,10 @@
 
 .PcTopCategoryProjectArea__category-wrapper__7BS-H {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  font-size: 18px;
 }
 
 .PcTopCategoryProjectArea__socialgood {
@@ -56,13 +60,6 @@
 .PcTopCategoryProjectArea__product
 .PcTopCategoryProjectArea__category-name__2WZLV {
   border-bottom: 1px solid #0064d0;
-}
-
-.PcTopCategoryProjectArea__category-name__2WZLV {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
-  font-size: 18px;
 }
 
 .top-category-page .favorite-tag {
