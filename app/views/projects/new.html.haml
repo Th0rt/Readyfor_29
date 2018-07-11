@@ -28,7 +28,7 @@
           %hr
           %label 募集期間
           .project-period
-            = f.date_select :limit_date, default: Date.today,
+            = f.date_select :limit_date, default: DateTime.now,
             use_month_numbers: true
           %hr
           %label 目標金額(第一)
