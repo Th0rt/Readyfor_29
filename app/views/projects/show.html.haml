@@ -31,7 +31,7 @@
         .project-info__text
           %span.span-project.span-project__title 目標金額
           %span.span-project.span-project__data
-            = "#{@project.goal}円"
+            = "#{number_with_delimiter(@project.goal)}円"
         .project-info__text
           %span.span-project.span-project__title 支援者数
           %span.span-project.span-project__data 90人
