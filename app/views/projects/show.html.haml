@@ -28,10 +28,20 @@
         .project-info__big-text
           %span.span-project.span-project__title-big 支援総額
           %span.span-project.span-project__data-big 1,000,000円
-        .project-info__text
-          %span.span-project.span-project__title 目標金額
-          %span.span-project.span-project__data
-            = "#{number_with_delimiter(@project.goal)}円"
+        - if @project.next_goal.nil?
+          .project-info__text
+            %span.span-project.span-project__title 目標金額
+            %span.span-project.span-project__data
+              = "#{number_with_delimiter(@project.goal)}円"
+        - else
+          .project-info__text
+            %span.span-project.span-project__title 目標金額
+            %span.span-project.span-project__data
+              = "#{number_with_delimiter(@project.next_goal)}円"
+          .project-info__text
+            %span.span-project.span-project__title 第一目標金額
+            %span.span-project.span-project__data
+              = "#{number_with_delimiter(@project.goal)}円"
         .project-info__text
           %span.span-project.span-project__title 支援者数
           %span.span-project.span-project__data 90人
