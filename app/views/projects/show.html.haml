@@ -32,22 +32,26 @@
           .project-info__text
             %span.span-project.span-project__title 目標金額
             %span.span-project.span-project__data
-              = "#{number_with_delimiter(@project.goal)}円"
+              = number_with_delimiter(@project.goal)
+              %span 円
         - else
           .project-info__text
             %span.span-project.span-project__title 目標金額
             %span.span-project.span-project__data
-              = "#{number_with_delimiter(@project.next_goal)}円"
+              = number_with_delimiter(@project.next_goal)
+              %span 円
           .project-info__text
             %span.span-project.span-project__title 第一目標金額
             %span.span-project.span-project__data
-              = "#{number_with_delimiter(@project.goal)}円"
+              = number_with_delimiter(@project.goal)
+              %span 円
         .project-info__text
           %span.span-project.span-project__title 支援者数
           %span.span-project.span-project__data 90人
         .project-info__text
           %span.span-project.span-project__title 残り日数
-          %span.span-project.span-project__data #{@project.days_life}
+          %span.span-project.span-project__data
+            = @project.days_life
         .project-info__progress
           .progress
             .progress-bar.progress-bar-danger.progress-level-of-achievement
