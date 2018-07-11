@@ -26,6 +26,9 @@
   .mypage-right
     .user-edit-wrapper
       .user-edit-contents
+        .notification
+          - flash.each do |key, value|
+            = content_tag :div, value, class:key
         .user-edit-main
           %p.title お名前
           %p.information ※プロフィールページやコメント欄に表示されます
