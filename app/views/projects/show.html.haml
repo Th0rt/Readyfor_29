@@ -1,6 +1,6 @@
 .project-contents
   .top-content
-    = link_to root_path do
+    = link_to project_path(params[:id]), method: :delete do
       %span.btn.btn-primary プロジェクト削除(検証用)
     .top-content__category
       = link_to root_path do
