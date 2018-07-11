@@ -1,9 +1,27 @@
 .bottom-content{
   width: 1000px;
   margin: 10px auto 0;
-  overflow:hidden;
   &__tab-btm{
-    height: 59px;
+    .project-tabs {
+      overflow: hidden;
+      li {
+        color: #333;
+        float: left;
+        margin: 0 0 -1px 0;
+        padding: 20px 50px;
+        cursor: pointer;
+        list-style: none;
+        font-size: 16px;
+        border-bottom: 1px solid #AAAAAA;
+      }
+      li:hover{
+        text-decoration: underline;
+      }
+      li.select {
+        cursor: auto;
+        border: 1px solid #AAAAAA;
+      }
+    }
   }
   &__tab-content{
     width: 610px;
