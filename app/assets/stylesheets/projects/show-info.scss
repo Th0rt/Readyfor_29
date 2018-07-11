@@ -20,15 +20,18 @@
       width: 80%;
     }
   }
-  &__button{
-    width: 400px;
-    height: 60px;
-    margin: 20px auto 0px;
-    display: table;
-    p{
-      display: table-cell;
-      vertical-align: middle;
-      font-size: 20px;
+  .btn-link{
+    text-decoration: none;
+    &__button{
+      width: 400px;
+      height: 60px;
+      margin: 20px auto 0px;
+      display: table;
+      p{
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 20px;
+      }
     }
   }
   .span-project{

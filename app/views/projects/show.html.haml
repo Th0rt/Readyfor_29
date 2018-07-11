@@ -41,8 +41,8 @@
         .project-info__progress
           .progress
             .progress-bar.progress-bar-danger.progress-level-of-achievement
-        = link_to root_path do
-          .project-info__button.btn.btn-danger
+        = link_to root_path,class: 'btn-link' do
+          .btn-link__button.btn.btn-danger
             %p このプロジェクトを支援する
     .top-content__info-footer
       = link_to root_path do
