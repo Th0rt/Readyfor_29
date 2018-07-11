@@ -11,17 +11,18 @@
 
 .header__right
   .header__right-item
-    %a クラウドファンディングとは
-    %a はじめる
-    %a さがす
+    = link_to 'クラウドファンディングとは', '#'
+    = link_to 'はじめる', '#'
+    = link_to 'さがす', '#'
+
     - if user_signed_in?
       = image_tag( "https://readyfor.jp/s3/readyfor-img/user_images/427103/medium/4318afb5382fc152e33dacc5e78583c291ca65e3.?1529888932" )
     - else
-      %a.login-botton ログイン・登録
+      = link_to 'ログイン・登録', '#', class: :'login-botton'
   - if user_signed_in?
     .header__right-panel
-      %a{ href: "https://readyfor.jp/mypage/messages" } メッセージ
-      %a{ href: "https://readyfor.jp/mypage" } 購入履歴
-      %a{ href: "https://readyfor.jp/mypage/edit" } プロフィール編集
-      %a{ href: "https://readyfor.jp/mypage/project_list?type=watched" } お気に入りリスト
-      %a{ href: "https://readyfor.jp/sign_out" } ログアウト
+      = link_to 'メッセージ', '#'
+      = link_to '購入履歴', '#'
+      = link_to 'プロフィール編集', '#'
+      = link_to 'お気に入りリスト', '#'
+      = link_to 'ログアウト', '#'

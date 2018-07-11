@@ -2,30 +2,30 @@
 
   .footer__content
     .footer__content-header 運営情報
-    %a.footer__content-low 運営会社
-    %a.footer__content-low 採用情報
-    %a.footer__content-low メディア掲載一覧
-    %a.footer__content-low 7th Anniversary
-    %a.footer__content-low READYFOR OF THE YEAR
-    %a.footer__content-low ヘルプ・お問い合わせ
-    %a.footer__content-low マニュアル
+    = link_to '運営会社', '#'
+    = link_to '採用情報', '#'
+    = link_to 'メディア掲載一覧', '#'
+    = link_to '7th Anniversary', '#'
+    = link_to 'READYFOR OF THE YEAR', '#'
+    = link_to 'ヘルプ・お問い合わせ', '#'
+    = link_to 'マニュアル', '#'
 
   .footer__content
     .footer__content-header はじめる
-    %a.footer__content-low クラウドファンディングとは
-    %a.footer__content-low プロジェクトをはじめる
-    %a.footer__content-low 創業をお考えの方へ
-    %a.footer__content-low マッチングギフト
-    %a.footer__content-low お知らせ
+    = link_to 'クラウドファンディングとは', '#'
+    = link_to 'プロジェクトをはじめる', '#'
+    = link_to '創業をお考えの方へ', '#'
+    = link_to 'マッチングギフト', '#'
+    = link_to 'お知らせ', '#'
 
   .footer__content
     .footer__content-header さがす
-    %a.footer__content-low 募集中のプロジェクト
-    %a.footer__content-low 成功したプロジェクト
-    %a.footer__content-low Readyfor VOYAGE
-    %a.footer__content-low 緊急災害支援プログラム
-    %a.footer__content-low 大学向けクラウドファンディング
-    %a.footer__content-low Readyforふるさと納税
+    = link_to '募集中のプロジェクト', '#'
+    = link_to '成功したプロジェクト', '#'
+    = link_to 'Readyfor VOYAGE', '#'
+    = link_to '緊急災害支援プログラム', '#'
+    = link_to '大学向けクラウドファンディング', '#'
+    = link_to 'Readyforふるさと納税', '#'
 
 
   .footer__content-img
@@ -36,12 +36,15 @@
 .footer__bottom
   .footer__bottom-left Copyright 2011 READYFOR, Inc. All rights reserved.
   .footer__bottom-right
-    %a{ href: :"https://readyfor.jp/privacypolicy" } プライバシーポリシー
-    %a{ href: :"https://readyfor.jp/terms_of_service" } 利用規約
-    %a{ href: :"https://readyfor.jp/guidelines" } ガイドライン
-    %a{ href: :"https://readyfor.jp/commercial_transactions" } 特定商取引法に基づく表記
+    = link_to 'プライバシーポリシー', '#'
+    = link_to '利用規約', '#'
+    = link_to 'ガイドライン', '#'
+    = link_to '特定商取引法に基づく表記', '#'
 
   .footer__bottom-social
-    %a.fa.fa-twitter{ href: :"https://twitter.com/ready_for/" }
-    %a.fa.fa-facebook{ href: :"https://www.facebook.com/readyfor/" }
-    %a.fa.fa-comment{ href: :"https://line.me/R/ti/p/%40lbw2411m/" }
+    = link_to "https://twitter.com/ready_for/" do
+      %i.fa.fa-twitter
+    = link_to "https://www.facebook.com/readyfor/" do
+      %i.fa.fa-facebook
+    = link_to "https://line.me/R/ti/p/%40lbw2411m/" do
+      %i.fa.fa-comment
