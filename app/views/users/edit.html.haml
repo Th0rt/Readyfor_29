@@ -32,7 +32,7 @@
           #nickname-edit-button 編集
         .user-edit-sub#user-nickname-explain
           %p.explain あなたの名前(ニックネーム)です。
-          %p.content 関谷佑斗
+          %p.content= current_user.nickname
         .hidden#user-edit-nickname
           = form_for(current_user) do |f|
             .field
@@ -48,7 +48,8 @@
           #email-edit-button 編集
         .user-edit-sub#user-email-explain
           %p.explain 連絡先のメールアドレスです。
-          %p.content　yhk3165t@gmail.com
+          %p.content= current_user.email
+
         .hidden#user-edit-email
           = form_for(current_user) do |f|
             .field
@@ -68,7 +69,7 @@
         .hidden#user-edit-password
           = form_for(current_user) do |f|
             .field
-              %p パスワードを入力:
+              %p 新しいパスワード:
               .field-input
                 = f.password_field :password, autocomplete: "off"
             .field
@@ -80,7 +81,7 @@
             .field
               .field-label.hidden
                 = f.label :current_password
-              %p 新しいパスワード:
+              %p 現在のパスワード:
               .field-input
                 = f.password_field :current_password, autocomplete: "off"
               .actions
@@ -203,11 +204,3 @@
         .user-edit-sub
           %p.explain Readyforを退会します。
           %p.user-edit-contents
-
-
-
-
-
-
-
-
