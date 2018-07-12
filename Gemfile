@@ -93,3 +93,5 @@ gem 'fog-aws'
 gem 'devise'
 # jqueryを使うため
 gem 'jquery-rails'
+# Use slick-slider
+gem "jquery-slick-rails"
