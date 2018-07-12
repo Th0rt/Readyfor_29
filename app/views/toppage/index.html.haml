@@ -1,5 +1,4 @@
-%h1 Toppage#index
-%p Find me in app/views/toppage/index.html.erb
+-# debug aria =========================================================
 - unless user_signed_in?
   %button
     = link_to "ログイン画面/サインアップ画面へ", new_user_registration_path
@@ -8,9 +7,75 @@
     = link_to "ユーザー画面へ",user_path(id: current_user.id)
   %button
     = link_to "ログアウト", destroy_user_session_path, method: :delete
+
   = link_to project_path(1), class: "btn btn-default" do
     project_show
   = link_to new_project_path, class: "btn btn-default" do
     project_new
   = link_to edit_project_path(1), class: "btn btn-default" do
     project_edit
+-# ====================================================================
+
+- partial_root = 'toppage/partial/'
+
+.Site-container
+  .PcTopContainer__root__145zb
+
+    .PcTopContainer__navbar__3erDz
+      = render "#{ partial_root }/PcTopCategoryNavBar"
+
+    #PcTopContentArea
+      .PcTopVisual__visual__2BHQD
+        = render "#{ partial_root }/PcTopVisual"
+
+      .PcTopProjectArea__main__1hv8i
+        / バナーエリア とりあえず動かないバージョン
+        .slick-slider.PcTopCategoryProjectArea__static-banner__2BBlL
+          = link_to "#" do
+            = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                          width:  '310px'
+          = link_to "#" do
+            = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                          width:  '310px'
+          = link_to "#" do
+            = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                          width:  '310px'
+
+        / プロジェクトエリア
+        = render "#{ partial_root }/Top-Entry"
+
+    / バナーエリア
+    .PcTopContainer__bottom-banners__2hh5U
+      = link_to('https://www.facebook.com/readyfor/') do
+        = image_tag('https://readyfor.jp/s3/readyfor-img/banner_images/59/normal_2x/df8d55732554d652df1d13e4c9bd8a85f728fc3a.JPG?1499930529',
+                    style: "width: 310px; height: 60px")
+      = link_to('https://readyfor.jp/proposals/intro/lp_business#utm_source=banner&utm_campaign=lp_business&utm_medium=bottom') do
+        = image_tag('https://readyfor.jp/s3/readyfor-img/banner_images/1/normal_2x/fb6d67b8b478ae8bc61ec361f01f165c28383499.png?1498039688',
+                    style: "width: 310px; height: 60px")
+      = link_to('https://www.wantedly.com/companies/readyfor2') do
+        = image_tag('https://readyfor.jp/s3/readyfor-img/banner_images/23/normal_2x/57edbb941e405d090877414b17488fcaecdf0441.jpg?1498039691',
+                    style: "width: 310px; height: 60px")
+
+    / お知らせ
+    .PcTopContainer__information__3pGwU
+      .PcTopContainer__wrap__234Wu
+        = render "#{ partial_root }/TopInformationList"
+      .PcTopContainer__wrap__234Wu
+        = render "#{ partial_root }/TopInformationList"
+
+    / 掲載ニュース
+    .PcTopContainer__public__1nhMO
+      = render "#{ partial_root }/PcPublicNews"
+
+    / 成功者インタビュー
+    .Container.Grid.u-mb_30
+      .Header
+        .Heading.Heading__txt
+          %h2 成功者インタビュー
+      %div
+        - 5.times do
+          = render "layouts/Entry-type4"
+
+    .Container.Grid.description
+      日本初・実績No.1のクラウドファンディングサイト「Readyfor」では、アイデア相談から実現まで
+      1対1の担当者制であなたのクラウドファンディング挑戦を徹底的にサポート！まずは無料相談から。
