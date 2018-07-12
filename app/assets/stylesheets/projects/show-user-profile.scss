@@ -5,7 +5,7 @@
   &__icon{
     width: 80px;
     height: 80px;
-    background-color: burlywood;
+    background: image-url("sample.jpg") #fff no-repeat center center;
     float: left;
   }
   &__name{
@@ -17,6 +17,7 @@
       font-size: 20px;
       display: table-cell;
       vertical-align: middle;
+      font-weight: bold;
     }
   }
 }
