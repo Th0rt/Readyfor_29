@@ -29,8 +29,12 @@
       .project-info
         .user-profile
           .user-profile__icon
+            - if (current_user.avatar).present?
+              = image_tag "#{current_user.avatar}", id: "mypage-avatar"
+            - else
+              = image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg", id: "mypage-avatar"
           .user-profile__name
-            %p エキスパートさん
+            %p= @project.user.nickname
         .project-info__big-text
           %span.span-project.span-project__title-big 支援総額
           %span.span-project.span-project__data-big 1,000,000円
