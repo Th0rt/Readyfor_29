@@ -17,7 +17,7 @@ http://18.191.118.146/
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |profile|text|
-|image|string|
+|avatar|string|
 
 ### Association
 - has_many :projects
