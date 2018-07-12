@@ -1,6 +1,6 @@
-$(function(){
-  $('.header__right-panel').hide();
-  $('img').click(function(){
-    $('.header__right-panel').toggle();
+$(document).on('turbolinks:load', function() {
+  $('.header__right-panelNone').hide();
+  $('#panel').on('click', function(){
+    $('.header__right-panelNone').toggle();
   })
-})
+});
