@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :index, :update] do
     resources :messages, only: [:index, :new]
   end
+  
   resources :projects
 end
