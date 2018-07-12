@@ -65,23 +65,27 @@
         border-radius: 3px;
         padding: 5px 7px;
       }
-      img {
+      img#panel {
         width: 25px;
         border-radius: 50%;
       }
     }
-    .header__right-panel {
-      background-color: #fff;
-      width: 200px;
-      top: 53px;
-      height: 190px;
-      display: flex;
-      flex-flow: column nowrap;
-      border: 1px solid #ccc;
-      padding:10px;
+    .header__right-panelNone{
+      display: none;
       position: absolute;
-      a{
-       padding: 6px;
+      top: 50px;
+
+      .header__right-panel {
+        flex-flow: column nowrap;
+        background-color: #fff;
+        width: 200px;
+        height: 190px;
+        display: flex;
+        border: 1px solid #ccc;
+        padding:10px;
+        a{
+         padding: 6px;
+        }
       }
     }
   }
