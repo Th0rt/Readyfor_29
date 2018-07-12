@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:index, :show]
 
   def index
   end
@@ -54,5 +55,11 @@ class ProjectsController < ApplicationController
       :next_goal,
       :limit_date
     ).merge(testdata)
+  end
+
+  def require_login
+    unless user_signed_in?
+      redirect_to root_path
+    end
   end
 end
