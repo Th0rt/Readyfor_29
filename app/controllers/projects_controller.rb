@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show]
+  before_action :set_project, only: [:show, :destroy]
 
   def index
   end
@@ -17,6 +17,12 @@ class ProjectsController < ApplicationController
       redirect_to root_path
     else
       render action: :new
+    end
+  end
+
+  def destroy
+    if @project.destroy
+      redirect_to root_path
     end
   end
 
