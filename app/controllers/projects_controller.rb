@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
@@ -18,7 +20,28 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @project.update(project_params)
+      redirect_to root_path
+    else
+      render action: :edit
+    end
+  end
+
+  def destroy
+    if @project.destroy
+      redirect_to root_path
+    end
+  end
+
   private
+
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
   def project_params
     testdata = {project_type: "購入型", likes_count: 0, user_id: current_user.id}

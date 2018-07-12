@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   resources :image_upload_tests
 
-  resources :users, only: [:show, :edit, :index] do
+  resources :users, only: [:show, :edit, :index, :update] do
     resources :messages, only: [:index, :new]
   end
-  resources :projects, only: [:index, :show, :new, :create]
+  
+  resources :projects
 end
