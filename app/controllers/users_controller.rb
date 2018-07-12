@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   def index
   end
 
+  def create
+    User.create(user_params)
+    redirect_to edit_user_path(current_user)
+  end
+
   def show
   end
 
@@ -16,7 +21,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:nickname, :email)
+    params.require(:user).permit(:nickname, :email, :avatar)
   end
 
 end
