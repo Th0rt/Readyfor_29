@@ -1,6 +1,6 @@
 .mypage-top
   .mypage-image
-    .portorate
+    = image_tag("#{current_user.avatar}")
   .mypage-profile
     .mypage-name
       = current_user.nickname
