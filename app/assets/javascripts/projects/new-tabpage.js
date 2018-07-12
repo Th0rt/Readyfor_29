@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('turbolinks:load', function () {
   $('ul.tabs li').click(function () {
     var index = $('.tabs li').index(this);
     $('.tab-content').removeClass('hide');
