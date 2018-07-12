@@ -2,25 +2,29 @@
   width: 1000px;
   margin: 10px auto 0;
   &__tab-btm{
+    border-bottom: 1px solid;
+    height: 50px;
+    display: flex;
     .project-tabs {
-      overflow: hidden;
-      li {
-        color: #333;
-        float: left;
-        margin: 0 0 -1px 0;
-        padding: 20px 50px;
-        cursor: pointer;
-        list-style: none;
-        font-size: 16px;
-        border-bottom: 1px solid #AAAAAA;
+      width: 200px;
+      background-color: white;
+      text-align: center;
+      p{
+        line-height: 50px;
+        font-size: 14px;
       }
-      li:hover{
-        text-decoration: underline;
-      }
-      li.select {
-        cursor: auto;
-        border: 1px solid #AAAAAA;
-      }
+    }
+    .project-tabs:hover{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .project-tabs.select{
+      height: 50px;
+      border-top: 1px solid;
+      border-right: 1px solid;
+      border-left: 1px solid;
+      border-bottom: 0;
     }
   }
   &__tab-content{
