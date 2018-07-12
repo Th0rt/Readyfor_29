@@ -1,0 +1,48 @@
+.PcTopCategoryProjectArea__container__2Bjhp
+  .PcTopCategoryProjectArea__category-wrapper__7BS-H
+
+    -# カテゴリータイトル
+    .PcTopCategoryProjectArea__visual__1jwLY.PcTopCategoryProjectArea__product
+      .PcTopCategoryProjectArea__category-name__2WZLV
+        %span
+          ものづくり
+        .top-category-page
+          = link_to 'お気に入りにする', "#", class: "favorite-tag"
+      .PcTopCategoryProjectArea__category-message__1zlX2
+        %span
+          大学の研究も、スタートアップも、企業内起業も、はじまりは小さなアイディア。わくわくしながら参加しませんか。
+    -# タグエリア
+    %aside.Project-outline__tags
+      = render partial: 'layouts/tags',
+               locals:  { adding_class: 'project-outline__tags-tags' }
+      .u-clr_both
+
+  -# プロジェクトバナーエリア
+  .PcTopCategoryProjectArea__static-banner__2BBlL
+    = link_to "#" do
+      = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                    width:  '310px'
+    = link_to "#" do
+      = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                    width:  '310px'
+    = link_to "#" do
+      = image_tag 'http://placehold.jp/310x60.png', height: '60px',
+                                                    width:  '310px'
+
+  -# プロジェクトリストエリア
+  .PcTopCategoryProjectArea__project-lists
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "注目のプロジェクト",
+                       max_display_projects: 4 }
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "新着のプロジェクト",
+                       max_display_projects: 4 }
+    = render partial: 'toppage/partial/PcTopProjectList',
+             locals: { title: "支援総額が多いプロジェクト",
+                       max_display_projects: 4 }
+
+  -# 活動報告エリア
+  .PcTopCategoryProjectArea__announcements__1cB4R
+    = render partial: 'toppage/partial/announcement-card'
+    = render partial: 'toppage/partial/announcement-card'
+    = render partial: 'toppage/partial/announcement-card'

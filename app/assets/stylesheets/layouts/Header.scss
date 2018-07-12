@@ -1,0 +1,28 @@
+.Header {
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.Header::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.Heading {
+  color: #6D6D6D;
+  font-size: 19px;
+  float: left;
+  line-height: 1.9;
+}
+
+.Heading.is-s h2 {
+  font-size: 16px;
+  line-height: inherit;
+}
+
+.Header .Header-more {
+  padding: 8px 0;
+  font-size: 16px;
+  color: #DF051C;
+}
