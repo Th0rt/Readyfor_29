@@ -92,18 +92,21 @@
       .user-edit-contents
         .user-edit-main
           %p.title プロフィール
-          %p.information ※※プロフィールページに表示されます
+          %p.information ※プロフィールページに表示されます
           #content-edit-button 編集
         .user-edit-sub#user-content-explain
           %p.explain
-          %p.content 未設定
+          - if current_user.profile.present?
+            %p.content 設定済み
+          - else
+            %p.content 未設定
         .hidden#user-edit-content
           = form_for(current_user) do |f|
             .field
               %p プロフィールを入力:
               %br
               .field-input
-                %input.content-form{ type: "textarea" , placeholder:"プロフィールの内容を入力してください" }
+                = f.text_field :profile, class: "content-form", placeholder: "プロフィールの内容を入力してください"
               .actions
                 %input.btn{ value: "更新する", type: "submit" }
       .user-edit-contents
@@ -113,7 +116,10 @@
           #image-edit-button 編集
         .user-edit-sub#user-image-explain
           %p.explain
-          %p.content 設定済み
+          - if current_user.avatar.present?
+            %p.content 設定済み
+          - else
+            %p.content 未設定
         .hidden#user-edit-image
           = form_for(current_user) do |f|
             .field
@@ -132,7 +138,7 @@
           #website-edit-button 編集
         .user-edit-sub#user-website-explain
           %p.explain
-          %p.content 設定済み
+          %p.content ###
         .hidden#user-edit-website
           = form_for(current_user) do |f|
             .field
@@ -163,7 +169,7 @@
           #return-edit-button 編集
         .user-edit-sub#user-return-explain
           %p.explain
-          %p.content 設定済み
+          %p.content ###
         .hidden#user-edit-return
           = form_for(current_user) do |f|
             .field
@@ -178,7 +184,7 @@
           #alertmail-edit-button 編集
         .user-edit-sub#user-alertmail-explain
           %p.explain
-          %p.content 設定済み
+          %p.content ###
         .hidden#user-edit-alertmail
           = form_for(current_user) do |f|
             .field
