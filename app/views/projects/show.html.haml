@@ -22,6 +22,10 @@
         カテゴリー2
     .overview
       .overview__image
+        - if (current_user.avatar).present?
+          = image_tag "#{current_user.avatar}", id: "project-image"
+        - else
+          = image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg", id: "project-image"
       .project-info
         .user-profile
           .user-profile__icon
