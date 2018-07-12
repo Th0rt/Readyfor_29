@@ -1,14 +1,4 @@
 $(document).on('turbolinks:load', function(){
-  // マイページの左側のタグの色の切り替え
-  $(function(){
-    $('.filter-item').click(function(){
-      $(this).addClass('selected')
-    })
-    $('.mypage-edit').click(function(){
-      $('.filter-list').children().removeClass('selected');
-    })
-  })
-
   // メッセージ作成の送信先の表示切り替え
   $(function(){
     $('#send-contributor').click(function(){

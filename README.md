@@ -17,7 +17,7 @@ http://18.191.118.146/
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |profile|text|
-|image|string|
+|avatar|string|
 
 ### Association
 - has_many :projects
@@ -122,7 +122,7 @@ http://18.191.118.146/
 |limit_date|datetime|null: false, index: true|
 |goal|int|null:false, index :true|
 |next_goal|int|
-|type|string|null: false|
+|project_type|string|null: false|
 |likes_count|int|null: false|
 
 
