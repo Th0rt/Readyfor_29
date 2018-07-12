@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'toppage/art',        to: 'toppage#art'
   get 'toppage/challenge',  to: 'toppage#challenge'
 
-  resources :users, only: [:show, :edit, :index] do
   resources :users, only: [:show, :edit, :index, :update] do
 
     resources :messages, only: [:index, :new]
