@@ -53,7 +53,7 @@
         .project-info__text
           %span.span-project.span-project__title 残り日数
           %span.span-project.span-project__data
-            = @project.days_life
+            = @project.limit_date_to_month_day
         .project-info__progress
           .progress
             .progress-bar.progress-bar-danger.progress-level-of-achievement
@@ -73,13 +73,12 @@
       %p このプロジェクトはAll or nothing形式です。7月31日（火）午後11:00までに、2,450,000円以上集まった場合に成立となります。
   .bottom-content
     .bottom-content__tab-btm
-      %ul.project-tabs
-        %li.select
-          プロジェクト概要
-        %li
-          新着情報
-        %li
-          応援コメント
+      .project-tabs.select
+        %p プロジェクト概要
+      .project-tabs
+        %p 新着情報
+      .project-tabs
+        %p 応援コメント
     .bottom-content__tab-content
       .tab-content
         %p プロジェクト概要
