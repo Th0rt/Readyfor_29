@@ -37,6 +37,9 @@
       margin-top: 5px;
       line-height: 35px;
       color: gray;
+      a {
+        display: block;
+      }
     }
     .selected a{
       color: white;
