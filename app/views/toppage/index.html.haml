@@ -14,6 +14,10 @@
   project_new
 = link_to edit_project_path(1), class: "btn btn-default" do
   project_edit
+
+- @recent_watched_projects.each do |p|
+  = p.title
+
 -# ====================================================================
 
 - partial_root = 'toppage/partial/'
