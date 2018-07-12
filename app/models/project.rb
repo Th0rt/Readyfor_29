@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  mount_uploader :image, ProjectImageUploader
 
   # 募集中かどうかを判定
   def active?
