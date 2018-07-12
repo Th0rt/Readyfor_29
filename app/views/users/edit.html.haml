@@ -120,9 +120,9 @@
               %p 画像を挿入:
               %br
               .field-input.picture-image
-                = f.label :image do
+                = f.label :avatar do
                   %i.fa.fa-picture-o クリックして画像を投稿
-                  = f.file_field :image, class: "hidden"
+                  = f.file_field :avatar, class: "hidden"
               .actions
                 %input.btn{ value: "画像を更新する", type: "submit" }
       .user-edit-contents
