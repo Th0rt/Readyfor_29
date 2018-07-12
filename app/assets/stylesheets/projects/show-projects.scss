@@ -1,4 +1,8 @@
+.clear{
+  clear: both;
+}
 .show-projects{
+  margin-top: 100px;
   .project-lists{
     clear: both;
     &__list{
@@ -10,7 +14,7 @@
     }
     p{
       font-size: 20px;
-      margin-left: 20px;
+      margin: 40px 0 0 20px;
     }
   }
 }

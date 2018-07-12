@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
     resources :messages, only: [:index, :new]
   end
-  resources :projects, only: [:index, :show, :new, :create]
+  
+  resources :projects
 end

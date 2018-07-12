@@ -1,10 +1,10 @@
 $(document).on('turbolinks:load', function () {
-  $('ul.tabs li').click(function () {
-    var index = $('.tabs li').index(this);
+  $('.project-tabs').click(function () {
+    var index = $('.project-tabs').index(this);
     $('.tab-content').removeClass('hide');
     $('.tab-content').css('display', 'none');
     $('.tab-content').eq(index).fadeIn();
-    $('.tabs li').removeClass('select');
+    $('.project-tabs').removeClass('select');
     $(this).addClass('select')
   });
 });
