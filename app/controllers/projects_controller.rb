@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    save_project_id_to_cookie
   end
 
   def new
@@ -54,5 +55,16 @@ class ProjectsController < ApplicationController
       :next_goal,
       :limit_date
     ).merge(testdata)
+  end
+
+  def save_project_id_to_cookie
+    if cookies[:recent_watched_projects]
+      # TODO:変数名valがイケてないのであとで直す
+      val = JSON.parse(cookies[:recent_watched_projects])
+      val << @project.id
+      cookies[:recent_watched_projects] = val.uniq.to_json
+    else
+      cookies[:recent_watched_projects] = [@project.id].to_json
+    end
   end
 end
