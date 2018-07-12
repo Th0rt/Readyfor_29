@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates :nickname, presence: true, length: { maximum: 10 }
 
-  has_many :projects
+  has_many :projects, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 end
