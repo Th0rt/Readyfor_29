@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    testdata = {project_type: "購入型", likes_count: 0}
+    testdata = {project_type: "購入型", likes_count: 0, user_id: current_user.id}
 
     params.require(:project).permit(
       :title,
