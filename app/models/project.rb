@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  belongs_to :user
 
   # 募集中かどうかを判定
   def active?
