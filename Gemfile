@@ -94,3 +94,5 @@ gem 'devise'
 
 # jquery
 gem 'jquery-rails'
+# Use slick-slider
+gem "jquery-slick-rails"
