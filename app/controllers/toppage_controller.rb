@@ -1,6 +1,9 @@
 class ToppageController < ApplicationController
   def index
-    @recent_watched_projects = Project.where(id: JSON.parse(cookies[:recent_watched_projects]))
+    @projects = Project.all
+    view_history = cookie_find_or_create("project_view_history")
+    @recent_viewed_projects = Project.where(id: view_history)
+                                     .order(['field(id, ?)', view_history])
   end
 
   def socialgood
