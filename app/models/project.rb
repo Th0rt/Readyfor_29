@@ -19,6 +19,6 @@ class Project < ApplicationRecord
   end
 
   def left_date
-    Time.at(self.limit_date - Time.current).strftime("%-d日")
+    Time.zone.at(self.limit_date - Time.current).strftime("%-d日")
   end
 end
