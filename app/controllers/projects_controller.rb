@@ -54,7 +54,7 @@ class ProjectsController < ApplicationController
       :goal,
       :next_goal,
       :limit_date,
-      :image
+      :project_image
     ).merge(testdata)
   end
 
