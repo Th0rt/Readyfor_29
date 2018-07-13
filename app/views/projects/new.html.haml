@@ -1,0 +1,52 @@
+.new-project
+  = form_for @project do |f|
+    .col-sm-3
+      .tab-lists
+        %h1 ページの編集
+        %ul.tabs
+          %li.select
+            基本情報
+          %li
+            概要
+          %li
+            リターン
+      .project-save
+        = f.submit "登録"
+    .col-sm-9
+      .tab-content
+        %h1 基本情報
+        .tab-content__form-group
+          %label タイトル
+          .project-title
+            = f.text_field :title, required: true, autofocus: true,
+              placeholder: "タイトルを入力してください。"
+          %hr
+          %label 画像
+          #project-image
+            = file_field :image, required: true
+            = hidden_field :image, value: "main"
+          %hr
+          %label 募集期間
+          .project-period
+            = f.date_select :limit_date, default: Time.current,
+            use_month_numbers: true
+          %hr
+          %label 目標金額(第一)
+          .project-target-amount
+            = f.number_field :goal, required: true
+            %span 円
+          %hr
+          %label 目標金額(第二)
+          .project-target-amount-next
+            = f.number_field :next_goal
+            %span 円
+      .tab-content.hide
+        .tab-content__form-group
+          %hr
+          %label プロジェクト概要(仮エディター)
+          .project-overview
+            = f.text_area :content, required: true
+      .tab-content.hide
+        .tab-content__form-group
+          %h1 あとで実装
+  .blank-content

@@ -1,0 +1,16 @@
+.project-type-badge {
+  width: 50px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-top: auto;
+}
+
+.project-type-badge.normal {
+  color: #969696;
+  background-color: white;
+  border: 1px solid #969696;
+}

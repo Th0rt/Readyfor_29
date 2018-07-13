@@ -1,0 +1,71 @@
+.project-info{
+  width: 448px;
+  margin-top: 10px;
+  float: left;
+  &__big-text{
+    width: 400px;
+    height: 50px;
+    margin: 10px auto 0px;
+    clear: both;
+  }
+  &__text{
+    width: 400px;
+    height: 30px;
+    margin: 5px auto 0px;
+  }
+  &__progress{
+    width: 400px;
+    margin: 30px auto 0px;
+    .progress{
+      border-radius: 10px;
+    }
+    .progress-level-of-achievement{
+      width: 80%;
+      p{
+        text-align: left;
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+  .btn-link{
+    text-decoration: none;
+    &__button{
+      width: 400px;
+      height: 60px;
+      margin: 26px auto 10px;
+      display: table;
+      p{
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 20px;
+      }
+    }
+  }
+  .span-project{
+    &__title-big{
+      line-height: 50px;
+      margin-left: 20px;
+      font-size: 20px;
+      float: left;
+    }
+    &__data-big{
+      line-height: 50px;
+      margin-right: 20px;
+      font-size: 32px;
+      float: right;
+    }
+    &__title{
+      line-height: 30px;
+      margin-left: 20px;
+      font-size: 16px;
+      float: left;
+    }
+    &__data{
+      line-height: 30px;
+      margin-right: 20px;
+      font-size: 16px;
+      float: right;
+    }
+  }
+}

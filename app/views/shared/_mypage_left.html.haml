@@ -1,0 +1,13 @@
+.mypage-top
+  .mypage-image
+    - if (current_user.avatar).present?
+      = image_tag "#{current_user.avatar}"
+    - else
+      = image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg", id: "mypage-avatar"
+  .mypage-profile
+    .mypage-name
+      = current_user.nickname
+    .mypage-edit
+      = link_to "プロフィール編集", edit_user_path(id: current_user.id)
+    .mypage-edit
+      = link_to "トップページへ", root_path(id: 1)
