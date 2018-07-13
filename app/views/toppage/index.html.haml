@@ -15,9 +15,6 @@
 = link_to edit_project_path(1), class: "btn btn-default" do
   project_edit
 
-- @recent_watched_projects.each do |p|
-  = p.title
-
 -# ====================================================================
 
 - partial_root = 'toppage/partial/'
@@ -52,7 +49,8 @@
             %section.Grid__col3.notable
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "最近見たプロジェクト",
-                                  project: @recent_watched_projects.last,
+                                  projects: @recent_viewed_projects,
+                                  max_display_projects: 1,
                                   is_dummy: false }
 
             -# あとひと押し
@@ -73,24 +71,28 @@
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals:  { title: "注目のプロジェクト",
+                                projects: @projects,
                                 max_display_projects: 4 }
 
           -# あとひと押し
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "あとひと押し",
+                               projects: @projects,
                                max_display_projects: 4 }
 
           -# 支援総額が多いプロジェクト
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "支援総額が多いプロジェクト",
+                               projects: @projects,
                                max_display_projects: 4 }
 
           -# 現在募集中のプロジェクト
           .Grid.public
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "支援総額が多いプロジェクト",
+                               projects: @projects,
                                max_display_projects: 12 }
 
     / バナーエリア
