@@ -4,4 +4,7 @@
       %span
         #{ title }
     = link_to("もっと見る", "#", class: "PcTopProjectList__more__1IH_J")
-  = render partial: "layouts/Entry-type2"
+  - if is_dummy
+    = render partial: "layouts/dummy/Entry-type2-dummy"
+  - else
+    = render partial: "layouts/Entry-type2", locals: { project: project }
