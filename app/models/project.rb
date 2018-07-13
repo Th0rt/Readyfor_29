@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
-  mount_uploader :project_image, ProjectImageUploader
+  mount_uploader :projectimage, ProjectimageUploader
 
   # 募集中かどうかを判定
   def active?
