@@ -91,5 +91,6 @@ gem 'fog-aws'
 
 # user-manegement
 gem 'devise'
-# jqueryを使うため
+
+# jquery
 gem 'jquery-rails'
