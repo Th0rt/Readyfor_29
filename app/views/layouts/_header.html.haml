@@ -1,0 +1,28 @@
+.header__left
+  .header__left-logo
+    = link_to root_path  do
+      = image_tag( "https://files.value-press.com/czMjYXJ0aWNsZSMxOTE1NCMxODQ2MzUjMTkxNTRfdExTenJSR29iVi5qcGc.jpg")
+
+  .header__left-searchText
+    .header__left-searchIcon
+      %i.fa.fa-search
+    %input{ size: :"25", type: :"text", placeholder: :"プロジェクトを探す" }
+
+.header__right
+  .header__right-item
+    = link_to 'クラウドファンディングとは'
+    = link_to 'はじめる'
+    = link_to 'さがす'
+
+    - if user_signed_in?
+      = image_tag "https://readyfor.jp/s3/readyfor-img/user_images/427103/medium/4318afb5382fc152e33dacc5e78583c291ca65e3.?1529888932" ,id: :'panel'
+    - else
+      = link_to 'ログイン・登録', '#', class: :'login-button'
+  - if user_signed_in?
+    .header__right-panelNone
+      .header__right-panel
+        = link_to 'メッセージ', '#'
+        = link_to '購入履歴', '#'
+        = link_to 'プロフィール編集', '#'
+        = link_to 'お気に入りリスト', '#'
+        = link_to 'ログアウト', '#'
