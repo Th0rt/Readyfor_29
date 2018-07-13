@@ -74,6 +74,7 @@
       display: none;
       position: absolute;
       top: 50px;
+      z-index: 1;
 
       .header__right-panel {
         flex-flow: column nowrap;
