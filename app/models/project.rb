@@ -16,4 +16,8 @@ class Project < ApplicationRecord
       @limit_date.to_s(:month_day)
     end
   end
+
+  def left_date
+    Time.at(self.limit_date - Time.current).strftime("%-d日")
+  end
 end
