@@ -48,5 +48,33 @@
             = f.text_area :content, required: true
       .tab-content.hide
         .tab-content__form-group
-          %h1 あとで実装
+          %h1 リターン
+          .return-create
+            %h2 リターン#1
+            .return-create__title.box-size
+              .content タイトル
+              .content-form
+                %input{ type: "text" }
+            .return-create__price.box-size
+              .content 価格
+              .content-form
+                %input{ type: "text"}
+            .return-create__content.clearfix
+              .content 説明
+              .content-form
+                %textarea
+            .return-create__stock.box-size
+              .content 在庫数
+              .content-form
+                %input{ type: "text" }
+            .return-create__arrival.box-size
+              .content 発送予定日
+              .content-form
+                %input{ type: "date" }
+            .return-create__image-show.clearfix
+              .content 画像
+              .content-form
+                %input{ type: "file", id: "create-return-image" }
+                #return-image-show
+                  %img{ src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvOUSpHlYa1jpsFW2BZB9_T5X68Q-YwCA4GtihyEUOW7AiAqru" ,alt: "画像がありません" ,id: "return-image-default"}
   .blank-content
