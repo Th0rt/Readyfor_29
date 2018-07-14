@@ -3,8 +3,9 @@
   border:1px solid #BBBBBB;
   &__image{
     width: 550px;
-    height: 400px;
-    background: image-url("sample.jpg") #fff no-repeat center center;
     float: left;
+    #project-image{
+      width: 100%;
+    }
   }
 }
