@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function(){
   function changecolor(id){
     $(id).hover(function(){
-      $(this).css('color', '#FFA500' )
+      $(this).css('color', '#FFA500')
     },function(){
-      $(this).css('color' , '' )
+      $(this).css('color' , '')
     });
   }
   changecolor('#search-project')
