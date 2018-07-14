@@ -22,8 +22,8 @@
         カテゴリー2
     .overview
       .overview__image
-        - if (@project.image).present?
-          = image_tag "#{@project.image}", id: "project-image"
+        - if (@project.projectimage).present?
+          = image_tag "#{@project.projectimage}", id: "project-image"
         - else
           = image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg", id: "project-image"
       .project-info
