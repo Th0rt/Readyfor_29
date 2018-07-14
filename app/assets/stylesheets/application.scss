@@ -52,6 +52,7 @@
 @import 'users/mypage';
 @import 'users/edit';
 @import 'users/sign_in';
+@import 'users/profile';
 
 // projects
 @import './projects/show';
@@ -66,3 +67,4 @@
 @import './projects/new-tabs';
 @import './projects/new-tab-content';
 @import './projects/search';
+@import './projects/create-return';
