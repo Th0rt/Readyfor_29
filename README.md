@@ -124,6 +124,7 @@ http://18.191.118.146/
 |next_goal|int|
 |project_type|string|null: false|
 |likes_count|int|null: false|
+|total_support|int|null: false|
 
 
 ### Association
