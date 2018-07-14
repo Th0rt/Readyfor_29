@@ -1,8 +1,10 @@
 .search-project-body{
   padding-top: 20px;
   background-color: whitesmoke;
+
   .container {
-    width: 1000px;
+    margin-left: 100px;
+    width: 1400px;
     height: 1900px;
     .sidebar {
       width:228px;
@@ -63,10 +65,16 @@
       }
     }
     .page-main {
-      width: 720px;
+      width: 1000px;
       height: 1900px;
-      background-color: white;
-      float: right;
+      float: left;
+      margin-left: 10px;
+      .page-pankuzu {
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 20px;
+      }
     }
   }
 }
