@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   get 'toppage/challenge',  to: 'toppage#challenge'
 
   resources :users, only: [:show, :edit, :index, :update] do
-
+    member do
+      get 'profile'
+    end
     resources :messages, only: [:index, :new]
   end
-  
+
   resources :projects
 end
