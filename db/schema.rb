@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_13_111521) do
+ActiveRecord::Schema.define(version: 2018_07_14_070139) do
 
   create_table "image_upload_tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_111521) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "projectimage", default: "", null: false
+    t.integer "total_support", default: 0, null: false
     t.index ["goal"], name: "index_projects_on_goal"
     t.index ["limit_date"], name: "index_projects_on_limit_date"
     t.index ["title"], name: "index_projects_on_title"
