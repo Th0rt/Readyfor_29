@@ -23,8 +23,8 @@
           %hr
           %label 画像
           #project-image
-            = file_field :image, required: true
-            = hidden_field :image, value: "main"
+            = f.file_field :projectimage, required: true
+            %img{ id: 'project-img-show' }
           %hr
           %label 募集期間
           .project-period

@@ -124,8 +124,9 @@ http://18.191.118.146/
 |next_goal|int|
 |project_type|string|null: false|
 |likes_count|int|null: false|
+|projectimage|string|null: false|
 |total_support|int|null: false|
-
+|user_id|reference|foreign_key: true|
 
 ### Association
 - has_many :likes
