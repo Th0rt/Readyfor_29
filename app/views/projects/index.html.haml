@@ -95,4 +95,19 @@
           %li.nav-menu-item
             = link_to "海外", href: "#"
             %i.fa.fa-angle-right
-    .page-main コンテンツを書く
+    .page-main
+      .page-pankuzu
+        =link_to root_path do
+          %small クラウドファンディングトップ
+        %span
+          %small >
+        %span
+          %small あとひと押し
+      %section.Grid.amount
+        = render partial: 'toppage/partial/PcTopProjectList',
+                  locals: { title: "あとひと押し",
+                             projects: @projects,
+                             max_display_projects: 8 }
+
+
+

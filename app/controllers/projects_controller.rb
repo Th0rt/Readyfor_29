@@ -3,9 +3,14 @@ class ProjectsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
+    @projects = Project.all
   end
 
   def show
+    view_history = cookie_find_or_create("project_view_history")
+    view_history.delete_if { |id| id = @project.id }
+    view_history << @project.id
+    cookie_save("project_view_history", view_history)
   end
 
   def new
@@ -53,7 +58,8 @@ class ProjectsController < ApplicationController
       :limit_date,
       :goal,
       :next_goal,
-      :limit_date
+      :limit_date,
+      :projectimage
     ).merge(testdata)
   end
 

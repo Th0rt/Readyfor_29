@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
+  mount_uploader :projectimage, ProjectimageUploader
 
   # 募集中かどうかを判定
   def active?
@@ -16,5 +17,9 @@ class Project < ApplicationRecord
     else
       @limit_date.to_s(:month_day)
     end
+  end
+
+  def left_date
+    Time.zone.at(self.limit_date - Time.current).strftime("%-d日")
   end
 end
