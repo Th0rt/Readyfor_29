@@ -75,8 +75,9 @@
             %section.Grid__col3.new_arrival
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "新着のプロジェクト",
-                                  projects: @projects,
-                                  is_dummy: true }
+                                  projects: @new_project,
+                                  max_display_projects: 1,
+                                  is_dummy: false }
 
           -# 注目のプロジェクト
           %section.Grid.amount
