@@ -6,6 +6,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    view_history = cookie_find_or_create("project_view_history")
+    view_history.delete_if { |id| id = @project.id }
+    view_history << @project.id
+    cookie_save("project_view_history", view_history)
   end
 
   def new
