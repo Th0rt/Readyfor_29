@@ -19,7 +19,6 @@
         #panel= image_tag "#{current_user.avatar}"
       - else
         #panel= image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg"
-
     - else
       = link_to 'ログイン・登録', new_user_session_path, class: :'login-button'
   - if user_signed_in?
