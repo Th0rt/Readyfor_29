@@ -7,7 +7,7 @@
   - if is_dummy
     = render partial: "layouts/dummy/Entry-type2-dummy"
   - else
-    - if projects.present?
+    - if projects.length >= 1
       - projects.first(max_display_projects).each do |project|
         = render partial: "layouts/Entry-type2", locals: { project: project }
     - else
