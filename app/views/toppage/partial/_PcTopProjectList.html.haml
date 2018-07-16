@@ -4,5 +4,4 @@
       %span
         #{ title }
     = link_to("もっと見る", "#", class: "PcTopProjectList__more__1IH_J")
-  - max_display_projects.times do
-    = render partial: "layouts/Entry-type1"
+  = render partial: 'layouts/Entry-type1', collection: projects, as: 'project'
