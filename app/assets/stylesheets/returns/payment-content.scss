@@ -3,4 +3,44 @@
   width: 800px;
   height: 500px;
   margin: 30px auto 0;
+  padding: 60px;
+  h1{
+    font-size: 18px;
+  }
+  h2{
+    font-size: 14px;
+    margin: 20px 0 30px;
+  }
+  .credit-card{
+    clear: both;
+    overflow: hidden;
+    &__left{
+      width: 24%;
+      height: 125px;
+      border: 1px #EEEEEE solid;
+      float: left;
+    }
+    &__right{
+      width: 76%;
+      height: 125px;
+      border: 1px #EEEEEE solid;
+      float: left;
+    }
+  }
+  .bank-transfer{
+    clear: both;
+    overflow: hidden;
+    &__left{
+      width: 24%;
+      height: 125px;
+      border: 1px #EEEEEE solid;
+      float: left;
+    }
+    &__right{
+      width: 76%;
+      height: 125px;
+      border: 1px #EEEEEE solid;
+      float: left;
+    }
+  }
 }
