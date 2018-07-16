@@ -69,6 +69,11 @@
         width: 25px;
         border-radius: 50%;
       }
+      img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+      }
     }
     .header__right-panelNone{
       display: none;
@@ -86,6 +91,7 @@
         padding:10px;
         a{
          padding: 6px;
+         color: black;
         }
       }
     }
