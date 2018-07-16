@@ -6,11 +6,17 @@ class ReturnsController < ApplicationController
 
   def create
     Return.create(return_params)
-    redirect_to root_path
+    redirect_to project_path(id: params[:project_id])
   end
 
   private
   def return_params
-    params.require(:return).permit(:title, :price, :stock, :content, :arrival_date, :returnimage).merge(project_id: params[:project_id])
+    params.require(:return).permit(:title,
+                                   :price,
+                                   :stock,
+                                   :content,
+                                   :arrival_date,
+                                   :returnimage
+                                  ).merge(project_id: params[:project_id])
   end
 end
