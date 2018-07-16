@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
+  has_many :returns
   mount_uploader :projectimage, ProjectimageUploader
 
   # 募集中かどうかを判定
