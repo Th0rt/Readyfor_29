@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :user
   mount_uploader :projectimage, ProjectimageUploader
+  enum project_type: { purchase: false, contribution: true }
 
   # 募集中かどうかを判定
   def active?
