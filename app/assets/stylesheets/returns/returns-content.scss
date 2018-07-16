@@ -3,9 +3,11 @@
   width: 800px;
   height: 500px;
   margin: 30px auto 0;
+
   .return-lists{
     height: 100px;
   }
+
   .ticket-selected{
     height: 65px;
     background-color: #F2F2F2;
@@ -30,7 +32,35 @@
     background-color: #FFFFFF;
     cursor: pointer;
   }
-  .return-total{
 
+  .return-total{
+    margin: 10px 60px;
+    background-color: #F2F2F2;
+    padding: 30px;
+    p{
+      font-size: 20px;
+      span{
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+    hr{
+      border-top: dashed 1px #AAAAAA;
+    }
+    table{
+      tr{
+        th{
+          border: 1px #BBBBBB solid;
+          padding: 5px 20px;
+          background-color: #D4D2D2;
+          font-size: 22px;
+        }
+        td{
+          border: 1px #BBBBBB solid;
+          padding: 5px 200px 5px 50px;
+          font-size: 26px;
+        }
+      }
+    }
   }
 }
