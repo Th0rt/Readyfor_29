@@ -1,0 +1,31 @@
+.header__left
+  .header__left-logo
+    = link_to root_path  do
+      = image_tag( "https://files.value-press.com/czMjYXJ0aWNsZSMxOTE1NCMxODQ2MzUjMTkxNTRfdExTenJSR29iVi5qcGc.jpg")
+
+  .header__left-searchText
+    .header__left-searchIcon
+      %i.fa.fa-search
+    %input{ size: :"25", type: :"text", placeholder: :"プロジェクトを探す" }
+
+.header__right
+  .header__right-item
+    = link_to 'クラウドファンディングとは'
+    = link_to 'はじめる'
+    = link_to 'さがす'
+    - if user_signed_in?
+      #panel
+        - if (current_user.avatar).present?
+          = image_tag "#{current_user.avatar}"
+        - else
+          = image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg"
+    - else
+      = link_to 'ログイン・登録', new_user_session_path, class: :'login-button'
+  - if user_signed_in?
+    .header__right-panelNone
+      .header__right-panel
+        = link_to 'メッセージ', user_messages_path(current_user.id)
+        = link_to '購入履歴', user_path(id: current_user.id)
+        = link_to 'プロフィール編集', edit_user_path(current_user.id)
+        = link_to 'お気に入りリスト', '#'
+        = link_to 'ログアウト', destroy_user_session_path ,method: :delete
