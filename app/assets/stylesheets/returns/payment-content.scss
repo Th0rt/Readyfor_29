@@ -6,10 +6,13 @@
   padding: 60px;
   h1{
     font-size: 18px;
+    border-left: solid 3px #B4292C;
   }
   h2{
     font-size: 14px;
     margin: 20px 0 30px;
+    color: #666666;
+    font-weight: bold;
   }
   .credit-card{
     clear: both;
@@ -24,7 +27,11 @@
       width: 76%;
       height: 125px;
       border: 1px #EEEEEE solid;
+      padding: 20px;
       float: left;
+      img{
+        margin-top: 20px;
+      }
     }
   }
   .bank-transfer{
@@ -40,6 +47,7 @@
       width: 76%;
       height: 125px;
       border: 1px #EEEEEE solid;
+      padding: 20px;
       float: left;
     }
   }
