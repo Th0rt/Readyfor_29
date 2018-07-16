@@ -22,4 +22,9 @@ class Project < ApplicationRecord
   def left_date
     Time.zone.at(self.limit_date - Time.current).strftime("%-d日")
   end
+
+  def achievement_rate
+    return 0 if self.total_support == 0
+    ((self.total_support.to_f / self.goal.to_f) * 100).floor
+  end
 end

@@ -83,29 +83,29 @@
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals:  { title: "注目のプロジェクト",
-                                projects: @projects,
-                                max_display_projects: 4 }
+                                link_path: '#',
+                                projects: @projects }
 
           -# あとひと押し
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "あとひと押し",
-                               projects: @projects,
-                               max_display_projects: 4 }
+                               link_path: '#',
+                               projects: @projects }
 
           -# 支援総額が多いプロジェクト
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "支援総額が多いプロジェクト",
-                               projects: @projects,
-                               max_display_projects: 4 }
+                               link_path: '#',
+                               projects: @projects }
 
           -# 現在募集中のプロジェクト
           .Grid.public
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "支援総額が多いプロジェクト",
-                               projects: @projects,
-                               max_display_projects: 12 }
+                               link_path: '#',
+                               projects: @projects }
 
     / バナーエリア
     .PcTopContainer__bottom-banners__2hh5U
