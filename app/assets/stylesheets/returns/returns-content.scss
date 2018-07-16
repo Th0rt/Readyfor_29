@@ -1,20 +1,34 @@
 .returns-content{
+  background-color: white;
+  width: 800px;
+  height: 500px;
+  margin: 30px auto 0;
   .return-lists{
-    background-color: white;
-    width: 800px;
-    height: 500px;
-    margin: 30px auto 0;
   }
   .ticket-selected{
-    background-color: white;
-    width: 800px;
-    height: 500px;
-    margin: 30px auto 0;
+    h1{
+
+    }
+    #ticketMenuBtn:before{
+      z-index: 2;
+      top: 23px;
+      right: 43px;
+      width: 10px;
+      height: 10px;
+      border-right: 4px solid #fff;
+      border-bottom: 4px solid #fff;
+      transform: rotate(45deg);
+    }
+    #ticketMenuBtn:after{
+      top: 12px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      background: #c30d23;
+      border-radius: 100%;
+    }
   }
   .return-total{
-    background-color: white;
-    width: 800px;
-    height: 500px;
-    margin: 30px auto 0;
+
   }
 }
