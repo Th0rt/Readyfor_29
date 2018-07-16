@@ -1,0 +1,105 @@
+.return-new-container{
+  .return-create {
+  width: 600px;
+  height: 650px;
+  background-color: #d3d3d3;
+  border-radius: 10px;
+  margin: 0 auto;
+    h2 {
+      margin:0px 0 10px 10px;
+      padding-top:10px;
+      font-size: 14px;
+    }
+    .box-size{
+      width: 550px;
+      height: 40px;
+      background-color: blue;
+      margin:0 auto;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+    }
+    input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding-left: 5px;
+    }
+    .content {
+        width: 20%;
+        height: 100%;
+        background-color: whitesmoke;
+        border-right: 1px solid black;
+        float: left;
+        padding-left: 10px;
+      }
+    .content-form{
+      width: 80%;
+      height: 100%;
+      background-color: white;
+      float: right;
+    }
+    &__title {
+      border-top: 1px solid black;
+    }
+    &__content {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      .content, .content-form{
+        height: 100px;
+      }
+      width: 550px;
+      margin: 0 auto;
+      textarea {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding-left: 5px;
+      }
+    }
+    &__image-show {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      .content{
+        height: 280px;
+      }
+      .content-form {
+        #return-image-show {
+        font-size: 8px;
+        width: 100%;
+        height: 260px;
+        }
+        img {
+          max-width: 250px;
+          max-height: 250px;
+          padding:20px 0 0 20px;
+        }
+        p {
+          font-size: 10px;
+        }
+      }
+      width: 550px;
+      margin: 0 auto;
+    }
+    &__submit {
+      margin: 0 auto;
+      input {
+        width: 150px;
+        background-color: red;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        color: white;
+        border-radius:5%;
+      }
+    }
+    .clearfix:after {
+      clear: both;
+      content: "";
+      display: block
+    }
+  }
+}
