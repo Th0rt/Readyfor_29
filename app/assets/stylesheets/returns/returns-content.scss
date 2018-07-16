@@ -4,28 +4,23 @@
   height: 500px;
   margin: 30px auto 0;
   .return-lists{
+    height: 100px;
   }
   .ticket-selected{
+    height: 65px;
+    background-color: #F2F2F2;
+    margin: 0 60px;
+    overflow:hidden;
     h1{
-
+      font-size: 20px;
+      margin-left: 20px;
+      line-height: 65px;
+      float: left;
     }
-    #ticketMenuBtn:before{
-      z-index: 2;
-      top: 23px;
-      right: 43px;
-      width: 10px;
-      height: 10px;
-      border-right: 4px solid #fff;
-      border-bottom: 4px solid #fff;
-      transform: rotate(45deg);
-    }
-    #ticketMenuBtn:after{
-      top: 12px;
-      right: 30px;
+    #selected-btn{
       width: 40px;
       height: 40px;
-      background: #c30d23;
-      border-radius: 100%;
+      float: right;
     }
   }
   .return-total{
