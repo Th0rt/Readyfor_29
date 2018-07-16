@@ -28,7 +28,7 @@
         .return-create__image-show.clearfix
           .content 画像
           .content-form
-            = f.file_field :returnimage, id: "create-return-image"
+            = f.file_field :returnimage, id: "create-return-image", required: true
             #return-image-show
               %img{ src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvOUSpHlYa1jpsFW2BZB9_T5X68Q-YwCA4GtihyEUOW7AiAqru" ,alt: "画像がありません" ,id: "return-image-default" }
         .return-create__submit
