@@ -1,5 +1,17 @@
 .returns-content{
-  .return-lists, .return-total{
+  .return-lists{
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    margin: 30px auto 0;
+  }
+  .ticket-selected{
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    margin: 30px auto 0;
+  }
+  .return-total{
     background-color: white;
     width: 800px;
     height: 500px;
