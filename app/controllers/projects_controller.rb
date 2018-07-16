@@ -50,7 +50,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    testdata = {project_type: "購入型", likes_count: 0, user_id: current_user.id}
+    testdata = {likes_count: 0, user_id: current_user.id}
 
     params.require(:project).permit(
       :title,
@@ -59,7 +59,8 @@ class ProjectsController < ApplicationController
       :goal,
       :next_goal,
       :limit_date,
-      :projectimage
+      :projectimage,
+      :project_type
     ).merge(testdata)
   end
 
