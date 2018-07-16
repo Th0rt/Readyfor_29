@@ -1,8 +1,11 @@
+-# デフォルト値設定 local変数はoptionalにできない？ので…
+- link_path ||= false
+
 .PcTopProjectList__container__1SV7K
   %header.PcTopProjectList__header__1_-D6
     .PcTopProjectList__title__39nY9
       %span
         #{ title }
-    = link_to("もっと見る", "#", class: "PcTopProjectList__more__1IH_J")
-  - max_display_projects.times do
-    = render partial: "layouts/Entry-type1"
+    - if link_path
+      = link_to "もっと見る", link_path, class: "PcTopProjectList__more__1IH_J"
+  = render partial: 'layouts/Entry-type1', collection: projects, as: 'project'
