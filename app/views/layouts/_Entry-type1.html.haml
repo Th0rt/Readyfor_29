@@ -1,12 +1,10 @@
 %article.Entry.is-type1.Grid__col4.u-mb_40.null
   = link_to(project_path(project)) do
-
     .Entry__img
       .Entry__img-mask
         %figure
-          = image_tag(project.projectimage.url,
-                      alt:   project.title,
-                      class: " lazyloaded")
+          = image_tag(project.projectimage.url, alt:   project.title,
+                                                class: "lazyloaded")
 
     .Entry__body
       %h4.Entry__h.is-hide-line3
@@ -16,13 +14,13 @@
           = project.project_type
       .Entry__info-founder.hidden-while-processing
         %span.Entry__info-founder-icon
-          = image_tag(project.user.avatar.url,
-                      class:  'Entry__icon-img',
-                      alt:    project.user.nickname,
-                      width:  '24px',
-                      height: '24px')
+          = image_tag(project.user.avatar.url, class:  'Entry__icon-img',
+                                               alt:    project.user.nickname,
+                                               width:  '24px',
+                                               height: '24px')
         %span.Entry__info-founder-name.should-be-abbriviate
           = project.user.nickname
+
       .Entry__condition
         %dl.Entry__condition-sum
           %dt.Entry__condition-sum-dt
@@ -34,6 +32,7 @@
             残り
           %dd.Entry__condition-remain-dd
             #{ project.limit_date_to_month_day }
+
       .Entry__gauge.Gauge.is-top
         .Gauge__obj.is-1{ style: "width: #{ project.achievement_rate }%;" }
         .Gauge__txt
