@@ -10,6 +10,8 @@
     height: 65px;
     background-color: #F2F2F2;
     margin: 0 60px;
+    border:1px solid #DDDDDD;
+    border-radius: 10px;
     overflow:hidden;
     h1{
       font-size: 20px;
@@ -20,8 +22,13 @@
     #selected-btn{
       width: 40px;
       height: 40px;
+      margin: 12px 20px 0 0;
       float: right;
     }
+  }
+  .ticket-selected:hover{
+    background-color: #FFFFFF;
+    cursor: pointer;
   }
   .return-total{
 
