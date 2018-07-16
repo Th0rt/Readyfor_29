@@ -14,6 +14,8 @@
   project_new
 = link_to edit_project_path(1), class: "btn btn-default" do
   project_edit
+= link_to new_project_return_path(project_id: 1), class: "btn btn-default" do
+  return_new
 -# ====================================================================
 
 - partial_root = 'toppage/partial/'
