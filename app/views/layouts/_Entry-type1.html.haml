@@ -1,39 +1,39 @@
 %article.Entry.is-type1.Grid__col4.u-mb_40.null
-  = link_to(project_path(project)) do
+  = link_to("https://readyfor.jp/projects/rainbowschool") do
+
     .Entry__img
       .Entry__img-mask
         %figure
-          = image_tag(project.projectimage.url, alt:   project.title,
-                                                class: "lazyloaded")
+          = image_tag("https://readyfor.jp/s3/readyfor-img/project_images/16366/large/9897e11ab3662e89f4cfb09287dfc8df2585f1af.jpg?1530772415",
+                      data:  { src: "https://readyfor.jp/s3/readyfor-img/project_images/16366/large/9897e11ab3662e89f4cfb09287dfc8df2585f1af.jpg?1530772415" },
+                      alt:   "退去の危機をチャンスに変えて！タイ国境&quot;虹の学校&quot;移転大計画！",
+                      class: " lazyloaded")
 
     .Entry__body
       %h4.Entry__h.is-hide-line3
-        = project.title
+        退去の危機をチャンスに変えて！タイ国境"虹の学校"移転大計画！
       .Entry__project-type-badge
         .project-type-badge.normal
-          = project.project_type
+          購入型
       .Entry__info-founder.hidden-while-processing
         %span.Entry__info-founder-icon
-          = image_tag(project.user.avatar.url, class:  'Entry__icon-img',
-                                               alt:    project.user.nickname,
-                                               width:  '24px',
-                                               height: '24px')
+          = image_tag("https://readyfor.jp/s3/readyfor-img/user_images/50196/thumb/d637557d668ce8838a0c973c72ece3bf7fb96993.jpg?1527943856",
+                      class:  "Entry__icon-img",
+                      alt:    "片岡朋子／田村恵（虹の学校校長／虹の学校相談役）")
         %span.Entry__info-founder-name.should-be-abbriviate
-          = project.user.nickname
-
+          片岡朋子／田村恵（虹の学校校長／虹の学校相
       .Entry__condition
         %dl.Entry__condition-sum
           %dt.Entry__condition-sum-dt
             支援総額
           %dd.Entry__condition-sum-dd
-            #{ project.total_support } 円
+            5,785,000 円
         %dl.Entry__condition-remain
           %dt.Entry__condition-remain-dt
             残り
           %dd.Entry__condition-remain-dd
-            #{ project.limit_date_to_month_day }
-
+            57日
       .Entry__gauge.Gauge.is-top
-        .Gauge__obj.is-1{ style: "width: #{ project.achievement_rate }%;" }
+        .Gauge__obj.is-1{ style: "width: 82%;" }
         .Gauge__txt
-          #{ project.achievement_rate } %
+          82 %

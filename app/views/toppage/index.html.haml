@@ -75,37 +75,36 @@
             %section.Grid__col3.new_arrival
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "新着のプロジェクト",
-                                  projects: @new_project,
-                                  max_display_projects: 1,
-                                  is_dummy: false }
+                                  projects: @projects,
+                                  is_dummy: true }
 
           -# 注目のプロジェクト
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals:  { title: "注目のプロジェクト",
-                                link_path: '#',
-                                projects: @projects }
+                                projects: @projects,
+                                max_display_projects: 4 }
 
           -# あとひと押し
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "あとひと押し",
-                               link_path: '#',
-                               projects: @projects }
+                               projects: @projects,
+                               max_display_projects: 4 }
 
           -# 支援総額が多いプロジェクト
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "支援総額が多いプロジェクト",
-                               link_path: '#',
-                               projects: @projects }
+                               projects: @large_amount_projects,
+                               max_display_projects: 4 }
 
           -# 現在募集中のプロジェクト
           .Grid.public
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "支援総額が多いプロジェクト",
-                               link_path: '#',
-                               projects: @projects }
+                               projects: @projects,
+                               max_display_projects: 12 }
 
     / バナーエリア
     .PcTopContainer__bottom-banners__2hh5U
