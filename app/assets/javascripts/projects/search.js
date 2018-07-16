@@ -5,9 +5,9 @@ $(document).on('turbolinks:load',function(){
       $(this).find('a').css('color', 'white')
       $(this).find('i').css('color', 'white')
     },function(){
-      $(this).css('background-color','')
-      $(this).find('a').css('color','')
-      $(this).find('i').css('color','')
+      $(this).css('background-color', '')
+      $(this).find('a').css('color', '')
+      $(this).find('i').css('color', '')
     });
   }
   change_background('.nav-menu-item')
