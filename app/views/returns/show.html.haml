@@ -4,10 +4,11 @@
       = image_tag "https://readyfor.jp/assets/contribution/flow01-734e16c18ee254970262a0bdb266999b639a20a249dd3e1d5ad4ab857d93fbec.png", id: "progress-image"
     .returns-content
       .return-lists
-        = render "returns/return-item"
-      .ticket-selected
-        %h1 その他リターン
-        = image_tag "/assets/down_arrow.png", id: "selected-btn"
+      .return-lists
+        = render partial: 'returns/return-item',
+                       locals:  { title: "選択したギフト" }
+        = render partial: 'returns/return-item',
+                       locals:  { title: "その他のギフト" }
       .return-total
         %p
           追加するリターン :
