@@ -27,4 +27,15 @@ class Project < ApplicationRecord
     return 0 if self.total_support == 0
     ((self.total_support.to_f / self.goal.to_f) * 100).floor
   end
+
+  def remaining_time
+    remaining_time = {}
+    total_sec = ( self.limit_date - Time.current ).to_i
+    remaining_time[:sec]  = total_sec % 60
+    remaining_time[:min]  = ( total_sec / 60 ) % 60
+    remaining_time[:hour] = ( total_sec / 60 / 60 ) % 24
+    remaining_time[:day]  = ( total_sec / 24 / 60 / 60 )
+    return remaining_time
+  end
+
 end
