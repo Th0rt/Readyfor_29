@@ -14,6 +14,8 @@
   project_new
 = link_to edit_project_path(1), class: "btn btn-default" do
   project_edit
+= link_to projects_path, class: "btn btn-default" do
+  project_search
 -# ====================================================================
 
 - partial_root = 'toppage/partial/'
@@ -75,36 +77,37 @@
             %section.Grid__col3.new_arrival
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "新着のプロジェクト",
-                                  projects: @projects,
-                                  is_dummy: true }
+                                  projects: @new_project,
+                                  max_display_projects: 1,
+                                  is_dummy: false }
 
           -# 注目のプロジェクト
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals:  { title: "注目のプロジェクト",
-                                projects: @projects,
-                                max_display_projects: 4 }
+                                link_path: '#',
+                                projects: @projects }
 
           -# あとひと押し
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "あとひと押し",
-                               projects: @projects,
-                               max_display_projects: 4 }
+                               link_path: '#',
+                               projects: @projects }
 
           -# 支援総額が多いプロジェクト
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "支援総額が多いプロジェクト",
-                               projects: @projects,
-                               max_display_projects: 4 }
+                               link_path: '#',
+                               projects: @projects_large_amount }
 
           -# 現在募集中のプロジェクト
           .Grid.public
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "支援総額が多いプロジェクト",
-                               projects: @projects,
-                               max_display_projects: 12 }
+                               link_path: '#',
+                               projects: @projects }
 
     / バナーエリア
     .PcTopContainer__bottom-banners__2hh5U
