@@ -6,7 +6,28 @@
   }
   .bottom-content{
     width: 100%;
-    height: 100px;
     background-color: white;
+    overflow: hidden;
+    .contact-us{
+      width: 660px;
+      border:1px solid #DDDDDD;
+      margin: 30px auto 0;
+      padding: 30px;
+      h2{
+        font-size: 18px;
+        border-left: solid 3px #B4292C;
+      }
+      &__list1{
+        img{
+          padding: 5px;
+        }
+
+      }
+      &__list2{
+        img{
+          padding: 5px;
+        }
+      }
+    }
   }
 }
