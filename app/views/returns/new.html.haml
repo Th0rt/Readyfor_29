@@ -22,7 +22,8 @@
         .return-create__stock.box-size
           .content 在庫数
           .content-form
-            = f.number_field :stock, required: true, placeholder: "在庫数に制限がない場合は０としてください"
+            = f.number_field :stock, required: true,
+              placeholder: "在庫数に制限がない場合は０としてください"
         .return-create__arrival.box-size
           .content 発送予定日
           .content-form
