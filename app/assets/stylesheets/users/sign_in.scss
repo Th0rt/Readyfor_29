@@ -32,6 +32,11 @@
       line-height: 40px;
       opacity: 0.8;
       margin-top: 10px;
+      a{
+        background-color: #204ea8;
+        text-decoration: none;
+        color: white;
+      }
     }
     #user_email,#user_password{
       width: 232px;
@@ -117,6 +122,12 @@
         display: block;
         line-height: 40px;
         opacity: 0.8;
+        a{
+          background-color: #204ea8;
+          text-decoration: none;
+          color: white;
+          font-size: 14px;
+        }
       }
       h1{
         font-size: 14px;

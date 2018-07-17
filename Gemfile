@@ -94,5 +94,12 @@ gem 'devise'
 
 # jquery
 gem 'jquery-rails'
+
+# Facebook認証
+gem 'omniauth'
+gem 'omniauth-facebook'
+# 環境変数を読み込むgemを追加
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
 # Use slick-slider
 gem "jquery-slick-rails"

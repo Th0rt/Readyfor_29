@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root to: 'toppage#index'
-  devise_for :users
-
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :image_upload_tests
 
   get 'toppage/socialgood', to: 'toppage#socialgood'
@@ -16,6 +15,5 @@ Rails.application.routes.draw do
     end
     resources :messages, only: [:index, :new]
   end
-
-  resources :projects
+  resources :projects, only: [:index, :show, :new, :create]
 end
