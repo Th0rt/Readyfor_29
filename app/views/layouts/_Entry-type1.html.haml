@@ -31,7 +31,7 @@
           %dt.Entry__condition-remain-dt
             残り
           %dd.Entry__condition-remain-dd
-            #{ project.remaining_funding_days } 日
+            #{ project.remaining_time[:day] } 日
 
       .Entry__gauge.Gauge.is-top
         .Gauge__obj.is-1{ style: "width: #{ project.achievement_rate }%;" }
