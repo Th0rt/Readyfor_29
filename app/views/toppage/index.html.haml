@@ -74,14 +74,14 @@
             %section.Grid__col3.new_arrival
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "新着のプロジェクト",
-                                  projects: @new_project }
+                                  projects: @projects_new }
 
           -# 注目のプロジェクト
           %section.Grid.amount
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals:  { title: "注目のプロジェクト",
                                 link_path: '#',
-                                projects: @projects }
+                                projects: @projects_nortable }
 
           -# あとひと押し
           %section.Grid.amount
