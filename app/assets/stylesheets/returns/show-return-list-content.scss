@@ -31,6 +31,7 @@
     .return-item-left{
       padding-top: 10px;
       .return-price{
+        margin-top: 20px;
         img{
           width: 10%;
           height: auto;
@@ -38,6 +39,7 @@
         }
         span{
           font-size: 26px;
+          color: #6499F8;
         }
       }
       .return-numbar{
@@ -50,7 +52,18 @@
       }
     }
     .return-item-right{
-      border-left: solid 1px #000000;
+      padding: 20px;
+      .return-item-right__text{
+        border-left: solid 1px #000000;
+        padding: 20px;
+        h2{
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
     }
   }
 }
