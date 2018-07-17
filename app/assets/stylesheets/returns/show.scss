@@ -1,5 +1,6 @@
 .purchase-contents{
   background-color: #F2F2F2;
+  margin-bottom: 30px;
   .top-content{
     width: 960px;
     margin: 0 auto;
@@ -16,16 +17,21 @@
       h2{
         font-size: 18px;
         border-left: solid 3px #B4292C;
+        color: #B4292C;
       }
-      &__list1{
-        img{
-          padding: 5px;
+      &__list{
+        &__image{
+          padding: 10px;
         }
-
-      }
-      &__list2{
-        img{
-          padding: 5px;
+        &__text{
+          padding: 10px;
+          h3{
+            font-size: 16px;
+            color: #B4292C;
+          }
+          p{
+            margin-top: 5px;
+          }
         }
       }
     }
