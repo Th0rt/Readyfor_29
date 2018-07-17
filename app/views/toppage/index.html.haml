@@ -62,24 +62,19 @@
             %section.Grid__col3.notable
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "最近見たプロジェクト",
-                                  projects: @recent_viewed_projects,
-                                  max_display_projects: 1,
-                                  is_dummy: false }
+                                  projects: @recent_viewed_projects }
 
             -# あとひと押し
             %section.Grid__col3.almost
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "あとひと押し",
-                                  projects: @projects,
-                                  is_dummy: true }
+                                  projects: @projects }
 
             -# 新着のプロジェクト
             %section.Grid__col3.new_arrival
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "新着のプロジェクト",
-                                  projects: @new_project,
-                                  max_display_projects: 1,
-                                  is_dummy: false }
+                                  projects: @new_project }
 
           -# 注目のプロジェクト
           %section.Grid.amount
