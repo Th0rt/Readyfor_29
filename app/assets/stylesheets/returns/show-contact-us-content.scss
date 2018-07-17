@@ -1,0 +1,27 @@
+.contact-us-content{
+  width: 660px;
+  border:1px solid #DDDDDD;
+  margin: 30px auto 0;
+  padding: 30px;
+  h2{
+    font-size: 18px;
+    border-left: solid 3px #B4292C;
+    color: #B4292C;
+  }
+  &__list{
+    &__image{
+      padding: 10px;
+    }
+    &__text{
+      padding: 10px;
+      h3{
+        font-size: 16px;
+        color: #B4292C;
+        margin-top: 10px;
+      }
+      p{
+        margin-top: 5px;
+      }
+    }
+  }
+}
