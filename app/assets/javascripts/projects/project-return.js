@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load',function(){
   function change_button(button){
     $(button).hover(function(){
-      console.log(this)
       $(this).css('box-shadow', 'none')
     },function(){
       $(this).css('box-shadow', '0 2px rgba(0,0,0,0.2)')
