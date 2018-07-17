@@ -17,7 +17,6 @@
               %dd 1,553,000 円
             %dl
               %dt 残り
-              %dd
-                = project.left_date
+              %dd #{ project.remaining_funding_days } 日
           .project-type-badge.normal
             = project.project_type
