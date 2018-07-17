@@ -15,8 +15,8 @@ class ToppageController < ApplicationController
                                       .reverse
                                       .first(4)
 
-    @projects_one_more_push = @projects.select{ |project| project.achievement_rate >= 40 && project.remaining_funding_days <= 30 }
-                                       .sort_by{ |project| project.remaining_funding_days }
+    @projects_one_more_push = @projects.select{ |project| project.achievement_rate >= 40 && project.remaining_time[:day] <= 30 }
+                                       .sort_by{ |project| project.remaining_time[:day] }
                                        .first(4)
   end
 
