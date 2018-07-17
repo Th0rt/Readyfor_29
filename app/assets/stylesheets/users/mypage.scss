@@ -10,11 +10,10 @@
     background-color: white;
     padding-right: 5px;
     .mypage-image {
-        float: left;
-      .portorate{
+      float: left;
+      img {
         width: 60px;
         height: 60px;
-        background-color: green;
       }
     }
     .mypage-profile {
@@ -37,6 +36,9 @@
       margin-top: 5px;
       line-height: 35px;
       color: gray;
+      a {
+        display: block;
+      }
     }
     .selected a{
       color: white;

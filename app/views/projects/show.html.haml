@@ -1,14 +1,18 @@
 .project-contents
   .top-content
+    = link_to project_path(params[:id]), method: :delete do
+      %span.btn.btn-primary プロジェクト削除(検証用)
     .top-content__category
       = link_to root_path do
         クラウドファンディングトップ
       %span >
       = link_to root_path do
         地域
-      %span > タイトル
+      %span >
+      = @project.title
     .top-content__title
-      %h1 プロジェクトタイトル
+      %h1
+        = @project.title
     .top-content__tag
       = link_to root_path, class: "btn btn-light" do
         東京
@@ -18,28 +22,52 @@
         カテゴリー2
     .overview
       .overview__image
+        - if (@project.projectimage).present?
+          = image_tag "#{@project.projectimage}", id: "project-image"
+        - else
+          = image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg", id: "project-image"
       .project-info
         .user-profile
           .user-profile__icon
+            - if (@project.user.avatar).present?
+              = image_tag "#{@project.user.avatar}", id: "mypage-avatar"
+            - else
+              = image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg", id: "mypage-avatar"
           .user-profile__name
-            %p エキスパート
+            %p= @project.user.nickname
         .project-info__big-text
           %span.span-project.span-project__title-big 支援総額
           %span.span-project.span-project__data-big 1,000,000円
-        .project-info__text
-          %span.span-project.span-project__title 目標金額
-          %span.span-project.span-project__data 1,500,000円
+        - if @project.next_goal.nil?
+          .project-info__text
+            %span.span-project.span-project__title 目標金額
+            %span.span-project.span-project__data
+              = number_with_delimiter(@project.goal)
+              %span 円
+        - else
+          .project-info__text
+            %span.span-project.span-project__title 目標金額
+            %span.span-project.span-project__data
+              = number_with_delimiter(@project.next_goal)
+              %span 円
+          .project-info__text
+            %span.span-project.span-project__title 第一目標金額
+            %span.span-project.span-project__data
+              = number_with_delimiter(@project.goal)
+              %span 円
         .project-info__text
           %span.span-project.span-project__title 支援者数
           %span.span-project.span-project__data 90人
         .project-info__text
           %span.span-project.span-project__title 残り日数
-          %span.span-project.span-project__data 29日
+          %span.span-project.span-project__data
+            = @project.limit_date_to_month_day
         .project-info__progress
           .progress
             .progress-bar.progress-bar-danger.progress-level-of-achievement
-        = link_to root_path do
-          .project-info__button.btn.btn-danger
+              %p 80%
+        = link_to root_path,class: 'btn-link' do
+          .btn-link__button.btn.btn-danger
             %p このプロジェクトを支援する
     .top-content__info-footer
       = link_to root_path do
@@ -53,24 +81,20 @@
       %p このプロジェクトはAll or nothing形式です。7月31日（火）午後11:00までに、2,450,000円以上集まった場合に成立となります。
   .bottom-content
     .bottom-content__tab-btm
-      %nav.navbar.navbar-default
-        .container
-          %ul.nav.navbar-nav
-            %li.active
-              = link_to root_path do
-                プロジェクト概要
-            %li
-              = link_to root_path do
-                新着情報
-            %li
-              = link_to root_path do
-                応援コメント
+      .project-tabs.select
+        %p プロジェクト概要
+      .project-tabs
+        %p 新着情報
+      .project-tabs
+        %p 応援コメント
     .bottom-content__tab-content
-      %p 友人と一念発起！東京でキッチンカーを走らせたい！
-      %p はじめまして、吉澤祐介と申します！
-      これまで15年ほど、自分の大好きな食べ物の世界で生活してきました。
-      今までいろんな食事に出合い、ジャンルを問わず、
-      興味を持ったものを本能が赴くままに味わい、自分の経験値として蓄積してきました。
+      .tab-content
+        %p プロジェクト概要
+        = @project.content
+      .tab-content.hide
+        %p 新着情報
+      .tab-content.hide
+        %p 応援コメント
     .return-content
       .return-content__link-btm
         %p.like-count-text 7人がお気に入りしています
@@ -79,17 +103,21 @@
         %p お気に入りリストに追加され、新着情報を受け取れます
       .return-content__returns
         %p 各リターンの部分テンプレート
+    .clear
     .show-projects
+      .clear
       .project-lists
         %p あなたにオススメのプロジェクト
         .project-lists__list
         .project-lists__list
         .project-lists__list
+      .clear
       .project-lists
         %p 注目のプロジェクト
         .project-lists__list
         .project-lists__list
         .project-lists__list
+      .clear
       .project-lists
         %p 新着プロジェクト
         .project-lists__list

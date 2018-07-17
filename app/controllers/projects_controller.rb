@@ -1,8 +1,16 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:index, :show]
+
   def index
+    @projects = Project.all
   end
 
   def show
+    view_history = cookie_find_or_create("project_view_history")
+    view_history.delete_if { |id| id = @project.id }
+    view_history << @project.id
+    cookie_save("project_view_history", view_history)
   end
 
   def new
@@ -18,10 +26,31 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @project.update(project_params)
+      redirect_to root_path
+    else
+      render action: :edit
+    end
+  end
+
+  def destroy
+    if @project.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
   def project_params
-    testdata = {project_type: "購入型", likes_count: 0}
+    testdata = {project_type: "購入型", likes_count: 0, user_id: current_user.id}
 
     params.require(:project).permit(
       :title,
@@ -29,7 +58,14 @@ class ProjectsController < ApplicationController
       :limit_date,
       :goal,
       :next_goal,
-      :limit_date
+      :limit_date,
+      :projectimage
     ).merge(testdata)
+  end
+
+  def require_login
+    unless user_signed_in?
+      redirect_to root_path
+    end
   end
 end

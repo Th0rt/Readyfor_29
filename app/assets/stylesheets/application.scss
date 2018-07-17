@@ -1,19 +1,58 @@
+// global
+
+// @import './scaffolds';
+@import './header';
+@import './footer';
+
 // addons
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+@import 'slick';
+@import 'slick-theme';
 
 // reset
 @import 'reset';
 
-// global
-@import './scaffolds';
+// layouts
+@import 'layouts/Header';
+@import 'layouts/Entry';
+@import 'layouts/Entry-type1';
+@import 'layouts/Entry-type2';
+@import 'layouts/Entry-type4';
+
+// toppage
+
+// components
+@import 'toppage/component/Container';
+@import 'toppage/component/Gauge';
+@import 'toppage/component/project-type-badge';
+@import 'toppage/component/slick-slider';
+@import 'toppage/component/tags';
+@import 'toppage/component/announcement-card';
+
+// projects
+@import 'toppage/project/Site-container';
+@import 'toppage/project/PcTopCategoryNavBar';
+@import 'toppage/project/PcTopCategoryProjectArea';
+@import 'toppage/project/PcTopContainer';
+@import 'toppage/project/Top-Entry';
+@import 'toppage/project/PcTopVisual';
+@import 'toppage/project/PcTopProjectArea';
+@import 'toppage/project/PcTopProjectList';
+@import 'toppage/project/TopInfomationList';
+@import 'toppage/project/PcPublicNews';
+
+// utility
+@import 'toppage/utility/Grid';
+@import 'toppage/utility/utility';
 
 // ユーザーページ、メッセージページ
 @import 'users/message';
 @import 'users/mypage';
 @import 'users/edit';
 @import 'users/sign_in';
+@import 'users/profile';
 
 // projects
 @import './projects/show';
@@ -27,3 +66,5 @@
 @import './projects/new';
 @import './projects/new-tabs';
 @import './projects/new-tab-content';
+@import './projects/search';
+@import './projects/create-return';

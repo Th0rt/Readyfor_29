@@ -1,0 +1,42 @@
+.Gauge {
+  background-color: #ccc;
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.Gauge.is-top {
+  height: 16px;
+  border-radius: 10px;
+}
+
+.Gauge__txt {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  padding-left: 2%;
+  box-sizing: border-box;
+  height: inherit;
+  position: absolute;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4)
+}
+
+.Gauge.is-top .Gauge__txt {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.Gauge__obj {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.Gauge__obj.is-1 {
+  background-color: #DF051C;
+}

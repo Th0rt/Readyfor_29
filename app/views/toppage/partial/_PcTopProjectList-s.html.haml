@@ -1,0 +1,16 @@
+.PcTopProjectList__container__1SV7K
+  %header.PcTopProjectList__header__1_-D6
+    .PcTopProjectList__title__39nY9.is-s
+      %span
+        #{ title }
+    = link_to "もっと見る", "#", class: "PcTopProjectList__more__1IH_J"
+  - if is_dummy
+    = render partial: "layouts/dummy/Entry-type2-dummy"
+  - else
+    - if projects.present?
+      - projects.first(max_display_projects).each do |project|
+        = render partial: "layouts/Entry-type2", locals: { project: project }
+    - else
+      .search-page-box
+        = link_to projects_path do
+          %span プロジェクトを探しに行く

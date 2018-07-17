@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_10_182418) do
+ActiveRecord::Schema.define(version: 2018_07_14_070139) do
 
   create_table "image_upload_tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -21,16 +21,20 @@ ActiveRecord::Schema.define(version: 2018_07_10_182418) do
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
-    t.date "limit_date", null: false
+    t.datetime "limit_date", null: false
     t.integer "goal", null: false
     t.integer "next_goal"
     t.string "project_type", null: false
     t.integer "likes_count", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "projectimage", default: "", null: false
+    t.integer "total_support", default: 0, null: false
     t.index ["goal"], name: "index_projects_on_goal"
     t.index ["limit_date"], name: "index_projects_on_limit_date"
     t.index ["title"], name: "index_projects_on_title"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,8 +53,11 @@ ActiveRecord::Schema.define(version: 2018_07_10_182418) do
     t.string "nickname"
     t.string "uid"
     t.string "provider"
+    t.string "avatar"
+    t.string "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "projects", "users"
 end

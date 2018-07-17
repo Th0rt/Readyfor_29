@@ -1,0 +1,67 @@
+.PcTopCategoryNavBar__nav__OC0Kd {
+  background-color: #fff;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  top: 47px;
+  max-width: 1000px
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd::-webkit-scrollbar {
+  display: none
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd a {
+  position: relative;
+  padding: 8px 15px;
+  color: #616161;
+  transition: color .2s;
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd .PcTopCategoryNavBar__is-active__1HV9W:after{
+  bottom: -1px;
+  content: '';
+  display: block;
+  height: 4px;
+  right: 0;
+  position: absolute;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd .PcTopCategoryNavBar__all__3LY8E:after {
+  background-image: linear-gradient(-135deg, #d2d2d2, #9b9b9b);
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd .PcTopCategoryNavBar__socialgood__FE1rj:after {
+  background-image: linear-gradient(-135deg, #dc99a0, #df051c);
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd .PcTopCategoryNavBar__local__2dl2t:after {
+  background-image: linear-gradient(-135deg, #69a286, #35a16b);
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd .PcTopCategoryNavBar__product__2pzr9:after {
+  background-image: linear-gradient(-135deg, #7ca3cd, #0064d0);
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd .PcTopCategoryNavBar__art__3mG7y:after {
+  background-image: linear-gradient(-135deg, #9d598e, #9a0079);
+}
+
+.PcTopCategoryNavBar__nav__OC0Kd .PcTopCategoryNavBar__challenge__35Wip:after {
+  background-image: linear-gradient(-135deg, #ffce86, #f90);
+}
+
+@keyframes PcToPCategoryNavBar__nav-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

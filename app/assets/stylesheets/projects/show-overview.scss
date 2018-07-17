@@ -1,9 +1,11 @@
 .overview{
-    overflow: hidden;
-    &__image{
-      width: 550px;
-      height: 400px;
-      background-color: burlywood;
-      float: left;
+  overflow: hidden;
+  border:1px solid #BBBBBB;
+  &__image{
+    width: 550px;
+    float: left;
+    #project-image{
+      width: 100%;
     }
   }
+}

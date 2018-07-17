@@ -1,0 +1,23 @@
+%article.Entry.is-type2
+  .Entry__img
+    .Entry__img-mask
+      = link_to( project_path(project) ) do
+        = image_tag( "http://placehold.jp/165x124.png", alt: project.title)
+        %p project.content
+
+  .Entry__body
+    .Entry__body-mask
+      = link_to( project_path(project) ) do
+        %h3.Entry__h.is-hide-line2.u-mb_3
+          = project.title
+        .Entry__condition-group
+          .Entry__numerical-info
+            %dl.Entry__condition-amount
+              %dt 支援総額
+              %dd 1,553,000 円
+            %dl
+              %dt 残り
+              %dd
+                = project.left_date
+          .project-type-badge.normal
+            = project.project_type

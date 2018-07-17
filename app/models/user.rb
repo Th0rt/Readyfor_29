@@ -4,6 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  validates :nickname, presence: true, length: { maximum: 10 }
+
+  has_many :projects, dependent: :destroy
+  mount_uploader :avatar, AvatarUploader
+
+
   def self.from_omniauth(auth)
      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
        user.email = auth.info.email

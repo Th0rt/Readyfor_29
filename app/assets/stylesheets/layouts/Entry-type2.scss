@@ -1,0 +1,29 @@
+.Entry.is-type2 {
+  height: 124px;
+  overflow: hidden;
+}
+
+.Entry.is-type2 .Entry__img {
+  display: table-cell;
+  vertical-align: top;
+  height: inherit;
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.Entry.is-type2 .Entry__img-mask {
+  width: 140px;
+  height: inherit;
+  overflow: hidden;
+}
+
+.Entry.is-type2 .Entry__body {
+  height: inherit;
+  display: table-cell;
+  vertical-align: top;
+  overflow: hidden;
+  padding: 10px 18px;
+}

@@ -36,11 +36,13 @@
       .right-content__input
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
-          .field.left-content__password
+          .field
+            = f.text_field :nickname, autofocus: true, autocomplete: "nickname" , class: "right-form", placeholder: "お名前(ニックネーム)を入力して下さい"
+          .field
             = f.email_field :email, autofocus: true, autocomplete: "email" , class: "right-form", placeholder: "メールアドレスを入力してください"
-          .field.left-content__password
+          .field
             = f.password_field :password, autocomplete: "off", class: "right-form", placeholder: "パスワードを入力してください。"
-          .field.left-content__submit
+          .field
             = f.password_field :password_confirmation, autocomplete: "off", class: "right-form", placeholder: "パスワードの確認"
           .actions
             = f.submit "新規登録" ,id: "signin-button"

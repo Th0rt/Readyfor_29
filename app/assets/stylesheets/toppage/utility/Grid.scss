@@ -1,0 +1,42 @@
+.Grid__col2, .Grid__col3, .Grid__col4, .Grid__col5,
+.feature_entry_example, .Grid.is-grid-s {
+  float: left;
+}
+
+.Grid__col3 {
+  width: 312px;
+}
+
+.Grid__col3+.Grid__col3 {
+  margin-left: 32px;
+}
+
+.Grid__col4 {
+  width: 226px;
+}
+
+.Grid__col4:nth-child(4n+2) {
+  margin-left: 0 !important;
+}
+
+.Grid__col4+.Grid__col4 {
+  margin-left: 32px;
+}
+
+.Grid__col5 {
+  width: 188px;
+}
+
+.Grid__col5+.Grid__col5 {
+  margin-left: 15px;
+}
+
+.Grid__col5:nth-child(5n+1) {
+  margin-left: 0 !important;
+}
+
+.Grid::after {
+  content: '';
+  display: block;
+  clear: both;
+}
