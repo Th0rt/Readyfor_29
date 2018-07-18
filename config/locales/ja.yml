@@ -1,0 +1,6 @@
+ja:
+  enums:
+    project:
+      project_type:
+        purchase: "購入型"
+        contribution: "寄付型"
