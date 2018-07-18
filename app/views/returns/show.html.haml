@@ -1,6 +1,13 @@
 .purchase-contents
   .top-content
-    = render 'returns/payment1'
+    - if params[:page] == '2'
+      = render 'returns/payment2'
+    - elsif params[:page] == '3'
+      = render 'returns/payment3'
+    - elsif params[:page] == '4'
+      = render 'returns/payment4'
+    - else
+      = render 'returns/payment1'
   .bottom-content
     .contact-us-content
       %h2 寄附にあたって

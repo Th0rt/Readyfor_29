@@ -32,6 +32,7 @@
       .progress-button__return
         = image_tag '/assets/left_arrow.png'
         %p プロジェクトページに戻る
-    .progress-button__next#progress-next-button3
-      %p 次に進む
-      = image_tag '/assets/right_arrow.png'
+    = link_to project_return_path(1, page: 4) do
+      .progress-button__next
+        %p 次に進む
+        = image_tag '/assets/right_arrow.png'
