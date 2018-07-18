@@ -1,0 +1,41 @@
+.credit-card-content{
+  padding: 50px;
+  h1{
+    font-size: 20px;
+    border-left: solid 3px #B4292C;
+  }
+  .credit-card-available{
+    border: solid 1px #CCCCCC;
+    margin: 20px 0;
+    border-radius: 5px;
+    span{
+      font-size: 16px;
+      margin-left: 70px;
+    }
+  }
+  table{
+    font-size: 16px;
+    tr{
+      th{
+        border: solid 1px #CCCCCC;
+        padding: 10px;
+        background-color: #F9F9F9;
+      }
+      td{
+        border: solid 1px #CCCCCC;
+        padding: 10px;
+      }
+    }
+  }
+  .about-settlement-system{
+    h2{
+
+    }
+    hr{
+
+    }
+    p{
+
+    }
+  }
+}
