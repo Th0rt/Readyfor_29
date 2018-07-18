@@ -112,7 +112,7 @@
             %strong= content.price
             %span のリターン
           .project-return__image
-            =image_tag( "#{content.returnimage}" )
+            = image_tag( "#{content.returnimage}" )
           .project-return__content
             %p= content.content
           .project-return__helper
@@ -120,7 +120,7 @@
               %i.fa.fa-circle-o.fa-stack-2x
               %i.fa.fa-user.fa-stack-1x
             %span ０人が支援中/
-            - if ( content.stock === 0 )
+            - if content.stock === 0
               %span 在庫制限なし
             - else
               %span 残り#{ content.stock }個
