@@ -1,3 +1,5 @@
+.purchase-progress-content
+  = image_tag "https://readyfor.jp/assets/contribution/flow01-734e16c18ee254970262a0bdb266999b639a20a249dd3e1d5ad4ab857d93fbec.png", id: "progress-image"
 .returns-content
   .return-lists
     = render partial: 'returns/return-item',
@@ -37,3 +39,18 @@
         = radio_button :payment_type, '支払い方法', {}
     .bank-transfer__right
       %p 銀行振込で支援する
+.progress-button-content
+  %h1
+    %i.fa.fa-question-circle.fa-lg.faq-link
+    支援についてわからないことがある場合、
+    = link_to "こちら", root_path
+    をご覧ください。
+  .progress-button
+    = link_to root_path do
+      .progress-button__return
+        = image_tag '/assets/left_arrow.png'
+        %p プロジェクトページに戻る
+    = link_to root_path do
+      .progress-button__next
+        %p 次に進む
+        = image_tag '/assets/right_arrow.png'
