@@ -85,7 +85,7 @@ http://18.191.118.146/
 |stock|int|
 |content|text|null: false|
 |arrival_date|date|
-|image|string|null: false|
+|returnimage|string|null: false|
 |project_id|reference|foreign_key: true|
 
 ### Association
