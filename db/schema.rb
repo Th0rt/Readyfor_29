@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_085008) do
     t.datetime "limit_date", null: false
     t.integer "goal", null: false
     t.integer "next_goal"
-    t.boolean "project_type", default: false, null: false
+    t.integer "project_type", default: 0, null: false
     t.integer "likes_count", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
