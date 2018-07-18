@@ -4,18 +4,17 @@
       = render 'shared/mypage_left'
       %ul.filter-list
         .filter-item
-          = link_to "購入履歴" ,user_path(id: current_user.id)
+          = link_to "購入履歴", user_path(id: current_user.id)
         .filter-item
-          = link_to "購入履歴(月額)" ,user_path(id: current_user.id)
+          = link_to "購入履歴(月額)", user_path(id: current_user.id)
         .filter-item
-          = link_to "お気に入りリスト" ,user_path(id: current_user.id)
+          = link_to "お気に入りリスト", user_path(id: current_user.id)
         .message-list
           %i.fa.fa-inbox メッセージ
         .filter-item.selected
-          = link_to "メッセージ一覧" ,user_messages_path(user_id: current_user.id)
+          = link_to "メッセージ一覧", user_messages_path(user_id: current_user.id)
         .filter-item
-          = link_to "新規メッセージ作成" ,
-            new_user_message_path(user_id: current_user.id)
+          = link_to "新規メッセージ作成", new_user_message_path(user_id: current_user.id)
         .answer-list
           %i.fa.fa-question-circle ヘルプ・問い合わせ
         .filter-item
@@ -25,5 +24,6 @@
       .mypage-message
         %input.user-search{ type:"search", placeholder: "ユーザー名を検索する" }
         .new-message
-          = link_to "新規メッセージ作成" , new_user_message_path(user_id: current_user.id)
+          %i.fa.fa-envelope
+          = link_to "新規メッセージ作成", new_user_message_path(user_id: current_user.id)
       .mypage-message-list まだ誰もいません
