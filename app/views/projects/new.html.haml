@@ -40,6 +40,15 @@
           .project-target-amount-next
             = f.number_field :next_goal
             %span 円
+          %hr
+          %label タイプ
+          .project-type
+            %label
+              = f.radio_button :project_type, :purchase, checked: true
+              購入型
+            %label
+              = f.radio_button :project_type, :contribution
+              寄附型
       .tab-content.hide
         .tab-content__form-group
           %hr

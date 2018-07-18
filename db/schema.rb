@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_14_070139) do
+ActiveRecord::Schema.define(version: 2018_07_16_085008) do
 
   create_table "image_upload_tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_07_14_070139) do
     t.datetime "limit_date", null: false
     t.integer "goal", null: false
     t.integer "next_goal"
-    t.string "project_type", null: false
+    t.integer "project_type", default: 0, null: false
     t.integer "likes_count", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,6 +35,19 @@ ActiveRecord::Schema.define(version: 2018_07_14_070139) do
     t.index ["limit_date"], name: "index_projects_on_limit_date"
     t.index ["title"], name: "index_projects_on_title"
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "returns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "price", null: false
+    t.integer "stock"
+    t.text "content", null: false
+    t.date "arrival_date"
+    t.string "returnimage", default: "", null: false
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_returns_on_project_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,4 +71,5 @@ ActiveRecord::Schema.define(version: 2018_07_14_070139) do
   end
 
   add_foreign_key "projects", "users"
+  add_foreign_key "returns", "projects"
 end

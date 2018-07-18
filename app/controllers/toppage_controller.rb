@@ -3,11 +3,14 @@ class ToppageController < ApplicationController
                 :set_projects_nortable,
                 :set_projects_large_amount,
                 :set_projects_new
-
+  
   def index
+    # NOTE: 各欄ごとにクエリを発行したくないので、allで一括取得して加工する。
+    @projects = Project.where('limit_date >= ?', Time.current)
+    
     view_history = cookie_find_or_create("project_view_history")
-    @recent_viewed_projects = Project.where(id: view_history)
-                                     .order(['field(id, ?)', view_history])
+    @recent_viewed_projects = @projects.select{ |project| view_history.include?(project.id)}
+
 
     @projects_one_more_push = @projects.select{ |project| project.achievement_rate >= 40 && project.remaining_funding_days <= 30 }
                                        .sort_by{ |project| project.remaining_funding_days }
