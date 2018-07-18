@@ -32,7 +32,7 @@ class ToppageController < ApplicationController
   private
 
   def set_projects_all
-    @projects = Project.all
+    @projects = Project.where('limit_date >= ?', Time.current)
   end
 
   def set_projects_new
