@@ -37,6 +37,19 @@ ActiveRecord::Schema.define(version: 2018_07_16_085008) do
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
+  create_table "returns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "price", null: false
+    t.integer "stock"
+    t.text "content", null: false
+    t.date "arrival_date"
+    t.string "returnimage", default: "", null: false
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_returns_on_project_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -58,4 +71,5 @@ ActiveRecord::Schema.define(version: 2018_07_16_085008) do
   end
 
   add_foreign_key "projects", "users"
+  add_foreign_key "returns", "projects"
 end

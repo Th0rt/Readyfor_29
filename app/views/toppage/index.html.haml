@@ -14,6 +14,8 @@
   project_new
 = link_to edit_project_path(1), class: "btn btn-default" do
   project_edit
+= link_to new_project_return_path(project_id: 1), class: "btn btn-default" do
+  return_new
 = link_to projects_path, class: "btn btn-default" do
   project_search
 -# ====================================================================
@@ -93,7 +95,7 @@
             = render partial: 'toppage/partial/PcTopProjectList',
                      locals: { title: "あとひと押し",
                                link_path: '#',
-                               projects: @projects }
+                               projects: @projects_one_more_push }
 
           -# 支援総額が多いプロジェクト
           %section.Grid.amount

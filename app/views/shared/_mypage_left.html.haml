@@ -1,11 +1,7 @@
 .mypage-top
   .mypage-image
-    - if (current_user.avatar).present?
-      = link_to profile_user_path(current_user) do
-        = image_tag "#{current_user.avatar}"
-    - else
-      = link_to profile_user_path(current_user) do
-        = image_tag "https://readyfor.jp/assets/noimage/noimage2-4a1d65fcb2283f403840eabc8f398100042714714fdce21f021c615fd66396f4.jpg"
+    = link_to profile_user_path(current_user) do
+      = image_tag "#{current_user.avatar}"
   .mypage-profile
     .mypage-name
       = link_to profile_user_path(current_user) do

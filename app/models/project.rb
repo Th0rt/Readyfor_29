@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
+  has_many :returns, dependent: :destroy
   mount_uploader :projectimage, ProjectimageUploader
   enum project_type: { purchase: 0, contribution: 1 }
 
@@ -20,8 +21,8 @@ class Project < ApplicationRecord
     end
   end
 
-  def left_date
-    Time.zone.at(self.limit_date - Time.current).strftime("%-d日")
+  def remaining_funding_days
+    ( self.limit_date.to_date - Time.current.to_date ).to_i
   end
 
   def achievement_rate
