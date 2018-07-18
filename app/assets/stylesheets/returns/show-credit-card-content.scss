@@ -25,9 +25,15 @@
         border: solid 1px #CCCCCC;
         padding: 20px;
         input{
-          height: 36px;
+          height: 40px;
+          width: 300px;
           border: solid 2px #CCCCCC;
           border-radius: 5px;
+        }
+        select{
+          height: 30px;
+          background-color: white;
+          border: solid 2px #CCCCCC;
         }
         span{
           padding: 5px;
@@ -36,14 +42,14 @@
     }
   }
   .about-settlement-system{
+    margin-top: 30px;
+    border: dashed 1px #CBCDCD;
+    padding: 10px 40px;
     h2{
-
-    }
-    hr{
-
+      border-bottom: solid 1px #B4292C;
     }
     p{
-
+      margin-top: 20px;
     }
   }
 }
