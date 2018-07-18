@@ -103,30 +103,36 @@
         = link_to root_path, class: "btn btn-light like-count-btm" do
           お気に入りに追加する
         %p お気に入りリストに追加され、新着情報を受け取れます
-      .project-return
-        .project-return__title
-          %h3 烏城焼に遊びに来てください！見学後にお抹茶とお菓子でほっとした時をお過ごしください
-        .project-return__price
-          %i.fa.fa-jpy
-          %strong 5,000円
-          %span のリターン
-        .project-return__image
-          = image_tag("https://readyfor.jp/s3/readyfor-img/reward_images/72620/medium/a17c9aaa61e80a1bf71d0d850af4e5baa9800bbd.?1529930815")
-        .project-return__content
-          %p ①サイン入り図鑑
-          %p ②抹茶セット
-        .project-return__helper
-          %span.fa-stack.fa-lg
-            %i.fa.fa-circle-o.fa-stack-2x
-            %i.fa.fa-user.fa-stack-1x
-          %span ０人が支援中/在庫制限なし
-        .project-return__arrival
-          %span.fa-stack.fa-lg
-            %i.fa.fa-circle-o.fa-stack-2x
-            %i.fa.fa-gift.fa-stack-1x
-          %span 2018年11月に発送予定です。
-        .project-return__purchase
-          %button.project-select-button  このリターンを購入する
+      - @returns.each do |content|
+        .project-return
+          .project-return__title
+            %h3= content.title
+          .project-return__price
+            %i.fa.fa-jpy
+            %strong= content.price
+            %span のリターン
+          .project-return__image
+            =image_tag( "#{content.returnimage}" )
+          .project-return__content
+            %p= content.content
+          .project-return__helper
+            %span.fa-stack.fa-lg
+              %i.fa.fa-circle-o.fa-stack-2x
+              %i.fa.fa-user.fa-stack-1x
+            %span ０人が支援中/
+            - if ( content.stock === 0 )
+              %span 在庫制限なし
+            - else
+              %span 残り#{ content.stock }個
+          .project-return__arrival
+            %span.fa-stack.fa-lg
+              %i.fa.fa-circle-o.fa-stack-2x
+              %i.fa.fa-gift.fa-stack-1x
+            %span #{ content.arrival_date.year }年
+            %span #{ content.arrival_date.month }月に発送予定です。
+          .project-return__purchase
+            = link_to href: "#" do
+              %button.project-select-button  このリターンを購入する
     .clear
     .show-projects
       .clear
