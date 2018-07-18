@@ -31,7 +31,10 @@
           %dt.Entry__condition-remain-dt
             残り
           %dd.Entry__condition-remain-dd
-            #{ project.remaining_time[:day] } 日
+            - if project.remaining_time[:day] != 0
+              #{ project.remaining_time[:day] } 日
+            - else
+              #{ project.remaining_time[:hour] } 時間
 
       .Entry__gauge.Gauge.is-top
         .Gauge__obj.is-1{ style: "width: #{ project.achievement_rate }%;" }
