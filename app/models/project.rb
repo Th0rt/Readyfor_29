@@ -2,6 +2,7 @@ class Project < ApplicationRecord
   belongs_to :user
   has_many :returns, dependent: :destroy
   mount_uploader :projectimage, ProjectimageUploader
+  enum project_type: { purchase: 0, contribution: 1 }
 
   # 募集中かどうかを判定
   def active?
@@ -11,21 +12,19 @@ class Project < ApplicationRecord
     @days_life >= 0
   end
 
-  # 終了日をStringで返す
-  def limit_date_to_month_day
-    if active?
-      "#{@days_life}日"
-    else
-      @limit_date.to_s(:month_day)
-    end
-  end
-
-  def remaining_funding_days
-    ( self.limit_date.to_date - Time.current.to_date ).to_i
-  end
-
   def achievement_rate
     return 0 if self.total_support == 0
     ((self.total_support.to_f / self.goal.to_f) * 100).floor
   end
+
+  def remaining_time
+    remaining_time = {}
+    total_sec = ( self.limit_date - Time.current ).to_i
+    remaining_time[:sec]  = total_sec % 60
+    remaining_time[:min]  = ( total_sec / 60 ) % 60
+    remaining_time[:hour] = ( total_sec / 60 / 60 ) % 24
+    remaining_time[:day]  = ( total_sec / 24 / 60 / 60 )
+    return remaining_time
+  end
+
 end
