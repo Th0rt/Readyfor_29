@@ -1,13 +1,21 @@
 .purchase-contents
   .top-content
-    - if params[:page] == '2'
-      = render 'returns/payment2'
-    - elsif params[:page] == '3'
-      = render 'returns/payment3'
-    - elsif params[:page] == '4'
-      = render 'returns/payment4'
-    - else
-      = render 'returns/payment1'
+    .purchase-progress-content
+      = image_tag "/assets/flow04.png", id: "progress-image"
+    .returns-content
+      .payment-completion
+        %h1 支払いが完了しました。
+    .progress-button-content
+      %h1
+        %i.fa.fa-question-circle.fa-lg.faq-link
+        支援についてわからないことがある場合、
+        = link_to "こちら", root_path
+        をご覧ください。
+      .progress-button
+        = link_to project_path(1) do
+          .progress-button__return
+            = image_tag '/assets/left_arrow.png'
+            %p プロジェクトページに戻る
   .bottom-content
     .contact-us-content
       %h2 寄附にあたって

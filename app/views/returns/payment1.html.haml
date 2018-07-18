@@ -1,0 +1,73 @@
+.purchase-contents
+  .top-content
+    .purchase-progress-content
+      = image_tag "/assets/flow01.png", id: "progress-image"
+    .returns-content
+      .return-lists
+        = render partial: 'returns/return-item',
+                        locals:  { title: "選択したギフト" }
+        = render partial: 'returns/return-item',
+                        locals:  { title: "その他のギフト" }
+      .return-total
+        %p
+          追加するリターン :
+          %span 1,000円
+          × 1個
+        %hr
+        .return-total__table
+          %table
+            %tr
+              %th 合計金額
+              %td 1,000円
+        .return-total__right-text
+          %span を
+        .clear
+        .return-total__text
+          %p プロジェクト「開始3ヶ月、豪雨災害で水没した子どもの学び場「ホハル」再建へ」に支援します
+    .payment-content
+      %h1 支払い方法を選択してください
+      %h2 新規のカードを登録する
+      .credit-card
+        .credit-card__left
+          %label
+            = radio_button_tag :payment_type, '0'
+        .credit-card__right
+          %p 下記のクレジットカードが利用できます
+          = image_tag "https://readyfor.jp/assets/contribution/caed5-bd4673425aa4e9850a622c63dc220988f7e2e09ae4f84357b924f6040f483e4d.png"
+      %h2 銀行振込で支援する
+      .bank-transfer
+        .bank-transfer__left
+          %label
+            = radio_button_tag :payment_type, '1'
+        .bank-transfer__right
+          %p 銀行振込で支援する
+    .progress-button-content
+      %h1
+        %i.fa.fa-question-circle.fa-lg.faq-link
+        支援についてわからないことがある場合、
+        = link_to "こちら", root_path
+        をご覧ください。
+      .progress-button
+        = link_to project_path(1) do
+          .progress-button__return
+            = image_tag '/assets/left_arrow.png'
+            %p プロジェクトページに戻る
+        = link_to root_path do
+          .progress-button__next
+            %p 次に進む
+            = image_tag '/assets/right_arrow.png'
+  .bottom-content
+    .contact-us-content
+      %h2 寄附にあたって
+      .contact-us-content__list.row
+        .contact-us-content__list__image.col-sm-4
+          = image_tag 'https://readyfor.jp/assets/contribution/support02-63c9bd72490f296b6bb24ebbb94ceb79d315888c6bac3ef79e63cf9ef2c7e7bd.gif'
+        .contact-us-content__list__text.col-sm-8
+          %h3 安心安全のセキュリティ
+          %p お客様の通信内容は高度な暗号化技術によって守られています。また個人情報の取り扱いについては寄附先との間で厳密な取り決めが結ばれております。
+      .contact-us-content__list.row
+        .contact-us-content__list__image.col-sm-4
+          = image_tag 'https://readyfor.jp/assets/contribution/support03-875f72bd79d2db130a9a41aa35007461cc368c7fdec4d00c7133679b0d3552c2.gif'
+        .contact-us-content__list__text.col-sm-8
+          %h3 お気軽にお問い合わせください
+          %p 寄附にあたって分からない点、不便な点などございましたら、03-6801-5767 もしくは info@readyfor.jp までお問い合わせ下さい。

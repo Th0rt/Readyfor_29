@@ -1,5 +1,14 @@
 class ReturnsController < ApplicationController
-  def show
+  def payment1
+  end
+
+  def payment2
+  end
+
+  def payment3
+  end
+
+  def payment4
   end
 
   def new
