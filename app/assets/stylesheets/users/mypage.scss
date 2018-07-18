@@ -25,15 +25,12 @@
       font-size: 12px;
       margin-left: 20px;
     }
-    .filter-list {
-      padding-left: 10px;
-    }
-    .message-list, .answer-list{
+    .message-list, .answer-list {
       margin: 10px 0 10px 0;
       border-bottom: 1px solid gray;
     }
     .filter-item {
-      width: 180px;
+      width: 200px;
       height: 35px;
       font-size: 14px;
       padding-left: 10px;
@@ -44,7 +41,7 @@
         display: block;
       }
     }
-    .selected a{
+    .selected a {
       color: white;
     }
     .mypage-top {
@@ -60,24 +57,25 @@
       color: gray;
     }
   }
-  .left-wrapper .selected{
-    background-color: blue;
+  .left-wrapper .selected {
+    background-color: #4078c0 ;
     color: white;
+    border-radius: 5px;
   }
-  .mypage-right{
+  .mypage-right {
     float: right;
     width: 740px;
     background-color: white;
-    border-left:solid 2px gray;
+    border-left:solid 1px #ccc;
     padding-left: 10px;
   }
-  .right-wrapper{
+  .right-wrapper {
     h2 {
       font-size: 14px;
       margin: 0;
       color: gray;
     }
-    .return-list{
+    .return-list {
       background-color: #fafafa;
       box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
       width: 740px;
@@ -87,7 +85,7 @@
       font-size: 15px;
       border-radius: 10px;
     }
-    button{
+    button {
       width: 578px;
       height: 32px;
       background-color: #e53935;
