@@ -1,8 +1,12 @@
 .mypage-container {
   width: 950px;
   height: 400px;
-  margin:0 auto;
-  margin-top:70px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  a {
+    color: black;
+  }
   .mypage-left {
     float: left;
     width: 200px;
