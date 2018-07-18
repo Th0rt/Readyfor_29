@@ -4,13 +4,9 @@
       %span
         #{ title }
     = link_to "もっと見る", "#", class: "PcTopProjectList__more__1IH_J"
-  - if is_dummy
-    = render partial: "layouts/dummy/Entry-type2-dummy"
+  - if projects.present?
+    = render partial: "layouts/Entry-type2", locals: { project: projects.first }
   - else
-    - if projects.present?
-      - projects.first(max_display_projects).each do |project|
-        = render partial: "layouts/Entry-type2", locals: { project: project }
-    - else
-      .search-page-box
-        = link_to projects_path do
-          %span プロジェクトを探しに行く
+    .search-page-box
+      = link_to projects_path do
+        %span プロジェクトを探しに行く
