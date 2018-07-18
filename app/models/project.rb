@@ -2,6 +2,7 @@ class Project < ApplicationRecord
   belongs_to :user
   has_many :returns, dependent: :destroy
   mount_uploader :projectimage, ProjectimageUploader
+  enum project_type: { purchase: 0, contribution: 1 }
 
   # 募集中かどうかを判定
   def active?
