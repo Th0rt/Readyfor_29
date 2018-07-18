@@ -38,22 +38,32 @@
       cursor: pointer;
     }
     &__next{
-      height: 55px;
-      width: 257px;
       float: right;
-      background-color: #B22B30;
+      position: relative;
+      input{
+        height: 55px;
+        width: 257px;
+        background-color: #B22B30;
+        text-align: left;
+      }
       p{
         font-size: 16px;
         line-height: 55px;
         color: white;
         float: left;
         margin-left: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
       img{
         float: right;
         width: 6%;
         height: auto;
         margin: 15px 20px 0 0;
+        position: absolute;
+        top: 0;
+        right: 0;
       }
     }
     &__next:hover{
