@@ -18,12 +18,20 @@
     tr{
       th{
         border: solid 1px #CCCCCC;
-        padding: 10px;
+        padding: 20px;
         background-color: #F9F9F9;
       }
       td{
         border: solid 1px #CCCCCC;
-        padding: 10px;
+        padding: 20px;
+        input{
+          height: 36px;
+          border: solid 2px #CCCCCC;
+          border-radius: 5px;
+        }
+        span{
+          padding: 5px;
+        }
       }
     }
   }
