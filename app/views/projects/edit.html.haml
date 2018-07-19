@@ -32,12 +32,14 @@
           %hr
           %label 目標金額(第一)
           .project-target-amount
-            = f.number_field :goal, required: true, maxlength: 9, class: 'goal-input'
+            = f.number_field :goal, required: true, maxlength: 9,
+             class: 'goal-input'
             %span 円
           %hr
           %label 目標金額(第二)
           .project-target-amount-next
-            = f.number_field :next_goal, maxlength: 9, class: 'goal-input'
+            = f.number_field :next_goal, maxlength: 9,
+             class: 'goal-input'
             %span 円
       .tab-content.hide
         .tab-content__form-group
