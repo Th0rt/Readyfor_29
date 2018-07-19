@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :returns, only: [:new, :create]
+    resources :likes, only: [:create, :destroy]
   end
 end
