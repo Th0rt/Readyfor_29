@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :projects, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
+  has_many :likes, dependent: :destroy
+  has_many :projects, through: :likes
 end

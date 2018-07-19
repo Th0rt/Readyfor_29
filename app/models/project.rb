@@ -2,6 +2,8 @@ class Project < ApplicationRecord
   belongs_to :user
   has_many :returns, dependent: :destroy
   mount_uploader :projectimage, ProjectimageUploader
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes
 
   # 募集中かどうかを判定
   def active?
@@ -28,4 +30,15 @@ class Project < ApplicationRecord
     return 0 if self.total_support == 0
     ((self.total_support.to_f / self.goal.to_f) * 100).floor
   end
+
+  # projectをいいねする
+  def iine(user)
+    likes.create(user_id: user.id)
+  end
+
+  # projectのいいねを解除する
+  def uniine(user)
+    likes.find_by(user.id).destroy
+  end
+
 end
