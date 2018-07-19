@@ -1,5 +1,5 @@
 .bank-content
-  %h1 講座情報をご確認ください！
+  %h1 口座情報をご確認ください！
   %table
     %tr
       %th 銀行名
@@ -17,6 +17,27 @@
       %th 口座番号
       %td
         %p= params[:account_number]
+
+  %hr
+
+  %h3 下記の振込先に「1000円」お振込ください。
+  %table
+    %tr
+      %th 銀行名
+      %td
+        %p みずほ銀行
+    %tr
+      %th 支店名
+      %td
+        %p 東京営業部
+    %tr
+      %th 口座氏名
+      %td
+        %p READYFOR株式会社
+    %tr
+      %th 口座番号
+      %td
+        %p 1234567
 
   .about-settlement-system
     %h2 決済システムについて
