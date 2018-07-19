@@ -1,0 +1,2 @@
+class UserReturn < ApplicationRecord
+end
