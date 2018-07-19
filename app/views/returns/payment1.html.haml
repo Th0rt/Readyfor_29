@@ -1,4 +1,4 @@
-= form_tag("/projects/#{1}/returns/#{1}/payment2", method: :post) do
+= form_tag(return_payment_page_url(1, 1, 'payment2'), method: :post) do
   .purchase-contents
     .top-content
       .purchase-progress-content

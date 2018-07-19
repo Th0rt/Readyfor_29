@@ -14,4 +14,8 @@ module ReturnsHelper
     ["2018", "2019", "2020", "2021", "2022", "2023","2024", "2025",
      "2026", "2027", "2028", "2029", "2030"]
   end
+
+  def return_payment_page_url(project_id, return_id, payment_view)
+    "/projects/#{project_id}/returns/#{return_id}/#{payment_view}"
+  end
 end
