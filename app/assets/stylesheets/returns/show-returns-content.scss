@@ -8,20 +8,11 @@
     margin: 0 60px;
   }
 
-  .return-Amount-of-money{
+  .return-amount-of-money{
     margin: 40px 60px;
     background-color: #F2F2F2;
     padding: 30px;
     overflow: hidden;
-    .return-count{
-      p{
-        font-size: 20px;
-        span{
-          font-size: 26px;
-          font-weight: bold;
-        }
-      }
-    }
     hr{
       border-top: dashed 1px #AAAAAA;
     }
@@ -56,6 +47,15 @@
         margin-top: 20px;
         p{
           font-size: 20px;
+        }
+      }
+    }
+    .return-count{
+      p{
+        font-size: 20px;
+        span{
+          font-size: 26px;
+          font-weight: bold;
         }
       }
     }
