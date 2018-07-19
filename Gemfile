@@ -96,3 +96,7 @@ gem 'devise'
 gem 'jquery-rails'
 # Use slick-slider
 gem "jquery-slick-rails"
+
+# rails_addon
+# enumを日本語にする
+gem 'enum_help'
