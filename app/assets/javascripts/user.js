@@ -47,4 +47,14 @@ $(document).on('turbolinks:load', function(){
     editButton("#return-edit-button","#user-return-explain","#user-edit-return");
     editButton("#alertmail-edit-button","#user-alertmail-explain","#user-edit-alertmail");
   })
+  //リンク先をグレーにする
+  $(function(){
+    $('.filter-item:not(.selected)').hover(function(){
+      $(this).css('background-color', 'whitesmoke')
+      $(this).find('a').css('color', 'blue')
+    },function(){
+      $(this).css('background-color', '')
+      $(this).find('a').css('color', '')
+    })
+  })
 });
