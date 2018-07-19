@@ -1,0 +1,38 @@
+.purchase-progress-content
+  = image_tag "/assets/flow02.png", id: "progress-image"
+.returns-content
+  .credit-card-content
+    %h1 カード情報をご入力ください！
+    .credit-card-available
+      %span
+        ご利用可能なクレジットカード :
+        = image_tag 'https://readyfor.jp/assets/contribution/caed5-bd4673425aa4e9850a622c63dc220988f7e2e09ae4f84357b924f6040f483e4d.png'
+    %table
+      %tr
+        %th カード番号
+        %td
+          = number_field :card, required: true
+      %tr
+        %th カード有効期限
+        %td
+          = select_tag 'month', options_for_select(["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"])
+          %span /
+          = select_tag 'year', options_for_select(["2018", "2019", "2020", "2021", "2022", "2023","2024", "2025", "2026", "2027", "2028", "2029", "2030"])
+    .about-settlement-system
+      %h2 決済システムについて
+      %p GMOペイメントゲートウェイ株式会社を利用しています。サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。 クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。
+.progress-button-content
+  %h1
+    %i.fa.fa-question-circle.fa-lg.faq-link
+    支援についてわからないことがある場合、
+    = link_to "こちら", root_path
+    をご覧ください。
+  .progress-button
+    = link_to project_path(1) do
+      .progress-button__return
+        = image_tag '/assets/left_arrow.png'
+        %p プロジェクトページに戻る
+    .progress-button__next
+      = submit_tag("")
+      %p 次に進む
+      = image_tag '/assets/right_arrow.png'

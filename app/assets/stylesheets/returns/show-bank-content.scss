@@ -1,0 +1,39 @@
+.bank-content{
+  padding: 50px;
+  h1{
+    font-size: 20px;
+    border-left: solid 3px #B4292C;
+  }
+  table{
+    font-size: 16px;
+    margin-top: 30px;
+    tr{
+      th{
+        border: solid 1px #CCCCCC;
+        padding: 20px;
+        background-color: #F9F9F9;
+      }
+      td{
+        border: solid 1px #CCCCCC;
+        padding: 20px;
+        input{
+          height: 40px;
+          width: 300px;
+          border: solid 2px #CCCCCC;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .about-settlement-system{
+    margin-top: 30px;
+    border: dashed 1px #CBCDCD;
+    padding: 10px 40px;
+    h2{
+      border-bottom: solid 1px #B4292C;
+    }
+    p{
+      margin-top: 20px;
+    }
+  }
+}
