@@ -3,6 +3,7 @@ class ToppageController < ApplicationController
                 :set_projects_nortable,
                 :set_projects_large_amount,
                 :set_projects_new
+                :set_tags_all
 
   def index
     # NOTE: 各欄ごとにクエリを発行したくないので、allで一括取得して加工する。
@@ -15,21 +16,27 @@ class ToppageController < ApplicationController
     @projects_one_more_push = @projects.select{ |project| project.achievement_rate >= 40 && project.remaining_funding_days <= 30 }
                                        .sort_by{ |project| project.remaining_funding_days }
                                        .first(4)
+    @tags = Tag.all
   end
 
   def socialgood
+    @tags = Tag.all
   end
 
   def local
+    @tags = Tag.all
   end
 
   def product
+    @tags = Tag.all
   end
 
   def art
+    @tags = Tag.all
   end
 
   def challenge
+    @tags = Tag.all
   end
 
   private

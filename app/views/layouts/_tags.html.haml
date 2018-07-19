@@ -1,5 +1,12 @@
+- tags ||= false
+
 %div{ class: "#{ adding_class } tags" }
-  - 5.times do
+  - if tags
+    - tags.each do |tag|
+      .project-tag.tag.undefined
+        = fa_icon('tag')
+        = link_to tag.name , tags_path(tag_id: tag.id)
+  - else
     .project-tag.tag.undefined
       = fa_icon('tag')
       = link_to('tag_name', '#')
