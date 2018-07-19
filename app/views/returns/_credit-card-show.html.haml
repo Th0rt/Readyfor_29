@@ -8,13 +8,13 @@
     %tr
       %th カード番号
       %td
-        %p 0000 0000 0000 0000
+        %p= params[:card]
     %tr
       %th カード有効期限
       %td
-        %span 01
+        %span= params[:month]
         %span /
-        %span 2018
+        %span= params[:year]
   .about-settlement-system
     %h2 決済システムについて
     %p GMOペイメントゲートウェイ株式会社を利用しています。サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。 クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。

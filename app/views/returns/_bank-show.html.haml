@@ -4,19 +4,19 @@
     %tr
       %th 銀行名
       %td
-        %p みずほ銀行
+        %p= params[:bank_name]
     %tr
       %th 支店名
       %td
-        %p 東京営業部
+        %p= params[:branch_office]
     %tr
       %th 口座氏名
       %td
-        %p あああ
+        %p= params[:name]
     %tr
       %th 口座番号
       %td
-        %p 0000000
+        %p= params[:account_number]
   .about-settlement-system
     %h2 決済システムについて
     %p GMOペイメントゲートウェイ株式会社を利用しています。サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。 クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。
