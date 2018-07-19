@@ -51,6 +51,8 @@
         = f.fields_for :returns do |r|
           .return-create
             %h2 リターンの編集
+            %button.return-delete-button
+              = link_to  "削除" ,project_return_path(project_id: params[:id], id: r.object.id), method: :delete
             .return-create__title.box-size
               .content タイトル
               .content-form
