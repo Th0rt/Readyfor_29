@@ -11,22 +11,24 @@
           = render partial: 'returns/return-item',
                           locals:  { title: "その他のギフト" }
 
-        .return-total
-          %p
-            追加するリターン :
-            %span 1,000円
-            × 1個
+        .return-Amount-of-money
+          .return-count
+            %p
+              追加するリターン :
+              %span 1,000円
+              × 1個
           %hr
-          .return-total__table
-            %table
-              %tr
-                %th 合計金額
-                %td 1,000円
-          .return-total__right-text
-            %span を
-          .clear
-          .return-total__text
-            %p プロジェクト「開始3ヶ月、豪雨災害で水没した子どもの学び場「ホハル」再建へ」に支援します
+          .return-total
+            .return-total__table
+              %table
+                %tr
+                  %th 合計金額
+                  %td 1,000円
+            .return-total__right-text
+              %span を
+            .clear
+            .return-total__text
+              %p プロジェクト「開始3ヶ月、豪雨災害で水没した子どもの学び場「ホハル」再建へ」に支援します
 
       .payment-content
         %h1 支払い方法を選択してください
