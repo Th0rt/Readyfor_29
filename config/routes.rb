@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
-    resources :returns, only: [:new, :create]
+    resources :returns, only: [:new, :create, :destroy]
   end
 end
