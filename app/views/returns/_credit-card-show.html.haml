@@ -5,17 +5,18 @@
     %span
       ご利用可能なクレジットカード :
       = image_tag creditcard_img_url()
-  %table
-    %tr
-      %th カード番号
-      %td
-        %p= params[:card]
-    %tr
-      %th カード有効期限
-      %td
-        %span= params[:month]
-        %span /
-        %span= params[:year]
+  .credit-card-input
+    %table
+      %tr
+        %th カード番号
+        %td
+          %p= params[:card]
+      %tr
+        %th カード有効期限
+        %td
+          %span= params[:month]
+          %span /
+          %span= params[:year]
 
   .about-settlement-system
     %h2 決済システムについて
