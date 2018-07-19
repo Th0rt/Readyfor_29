@@ -1,4 +1,4 @@
-.user-container{
+.user-container {
   height: 400px;
   width: 640px;
   margin: 0 auto;
@@ -12,15 +12,15 @@
     float: left;
     color: white;
   }
-  .left-content{
+  .left-content {
     margin-left: 20px;
-    .left-content__input{
+    .left-content__input {
       height: 100px;
       width: 100%;
       margin: 20px 0 0  15px;
       color: black;
     }
-    button{
+    button {
       margin-left: 20px;
       font-size: 14px;
       width : 240px;
@@ -33,14 +33,14 @@
       opacity: 0.8;
       margin-top: 10px;
     }
-    #user_email,#user_password{
+    #user_email,#user_password {
       width: 232px;
       height: 30px;
       font-size: 12px;
       padding: 10px;
       color: black;
     }
-    #user_email{
+    #user_email {
       margin-top: 35px;
       height: 40px;
     }
@@ -48,27 +48,27 @@
       margin-top: 10px;
       height: 35px;
     }
-    .left-content__button{
+    .left-content__button {
       margin-top: 20px;
     }
-    .left-content__checkbox{
+    .left-content__checkbox {
       float: left;
       font-size: 8px;
       margin-top: 10px;
       margin-right: 20px;
     }
-    .left-content__submit{
+    .left-content__submit {
       margin-top: 20px;
       width: 300px;
       height: 40px;
-      #user_remember_me{
+      #user_remember_me {
         float: left;
       }
-      #login-checkbox{
+      #login-checkbox {
         font-size: 12px;
         float: left;
       }
-      #login-button{
+      #login-button {
         background-color: red;
         width: 102px;
         height: 36px;
@@ -87,17 +87,17 @@
       margin-top: 20px;
     }
   }
-  .user-right{
+  .user-right {
     width: 326px;
     height: 400px;
     float: right;
     background-color: white;
     .right-content{
       padding:32px 48px 0 48px;
-      .right-content__input{
+      .right-content__input {
         margin-top: 20px;
       }
-      #right-content-email{
+      #right-content-email {
          background-color: red;
          width: 240px;
          height: 36px;
@@ -107,7 +107,7 @@
          line-height: 36px;
          margin-bottom: 20px;
       }
-      button{
+      button {
         font-size: 14px;
         width : 240px;
         height: 40px;
@@ -118,36 +118,36 @@
         line-height: 40px;
         opacity: 0.8;
       }
-      h1{
+      h1 {
         font-size: 14px;
         text-align: center;
         color: red;
         padding-bottom:16px;
         border-bottom: solid 3px red;
       }
-      h2{
+      h2 {
         font-size: 11px;
         text-align: center;
       }
-      .right-content-fb{
+      .right-content-fb {
         margin-top: 10px;
 
       }
-      .warning-notice, a{
+      .warning-notice, a {
         font-size: 8px;
         margin-top: 20px;
       }
-      .email-receive-option{
+      .email-receive-option {
         margin-top: 10px;
       }
-      .right-form{
+      .right-form {
         width: 230px;
         height: 30px;
         margin-top:5px;
         padding: 8px;
         font-size: 12px;
       }
-      #signin-button{
+      #signin-button {
         width: 102px;
         height: 36px;
         background-color: red;
@@ -158,7 +158,7 @@
       }
     }
   }
-  .hidden{
+  .hidden {
     display: none;
   }
 }
