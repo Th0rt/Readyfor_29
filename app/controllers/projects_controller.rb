@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.returns.build
   end
 
   def create
@@ -60,7 +61,8 @@ class ProjectsController < ApplicationController
       :next_goal,
       :limit_date,
       :projectimage,
-      :project_type
+      :project_type,
+      returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage]
     ).merge(testdata)
   end
 
