@@ -5,12 +5,15 @@
     = image_tag "/assets/down_arrow.png", id: "selected-btn"
   .return-items.row
     .return-item-left.col-sm-4
+
       .return-price.col
         = image_tag "/assets/check.png"
         %span 1,000円
+
       .return-numbar.col
         = select_tag 'numbar', options_for_select(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"])
         %span 個
+
     .return-item-right.col-sm-8
       .return-item-right__text.col
         %h2 1,000円コース

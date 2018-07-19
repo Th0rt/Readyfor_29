@@ -3,12 +3,14 @@
     .top-content
       .purchase-progress-content
         = image_tag "/assets/flow01.png", id: "progress-image"
+
       .returns-content
         .return-lists
           = render partial: 'returns/return-item',
                           locals:  { title: "選択したギフト" }
           = render partial: 'returns/return-item',
                           locals:  { title: "その他のギフト" }
+
         .return-total
           %p
             追加するリターン :
@@ -25,6 +27,7 @@
           .clear
           .return-total__text
             %p プロジェクト「開始3ヶ月、豪雨災害で水没した子どもの学び場「ホハル」再建へ」に支援します
+
       .payment-content
         %h1 支払い方法を選択してください
         %h2 新規のカードを登録する
@@ -42,6 +45,7 @@
               = radio_button_tag :payment_type, '1'
           .bank-transfer__right
             %p 銀行振込で支援する
+
       .progress-button-content
         %h1
           %i.fa.fa-question-circle.fa-lg.faq-link
@@ -57,6 +61,7 @@
             = submit_tag("")
             %p 次に進む
             = image_tag '/assets/right_arrow.png'
+
     .bottom-content
       .contact-us-content
         %h2 寄附にあたって

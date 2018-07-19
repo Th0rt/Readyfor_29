@@ -3,11 +3,13 @@
     .top-content
       .purchase-progress-content
         = image_tag "/assets/flow03.png", id: "progress-image"
+
       .returns-content
         - if params[:card].nil?
           = render 'returns/bank-show'
         - else
           = render 'returns/credit-card-show'
+
       .progress-button-content
         %h1
           %i.fa.fa-question-circle.fa-lg.faq-link
@@ -23,6 +25,7 @@
             = submit_tag("")
             %p 次に進む
             = image_tag '/assets/right_arrow.png'
+
     .bottom-content
       .contact-us-content
         %h2 寄附にあたって
