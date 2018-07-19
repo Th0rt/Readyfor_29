@@ -1,6 +1,10 @@
 class Project < ApplicationRecord
   belongs_to :user
   has_many :returns, dependent: :destroy
+
+  has_many :tag_projects
+  has_many :tags, through: :tag_projects
+
   mount_uploader :projectimage, ProjectimageUploader
   enum project_type: { purchase: 0, contribution: 1 }
 
