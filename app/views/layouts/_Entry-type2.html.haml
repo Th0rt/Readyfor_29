@@ -2,7 +2,7 @@
   .Entry__img
     .Entry__img-mask
       = link_to( project_path(project) ) do
-        = image_tag( "http://placehold.jp/165x124.png", alt: project.title)
+        = image_tag( project.projectimage.url, alt: project.title)
         %p project.content
 
   .Entry__body
@@ -14,7 +14,7 @@
           .Entry__numerical-info
             %dl.Entry__condition-amount
               %dt 支援総額
-              %dd 1,553,000 円
+              %dd #{ project.total_support} 円
             %dl
               %dt 残り
               %dd
@@ -23,4 +23,4 @@
                 - else
                   #{ project.remaining_time[:hour] } 時間
           .project-type-badge.normal
-            = project.project_type
+            = project.project_type_i18n

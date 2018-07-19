@@ -11,7 +11,7 @@
         = project.title
       .Entry__project-type-badge
         .project-type-badge.normal
-          = project.project_type
+          = project.project_type_i18n
       .Entry__info-founder.hidden-while-processing
         %span.Entry__info-founder-icon
           = image_tag(project.user.avatar.url, class:  'Entry__icon-img',
