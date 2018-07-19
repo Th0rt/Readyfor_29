@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_19_034615) do
+ActiveRecord::Schema.define(version: 2018_07_19_045938) do
 
   create_table "image_upload_tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2018_07_19_034615) do
     t.index ["project_id"], name: "index_returns_on_project_id"
   end
 
+  create_table "tag_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_tag_projects_on_project_id"
+    t.index ["tag_id"], name: "index_tag_projects_on_tag_id"
+  end
+
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "type"
@@ -80,4 +89,6 @@ ActiveRecord::Schema.define(version: 2018_07_19_034615) do
 
   add_foreign_key "projects", "users"
   add_foreign_key "returns", "projects"
+  add_foreign_key "tag_projects", "projects"
+  add_foreign_key "tag_projects", "tags"
 end
