@@ -11,7 +11,7 @@
         %span 1,000円
 
       .return-numbar.col
-        = select_tag 'numbar', options_for_select(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"])
+        = select_tag 'numbar', options_for_select(return_count_options())
         %span 個
 
     .return-item-right.col-sm-8
