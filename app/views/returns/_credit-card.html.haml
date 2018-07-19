@@ -9,17 +9,18 @@
       %span
         ご利用可能なクレジットカード :
         = image_tag 'https://readyfor.jp/assets/contribution/caed5-bd4673425aa4e9850a622c63dc220988f7e2e09ae4f84357b924f6040f483e4d.png'
-    %table
-      %tr
-        %th カード番号
-        %td
-          = number_field_tag :card
-      %tr
-        %th カード有効期限
-        %td
-          = select_tag :month, options_for_select(return_month_options())
-          %span /
-          = select_tag :year, options_for_select(return_year_options())
+    .credit-card-input
+      %table
+        %tr
+          %th カード番号
+          %td
+            = number_field_tag :card
+        %tr
+          %th カード有効期限
+          %td
+            = select_tag :month, options_for_select(return_month_options())
+            %span /
+            = select_tag :year, options_for_select(return_year_options())
 
     .about-settlement-system
       %h2 決済システムについて

@@ -13,30 +13,32 @@
       margin-left: 70px;
     }
   }
-  table{
-    font-size: 16px;
-    tr{
-      th{
-        border: solid 1px #CCCCCC;
-        padding: 20px;
-        background-color: #F9F9F9;
-      }
-      td{
-        border: solid 1px #CCCCCC;
-        padding: 20px;
-        input{
-          height: 40px;
-          width: 300px;
-          border: solid 2px #CCCCCC;
-          border-radius: 5px;
+  .credit-card-input{
+    table{
+      font-size: 16px;
+      tr{
+        th{
+          border: solid 1px #CCCCCC;
+          padding: 20px;
+          background-color: #F9F9F9;
         }
-        select{
-          height: 30px;
-          background-color: white;
-          border: solid 2px #CCCCCC;
-        }
-        span{
-          padding: 5px;
+        td{
+          border: solid 1px #CCCCCC;
+          padding: 20px;
+          input{
+            height: 40px;
+            width: 300px;
+            border: solid 2px #CCCCCC;
+            border-radius: 5px;
+          }
+          select{
+            height: 30px;
+            background-color: white;
+            border: solid 2px #CCCCCC;
+          }
+          span{
+            padding: 5px;
+          }
         }
       }
     }
