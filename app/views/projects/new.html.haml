@@ -19,7 +19,7 @@
           %label タイトル
           .project-title
             = f.text_field :title, required: true, autofocus: true,
-              placeholder: "タイトルを入力してください。"
+              placeholder: "タイトルを入力してください。(30文字以内)", maxlength: 30
           %hr
           %label 画像
           #project-image
