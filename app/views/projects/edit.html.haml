@@ -90,6 +90,7 @@
                 #return-image-show
                   %img{ src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvOUSpHlYa1jpsFW2BZB9_T5X68Q-YwCA4GtihyEUOW7AiAqru" ,alt: "画像がありません" ,id: "return-image-default" }
         .return-new-link
-          .btn.btn-primary
-            = link_to "リターンを追加", new_project_return_path(project_id: params[:id])
+          .btn.btn-primary.return-add-button
+            = link_to "リターンを追加",
+              new_project_return_path(project_id: params[:id])
   .blank-content
