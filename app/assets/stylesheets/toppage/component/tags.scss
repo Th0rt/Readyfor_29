@@ -27,3 +27,11 @@
     background: #fdd;
   }
 }
+
+.tags .tag--checkbox {
+  display: inline-block;
+}
+
+.tag--checkbox+.tag--checkbox {
+  margin-left: 10px;
+}
