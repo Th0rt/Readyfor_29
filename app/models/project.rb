@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   has_many :returns, dependent: :destroy
   accepts_nested_attributes_for :returns, allow_destroy: true
 
-  has_many :tag_projects
+  has_many :tag_projects, dependent: :destroy
   has_many :tags, through: :tag_projects
 
   mount_uploader :projectimage, ProjectimageUploader
