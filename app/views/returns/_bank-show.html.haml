@@ -1,0 +1,47 @@
+.bank-content
+  %h1 口座情報をご確認ください！
+  %table
+    %tr
+      %th 銀行名
+      %td
+        %p= params[:bank_name]
+    %tr
+      %th 支店名
+      %td
+        %p= params[:branch_office]
+    %tr
+      %th 口座氏名
+      %td
+        %p= params[:name]
+    %tr
+      %th 口座番号
+      %td
+        %p= params[:account_number]
+
+  %hr
+
+  %h3 下記の振込先に「1000円」お振込ください。
+  %table
+    %tr
+      %th 銀行名
+      %td
+        %p みずほ銀行
+    %tr
+      %th 支店名
+      %td
+        %p 東京営業部
+    %tr
+      %th 口座氏名
+      %td
+        %p READYFOR株式会社
+    %tr
+      %th 口座番号
+      %td
+        %p 1234567
+
+  .about-settlement-system
+    %h2 決済システムについて
+    %p
+      GMOペイメントゲートウェイ株式会社を利用しています。
+      サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。
+      クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。

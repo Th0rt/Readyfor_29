@@ -68,7 +68,16 @@
 @import './projects/new-tab-content';
 @import './projects/search';
 
-// return
+// returns
+@import './returns/show';
+@import './returns/show-purchase-progress-content';
+@import './returns/show-returns-content';
+@import './returns/show-payment-content';
+@import './returns/show-progress-button-content';
+@import './returns/show-contact-us-content';
+@import './returns/show-return-list-content';
+@import './returns/show-credit-card-content';
+@import './returns/show-payment-completion';
+@import './returns/show-bank-content';
 @import './projects/returns/project-new';
 @import './projects/returns/return-new';
-

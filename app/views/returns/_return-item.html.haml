@@ -1,0 +1,22 @@
+.return-list-content
+  .return-list-content-title
+    %h1
+      #{ title }
+    = image_tag "/assets/down_arrow.png", id: "selected-btn"
+  .return-items.row
+    .return-item-left.col-sm-4
+
+      .return-price.col
+        = image_tag "/assets/check.png"
+        %span 1,000円
+
+      .return-numbar.col
+        = select_tag 'numbar', options_for_select(return_count_options())
+        %span 個
+
+    .return-item-right.col-sm-8
+      .return-item-right__text.col
+        %h2 1,000円コース
+        %p ■活動報告メールをお送りします。
+        %p ■寄附金品領収証明書を発行いたします。
+        %p 発送は2018年8月を予定】
