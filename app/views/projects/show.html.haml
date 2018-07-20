@@ -123,7 +123,7 @@
             - if content.stock === 0
               %span 在庫制限なし
             - else
-              %span 残り#{ content.stock }個
+              %span 残り#{ number_with_delimiter(content.price) }個
           .project-return__arrival
             %span.fa-stack.fa-lg
               %i.fa.fa-circle-o.fa-stack-2x
