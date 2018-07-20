@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'tags/index'
   root to: 'toppage#index'
   devise_for :users
 
@@ -11,7 +10,8 @@ Rails.application.routes.draw do
   get 'toppage/art',        to: 'toppage#art'
   get 'toppage/challenge',  to: 'toppage#challenge'
 
-  resources :tags, only: [:index]
+  resources :tags, only: [:index, :new, :create, :update, :destroy]
+  resources :region, only: [:create, :update, :destroy]
 
   resources :users, only: [:show, :edit, :index, :update] do
     member do
