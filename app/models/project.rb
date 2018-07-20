@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :user
   has_many :returns, dependent: :destroy
+  accepts_nested_attributes_for :returns, allow_destroy: true
   mount_uploader :projectimage, ProjectimageUploader
   enum project_type: { purchase: 0, contribution: 1 }
 
