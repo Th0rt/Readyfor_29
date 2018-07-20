@@ -109,7 +109,7 @@
             %h3= content.title
           .project-return__price
             %i.fa.fa-jpy
-            %strong= content.price
+            %strong= number_with_delimiter(content.price)
             %span 円のリターン
           .project-return__image
             = image_tag( "#{content.returnimage}" )
