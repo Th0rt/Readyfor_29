@@ -1,6 +1,6 @@
 class ReturnsController < ApplicationController
   before_action :set_return, only: [:destroy]
-  before_action :set_project, only: [:new, :destroy]
+  before_action :set_project, only: [:new]
   def new
     @return = Return.new
   end
@@ -12,12 +12,7 @@ class ReturnsController < ApplicationController
 
   def destroy
     @return.destroy
-    @returns = @project.returns
-    if @returns.present?
-      redirect_to root_path
-    else
-      redirect_to edit_project_path(id: params[:project_id])
-    end
+    redirect_to edit_project_path(id: params[:project_id])
   end
 
   private
