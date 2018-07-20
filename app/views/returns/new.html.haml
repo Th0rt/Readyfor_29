@@ -2,7 +2,7 @@
   .return-new-form
     = form_for [@project, @return]   do |f|
       .return-create
-        %h2 リターンの新規登録
+        %h2 #{@project.title}にリターンを追加
         .return-create__title.box-size
           .content タイトル
           .content-form
