@@ -29,6 +29,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    if @project.returns.present?
+      @returns = @project.returns
+    else
+      @return = @project.returns.new
+    end
   end
 
   def update
