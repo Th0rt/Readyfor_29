@@ -45,7 +45,7 @@ class ToppageController < ApplicationController
   end
 
   def set_projects_nortable
-    @projects_nortable = @projects
+    @projects_nortable = @projects.first(4)
   end
 
   def set_projects_large_amount
