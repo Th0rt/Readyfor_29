@@ -3,11 +3,13 @@
     = form_for [@project, @return]   do |f|
       .return-create
         %h2 リターンの新規登録
+
         .return-create__title.box-size
           .content タイトル
           .content-form
             = f.text_field :title, required: true, autofocus: true,
               placeholder: "タイトルを入力してください。"
+
         .return-create__price.box-size
           .content
             %span 価格
@@ -20,16 +22,19 @@
           .content-form
             = f.text_area :content, required: true, autofocus: true,
               placeholder: "説明文を入力してください。"
+
         .return-create__stock.box-size
           .content 在庫数
           .content-form
             = f.number_field :stock, required: true,
               placeholder: "在庫数に制限がない場合は０としてください"
+
         .return-create__arrival.box-size
           .content 発送予定日
           .content-form
             = f.date_select :arrival_date, dafault: Time.current,
               use_month_numbers: true, discard_day: true
+
         .return-create__image-show.clearfix
           .content 画像
           .content-form
@@ -37,5 +42,6 @@
               required: true
             #return-image-show
               %img{ src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvOUSpHlYa1jpsFW2BZB9_T5X68Q-YwCA4GtihyEUOW7AiAqru" ,alt: "画像がありません" ,id: "return-image-default" }
+
         .return-create__submit
           = f.submit "リターンの登録"
