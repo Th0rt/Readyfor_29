@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
     view_history << @project.id
     cookie_save("project_view_history", view_history)
     @returns = @project.returns
+    @tags = @project.tags
   end
 
   def new
