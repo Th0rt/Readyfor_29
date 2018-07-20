@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.tags << Tag.where(id: project_params[:tag_ids])
     if @project.save
       redirect_to root_path
     else
@@ -63,6 +64,7 @@ class ProjectsController < ApplicationController
       :limit_date,
       :projectimage,
       :project_type,
+      tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage]
     ).merge(testdata)
   end
