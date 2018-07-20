@@ -114,7 +114,7 @@
           .project-return__image
             = image_tag( "#{content.returnimage}" )
           .project-return__content
-            %p= content.content
+            %p= simple_format(content.content)
           .project-return__helper
             %span.fa-stack.fa-lg
               %i.fa.fa-circle-o.fa-stack-2x
