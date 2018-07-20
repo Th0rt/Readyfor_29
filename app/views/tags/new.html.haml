@@ -1,0 +1,22 @@
+.Site-container
+  .PcTopProjectArea__main__1hv8i
+    %h1 タグの管理
+
+    .tag-create
+      %h3 作成
+      = form_for @tag, html: { class: 'form-group' } do |f|
+        = f.text_field :name, class: 'form-control'
+        = f.label 'type'
+        = f.select :type, ['', 'Region'], class: 'form-control'
+        = f.submit '作成', class: 'btn-xs btn-primary'
+
+    .tag-update
+      %h3 更新
+      - @tags.each do |tag|
+        %div.tag-update__form.form-group
+          = form_for tag do |f|
+            = f.text_field :name, class: 'form-control'
+            = f.label 'type'
+            = f.select :type, ['', 'Region']
+            = f.submit '更新', class: 'btn-xs btn-primary'
+          = button_to '削除', tag, method: :delete, class: 'btn-xs btn-danger'
