@@ -4,8 +4,9 @@
   - if tags
     - tags.each do |tag|
       .project-tag.tag.undefined
-        = fa_icon('tag')
-        = link_to tag.name , tags_path(tag_id: tag.id)
+        = link_to tags_path(tag_id: tag.id), class: '' do
+          = fa_icon('tag')
+          = tag.name
   - else
     .project-tag.tag.undefined
       = fa_icon('tag')
