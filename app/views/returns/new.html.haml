@@ -13,7 +13,8 @@
             %span 価格
             %i.fa.fa-jpy
           .content-form
-            = f.number_field :price, required: true
+            = f.number_field :price, required: true, maxlength: 9,
+             class: 'price-input'
         .return-create__content.clearfix
           .content 説明
           .content-form
