@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_tags, only: [:new, :edit]
   before_action :require_login, except: [:index, :show]
 
   def index
@@ -22,7 +23,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.tags << Tag.where(id: project_params[:tag_ids])
     if @project.save
       redirect_to root_path
     else
@@ -51,6 +51,10 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id])
+  end
+
+  def set_tags
+    @tags = Tag.all
   end
 
   def project_params
