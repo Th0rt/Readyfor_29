@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_19_045938) do
+ActiveRecord::Schema.define(version: 2018_07_19_164619) do
 
   create_table "image_upload_tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_07_19_045938) do
     t.index ["project_id"], name: "index_returns_on_project_id"
   end
 
+<<<<<<< HEAD
   create_table "tag_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "project_id"
     t.bigint "tag_id"
@@ -65,6 +66,16 @@ ActiveRecord::Schema.define(version: 2018_07_19_045938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type"], name: "index_tags_on_type"
+=======
+  create_table "user_returns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "count", null: false
+    t.bigint "return_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["return_id"], name: "index_user_returns_on_return_id"
+    t.index ["user_id"], name: "index_user_returns_on_user_id"
+>>>>>>> プロジェクト作成時にリターンも新規登録
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,6 +100,11 @@ ActiveRecord::Schema.define(version: 2018_07_19_045938) do
 
   add_foreign_key "projects", "users"
   add_foreign_key "returns", "projects"
+<<<<<<< HEAD
   add_foreign_key "tag_projects", "projects"
   add_foreign_key "tag_projects", "tags"
+=======
+  add_foreign_key "user_returns", "returns"
+  add_foreign_key "user_returns", "users"
+>>>>>>> プロジェクト作成時にリターンも新規登録
 end
