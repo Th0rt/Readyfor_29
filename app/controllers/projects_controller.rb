@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
     view_history.delete_if { |id| id = @project.id }
     view_history << @project.id
     cookie_save("project_view_history", view_history)
-    @returns = @project.returns
+    @returns = @project.returns.order('price ASC' )
   end
 
   def new
