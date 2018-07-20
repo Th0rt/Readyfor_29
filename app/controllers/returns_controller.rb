@@ -1,5 +1,4 @@
 class ReturnsController < ApplicationController
-  before_action :set_return, only: [:payment1, :payment2, :payment3, :payment4]
   before_action :set_project, only: [:new, :payment1, :payment2, :payment3, :payment4]
 
   def payment1
@@ -32,10 +31,6 @@ class ReturnsController < ApplicationController
                                    :arrival_date,
                                    :returnimage
                                   ).merge(project_id: params[:project_id])
-  end
-
-  def set_return
-    @return = Return.find(params[:id])
   end
 
   def set_project

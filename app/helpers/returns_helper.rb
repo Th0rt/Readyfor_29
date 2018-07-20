@@ -18,8 +18,8 @@ module ReturnsHelper
   end
 
   # 支払い処理の各画面URLを返す
-  def return_payment_page_url(project_id, return_id, payment_view)
-    "/projects/#{project_id}/returns/#{return_id}/#{payment_view}"
+  def return_payment_page_url(project_id, return_id, payment_view, parameter)
+    "/projects/#{project_id}/returns/#{return_id}/#{payment_view}/#{parameter}"
   end
 
   # 安心安全のセキュリティの画像URLを返す
