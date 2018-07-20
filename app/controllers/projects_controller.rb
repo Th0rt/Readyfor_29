@@ -11,10 +11,12 @@ class ProjectsController < ApplicationController
     view_history.delete_if { |id| id = @project.id }
     view_history << @project.id
     cookie_save("project_view_history", view_history)
+    @returns = @project.returns
   end
 
   def new
     @project = Project.new
+    @project.returns.build
   end
 
   def create
@@ -50,7 +52,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    testdata = {project_type: "購入型", likes_count: 0, user_id: current_user.id}
+    testdata = {likes_count: 0, user_id: current_user.id}
 
     params.require(:project).permit(
       :title,
@@ -59,7 +61,9 @@ class ProjectsController < ApplicationController
       :goal,
       :next_goal,
       :limit_date,
-      :projectimage
+      :projectimage,
+      :project_type,
+      returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage]
     ).merge(testdata)
   end
 

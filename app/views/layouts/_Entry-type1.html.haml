@@ -11,7 +11,7 @@
         = project.title
       .Entry__project-type-badge
         .project-type-badge.normal
-          = project.project_type
+          = project.project_type_i18n
       .Entry__info-founder.hidden-while-processing
         %span.Entry__info-founder-icon
           = image_tag(project.user.avatar.url, class:  'Entry__icon-img',
@@ -31,7 +31,10 @@
           %dt.Entry__condition-remain-dt
             残り
           %dd.Entry__condition-remain-dd
-            #{ project.remaining_funding_days } 日
+            - if project.remaining_time[:day] != 0
+              #{ project.remaining_time[:day] } 日
+            - else
+              #{ project.remaining_time[:hour] } 時間
 
       .Entry__gauge.Gauge.is-top
         .Gauge__obj.is-1{ style: "width: #{ project.achievement_rate }%;" }

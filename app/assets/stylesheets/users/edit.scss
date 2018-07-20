@@ -1,9 +1,12 @@
 /* edit画面の右側 */
-.mypage-container{
-  .user-edit-wrapper{
+.mypage-container {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  .user-edit-wrapper {
     width: 740px;
   }
-  .user-edit-contents{
+  .user-edit-contents {
     width: 700px;
     margin-bottom: 30px;
     p{
@@ -11,10 +14,10 @@
       margin: 0;
       padding: 0;
     }
-    .hidden{
+    .hidden {
       display: none;
     }
-    .user-edit-main{
+    .user-edit-main {
       width: 600px;
       height: 20px;
       border-bottom: solid 1px #F0F8FF;
@@ -31,46 +34,46 @@
         font-size: 14px;
         font-weight: bold;
       }
-      .title{
+      .title {
         margin-left: 10px;
         line-height: 20px;
         font-weight: bold;
       }
-      .information{
+      .information {
         font-size: 10px;
         margin-left: 30px;
         line-height: 20px;
         color: #A9A9A9;
       }
     }
-    .user-edit-sub{
+    .user-edit-sub {
       width: 600px;
       height: 20px;
-      .explain{
+      .explain {
         float: left;
         margin-left: 10px;
         color: #A9A9A9
       }
-      .content{
+      .content {
         float: right;
         line-height: 20px;
       }
     }
     #user-edit-nickname, #user-edit-email, #user-edit-password, #user-edit-content
-      ,#user-edit-image, #user-edit-website, #user-edit-return, #user-edit-alertmail{
+      ,#user-edit-image, #user-edit-website, #user-edit-return, #user-edit-alertmail {
       margin: 10px 0 0 150px;
       p{
         float: left;
         font-size: 12px;
-        margin-right: 10px
+        margin-right: 10px;
       }
-      .field_input{
+      .field_input {
         float: left;
         input{
           padding: 0 30px ;
         }
       }
-      .picture-image{
+      .picture-image {
           margin-left: 80px;
         }
       .alertmail-checkboxes{
