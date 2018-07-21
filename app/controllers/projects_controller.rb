@@ -87,6 +87,7 @@ class ProjectsController < ApplicationController
       :limit_date,
       :projectimage,
       :project_type,
+      tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
   end
