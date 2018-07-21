@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
     view_history.delete_if { |id| id = @project.id }
     view_history << @project.id
     cookie_save("project_view_history", view_history)
-    @returns = @project.returns
+    @returns = @project.returns.order('price ASC' )
     @tags = @project.tags
   end
 
@@ -31,10 +31,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @returns = @project.returns
   end
 
   def update
-    if @project.update(project_params)
+    if @project.update(update_project_params)
       redirect_to root_path
     else
       render action: :edit
@@ -71,6 +72,22 @@ class ProjectsController < ApplicationController
       :project_type,
       tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage]
+    ).merge(testdata)
+  end
+
+  def update_project_params
+    testdata = {likes_count: 0, user_id: current_user.id}
+
+    params.require(:project).permit(
+      :title,
+      :content,
+      :limit_date,
+      :goal,
+      :next_goal,
+      :limit_date,
+      :projectimage,
+      :project_type,
+      returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
   end
 
