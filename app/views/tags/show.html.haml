@@ -98,7 +98,8 @@
         %span
           %small >
         %span
-          %small #{ @tag.name }
+          %small
+            = @tag.name
       %section.Grid.amount
         = render partial: 'toppage/partial/PcTopProjectList',
                   locals: { title: "「#{ @tag.name }」に関するプロジェクト",
