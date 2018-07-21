@@ -1,0 +1,106 @@
+.search-project-body
+  .container
+    .sidebar
+      .nav-project
+        %h3
+          %span.fa-stack.fa-lg
+            %i.fa.fa-circle.fa-stack-2x
+            %i.fa.fa-search.fa-stack-1x.fa-inverse
+          %span#search-project プロジェクトをさがす
+        %ul.nav-menu-lists
+          %li.nav-menu-item
+            = link_to  "注目のプロジェクト", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "支援金額の多いプロジェクト", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "あとひと押しのプロジェクト", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "新着プロジェクト", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "成立済みのプロジェクト", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "最近見たプロジェクト", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "もうすぐ終了のプロジェクト", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "コミュニティ型プロジェクト", href: "#"
+            %i.fa.fa-angle-right
+      .nav-category
+        %h3
+          %span.fa-stack.fa-lg
+            %i.fa.fa-circle.fa-stack-2x
+            %i.fa.fa-tag.fa-stack-1x.fa-inverse
+          %span#search-category カテゴリからさがす
+        %ul.nav-menu-lists
+          %li.nav-menu-item
+            = link_to "社会にいいこと", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "地域", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "ものづくり", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "アート", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "チャレンジ", href: "#"
+            %i.fa.fa-angle-right
+      .nav-area
+        %h3
+          %span.fa-stack.fa-lg
+            %i.fa.fa-circle.fa-stack-2x
+            %i.fa.fa-tag.fa-stack-1x.fa-inverse
+          %span#search-area 地域からさがす
+        %ul.nav-menu-lists
+          %li.nav-menu-item
+            = link_to "北海道", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "東北", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "関東", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "中部", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "近畿", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "中国", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "四国", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "九州", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "沖縄", href: "#"
+            %i.fa.fa-angle-right
+          %li.nav-menu-item
+            = link_to "海外", href: "#"
+            %i.fa.fa-angle-right
+    .page-main
+      .page-pankuzu
+        = link_to root_path do
+          %small クラウドファンディングトップ
+        %span
+          %small >
+        %span
+          %small #{ @tag.name }
+      %section.Grid.amount
+        = render partial: 'toppage/partial/PcTopProjectList',
+                  locals: { title: "「#{ @tag.name }」に関するプロジェクト",
+                             projects: @projects,
+                             max_display_projects: 8 }

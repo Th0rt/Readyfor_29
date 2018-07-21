@@ -5,7 +5,7 @@
   - if tags
     - tags.each do |tag|
       %div{ class: "project-tag tag #{tag.type}" }
-        = link_to tags_path(tag_id: tag.id), class: '' do
+        = link_to tag_path(tag) do
           = fa_icon('tag')
           = tag.name
   - else

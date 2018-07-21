@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_action :set_tag, only: [:update, :destroy]
+  before_action :set_tag, only: [:show, :update, :destroy]
 
   def index
     if params[:tag_id]
@@ -8,6 +8,10 @@ class TagsController < ApplicationController
     else
       @projects = Project.all
     end
+  end
+
+  def show
+    @projects = @tag.projects
   end
 
   def new
