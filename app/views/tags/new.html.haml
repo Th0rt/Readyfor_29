@@ -13,7 +13,7 @@
     .tag-update
       %h3 更新
       - @tags.each do |tag|
-        %div.tag-update__form.form-group
+        .tag-update__form.form-group
           = form_for tag do |f|
             = f.text_field :name, class: 'form-control'
             = f.label 'type'
