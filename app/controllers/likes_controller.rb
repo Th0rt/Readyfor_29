@@ -1,11 +1,16 @@
 class LikesController < ApplicationController
+  
   def create
-    @project = Project.find(params[:params_id])
-    @project.iine(current_user)
+    @like = Like.create(user_id: current_user.id, project_id: params[:project_id])
+    @likes = Like.where(project_id: params[:project_id])
+    @projects = project.all
   end
 
   def destroy
-    @project = Like.find(params[:id]).project
-    @project.uniine(current_user)
+    like = Like.find_by(user_id: current_user.id, project_id: params[:project_id])
+    like.destroy
+    @likes = Like.where(project_id: params[:project_id])
+    @projects = project.all
   end
+
 end

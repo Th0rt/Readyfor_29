@@ -20,16 +20,11 @@ class Project < ApplicationRecord
     ((self.total_support.to_f / self.goal.to_f) * 100).floor
   end
 
-  # projectをいいねする
-  def iine(user)
-    likes.create(user_id: user.id)
+  # ユーザーがすでにいいねをしているか
+  def like_user(user_id)
+   likes.find_by(user_id: user_id)
   end
 
-  # projectのいいねを解除する
-  def uniine(user)
-    likes.find_by(user.id).destroy
-  end
-  
   def remaining_time
     remaining_time = {}
     total_sec = ( self.limit_date - Time.current ).to_i

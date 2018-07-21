@@ -100,8 +100,9 @@
     .return-content
       .return-content__link-btm
         %p.like-count-text 7人がお気に入りしています
-        = link_to root_path, class: "btn btn-light like-count-btm" do
-          お気に入りに追加する
+        お気に入りに追加する
+        = render "likes/like"
+
         %p お気に入りリストに追加され、新着情報を受け取れます
       - if @returns.present?
         - @returns.each do |content|
