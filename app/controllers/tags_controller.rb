@@ -2,12 +2,7 @@ class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :update, :destroy]
 
   def index
-    if params[:tag_id]
-      @tag = Tag.find(params[:tag_id])
-      @projects = @tag.projects
-    else
-      @projects = Project.all
-    end
+    @tags = Tag.all
   end
 
   def show

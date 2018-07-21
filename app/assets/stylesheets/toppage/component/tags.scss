@@ -2,6 +2,16 @@
   margin-top: 10px;
 }
 
+.taglist__container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  padding: 40px 0;
+}
+
 .tags .tag {
   display: inline-block;
   margin: 6px 6px 0 0;
