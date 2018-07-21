@@ -19,7 +19,7 @@
           %label タイトル
           .project-title
             = f.text_field :title, required: true, autofocus: true,
-              placeholder: "タイトルを入力してください。"
+              placeholder: "タイトルを入力してください。(30文字以内)", maxlength: 30
           %hr
           %label 画像
           #project-image
@@ -32,12 +32,14 @@
           %hr
           %label 目標金額(第一)
           .project-target-amount
-            = f.number_field :goal, required: true
+            = f.number_field :goal, required: true, maxlength: 9,
+             class: 'price-input'
             %span 円
           %hr
           %label 目標金額(第二)
           .project-target-amount-next
-            = f.number_field :next_goal
+            = f.number_field :next_goal, maxlength: 9,
+             class: 'price-input'
             %span 円
       .tab-content.hide
         .tab-content__form-group

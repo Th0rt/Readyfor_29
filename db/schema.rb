@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_085008) do
+ActiveRecord::Schema.define(version: 2018_07_19_164619) do
 
   create_table "image_upload_tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 2018_07_16_085008) do
     t.index ["project_id"], name: "index_returns_on_project_id"
   end
 
+  create_table "user_returns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "count", null: false
+    t.bigint "return_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["return_id"], name: "index_user_returns_on_return_id"
+    t.index ["user_id"], name: "index_user_returns_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,4 +82,6 @@ ActiveRecord::Schema.define(version: 2018_07_16_085008) do
 
   add_foreign_key "projects", "users"
   add_foreign_key "returns", "projects"
+  add_foreign_key "user_returns", "returns"
+  add_foreign_key "user_returns", "users"
 end

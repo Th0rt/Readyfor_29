@@ -1,6 +1,18 @@
 class ReturnsController < ApplicationController
   before_action :set_return, only: [:destroy]
   before_action :set_project, only: [:new]
+  def payment1
+  end
+
+  def payment2
+  end
+
+  def payment3
+  end
+
+  def payment4
+  end
+  
   def new
     @return = Return.new
   end

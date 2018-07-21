@@ -19,5 +19,9 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :returns, only: [:new, :create, :destroy]
+    get 'returns/payment1', to: 'returns#payment1'
+    get 'returns/payment2', to: 'returns#payment2'
+    get 'returns/payment3', to: 'returns#payment3'
+    get 'returns/payment4', to: 'returns#payment4'
   end
 end

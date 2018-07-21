@@ -1,0 +1,63 @@
+.returns-content{
+  background-color: white;
+  width: 800px;
+  margin: 30px auto 0;
+  overflow: hidden;
+
+  .return-lists{
+    margin: 0 60px;
+  }
+
+  .return-amount-of-money{
+    margin: 40px 60px;
+    background-color: #F2F2F2;
+    padding: 30px;
+    overflow: hidden;
+    hr{
+      border-top: dashed 1px #AAAAAA;
+    }
+    .return-total{
+      &__table{
+        float: left;
+        table{
+          tr{
+            th{
+              border: 1px #BBBBBB solid;
+              padding: 5px 20px;
+              background-color: #D4D2D2;
+              font-size: 22px;
+            }
+            td{
+              border: 1px #BBBBBB solid;
+              padding: 5px 200px 5px 50px;
+              font-size: 26px;
+            }
+          }
+        }
+      }
+      &__right-text{
+        float: left;
+        span{
+          font-size: 20px;
+          line-height: 50px;
+          margin-left: 20px;
+        }
+      }
+      &__text{
+        margin-top: 20px;
+        p{
+          font-size: 20px;
+        }
+      }
+    }
+    .return-count{
+      p{
+        font-size: 20px;
+        span{
+          font-size: 26px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
