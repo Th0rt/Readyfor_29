@@ -19,9 +19,9 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :returns, only: [:new, :create]
-    get 'returns/:id/payment1', to: 'returns#payment1'
-    post 'returns/:id/payment2', to: 'returns#payment2'
-    post 'returns/:id/payment3', to: 'returns#payment3'
-    post 'returns/:id/payment4', to: 'returns#payment4'
+    get 'returns/payment1', to: 'returns#payment1'
+    post 'returns/payment2', to: 'returns#payment2'
+    post 'returns/payment3', to: 'returns#payment3'
+    post 'returns/payment4', to: 'returns#payment4'
   end
 end
