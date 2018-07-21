@@ -4,7 +4,7 @@
 %div{ class: "#{ adding_class } tags" }
   - if tags
     - tags.each do |tag|
-      .project-tag.tag.undefined
+      %div{ class: "project-tag tag #{tag.type}" }
         = link_to tags_path(tag_id: tag.id), class: '' do
           = fa_icon('tag')
           = tag.name
