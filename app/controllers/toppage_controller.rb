@@ -12,8 +12,8 @@ class ToppageController < ApplicationController
     @recent_viewed_projects = @projects.select{ |project| view_history.include?(project.id)}
 
 
-    @projects_one_more_push = @projects.select{ |project| project.achievement_rate >= 40 && project.remaining_funding_days <= 30 }
-                                       .sort_by{ |project| project.remaining_funding_days }
+    @projects_one_more_push = @projects.select{ |project| project.achievement_rate >= 40 && project.remaining_time[:day] <= 30 }
+                                       .sort_by{ |project| project.remaining_time }
                                        .first(4)
   end
 
@@ -45,7 +45,7 @@ class ToppageController < ApplicationController
   end
 
   def set_projects_nortable
-    @projects_nortable = @projects
+    @projects_nortable = @projects.first(4)
   end
 
   def set_projects_large_amount

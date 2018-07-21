@@ -70,7 +70,7 @@
             %section.Grid__col3.almost
               = render partial: 'toppage/partial/PcTopProjectList-s',
                        locals:  { title: "あとひと押し",
-                                  projects: @projects }
+                                  projects: @projects_one_more_push }
 
             -# 新着のプロジェクト
             %section.Grid__col3.new_arrival
@@ -102,7 +102,7 @@
           -# 現在募集中のプロジェクト
           .Grid.public
             = render partial: 'toppage/partial/PcTopProjectList',
-                     locals: { title: "支援総額が多いプロジェクト",
+                     locals: { title: "現在募集中のプロジェクト",
                                link_path: '#',
                                projects: @projects }
 
