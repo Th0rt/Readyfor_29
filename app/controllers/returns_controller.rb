@@ -1,16 +1,16 @@
 class ReturnsController < ApplicationController
-  before_action :set_project, only: [:new, :payment1, :payment2, :payment3, :payment4]
+  before_action :set_project, only: [:new, :choice, :information, :confirmation]
 
-  def payment1
+  # 支払い選択
+  def choice
   end
 
-  def payment2
+  # 支払い情報入力
+  def information
   end
 
-  def payment3
-  end
-
-  def payment4
+  # 支払い情報確認
+  def confirmation
   end
 
   def new
