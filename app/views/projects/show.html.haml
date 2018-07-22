@@ -131,7 +131,7 @@
                 %i.fa.fa-gift.fa-stack-1x
               %span #{ content.arrival_date.year }年#{ content.arrival_date.month }月に発送予定です。
             .project-return__purchase
-              = link_to return_payment_page_url(params[:id], content.id, 'payment1') do
+              = link_to project_returns_payment_choice_path(params[:id]) do
                 %button.project-select-button  このリターンを購入する
       - else
         .project-return
@@ -157,7 +157,8 @@
               %i.fa.fa-gift.fa-stack-1x
             %span 2018年11月に発送予定です。
           .project-return__purchase
-            %button.project-select-button  このリターンを購入する
+            = link_to project_returns_payment_choice_path(params[:id]) do
+              %button.project-select-button  このリターンを購入する
     .clear
     .show-projects
       .clear
