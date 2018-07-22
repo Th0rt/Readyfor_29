@@ -1,0 +1,2 @@
+class UserReturnsController < ApplicationController
+end
