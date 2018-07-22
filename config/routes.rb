@@ -23,4 +23,6 @@ Rails.application.routes.draw do
     post 'returns/payment/information', to: 'returns#information'
     post 'returns/payment/information/confirmation', to: 'returns#confirmation'
   end
+
+  post 'returns/payment/done', to: 'user_returns#create'
 end
