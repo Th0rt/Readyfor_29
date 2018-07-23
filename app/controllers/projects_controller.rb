@@ -6,6 +6,8 @@ class ProjectsController < ApplicationController
   def index
     return @projects = Project.all if project_search_params[:keyword].empty?
 
+    keywords = project_search_params[:keyword].gsub(/[[:blank:]]+/, "\s")
+                                              .split(/\s/)
     keywords.each do |word|
       match_projects = Project.joins(:user)
                               .where("title             like :word
