@@ -1,0 +1,12 @@
+.Site-container
+  .taglist__container
+    .u-mb_10
+      %span
+        = link_to 'クラウドファウンディングトップ', root_path
+      %span
+        %span.current キーワード一覧
+    %h1.u-mb_10 キーワード一覧
+    .desc
+      Readyforのプロジェクトに関連したキーワードです。
+      興味のあるキーワードをクリックしてみてください。
+    = render partial: 'layouts/tags', locals: { tags: @tags }

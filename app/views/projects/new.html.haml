@@ -51,6 +51,13 @@
             %label
               = f.radio_button :project_type, :contribution
               寄附型
+          %hr
+          .project-tags
+            %label タグ
+            .tags
+              = f.collection_check_boxes :tag_ids, @tags, :id, :name do |tag|
+                .tag--checkbox
+                  = tag.label { tag.check_box + tag.text }
       .tab-content.hide
         .tab-content__form-group
           %hr

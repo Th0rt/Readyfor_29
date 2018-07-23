@@ -50,6 +50,23 @@ ActiveRecord::Schema.define(version: 2018_07_19_164619) do
     t.index ["project_id"], name: "index_returns_on_project_id"
   end
 
+  create_table "tag_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_tag_projects_on_project_id"
+    t.index ["tag_id"], name: "index_tag_projects_on_tag_id"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_tags_on_type"
+  end
+
   create_table "user_returns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "count", null: false
     t.bigint "return_id"
@@ -82,6 +99,8 @@ ActiveRecord::Schema.define(version: 2018_07_19_164619) do
 
   add_foreign_key "projects", "users"
   add_foreign_key "returns", "projects"
+  add_foreign_key "tag_projects", "projects"
+  add_foreign_key "tag_projects", "tags"
   add_foreign_key "user_returns", "returns"
   add_foreign_key "user_returns", "users"
 end
