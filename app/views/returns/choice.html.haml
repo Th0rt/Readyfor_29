@@ -1,4 +1,4 @@
-= form_tag(project_returns_payment_information_path(1), method: :post) do
+= form_tag(payment_path(params[:project_id], 'payment/information', params[:id]), method: :post) do
   .purchase-contents
     .top-content
       .purchase-progress-content

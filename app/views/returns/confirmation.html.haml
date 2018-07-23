@@ -1,4 +1,4 @@
-= form_tag(returns_payment_done_path, method: :post) do
+= form_for([@project, @return, @user_return], method: :post) do |f|
   .purchase-contents
     .top-content
       .purchase-progress-content
@@ -9,6 +9,8 @@
           = render 'returns/bank-show'
         - else
           = render 'returns/credit-card-show'
+
+      = f.hidden_field :count, value: 1
 
       .progress-button-content
         %h1
@@ -22,7 +24,7 @@
               = image_tag '/assets/left_arrow.png'
               %p プロジェクトページに戻る
           .progress-button__next
-            = submit_tag("")
+            = f.submit ""
             %p 次に進む
             = image_tag '/assets/right_arrow.png'
 
