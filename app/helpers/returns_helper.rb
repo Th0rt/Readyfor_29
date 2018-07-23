@@ -17,6 +17,10 @@ module ReturnsHelper
      "2026", "2027", "2028", "2029", "2030"]
   end
 
+  def payment_path(project_id, url, return_id)
+    "/projects/#{project_id}/#{url}/#{return_id}"
+  end
+
   # 安心安全のセキュリティの画像URLを返す
   def security_img_url
     'https://readyfor.jp/assets/contribution/support02-63c9bd72490f296b6bb24ebbb94ceb79d315888c6bac3ef79e63cf9ef2c7e7bd.gif'
