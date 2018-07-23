@@ -11,6 +11,8 @@
           = render 'returns/credit-card-show'
 
       = f.hidden_field :count, value: 1
+      - params[:number].each do |key, value|
+        = f.hidden_field "number[#{key}]", value: "#{value}"
 
       .progress-button-content
         %h1

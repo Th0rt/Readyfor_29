@@ -6,6 +6,9 @@
       - elsif params[:payment_type] == '1'
         = render 'returns/bank'
 
+    - params[:number].each do |key, value|
+      = hidden_field_tag "number[#{key}]", "#{value}"
+
     .bottom-content
       .contact-us-content
         %h2 寄附にあたって

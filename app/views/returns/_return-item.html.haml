@@ -14,11 +14,11 @@
 
         - if returns.count == 1
           .return-numbar.col
-            = select_tag 'numbar', options_for_select(return_count_options(), selected: 1)
+            = select_tag "number[#{item.id}]", options_for_select(return_count_options(), selected: 1)
             %span 個
         - else
           .return-numbar.col
-            = select_tag 'numbar', options_for_select(return_count_options())
+            = select_tag "number[#{item.id}]", options_for_select(return_count_options())
             %span 個
 
       .return-item-right.col-sm-8
