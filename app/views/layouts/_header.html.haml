@@ -6,7 +6,9 @@
   = form_tag projects_path, method: :get, class: 'header__left-searchText' do
     .header__left-searchIcon
       %i.fa.fa-search
-    = text_field :search, :keyword, size: '25', type: 'text', placeholder: 'プロジェクトを探す'
+    = text_field :search, :keyword, size:        '25',
+                                    type:        'text',
+                                    placeholder: 'プロジェクトを探す'
 
 .header__right
   .header__right-item
