@@ -1,4 +1,4 @@
-= form_tag(payment_path(params[:project_id], 'payment/information/confirmation', params[:id]), method: :post) do
+= form_tag(payment_path(params[:project_id], 'payment/information/confirmation', params[:id], ''), method: :post) do
   .purchase-contents
     .top-content
       - if params[:payment_type] == '0'

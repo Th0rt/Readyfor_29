@@ -1,4 +1,4 @@
-= form_tag(payment_path(params[:project_id], 'payment/information', params[:id]), method: :post) do
+= form_tag(payment_path(params[:project_id], 'payment/information', params[:id], ''), method: :post) do
   .purchase-contents
     .top-content
       .purchase-progress-content
@@ -7,9 +7,9 @@
       .returns-content
         .return-lists
           = render partial: 'returns/return-item',
-                          locals:  { title: "選択したギフト" }
+                          locals:  { title: "選択したギフト", returns: @returns.where(id: params[:select_id]) }
           = render partial: 'returns/return-item',
-                          locals:  { title: "その他のギフト" }
+                          locals:  { title: "その他のギフト", returns: @returns.where.not(id: params[:select_id]) }
 
         .return-amount-of-money
           .return-count
