@@ -4,12 +4,13 @@ class ProjectsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
-    return @projects = Project.all if project_search_params[:keyword].empty?
+    return @projects = Project.active if project_search_params[:keyword].empty?
 
     keywords = project_search_params[:keyword].gsub(/[[:blank:]]+/, "\s")
                                               .split(/\s/)
     keywords.each do |word|
-      match_projects = Project.joins(:user)
+      match_projects = Project.active
+                              .joins(:user)
                               .where("title             like :word
                                       OR content        like :word
                                       OR users.nickname like :word",
