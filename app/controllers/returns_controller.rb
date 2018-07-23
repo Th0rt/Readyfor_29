@@ -11,6 +11,8 @@ class ReturnsController < ApplicationController
 
   # 支払い情報確認
   def confirmation
+    @user_return = UserReturn.new
+    @return = Return.find(params[:id])
   end
 
   def new
