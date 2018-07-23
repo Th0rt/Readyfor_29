@@ -3,6 +3,7 @@ class ReturnsController < ApplicationController
 
   # 支払い選択
   def choice
+    @returns = @project.returns
   end
 
   # 支払い情報入力
