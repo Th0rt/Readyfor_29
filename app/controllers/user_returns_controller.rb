@@ -6,9 +6,11 @@ class UserReturnsController < ApplicationController
     user_returns = []
     sum = 0
     user_return_params[:number].each do |key, value|
-      user_returns << UserReturn.new(count: value.to_i, return_id: key.to_i, user_id: user_return_params[:user_id])
-      return_item = Return.find(key)
-      sum += return_item.price * value.to_i
+      unless value.to_i == 0
+        user_returns << UserReturn.new(count: value.to_i, return_id: key.to_i, user_id: user_return_params[:user_id])
+        return_item = Return.find(key)
+        sum += return_item.price * value.to_i
+      end
     end
 
     if UserReturn.import user_returns
