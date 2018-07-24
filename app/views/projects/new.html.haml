@@ -33,12 +33,14 @@
           %hr
           %label 目標金額(第一)
           .project-target-amount
-            = f.number_field :goal, required: true
+            = f.number_field :goal, required: true, maxlength: 9,
+             class: 'price-input'
             %span 円
           %hr
           %label 目標金額(第二)
           .project-target-amount-next
-            = f.number_field :next_goal
+            = f.number_field :next_goal, maxlength: 9,
+             class: 'price-input'
             %span 円
           %hr
           %label タイプ
@@ -49,6 +51,13 @@
             %label
               = f.radio_button :project_type, :contribution
               寄附型
+          %hr
+          .project-tags
+            %label タグ
+            .tags
+              = f.collection_check_boxes :tag_ids, @tags, :id, :name do |tag|
+                .tag--checkbox
+                  = tag.label { tag.check_box + tag.text }
       .tab-content.hide
         .tab-content__form-group
           %hr

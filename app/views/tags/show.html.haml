@@ -92,8 +92,16 @@
             = link_to "海外", href: "#"
             %i.fa.fa-angle-right
     .page-main
+      .page-pankuzu
+        = link_to root_path do
+          %small クラウドファンディングトップ
+        %span
+          %small >
+        %span
+          %small
+            = @tag.name
       %section.Grid.amount
         = render partial: 'toppage/partial/PcTopProjectList',
-                  locals: { title: "検索結果 #{ @projects.count }件",
-                            projects: @projects }
-
+                  locals: { title: "「#{ @tag.name }」に関するプロジェクト",
+                             projects: @projects,
+                             max_display_projects: 8 }
