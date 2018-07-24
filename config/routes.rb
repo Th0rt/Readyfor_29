@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'toppage/art',        to: 'toppage#art'
   get 'toppage/challenge',  to: 'toppage#challenge'
 
+  resources :tags, only: [:index, :show, :new, :create, :update, :destroy]
+  resources :region, only: [:create, :update, :destroy]
+
   resources :users, only: [:show, :edit, :index, :update] do
     member do
       get 'profile'
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
-    resources :returns, only: [:new, :create] do
+    resources :returns, only: [:new, :create, :destroy] do
       resources :user_returns, only: [:create]
     end
     get 'payment/choice/:id', to: 'returns#choice'
