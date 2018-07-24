@@ -8,6 +8,4 @@ class User < ApplicationRecord
   has_many :projects, dependent: :destroy
   has_many :returns, through: :user_returns
   mount_uploader :avatar, AvatarUploader
-  has_many :likes, dependent: :destroy
-  has_many :projects, through: :likes
 end
