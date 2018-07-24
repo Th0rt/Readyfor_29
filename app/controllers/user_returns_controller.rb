@@ -5,7 +5,14 @@ class UserReturnsController < ApplicationController
     if UserReturn.create(user_return_params)
       render "returns/done"
     end
-    @project.update(total_support: @project.total_support += 1000)
+
+    # 支援総額への加算
+    sum = 0
+    params[:user_return][:number].each do |key, value|
+      return_item = Return.find(key)
+      sum += return_item.price * value.to_i
+    end
+    @project.update(total_support: @project.total_support += sum)
   end
 
   private
