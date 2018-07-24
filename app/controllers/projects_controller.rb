@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     @projects = Project.active
     return false if project_search_params[:keyword].blank?
 
-    keywords = project_search_params[:keyword].gsub(/(\w+)/, '%\0%').split(/\s/)
+    keywords = project_search_params[:keyword].gsub(/(\S+)/, '%\0%').split(/\s/)
     keywords.each do |word|
       @projects = @projects.search(word)
     end
