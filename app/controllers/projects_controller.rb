@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
     view_history << @project.id
     cookie_save("project_view_history", view_history)
     @returns = @project.returns
+    @like = @project.likes.find_by(user_id: current_user.id)
   end
 
   def new
