@@ -1,7 +1,5 @@
 .project-contents
   .top-content
-    = link_to project_path(params[:id]), method: :delete do
-      %span.btn.btn-primary プロジェクト削除(検証用)
     .top-content__category
       = link_to root_path do
         クラウドファンディングトップ
@@ -67,15 +65,12 @@
           .btn-link__button.btn.btn-danger
             %p このプロジェクトを支援する
     .top-content__info-footer
-      = link_to root_path do
-        %span.btn.btn-primary いいね
-      = link_to root_path do
-        %span.btn.btn-primary シェア
-      = link_to root_path do
-        %span.btn.btn-primary ツイートする
-      = link_to root_path do
-        %span.btn.btn-primary ブックマーク
-      %p このプロジェクトはAll or nothing形式です。7月31日（火）午後11:00までに、2,450,000円以上集まった場合に成立となります。
+      - if user_signed_in? && current_user.id == @project.user.id
+        = link_to edit_project_path(id: params[:id]) do
+          %span.btn.btn-primary プロジェクトを編集する
+        = link_to project_path, method: :delete do
+          %span.btn.btn-primary.delete-btn プロジェクトを削除する
+        %p このプロジェクトはAll or nothing形式です。7月31日（火）午後11:00までに、2,450,000円以上集まった場合に成立となります。
   .bottom-content
     .bottom-content__tab-btm
       .project-tabs.select
