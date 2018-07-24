@@ -7,12 +7,17 @@
 
       .returns-content
         .return-lists
-          = render partial: 'returns/return-item',
-                          locals:  { title: "選択したギフト",
-                           returns: @returns.where(id: params[:select_id]) }
-          = render partial: 'returns/return-item',
-                          locals:  { title: "その他のギフト",
-                          returns: @returns.where.not(id: params[:select_id]) }
+          - if params[:select_id].nil?
+            = render partial: 'returns/return-item',
+                            locals:  { title: "リターンを選んでください！",
+                            returns: @returns }
+          - else
+            = render partial: 'returns/return-item',
+                            locals:  { title: "選択したギフト",
+                            returns: @returns.where(id: params[:select_id]) }
+            = render partial: 'returns/return-item',
+                            locals:  { title: "その他のギフト",
+                            returns: @returns.where.not(id: params[:select_id]) }
 
         .return-amount-of-money
           .return-count
@@ -58,7 +63,7 @@
           = link_to "こちら", root_path
           をご覧ください。
         .progress-button
-          = link_to project_path(1) do
+          = link_to project_path(params[:project_id]) do
             .progress-button__return
               = image_tag 'left_arrow.png'
               %p プロジェクトページに戻る

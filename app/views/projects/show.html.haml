@@ -63,7 +63,8 @@
           .progress
             .progress-bar.progress-bar-danger.progress-level-of-achievement
               %p 80%
-        = link_to root_path,class: 'btn-link' do
+        = link_to payment_path(params[:id], 'payment/choice',
+               1, ''), class: 'btn-link' do
           .btn-link__button.btn.btn-danger
             %p このプロジェクトを支援する
     .top-content__info-footer
