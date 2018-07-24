@@ -2,6 +2,16 @@
   margin-top: 10px;
 }
 
+.taglist__container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  padding: 40px 0;
+}
+
 .tags .tag {
   display: inline-block;
   margin: 6px 6px 0 0;
@@ -19,7 +29,35 @@
     font-size: 9px;
     font-weight: 400;
     display: inline-block;
-    padding: 4px 4px 4px 0;
+    padding: 4px;
     color: #848484;
   }
+
+  :hover {
+    background: #fdd;
+  }
+}
+
+.tags .tag.Region i {
+  color: #8d87f4;
+}
+
+.tags .tag--checkbox {
+  display: inline-block;
+}
+
+.tag--checkbox+.tag--checkbox {
+  margin-left: 10px;
+}
+
+.tag-create,.tag-update {
+  margin: 20px 0;
+}
+
+.tag-create form {
+  margin-top: 10px;
+}
+
+.tag-update.tag-update__form {
+  margin-top: 10px;
 }

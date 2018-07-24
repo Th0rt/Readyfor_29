@@ -2,8 +2,7 @@
   .return-new-form
     = form_for [@project, @return]   do |f|
       .return-create
-        %h2 リターンの新規登録
-
+        %h2 #{@project.title}にリターンを追加
         .return-create__title.box-size
           .content タイトル
           .content-form
@@ -15,8 +14,8 @@
             %span 価格
             %i.fa.fa-jpy
           .content-form
-            = f.number_field :price, required: true
-
+            = f.number_field :price, required: true, maxlength: 9,
+             class: 'price-input'
         .return-create__content.clearfix
           .content 説明
           .content-form
