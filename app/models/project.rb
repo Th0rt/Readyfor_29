@@ -9,6 +9,14 @@ class Project < ApplicationRecord
   mount_uploader :projectimage, ProjectimageUploader
   enum project_type: { purchase: 0, contribution: 1 }
 
+  scope :active,     ->         { where('limit_date >= ?', Time.current) }
+  scope :title,      -> title   { where('title like ?', title) }
+  scope :content,    -> content { where('content like ?', content) }
+  scope :owner_name, -> name    { joins(:user).where('users.nickname like ?', name) }
+  scope :search,     -> keyword {
+    title(keyword).or(content(keyword)).joins(:user).or(owner_name(keyword))
+  }
+
   # 募集中かどうかを判定
   def active?
     @limit_date = self.limit_date
