@@ -4,7 +4,13 @@ class ProjectsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
-    @projects = Project.all
+    @projects = Project.active
+    return false if project_search_params[:keyword].blank?
+
+    keywords = project_search_params[:keyword].gsub(/(\S+)/, '%\0%').split(/\s/)
+    keywords.each do |word|
+      @projects = @projects.search(word)
+    end
   end
 
   def show
@@ -56,6 +62,10 @@ class ProjectsController < ApplicationController
 
   def set_tags
     @tags = Tag.all
+  end
+
+  def project_search_params
+    params.fetch(:search, {}).permit(:keyword)
   end
 
   def project_params
