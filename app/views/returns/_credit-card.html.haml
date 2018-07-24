@@ -1,46 +1,55 @@
-.purchase-progress-content
-  = image_tag "/assets/flow02.png", id: "progress-image"
+= form_tag(payment_path(params[:project_id],
+'payment/information/confirmation', params[:id], ''), method: :post, id: 'card-input') do
+  .purchase-progress-content
+    = image_tag "/assets/flow02.png", id: "progress-image"
 
-.returns-content
-  .credit-card-content
-    %h1 カード情報をご入力ください！
+  .returns-content
+    .credit-card-content
+      %h1 カード情報をご入力ください！
 
-    .credit-card-available
-      %span
-        ご利用可能なクレジットカード :
-        = image_tag creditcard_img_url()
-    .credit-card-input
-      %table
-        %tr
-          %th カード番号
-          %td
-            = number_field_tag :card
-        %tr
-          %th カード有効期限
-          %td
-            = select_tag :month, options_for_select(return_month_options())
-            %span /
-            = select_tag :year, options_for_select(return_year_options())
+      .credit-card-available
+        %span
+          ご利用可能なクレジットカード :
+          = image_tag creditcard_img_url()
+      .credit-card-input
+        %table
+          %tr
+            %th カード番号
+            %td
+              = number_field_tag :card
+          %tr
+            %th CVC番号
+            %td
+              = number_field_tag :cvc
+          %tr
+            %th カード有効期限
+            %td
+              = select_tag :month, options_for_select(return_month_options())
+              %span /
+              = select_tag :year, options_for_select(return_year_options())
 
-    .about-settlement-system
-      %h2 決済システムについて
-      %p
-        GMOペイメントゲートウェイ株式会社を利用しています。
-        サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。
-        クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。
+      .about-settlement-system
+        %h2 決済システムについて
+        %p
+          GMOペイメントゲートウェイ株式会社を利用しています。
+          サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。
+          クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。
 
-.progress-button-content
-  %h1
-    %i.fa.fa-question-circle.fa-lg.faq-link
-    支援についてわからないことがある場合、
-    = link_to "こちら", root_path
-    をご覧ください。
-  .progress-button
-    = link_to project_path(1) do
-      .progress-button__return
-        = image_tag '/assets/left_arrow.png'
-        %p プロジェクトページに戻る
-    .progress-button__next
-      = submit_tag("")
-      %p 次に進む
-      = image_tag '/assets/right_arrow.png'
+  - params[:number].each do |key, value|
+    = hidden_field_tag "number[#{key}]", "#{value}"
+
+  .progress-button-content
+    %h1
+      %i.fa.fa-question-circle.fa-lg.faq-link
+      支援についてわからないことがある場合、
+      = link_to "こちら", root_path
+      をご覧ください。
+    .progress-button
+      = link_to project_path(1) do
+        .progress-button__return
+          = image_tag '/assets/left_arrow.png'
+          %p プロジェクトページに戻る
+      .progress-button__next
+        = submit_tag("")
+        %p 次に進む
+        = image_tag '/assets/right_arrow.png'

@@ -1,32 +1,27 @@
-= form_tag(payment_path(params[:project_id],
-'payment/information/confirmation', params[:id], ''), method: :post) do
-  .purchase-contents
-    .top-content
-      - if params[:payment_type] == '0'
-        = render 'returns/credit-card'
-      - elsif params[:payment_type] == '1'
-        = render 'returns/bank'
+.purchase-contents
+  .top-content
+    - if params[:payment_type] == '0'
+      = render 'returns/credit-card'
+    - elsif params[:payment_type] == '1'
+      = render 'returns/bank'
 
-    - params[:number].each do |key, value|
-      = hidden_field_tag "number[#{key}]", "#{value}"
+  .bottom-content
+    .contact-us-content
+      %h2 寄附にあたって
+      .contact-us-content__list.row
+        .contact-us-content__list__image.col-sm-4
+          = image_tag security_img_url()
+        .contact-us-content__list__text.col-sm-8
+          %h3 安心安全のセキュリティ
+          %p
+            お客様の通信内容は高度な暗号化技術によって守られています。
+            また個人情報の取り扱いについては寄附先との間で厳密な取り決めが結ばれております。
 
-    .bottom-content
-      .contact-us-content
-        %h2 寄附にあたって
-        .contact-us-content__list.row
-          .contact-us-content__list__image.col-sm-4
-            = image_tag security_img_url()
-          .contact-us-content__list__text.col-sm-8
-            %h3 安心安全のセキュリティ
-            %p
-              お客様の通信内容は高度な暗号化技術によって守られています。
-              また個人情報の取り扱いについては寄附先との間で厳密な取り決めが結ばれております。
-
-        .contact-us-content__list.row
-          .contact-us-content__list__image.col-sm-4
-            = image_tag inquiry_img_url()
-          .contact-us-content__list__text.col-sm-8
-            %h3 お気軽にお問い合わせください
-            %p
-              寄附にあたって分からない点、不便な点などございましたら、
-              03-6801-5767 もしくは info@readyfor.jp までお問い合わせ下さい。
+      .contact-us-content__list.row
+        .contact-us-content__list__image.col-sm-4
+          = image_tag inquiry_img_url()
+        .contact-us-content__list__text.col-sm-8
+          %h3 お気軽にお問い合わせください
+          %p
+            寄附にあたって分からない点、不便な点などございましたら、
+            03-6801-5767 もしくは info@readyfor.jp までお問い合わせ下さい。
