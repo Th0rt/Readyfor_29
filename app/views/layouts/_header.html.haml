@@ -11,8 +11,8 @@
 .header__right
   .header__right-item
     = link_to 'クラウドファンディングとは'
-    = link_to 'はじめる'
-    = link_to 'さがす'
+    = link_to 'はじめる', new_project_path
+    = link_to 'さがす', projects_path
     - if user_signed_in?
       #panel
         - if (current_user.avatar).present?
