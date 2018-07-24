@@ -2,7 +2,8 @@ class ToppageController < ApplicationController
   before_action :set_projects_all,
                 :set_projects_nortable,
                 :set_projects_large_amount,
-                :set_projects_new
+                :set_projects_new,
+                :set_tags_all
 
   def index
     # NOTE: 各欄ごとにクエリを発行したくないので、allで一括取得して加工する。
@@ -52,5 +53,9 @@ class ToppageController < ApplicationController
     @projects_large_amount = @projects.sort_by{ |project| project.total_support }
                                       .reverse
                                       .first(4)
+  end
+
+  def set_tags_all
+    @tags = Tag.all
   end
 end

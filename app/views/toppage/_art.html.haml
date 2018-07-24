@@ -15,8 +15,7 @@
 
     -# タグエリア
     %aside.Project-outline__tags
-      = render partial: 'layouts/tags',
-               locals:  { adding_class: 'project-outline__tags-tags' }
+      = render partial: 'layouts/tags', locals: { tags: tags }
       .u-clr_both
 
   -# プロジェクトバナーエリア

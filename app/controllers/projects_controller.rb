@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_tags, only: [:new, :edit]
   before_action :require_login, except: [:index, :show]
 
   def index
@@ -12,6 +13,7 @@ class ProjectsController < ApplicationController
     view_history << @project.id
     cookie_save("project_view_history", view_history)
     @returns = @project.returns.order('price ASC' )
+    @tags = @project.tags
   end
 
   def new
@@ -52,6 +54,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def set_tags
+    @tags = Tag.all
+  end
+
   def project_params
     testdata = {likes_count: 0, user_id: current_user.id}
 
@@ -64,6 +70,7 @@ class ProjectsController < ApplicationController
       :limit_date,
       :projectimage,
       :project_type,
+      tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage]
     ).merge(testdata)
   end
@@ -80,6 +87,7 @@ class ProjectsController < ApplicationController
       :limit_date,
       :projectimage,
       :project_type,
+      tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
   end

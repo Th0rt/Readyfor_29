@@ -41,6 +41,12 @@
             = f.number_field :next_goal, maxlength: 9,
              class: 'price-input'
             %span 円
+          .project-tags
+            %label タグ
+            .tags
+              = f.collection_check_boxes :tag_ids, @tags, :id, :name do |tag|
+                .tag--checkbox
+                  = tag.label { tag.check_box + tag.text }
       .tab-content.hide
         .tab-content__form-group
           %hr

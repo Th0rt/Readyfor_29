@@ -14,12 +14,7 @@
       %h1
         = @project.title
     .top-content__tag
-      = link_to root_path, class: "btn btn-light" do
-        東京
-      = link_to root_path, class: "btn btn-light" do
-        カテゴリー1
-      = link_to root_path, class: "btn btn-light" do
-        カテゴリー2
+      = render partial: 'layouts/tags', locals: { tags: @tags }
     .overview
       .overview__image
         - if (@project.projectimage).present?
