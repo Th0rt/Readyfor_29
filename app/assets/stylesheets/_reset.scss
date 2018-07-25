@@ -124,3 +124,12 @@ legend {
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
+
+/* addition */
+:focus {
+  outline: 0px;
+}
+
+input:focus {
+  outline-offset: 0px;
+}
