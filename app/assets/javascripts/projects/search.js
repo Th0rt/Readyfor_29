@@ -10,5 +10,22 @@ $(document).on('turbolinks:load',function(){
       $(this).find('i').css('color', '')
     });
   }
-  change_background('.nav-menu-item')
+  function show_tabs(tab){
+    $(tab).hover(function(){
+      $(this).find('.subdivision-links').toggle();
+    },function(){
+      $(this).find('.subdivision-links').toggle();
+    });
+  }
+  function link_opacity(area_link){
+    $(area_link).hover(function(){
+      console.log(this)
+      $(this).css('background', '#FFCC33' )
+    },function(){
+      $(this).css('background', '#FFA500')
+    });
+  }
+  change_background('.area-nav')
+  show_tabs('.area-nav')
+  link_opacity('.subdivision-links .nav-menu-item')
 });
