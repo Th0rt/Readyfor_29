@@ -27,7 +27,7 @@
             %p= @project.user.nickname
         .project-info__big-text
           %span.span-project.span-project__title-big 支援総額
-          %span.span-project.span-project__data-big 1,000,000円
+          %span.span-project.span-project__data-big= "#{@project.total_support}円"
         - if @project.next_goal.nil?
           .project-info__text
             %span.span-project.span-project__title 目標金額
