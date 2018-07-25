@@ -24,7 +24,7 @@ $(document).on('turbolinks:load',function(){
       $(this).css('background', '#FFA500')
     });
   }
-  change_background('.area-nav')
-  show_tabs('.area-nav')
+  change_background('.show-links')
+  show_tabs('.show-links')
   link_opacity('.subdivision-links .nav-menu-item')
 });
