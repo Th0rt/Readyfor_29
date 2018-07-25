@@ -94,11 +94,8 @@
         %p 応援コメント
     .return-content
       .return-content__link-btm
-        %p.like-count-text 7人がお気に入りしています
-        #like-buttons
+        #like-content
           = render partial: 'likes/like', locals:{ project: @project, like: @like }
-          お気に入りに追加する
-
         %p お気に入りリストに追加され、新着情報を受け取れます
       - @returns.each do |content|
         .project-return
