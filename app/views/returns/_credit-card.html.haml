@@ -2,7 +2,7 @@
 'payment/information/confirmation', params[:id], ''),
  method: :post, id: 'card-input') do
   .purchase-progress-content
-    = image_tag "/assets/flow02.png", id: "progress-image"
+    = image_tag "flow02.png", id: "progress-image"
 
   .returns-content
     .credit-card-content
@@ -48,9 +48,9 @@
     .progress-button
       = link_to project_path(params[:project_id]) do
         .progress-button__return
-          = image_tag '/assets/left_arrow.png'
+          = image_tag 'left_arrow.png'
           %p プロジェクトページに戻る
       .progress-button__next
         = submit_tag("")
         %p 次に進む
-        = image_tag '/assets/right_arrow.png'
+        = image_tag 'right_arrow.png'

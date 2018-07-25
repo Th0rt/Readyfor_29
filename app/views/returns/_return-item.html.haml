@@ -2,13 +2,13 @@
   .return-list-content-title
     %h1
       #{ title }
-    = image_tag "/assets/down_arrow.png", id: "selected-btn"
+    = image_tag "down_arrow.png", id: "selected-btn"
   - returns.each do |item|
     .return-items.row
       .return-item-left.col-sm-4
 
         .return-price.col
-          = image_tag "/assets/check.png"
+          = image_tag "check.png"
           %span= item.price
           %span 円
 
