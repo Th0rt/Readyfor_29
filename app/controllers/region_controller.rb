@@ -4,16 +4,19 @@ class RegionController < ApplicationController
   def create
     Region.create(region_params)
     redirect_to new_tag_path
+    flash[:notice] = 'タグを作成しました。'
   end
 
   def update
     @region.update(region_params)
     redirect_to new_tag_path
+    flash[:notice] = 'タグを更新しました。'
   end
 
   def destroy
     @region.destroy
     redirect_to new_tag_path
+    flash[:notice] = 'タグを削除しました。'
   end
 
   private
