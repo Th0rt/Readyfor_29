@@ -1,4 +1,9 @@
 .slick-slider {
+  display: none;
+}
+
+.slick-slider.slick-initialized {
+  display: block;
   margin-bottom: 30px;
 }
 

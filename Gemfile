@@ -100,3 +100,6 @@ gem "jquery-slick-rails"
 # rails_addon
 # enumを日本語にする
 gem 'enum_help'
+
+# 1つのcreateで複数のレコード同時保存できる
+gem 'activerecord-import'

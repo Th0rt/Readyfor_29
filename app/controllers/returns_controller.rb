@@ -1,18 +1,21 @@
 class ReturnsController < ApplicationController
-  before_action :set_return, only: [:destroy]
-  before_action :set_project, only: [:new]
-  def payment1
+  before_action :set_return, only: [:destroy, :confirmation]
+  before_action :set_project, only: [:new, :choice, :confirmation]
+
+  # 支払い選択
+  def choice
+    @returns = @project.returns
   end
 
-  def payment2
+  # 支払い情報入力
+  def information
   end
 
-  def payment3
+  # 支払い情報確認
+  def confirmation
+    @user_return = UserReturn.new
   end
 
-  def payment4
-  end
-  
   def new
     @return = Return.new
   end

@@ -22,8 +22,11 @@
               placeholder: "タイトルを入力してください。(30文字以内)", maxlength: 30
           %hr
           %label 画像
-          #project-image
-            = f.file_field :projectimage, required: true
+          .project-image
+            = f.file_field :projectimage, id: "project-image"
+          #project-img-default
+            = image_tag "#{f.object.projectimage}"
+          #project-img-show
           %hr
           %label 募集期間
           .project-period
@@ -93,10 +96,9 @@
             .return-create__image-show.clearfix
               .content 画像
               .content-form
-                = r.file_field :returnimage, id: "create-return-image",
-                  required: true
+                = r.file_field :returnimage, id: "create-return-image"
                 #return-image-show
-                  %img{ src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvOUSpHlYa1jpsFW2BZB9_T5X68Q-YwCA4GtihyEUOW7AiAqru" ,alt: "画像がありません" ,id: "return-image-default" }
+                  = image_tag "#{r.object.returnimage}"
         .return-new-link
           .btn.btn-primary.return-add-button
             = link_to "リターンを追加",

@@ -1,0 +1,35 @@
+.nav-project
+  %h3
+    %span.fa-stack.fa-lg
+      %i.fa.fa-circle.fa-stack-2x
+      %i.fa.fa-search.fa-stack-1x.fa-inverse
+    %span#search-project プロジェクトをさがす
+  %ul.nav-menu-lists
+    %li.nav-menu-item
+      = link_to  "注目のプロジェクト", href: "#"
+      %i.fa.fa-angle-right
+    %li.nav-menu-item
+      = link_to "支援金額の多いプロジェクト", href: "#"
+      %i.fa.fa-angle-right
+    %li.nav-menu-item
+      = link_to "あとひと押しのプロジェクト", href: "#"
+      %i.fa.fa-angle-right
+    %li.nav-menu-item
+      = link_to "新着プロジェクト", href: "#"
+      %i.fa.fa-angle-right
+    %li.nav-menu-item
+      = link_to "成立済みのプロジェクト", href: "#"
+      %i.fa.fa-angle-right
+    %li.nav-menu-item
+      = link_to "最近見たプロジェクト", href: "#"
+      %i.fa.fa-angle-right
+    %li.nav-menu-item
+      = link_to "もうすぐ終了のプロジェクト", href: "#"
+      %i.fa.fa-angle-right
+    %li.nav-menu-item
+      = link_to "コミュニティ型プロジェクト", href: "#"
+      %i.fa.fa-angle-right
+.nav-category
+  = render 'projects/sidebar/category'
+.nav-area
+  = render 'projects/sidebar/area'

@@ -21,11 +21,12 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
-    resources :returns, only: [:new, :create]
     resources :likes, only: [:create, :destroy]
-    get 'returns/:id/payment1', to: 'returns#payment1'
-    post 'returns/:id/payment2', to: 'returns#payment2'
-    post 'returns/:id/payment3', to: 'returns#payment3'
-    post 'returns/:id/payment4', to: 'returns#payment4'
+    resources :returns, only: [:new, :create, :destroy] do
+      resources :user_returns, only: [:create]
+    end
+    get 'payment/choice/:id', to: 'returns#choice'
+    post 'payment/information/:id', to: 'returns#information'
+    post 'payment/information/confirmation/:id', to: 'returns#confirmation'
   end
 end
