@@ -1,0 +1,30 @@
+- returns.each do |r|
+  .project-return
+    .project-return__title
+      %h3= r.title
+    .project-return__price
+      %i.fa.fa-jpy
+      %strong= number_with_delimiter(r.price)
+      %span 円のリターン
+    .project-return__image
+      = image_tag( "#{r.returnimage}" )
+    .project-return__content
+      %p= simple_format(r.content)
+    .project-return__helper
+      %span.fa-stack.fa-lg
+        %i.fa.fa-circle-o.fa-stack-2x
+        %i.fa.fa-user.fa-stack-1x
+      %span ０人が支援中/
+      - if r.stock === 0
+        %span 在庫制限なし
+      - else
+        %span 残り#{ number_with_delimiter(r.price) }個
+    .project-return__arrival
+      %span.fa-stack.fa-lg
+        %i.fa.fa-circle-o.fa-stack-2x
+        %i.fa.fa-gift.fa-stack-1x
+      %span #{ r.arrival_date.year }年#{ r.arrival_date.month }月に発送予定です。
+    .project-return__purchase
+      = link_to payment_path(params[:id], 'payment/choice',
+      r.id, "?select_id=#{r.id}") do
+        %button.project-select-button  このリターンを購入する
