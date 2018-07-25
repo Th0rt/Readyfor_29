@@ -61,10 +61,15 @@
           .progress
             .progress-bar.progress-bar-danger.progress-level-of-achievement
               %p 80%
-        = link_to payment_path(params[:id], 'payment/choice',
-               1, ''), class: 'btn-link' do
-          .btn-link__button.btn.btn-danger
-            %p このプロジェクトを支援する
+        - if user_signed_in?
+          = link_to payment_path(params[:id], 'payment/choice',
+                1, ''), class: 'btn-link' do
+            .btn-link__button.btn.btn-danger
+              %p このプロジェクトを支援する
+        - else
+          = link_to new_user_session_path, class: 'btn-link' do
+            .btn-link__button.btn.btn-danger
+              %p このプロジェクトを支援する
     .top-content__info-footer
       - if user_signed_in? && current_user.id == @project.user.id
         = link_to edit_project_path(id: params[:id]) do
@@ -122,9 +127,13 @@
                 %i.fa.fa-gift.fa-stack-1x
               %span #{ content.arrival_date.year }年#{ content.arrival_date.month }月に発送予定です。
             .project-return__purchase
-              = link_to payment_path(params[:id], 'payment/choice',
-               content.id, "?select_id=#{content.id}") do
-                %button.project-select-button  このリターンを購入する
+              - if user_signed_in?
+                = link_to payment_path(params[:id], 'payment/choice',
+                content.id, "?select_id=#{content.id}") do
+                  %button.project-select-button  このリターンを購入する
+              - else
+                = link_to new_user_session_path do
+                  %button.project-select-button  このリターンを購入する
       - else
         - @returns.each do |content|
           .project-return
@@ -153,9 +162,13 @@
                 %i.fa.fa-gift.fa-stack-1x
               %span #{ content.arrival_date.year }年#{ content.arrival_date.month }月に発送予定です。
             .project-return__purchase
-              = link_to payment_path(params[:id], 'payment/choice',
-              content.id, "?select_id=#{content.id}") do
-                %button.project-select-button  このリターンを購入する
+              - if user_signed_in?
+                = link_to payment_path(params[:id], 'payment/choice',
+                content.id, "?select_id=#{content.id}") do
+                  %button.project-select-button  このリターンを購入する
+              - else
+                = link_to new_user_session_path do
+                  %button.project-select-button  このリターンを購入する
     .clear
     .show-projects
       .clear
