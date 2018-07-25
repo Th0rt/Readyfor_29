@@ -10,7 +10,7 @@
         = f.select :type, %w(Region), include_blank: true,
                                       class: 'form-control'
         = f.fields_for :category do |c|
-          = c.collection_select :name, @categories, :name, :name, class: 'form-control'
+          = c.collection_select :id, @categories, :id, :name, include_blank: true, class: 'form-control'
         = f.submit '作成', class: 'btn-xs btn-primary'
 
     .tag-update
@@ -22,7 +22,7 @@
             = f.label 'type'
             = f.select :type, %w(Region), include_blank: true,
                                           class: 'form-control'
-            = f.fields_for tag.category do |c|
-              = c.collection_select :name, @categories, :name, :name, class: 'form-control'
+            = f.fields_for :category do |c|
+              = c.collection_select :id, @categories, :id, :name, include_blank: true, selected: "#{ tag.category.id if tag.category }", class: 'form-control'
             = f.submit '更新', class: 'btn-xs btn-primary'
           = button_to '削除', tag, method: :delete, class: 'btn-xs btn-danger'

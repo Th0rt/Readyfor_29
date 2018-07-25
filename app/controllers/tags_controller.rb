@@ -10,8 +10,9 @@ class TagsController < ApplicationController
   end
 
   def new
-    @tags = Tag.where.not(type: "Category")
     @categories = Category.all
+    @tags = Tag.where.not(type: "Category")
+    @tags.each { |tag| tag.build_tag_category unless tag.category }
     @tag = Tag.new
   end
 
@@ -19,12 +20,16 @@ class TagsController < ApplicationController
     tag = Tag.create(
       name: tag_params[:name],
       type: tag_params[:type],
-      category: Category.find(tag_params[:category[:id]]))
+      category: Category.find(tag_params[:category][:id]))
     redirect_to new_tag_path
   end
 
   def update
-    @tag.update(tag_params)
+    @tag.update(
+      name: tag_params[:name],
+      type: tag_params[:type],
+      category: Category.find(tag_params[:category][:id])
+    )
     redirect_to new_tag_path
   end
 
@@ -36,7 +41,7 @@ class TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:tag).permit(:name, :type, :category[:id])
+    params.require(:tag).permit(:name, :type, category: [:id])
   end
 
   def set_tag
