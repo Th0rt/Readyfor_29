@@ -4,7 +4,7 @@ class UserReturnsController < ApplicationController
     @project = @return.project
 
     if UserReturn.import UserReturn.user_return_array(user_return_params[:number], user_return_params[:user_id])
-      if @project.update(total_support: @project.total_support += UserReturn.return_sum(user_return_params[:number]))
+      if @project.update(total_support: @project.total_support += Project.return_sum(user_return_params[:number]))
         render 'returns/done'
       end
     end

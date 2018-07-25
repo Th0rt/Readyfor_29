@@ -40,4 +40,15 @@ class Project < ApplicationRecord
     return remaining_time
   end
 
+  def self.return_sum(params_number)
+    sum = 0
+    params_number.each do |key, value|
+      unless value.to_i == 0
+        return_item = Return.find(key)
+        sum += return_item.price * value.to_i
+      end
+    end
+    return sum
+  end
+
 end
