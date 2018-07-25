@@ -19,7 +19,6 @@ $(document).on('turbolinks:load',function(){
   }
   function link_opacity(area_link){
     $(area_link).hover(function(){
-      console.log(this)
       $(this).css('background', '#FFCC33' )
     },function(){
       $(this).css('background', '#FFA500')
