@@ -30,26 +30,6 @@
       = link_to "コミュニティ型プロジェクト", href: "#"
       %i.fa.fa-angle-right
 .nav-category
-  %h3
-    %span.fa-stack.fa-lg
-      %i.fa.fa-circle.fa-stack-2x
-      %i.fa.fa-tag.fa-stack-1x.fa-inverse
-    %span#search-category カテゴリからさがす
-  %ul.nav-menu-lists
-    %li.nav-menu-item
-      = link_to "社会にいいこと", href: "#"
-      %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "地域", href: "#"
-      %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "ものづくり", href: "#"
-      %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "アート", href: "#"
-      %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "チャレンジ", href: "#"
-      %i.fa.fa-angle-right
+  = render 'projects/sidebar/category'
 .nav-area
-  = render 'projects/sidebar/prefecture'
+  = render 'projects/sidebar/area'
