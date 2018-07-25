@@ -8,7 +8,6 @@ class Project < ApplicationRecord
 
   mount_uploader :projectimage, ProjectimageUploader
   has_many :likes, dependent: :destroy
-  has_many :users, through: :likes
   enum project_type: { purchase: 0, contribution: 1 }
 
   scope :active,     ->         { where('limit_date >= ?', Time.current) }
