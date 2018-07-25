@@ -1,10 +1,33 @@
-= form_tag(return_payment_page_url(1, 1, 'payment3'), method: :post) do
+= form_for([@project, @return, @user_return], method: :post) do |f|
   .purchase-contents
     .top-content
-      - if params[:payment_type] == '0'
-        = render 'returns/credit-card'
-      - elsif params[:payment_type] == '1'
-        = render 'returns/bank'
+      .purchase-progress-content
+        = image_tag "flow03.png", id: "progress-image"
+
+      .returns-content
+        - if params[:card].nil?
+          = render 'returns/bank-show'
+        - else
+          = render 'returns/credit-card-show'
+
+      - params[:number].each do |key, value|
+        = f.hidden_field "number[#{key}]", value: "#{value}"
+
+      .progress-button-content
+        %h1
+          %i.fa.fa-question-circle.fa-lg.faq-link
+          支援についてわからないことがある場合、
+          = link_to "こちら", root_path
+          をご覧ください。
+        .progress-button
+          = link_to project_path(params[:project_id]) do
+            .progress-button__return
+              = image_tag 'left_arrow.png'
+              %p プロジェクトページに戻る
+          .progress-button__next
+            = f.submit ""
+            %p 次に進む
+            = image_tag 'right_arrow.png'
 
     .bottom-content
       .contact-us-content
@@ -17,7 +40,6 @@
             %p
               お客様の通信内容は高度な暗号化技術によって守られています。
               また個人情報の取り扱いについては寄附先との間で厳密な取り決めが結ばれております。
-
         .contact-us-content__list.row
           .contact-us-content__list__image.col-sm-4
             = image_tag inquiry_img_url()

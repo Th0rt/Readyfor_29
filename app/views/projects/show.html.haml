@@ -61,7 +61,8 @@
           .progress
             .progress-bar.progress-bar-danger.progress-level-of-achievement
               %p 80%
-        = link_to root_path,class: 'btn-link' do
+        = link_to payment_path(params[:id], 'payment/choice',
+               1, ''), class: 'btn-link' do
           .btn-link__button.btn.btn-danger
             %p このプロジェクトを支援する
     .top-content__info-footer
@@ -93,35 +94,68 @@
         = link_to root_path, class: "btn btn-light like-count-btm" do
           お気に入りに追加する
         %p お気に入りリストに追加され、新着情報を受け取れます
-      - @returns.each do |content|
-        .project-return
-          .project-return__title
-            %h3= content.title
-          .project-return__price
-            %i.fa.fa-jpy
-            %strong= number_with_delimiter(content.price)
-            %span のリターン
-          .project-return__image
-            = image_tag( "#{content.returnimage}" )
-          .project-return__content
-            %p= simple_format(content.content)
-          .project-return__helper
-            %span.fa-stack.fa-lg
-              %i.fa.fa-circle-o.fa-stack-2x
-              %i.fa.fa-user.fa-stack-1x
-            %span ０人が支援中/
-            - if content.stock === 0
-              %span 在庫制限なし
-            - else
-              %span 残り#{ number_with_delimiter(content.price) }個
-          .project-return__arrival
-            %span.fa-stack.fa-lg
-              %i.fa.fa-circle-o.fa-stack-2x
-              %i.fa.fa-gift.fa-stack-1x
-            %span #{ content.arrival_date.year }年#{ content.arrival_date.month }月に発送予定です。
-          .project-return__purchase
-            = link_to href: "#" do
-              %button.project-select-button  このリターンを購入する
+      - if @returns.present?
+        - @returns.each do |content|
+          .project-return
+            .project-return__title
+              %h3= content.title
+            .project-return__price
+              %i.fa.fa-jpy
+              %strong= content.price
+              %span 円のリターン
+            .project-return__image
+              = image_tag( "#{content.returnimage}" )
+            .project-return__content
+              %p= content.content
+            .project-return__helper
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle-o.fa-stack-2x
+                %i.fa.fa-user.fa-stack-1x
+              %span ０人が支援中/
+              - if content.stock === 0
+                %span 在庫制限なし
+              - else
+                %span 残り#{ content.stock }個
+            .project-return__arrival
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle-o.fa-stack-2x
+                %i.fa.fa-gift.fa-stack-1x
+              %span #{ content.arrival_date.year }年#{ content.arrival_date.month }月に発送予定です。
+            .project-return__purchase
+              = link_to payment_path(params[:id], 'payment/choice',
+               content.id, "?select_id=#{content.id}") do
+                %button.project-select-button  このリターンを購入する
+      - else
+        - @returns.each do |content|
+          .project-return
+            .project-return__title
+              %h3= content.title
+            .project-return__price
+              %i.fa.fa-jpy
+              %strong= number_with_delimiter(content.price)
+              %span 円のリターン
+            .project-return__image
+              = image_tag( "#{content.returnimage}" )
+            .project-return__content
+              %p= simple_format(content.content)
+            .project-return__helper
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle-o.fa-stack-2x
+                %i.fa.fa-user.fa-stack-1x
+              %span ０人が支援中/
+              - if content.stock === 0
+                %span 在庫制限なし
+              - else
+                %span 残り#{ number_with_delimiter(content.price) }個
+            .project-return__arrival
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle-o.fa-stack-2x
+                %i.fa.fa-gift.fa-stack-1x
+              %span #{ content.arrival_date.year }年#{ content.arrival_date.month }月に発送予定です。
+            .project-return__purchase
+              = link_to payment_path(params[:id], 'payment/choice',
+              content.id, "?select_id=#{content.id}") do
+                %button.project-select-button  このリターンを購入する
     .clear
     .show-projects
       .clear

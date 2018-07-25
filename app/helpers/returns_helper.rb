@@ -2,7 +2,7 @@ module ReturnsHelper
 
   # optionのdata
   def return_count_options
-    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+    ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
      "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
       "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]
   end
@@ -17,9 +17,8 @@ module ReturnsHelper
      "2026", "2027", "2028", "2029", "2030"]
   end
 
-  # 支払い処理の各画面URLを返す
-  def return_payment_page_url(project_id, return_id, payment_view)
-    "/projects/#{project_id}/returns/#{return_id}/#{payment_view}"
+  def payment_path(project_id, url, return_id, parameter)
+    "/projects/#{project_id}/#{url}/#{return_id}/#{parameter}"
   end
 
   # 安心安全のセキュリティの画像URLを返す
