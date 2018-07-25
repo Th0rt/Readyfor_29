@@ -1,6 +1,6 @@
 class ReturnsController < ApplicationController
   before_action :set_return, only: [:destroy]
-  before_action :set_project, only: [:new, :choice, :information, :confirmation]
+  before_action :set_project, only: [:new, :choice, :confirmation]
 
   # 支払い選択
   def choice
@@ -9,14 +9,12 @@ class ReturnsController < ApplicationController
 
   # 支払い情報入力
   def information
-    @returns = @project.returns
   end
 
   # 支払い情報確認
   def confirmation
     @user_return = UserReturn.new
     @return = Return.find(params[:id])
-    @returns = @project.returns
   end
 
   def new
