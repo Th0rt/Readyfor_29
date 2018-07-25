@@ -2,6 +2,9 @@ class UserReturn < ApplicationRecord
   belongs_to :user
   belongs_to :return
 
+  # 購入するリターンごとにinsert(create)するためのUserReturnオブジェクトを生成し配列で返す。
+  # params_number(hash配列) : key(return_id):value(count)
+  # params_user_id(hash) : user_id
   def self.user_return_array(params_number, params_user_id)
     user_returns = []
     params_number.each do |key, value|

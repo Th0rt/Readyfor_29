@@ -40,6 +40,8 @@ class Project < ApplicationRecord
     return remaining_time
   end
 
+  # リターン購入分の合計値を(リターン金額と数量)で算出し、合計金額を返す。
+  # params_number(hash配列) : key(return_id):value(count)
   def self.return_sum(params_number)
     sum = 0
     params_number.each do |key, value|
