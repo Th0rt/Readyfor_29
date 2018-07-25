@@ -7,7 +7,9 @@
       = form_for @tag, html: { class: 'form-group' } do |f|
         = f.text_field :name, class: 'form-control'
         = f.label 'type'
-        = f.select :type, ['', 'Region'], class: 'form-control'
+        = f.select :type, ['Region'], include_blank: true, class: 'form-control'
+        = f.label 'Category'
+        = f.select :category, @categories.map(&:name), class: 'form-control'
         = f.submit '作成', class: 'btn-xs btn-primary'
 
     .tag-update
