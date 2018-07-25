@@ -1,0 +1,16 @@
+%table
+  %tr
+    %th プロジェクト名(リンク)
+    %th 個数
+    %th 価格
+    %th 合計金額
+    %th 購入日
+    %th 到着日
+  - returns.each do |r|
+    %tr
+      %td= link_to  "#{ r.project.title }", project_path(id: r.project)
+      %td= r.user_returns.count
+      %td= number_with_delimiter(r.price)
+      %td= number_with_delimiter("#{ r.price * r.user_returns.count }")
+      %td= "#{r.created_at.year}年#{r.created_at.month}月#{r.created_at.day}日"
+      %td= "#{ r.arrival_date.year }年#{ r.arrival_date.month }月"
