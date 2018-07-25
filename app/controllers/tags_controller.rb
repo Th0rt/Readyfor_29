@@ -16,8 +16,10 @@ class TagsController < ApplicationController
   end
 
   def create
-    tag = Tag.new(name: tag_params[:name], type: tag_params[:type])
-    tag.category = Category.find_by(name: tag_params[:category]) if tag_params[:category]
+    tag = Tag.create(
+      name: tag_params[:name],
+      type: tag_params[:type],
+      category: Category.find(tag_params[:category[:id]]))
     redirect_to new_tag_path
   end
 
@@ -34,7 +36,7 @@ class TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:tag).permit(:name, :type, :category)
+    params.require(:tag).permit(:name, :type, :category[:id])
   end
 
   def set_tag
