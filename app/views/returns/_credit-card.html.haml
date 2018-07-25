@@ -1,5 +1,6 @@
 = form_tag(payment_path(params[:project_id],
-'payment/information/confirmation', params[:id], ''), method: :post, id: 'card-input') do
+'payment/information/confirmation', params[:id], ''),
+ method: :post, id: 'card-input') do
   .purchase-progress-content
     = image_tag "/assets/flow02.png", id: "progress-image"
 
