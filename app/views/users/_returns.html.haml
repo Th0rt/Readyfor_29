@@ -12,5 +12,5 @@
       %td= r.user_returns.count
       %td= number_with_delimiter(r.price)
       %td= number_with_delimiter("#{ r.price * r.user_returns.count }")
-      %td= "#{r.created_at.year}年#{ r.created_at.month }月#{ r.created_at.day }日"
-      %td= "#{ r.arrival_date.year }年#{ r.arrival_date.month }月"
+      %td #{ r.created_at.year }年#{ r.created_at.month }月#{ r.created_at.day }日
+      %td #{ r.arrival_date.year }年#{ r.arrival_date.month }月
