@@ -10,5 +10,21 @@ $(document).on('turbolinks:load',function(){
       $(this).find('i').css('color', '')
     });
   }
-  change_background('.nav-menu-item')
+  function show_tabs(tab){
+    $(tab).hover(function(){
+      $(this).find('.subdivision-links').toggle();
+    },function(){
+      $(this).find('.subdivision-links').toggle();
+    });
+  }
+  function link_opacity(area_link){
+    $(area_link).hover(function(){
+      $(this).css('background', '#FFCC33' )
+    },function(){
+      $(this).css('background', '#FFA500')
+    });
+  }
+  change_background('.show-links')
+  show_tabs('.show-links')
+  link_opacity('.subdivision-links .nav-menu-item')
 });

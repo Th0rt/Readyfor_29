@@ -13,6 +13,21 @@
       .nav-menu-lists {
         border-top: 1px solid rgba(128, 128, 128, 0.3);
         margin-top: 10px;
+        .show-links {
+          position: relative;
+          .subdivision-links {
+            position: absolute;
+            right: -218px;
+            top:0;
+            display: none;
+            border-top: 1px solid rgba(128, 128, 128, 0.3);
+            background-color: #FFA500;
+            padding-bottom: 0;
+            li {
+              color: white;
+            }
+          }
+        }
       }
       .nav-menu-item {
         width: 100%;
