@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   def cookie_save(cookie_name, value)
     cookies[cookie_name] = value.to_json
   end
+
+  def require_login
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 end
