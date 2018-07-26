@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :set_tags, only: [:new, :edit]
+  before_action :set_categories, only: [:new, :edit]
   before_action :require_login, except: [:index, :show]
 
   def index
@@ -61,7 +62,11 @@ class ProjectsController < ApplicationController
   end
 
   def set_tags
-    @tags = Tag.all
+    @tags = Tag.where.not(type: 'Category')
+  end
+
+  def set_categories
+    @categories = Category.all
   end
 
   def project_search_params
@@ -80,6 +85,7 @@ class ProjectsController < ApplicationController
       :limit_date,
       :projectimage,
       :project_type,
+      :category_id,
       tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage]
     ).merge(testdata)

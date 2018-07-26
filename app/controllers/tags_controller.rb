@@ -20,7 +20,7 @@ class TagsController < ApplicationController
     tag = Tag.create(
       name: tag_params[:name],
       type: tag_params[:type],
-      category: Category.find(tag_params[:category][:id]))
+      category: set_category(tag_params[:category][:id]))
     redirect_to new_tag_path
   end
 
@@ -46,5 +46,10 @@ class TagsController < ApplicationController
 
   def set_tag
     @tag = Tag.find(params[:id])
+  end
+
+  def set_category(category_id)
+    return nil if category_id
+    Category.find(category_id)
   end
 end
