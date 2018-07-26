@@ -29,8 +29,13 @@ class Project < ApplicationRecord
     self.tags.find_by(type: 'category')
   end
 
-  def category_name
-    self.category.name
+  def category_add(category_id)
+    return false if self.category
+    self.tags << Category.find(category_id)
+  end
+
+  def category_delete
+    self.tag_projects.find_by(tag_id: self.category.id).delete
   end
 
   def achievement_rate

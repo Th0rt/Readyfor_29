@@ -31,6 +31,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.category_add(project_params[:category_id])
     if @project.save
       redirect_to root_path
     else
@@ -44,6 +45,10 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(update_project_params)
+      if @project.category && @project.category.id == project_params[:category_id]
+        @project.category_delete
+      end
+      @project.category_add(project_params[:category_id])
       redirect_to root_path
     else
       render action: :edit
@@ -104,6 +109,7 @@ class ProjectsController < ApplicationController
       :limit_date,
       :projectimage,
       :project_type,
+      :category_id,
       tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
