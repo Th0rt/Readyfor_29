@@ -119,7 +119,7 @@
               %span #{ content.arrival_date.year }年#{ content.arrival_date.month }月に発送予定です。
             .project-return__purchase
               = link_to payment_path(params[:id], 'payment/choice',
-               content.id, "?select_id=#{content.id}") do
+              content.id, "?select_id=#{content.id}") do
                 %button.project-select-button  このリターンを購入する
       - else
         - @returns.each do |content|

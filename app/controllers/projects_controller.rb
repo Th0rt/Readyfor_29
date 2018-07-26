@@ -102,10 +102,4 @@ class ProjectsController < ApplicationController
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
   end
-
-  def require_login
-    unless user_signed_in?
-      redirect_to root_path
-    end
-  end
 end
