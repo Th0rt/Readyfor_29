@@ -37,11 +37,8 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    if @project.user_id == current_user.id
-      @returns = @project.returns
-    else
-      redirect_to root_path
-    end
+    redirect_to root_path unless @project.user_id == current_user.id
+    @returns = @project.returns
   end
 
   def update
