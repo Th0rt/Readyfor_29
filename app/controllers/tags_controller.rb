@@ -17,7 +17,7 @@ class TagsController < ApplicationController
   end
 
   def create
-    tag = Tag.create(
+    Tag.create(
       name: tag_params[:name],
       type: tag_params[:type],
       category: set_category(tag_params[:category][:id]))
