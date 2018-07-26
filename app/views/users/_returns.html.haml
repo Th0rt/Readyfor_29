@@ -4,13 +4,13 @@
     %th 個数
     %th 価格
     %th 合計金額
-    %th 購入日
+    %th 購入日時
     %th 到着日
   - returns.each do |r|
     %tr
-      %td= link_to  "#{ r.project.title }", project_path(id: r.project)
-      %td= r.user_returns.count
-      %td= number_with_delimiter(r.price)
-      %td= number_with_delimiter("#{ r.price * r.user_returns.count }")
-      %td #{ r.created_at.year }年#{ r.created_at.month }月#{ r.created_at.day }日
-      %td #{ r.arrival_date.year }年#{ r.arrival_date.month }月
+      %td= link_to  "#{ r.return.project.title }", project_path(id: r.return.project)
+      %td= r.count
+      %td= number_with_delimiter(r.return.price)
+      %td= number_with_delimiter("#{ r.return.price * r.count }")
+      %td.time #{ r.created_at.year }年#{ r.created_at.month }月#{ r.created_at.day }日#{ r.created_at.hour}時#{ r.created_at.min}分
+      %td #{ r.return.arrival_date.year }年#{ r.return.arrival_date.month }月
