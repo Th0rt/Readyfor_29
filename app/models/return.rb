@@ -5,6 +5,8 @@ class Return < ApplicationRecord
   mount_uploader :returnimage, ReturnImageUploader
 
   # 初めて購入したリターンの場合、total_userに加算する
+  # params_number(hash配列) : key(return_id):value(count)
+  # current_user_id(int)) : 現在ログインしているuser_id
   def self.total_user_sum(params_number, current_user_id)
     params_number.each do |key, value|
       unless value.to_i == 0
