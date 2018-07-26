@@ -8,7 +8,8 @@
     %th 到着日
   - returns.each do |r|
     %tr
-      %td= link_to  "#{ r.return.project.title }", project_path(id: r.return.project)
+      %td= link_to  "#{ r.return.project.title }",
+        project_path(id: r.return.project)
       %td= r.count
       %td= number_with_delimiter(r.return.price)
       %td= number_with_delimiter("#{ r.return.price * r.count }")
