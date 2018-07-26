@@ -212,7 +212,7 @@
         .user-edit-main
           %p.title 退会手続きへ
           %p.information
-          = link_to "退会", "/users", method: :delete
+          = link_to "退会", "/users", data: { confirm: "退会してよろしいですか？" } , method: :delete
         .user-edit-sub
           %p.explain Readyforを退会します。
           %p.user-edit-contents
