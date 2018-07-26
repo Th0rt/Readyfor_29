@@ -69,7 +69,8 @@
       - if user_signed_in? && current_user.id == @project.user.id
         = link_to edit_project_path(id: params[:id]) do
           %span.btn.btn-primary プロジェクトを編集する
-        = link_to project_path, method: :delete , data: { confirm: "削除してよろしいですか？" } do
+        = link_to project_path, method: :delete ,
+          data: { confirm: "削除してよろしいですか？" } do
           %span.btn.btn-primary.delete-btn プロジェクトを削除する
         %p このプロジェクトはAll or nothing形式です。7月31日（火）午後11:00までに、2,450,000円以上集まった場合に成立となります。
   .bottom-content
