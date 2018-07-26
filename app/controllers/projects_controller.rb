@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
     view_history << @project.id
     cookie_save("project_view_history", view_history)
     @returns = @project.returns.order('price ASC' )
+    @category = @project.category
     @tags = @project.tags
   end
 

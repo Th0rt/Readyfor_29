@@ -3,8 +3,6 @@ class Project < ApplicationRecord
   has_many :returns, dependent: :destroy
   accepts_nested_attributes_for :returns, allow_destroy: true
 
-  belongs_to :category, class_name: 'Tag', foreign_key: :category_id
-
   has_many :tag_projects, dependent: :destroy
   has_many :tags, through: :tag_projects
 
@@ -25,6 +23,14 @@ class Project < ApplicationRecord
     days_life_date = limit_date - Time.current
     @days_life = (days_life_date / 24 / 60 / 60).to_i
     @days_life >= 0
+  end
+
+  def category
+    self.tags.find_by(type: 'category')
+  end
+
+  def category_name
+    self.category.name
   end
 
   def achievement_rate
