@@ -13,6 +13,10 @@ class Project < ApplicationRecord
   scope :title,      -> title   { where('title like ?', title) }
   scope :content,    -> content { where('content like ?', content) }
   scope :owner_name, -> name    { joins(:user).where('users.nickname like ?', name) }
+  scope :order_new,  ->         { sort_by{ |project| project.created_at }.reverse }
+  # お気に入り機能が実装されるまでコメントアウト
+  # scope :order_like_count -> { sort_by{ |project| project.likes_count }.reverse }
+  scope :order_total_support, -> { sort_by{ |project| project.total_support }.reverse }
   scope :search,     -> keyword {
     title(keyword).or(content(keyword)).joins(:user).or(owner_name(keyword))
   }
