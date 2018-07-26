@@ -24,7 +24,9 @@
             %p= @project.user.nickname
         .project-info__big-text
           %span.span-project.span-project__title-big 支援総額
-          %span.span-project.span-project__data-big= "#{number_with_delimiter(@project.total_support)}円"
+          %span.span-project.span-project__data-big
+            = number_with_delimiter(@project.total_support)
+            円
         - if @project.next_goal.nil?
           .project-info__text
             %span.span-project.span-project__title 目標金額
@@ -44,7 +46,9 @@
               %span 円
         .project-info__text
           %span.span-project.span-project__title 支援者数
-          %span.span-project.span-project__data= "#{@total_user_max}人"
+          %span.span-project.span-project__data
+            = number_with_delimiter(@total_user_max)
+            人
         .project-info__text
           %span.span-project.span-project__title 残り日数
           %span.span-project.span-project__data
@@ -56,7 +60,7 @@
               #{ @project.remaining_time[:sec] } 秒
         .project-info__progress
           .progress
-            .progress-bar.progress-bar-danger.progress-level-of-achievement{style: "width: #{ @project.achievement_rate }%;"}
+            .progress-bar.progress-bar-danger.progress-level-of-achievement{ style: "width: #{ @project.achievement_rate }%;" }
               %p= "#{ @project.achievement_rate } %"
         = link_to payment_path(params[:id], 'payment/choice',
                "#{@returns.first.id}", ''), class: 'btn-link' do
