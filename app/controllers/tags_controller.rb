@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :update, :destroy]
+  before_action :require_login, except: [:index, :show]
 
   def index
     @tags = Tag.all

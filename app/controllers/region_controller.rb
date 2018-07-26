@@ -1,5 +1,6 @@
 class RegionController < ApplicationController
   before_action :set_region
+  before_action :require_login
 
   def create
     Region.create(region_params)
