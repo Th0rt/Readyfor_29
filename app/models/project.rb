@@ -53,4 +53,15 @@ class Project < ApplicationRecord
     return sum
   end
 
+  # 各リターンに支援した一番多いユーザー人数を返却する。
+  def total_user_max(returns)
+    total_user_max = 0
+    returns.each do |return_item|
+      if total_user_max < return_item.total_user
+        total_user_max = return_item.total_user
+      end
+    end
+    return total_user_max
+  end
+
 end
