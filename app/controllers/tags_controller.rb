@@ -28,8 +28,7 @@ class TagsController < ApplicationController
     @tag.update(
       name: tag_params[:name],
       type: tag_params[:type],
-      category: Category.find(tag_params[:category][:id])
-    )
+      category: Category.find(tag_params[:category][:id]))
     redirect_to new_tag_path
   end
 
@@ -49,7 +48,7 @@ class TagsController < ApplicationController
   end
 
   def set_category(category_id)
-    return nil if category_id
+    return nil unless category_id
     Category.find(category_id)
   end
 end
