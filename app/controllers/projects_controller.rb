@@ -20,6 +20,14 @@ class ProjectsController < ApplicationController
     cookie_save("project_view_history", view_history)
     @returns = @project.returns.order('price ASC' )
     @tags = @project.tags
+
+    # 各リターンに支援した一番多いユーザー人数をプロジェクト支援者数とする。
+    @total_user_max = 0
+    @returns.each do |return_item|
+      if @total_user_max < return_item.total_user
+        @total_user_max = return_item.total_user
+      end
+    end
   end
 
   def new

@@ -4,6 +4,7 @@ class Return < ApplicationRecord
   has_many :users, through: :user_returns
   mount_uploader :returnimage, ReturnImageUploader
 
+  # まだ購入したリターン出ない場合、total_userに加算する
   def self.total_user_sum(params_number, current_user_id)
     params_number.each do |key, value|
       unless value.to_i == 0
