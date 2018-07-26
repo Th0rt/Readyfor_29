@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :set_tags, only: [:new, :edit]
   before_action :require_login, except: [:index, :show]
+  before_action :project_edit, only: [:edit]
 
   def index
     @projects = Project.active
@@ -100,5 +101,9 @@ class ProjectsController < ApplicationController
       tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
+  end
+
+  def project_edit
+    redirect_to root_path unless user_signed_in? && @project.user_id == current_user.id
   end
 end
