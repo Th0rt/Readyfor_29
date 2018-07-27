@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :set_tags, only: [:new, :edit]
+  before_action :set_tags, only: [:new, :create, :edit, :update]
+  before_action :set_returns, only: [:edit, :update]
   before_action :require_login, except: [:index, :show]
 
   def index
@@ -41,7 +42,6 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @returns = @project.returns
   end
 
   def update
@@ -71,6 +71,10 @@ class ProjectsController < ApplicationController
 
   def set_tags
     @tags = Tag.all
+  end
+
+  def set_returns
+    @returns = @project.returns
   end
 
   def project_search_params
