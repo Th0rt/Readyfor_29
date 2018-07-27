@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @returns = current_user.user_returns.order('created_at DESC')
   end
 
   def edit
