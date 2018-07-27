@@ -126,7 +126,7 @@
               content.id, "?select_id=#{content.id}") do
                 %button.project-select-button  このリターンを購入する
       - else
-        = render partial: 'shared/return-list', locals: {return: @returns }
+        = render partial: 'shared/return-list', locals: { return: @returns }
     .clear
     .show-projects
       .clear

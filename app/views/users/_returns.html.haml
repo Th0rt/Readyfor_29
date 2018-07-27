@@ -13,5 +13,5 @@
       %td= r.count
       %td= number_with_delimiter(r.return.price)
       %td= number_with_delimiter("#{ r.return.price * r.count }")
-      %td.time #{ r.created_at.year }年#{ r.created_at.month }月#{ r.created_at.day }日#{ r.created_at.hour}時#{ r.created_at.min}分
+      %td.time #{r.created_at.strftime('%Y年%m月%d日 %H時%M分')}
       %td #{ r.return.arrival_date.year }年#{ r.return.arrival_date.month }月

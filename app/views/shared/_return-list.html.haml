@@ -7,7 +7,7 @@
       %strong= number_with_delimiter(r.price)
       %span 円のリターン
     .project-return__image
-      = image_tag( "#{r.returnimage}" )
+      = image_tag("#{ r.returnimage }")
     .project-return__content
       %p= simple_format(r.content)
     .project-return__helper
@@ -26,5 +26,5 @@
       %span #{ r.arrival_date.year }年#{ r.arrival_date.month }月に発送予定です。
     .project-return__purchase
       = link_to payment_path(params[:id], 'payment/choice',
-      r.id, "?select_id=#{r.id}") do
+      r.id, "?select_id=#{ r.id }") do
         %button.project-select-button  このリターンを購入する
