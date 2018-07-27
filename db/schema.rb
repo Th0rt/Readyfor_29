@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2018_07_26_060832) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_likes_on_project_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
@@ -98,6 +107,8 @@ ActiveRecord::Schema.define(version: 2018_07_26_060832) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "projects"
+  add_foreign_key "likes", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "returns", "projects"
   add_foreign_key "tag_projects", "projects"
