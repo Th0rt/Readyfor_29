@@ -1,6 +1,7 @@
 class ReturnsController < ApplicationController
   before_action :set_return, only: [:destroy, :confirmation]
   before_action :set_project, only: [:new, :choice, :confirmation]
+  before_action :require_login
 
   # 支払い選択
   def choice
