@@ -4,9 +4,6 @@
       = link_to root_path do
         クラウドファンディングトップ
       %span >
-      = link_to root_path do
-        地域
-      %span >
       = @project.title
     .top-content__title
       %h1
@@ -27,7 +24,9 @@
             %p= @project.user.nickname
         .project-info__big-text
           %span.span-project.span-project__title-big 支援総額
-          %span.span-project.span-project__data-big 1,000,000円
+          %span.span-project.span-project__data-big
+            = number_with_delimiter(@project.total_support)
+            円
         - if @project.next_goal.nil?
           .project-info__text
             %span.span-project.span-project__title 目標金額
@@ -47,7 +46,9 @@
               %span 円
         .project-info__text
           %span.span-project.span-project__title 支援者数
-          %span.span-project.span-project__data 90人
+          %span.span-project.span-project__data
+            = number_with_delimiter(@total_user_max)
+            人
         .project-info__text
           %span.span-project.span-project__title 残り日数
           %span.span-project.span-project__data
@@ -59,10 +60,10 @@
               #{ @project.remaining_time[:sec] } 秒
         .project-info__progress
           .progress
-            .progress-bar.progress-bar-danger.progress-level-of-achievement
-              %p 80%
+            .progress-bar.progress-bar-danger.progress-level-of-achievement{ style: "width: #{ @project.achievement_rate }%;" }
+              %p= "#{ @project.achievement_rate } %"
         = link_to payment_path(params[:id], 'payment/choice',
-              1, ''), class: 'btn-link' do
+               "#{@returns.first.id}", ''), class: 'btn-link' do
           .btn-link__button.btn.btn-danger
             %p このプロジェクトを支援する
     .top-content__info-footer
@@ -71,7 +72,6 @@
           %span.btn.btn-primary プロジェクトを編集する
         = link_to project_path, method: :delete do
           %span.btn.btn-primary.delete-btn プロジェクトを削除する
-        %p このプロジェクトはAll or nothing形式です。7月31日（火）午後11:00までに、2,450,000円以上集まった場合に成立となります。
   .bottom-content
     .bottom-content__tab-btm
       .project-tabs.select

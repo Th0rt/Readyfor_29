@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
     cookie_save("project_view_history", view_history)
     @returns = @project.returns.order('price ASC' )
     @tags = @project.tags
+    @total_user_max = @project.total_user_max(@returns)
   end
 
   def new
