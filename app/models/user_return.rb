@@ -14,4 +14,8 @@ class UserReturn < ApplicationRecord
     end
     return user_returns
   end
+
+  def self.count_return_users
+    self.pluck(:user_id).uniq.count
+  end
 end
