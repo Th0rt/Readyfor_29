@@ -58,6 +58,9 @@
               #{ @project.remaining_time[:hour] } 時間
               #{ @project.remaining_time[:min] } 分
               #{ @project.remaining_time[:sec] } 秒
+        .project-info__type
+          .project-type-badge.normal
+            = @project.project_type_i18n
         .project-info__progress
           .progress
             .progress-bar.progress-bar-danger.progress-level-of-achievement{ style: "width: #{ @project.achievement_rate }%;" }
