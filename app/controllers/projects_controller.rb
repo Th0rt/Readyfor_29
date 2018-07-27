@@ -32,8 +32,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       redirect_to root_path
+      flash[:notice] = 'プロジェクトを作成しました。'
     else
       render action: :new
+      flash[:alert] = 'プロジェクトの作成に失敗しました。'
     end
   end
 
@@ -44,14 +46,19 @@ class ProjectsController < ApplicationController
   def update
     if @project.update(update_project_params)
       redirect_to root_path
+      flash[:notice] = 'プロジェクトを更新しました。'
     else
       render action: :edit
+      flash[:alert] = 'プロジェクトの更新に失敗しました。'
     end
   end
 
   def destroy
     if @project.destroy
       redirect_to root_path
+      flash[:notice] = 'プロジェクトを削除しました。'
+    else
+      flash[:alert] = 'プロジェクトの削除に失敗しました。'
     end
   end
 

@@ -26,5 +26,8 @@
   .mypage-right
     .right-wrapper
       %h2 購入履歴
-      .return-list 表示できる履歴がありません
-      %button.return-more もっと見る
+      .return-lists
+        - if @returns.present?
+          = render partial: 'users/returns', locals: {returns: @returns}
+        - else
+          .return-list 表示できる履歴がありません

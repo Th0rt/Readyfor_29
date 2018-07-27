@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_login
 
   def index
   end
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @returns = current_user.user_returns.order('created_at DESC')
   end
 
   def edit
@@ -17,6 +19,7 @@ class UsersController < ApplicationController
   def update
     current_user.update(user_params)
     redirect_to edit_user_path(current_user)
+    flash[:notice] = 'プロフィール情報を更新しました。'
   end
 
   def profile
