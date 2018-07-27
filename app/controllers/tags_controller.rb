@@ -48,7 +48,7 @@ class TagsController < ApplicationController
   end
 
   def set_category(category_id)
-    return nil unless category_id
+    return nil if category_id.blank?
     Category.find(category_id)
   end
 end
