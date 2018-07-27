@@ -13,14 +13,17 @@
     height: 30px;
     margin: 5px auto 0px;
   }
+  &__type{
+    float: right;
+    margin: 10px 40px 0 0;
+  }
   &__progress{
     width: 400px;
-    margin: 30px auto 0px;
+    margin: 40px auto 0px;
     .progress{
       border-radius: 10px;
     }
     .progress-level-of-achievement{
-      width: 80%;
       p{
         text-align: left;
         margin-left: 10px;
