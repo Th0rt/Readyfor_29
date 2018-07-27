@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
+    resources :likes, only: [:create, :destroy]
     resources :returns, only: [:new, :create, :destroy] do
       resources :user_returns, only: [:create]
     end

@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
     view_history.delete_if { |id| id = @project.id }
     view_history << @project.id
     cookie_save("project_view_history", view_history)
+    @like = @project.likes.find_by(user_id: current_user.id) if user_signed_in?
     @returns = @project.returns.order('price ASC' )
     @tags = @project.tags
     @total_user_max = @project.total_user_max(@returns)
