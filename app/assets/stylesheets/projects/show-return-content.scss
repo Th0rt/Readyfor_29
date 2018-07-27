@@ -34,25 +34,24 @@
         border-radius: 50%;
         float: left;
         background-color: rgb(243, 234, 234);
-        button {
-          border: none;
-          background-color: #f3eaea;
-          padding-top: 5px
-        }
-        .fa-heart {
-          color: red;
-        }
+      }
+      button {
+        border: none;
+        background-color: transparent;
+        padding-top: 5px;
+        display: flex;
+      }
+      .fa-heart {
+        color: red;
       }
       .like-text{
-        display: inline-block;
         color: #4a4a4a;
-        line-height: 60px;
-        width: 240px;
-        margin-top: 0;
-        text-align: center;
+        width: 210px;
         font-size: 18px;
         font-weight: bold;
-
+        position: relative;
+        bottom: 8px;
+        left: 20px;
       }
     }
   }
