@@ -35,6 +35,7 @@ class Project < ApplicationRecord
 
   def category_add(category_id)
     return false if self.category
+    return false if category_id.blank?
     self.tags << Category.find(category_id)
   end
 
