@@ -7,6 +7,7 @@ class Project < ApplicationRecord
   has_many :tags, through: :tag_projects
 
   mount_uploader :projectimage, ProjectimageUploader
+  has_many :likes, dependent: :destroy
   enum project_type: { purchase: 0, contribution: 1 }
 
   scope :active,     ->         { where('limit_date >= ?', Time.current) }
@@ -41,6 +42,11 @@ class Project < ApplicationRecord
 
   def strech_rate
     ((self.goal.to_f / self.next_goal.to_f) * 100).floor
+  end
+  
+  # ユーザーがすでにいいねをしているか
+  def like_user(user_id)
+   likes.find_by(user_id: user_id)
   end
 
   def remaining_time
