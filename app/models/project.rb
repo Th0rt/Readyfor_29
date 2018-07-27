@@ -25,9 +25,22 @@ class Project < ApplicationRecord
     @days_life >= 0
   end
 
+  def success?
+    self.total_support >= self.goal
+  end
+
   def achievement_rate
     return 0 if self.total_support == 0
     ((self.total_support.to_f / self.goal.to_f) * 100).floor
+  end
+
+  def achievement_rate_next_goal
+    return 0 if self.total_support == 0
+    ((self.total_support.to_f / self.next_goal.to_f) * 100).floor
+  end
+
+  def strech_rate
+    ((self.goal.to_f / self.next_goal.to_f) * 100).floor
   end
 
   def remaining_time
