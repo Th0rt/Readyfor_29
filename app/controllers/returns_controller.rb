@@ -1,6 +1,7 @@
 class ReturnsController < ApplicationController
   before_action :set_return, only: [:destroy, :confirmation]
   before_action :set_project, only: [:new, :choice, :confirmation]
+  before_action :require_login
 
   # 支払い選択
   def choice
@@ -21,12 +22,21 @@ class ReturnsController < ApplicationController
   end
 
   def create
-    Return.create(return_params)
-    redirect_to project_path(id: params[:project_id])
+    if Return.create(return_params)
+      redirect_to project_path(id: params[:project_id])
+      flash[:notice] = 'リターンを作成しました。'
+    else
+      render action: :new
+      flash[:alert] = 'リターンの作成に失敗しました。'
+    end
   end
 
   def destroy
-    @return.destroy
+    if @return.destroy
+      flash[:notice] = 'リターンを削除しました。'
+    else
+      flash[:alert] = 'リターンの削除に失敗しました。'
+    end
     redirect_to edit_project_path(id: params[:project_id])
   end
 

@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :update, :destroy]
+  before_action :require_login, except: [:index, :show]
 
   def index
     @tags = Tag.all
@@ -22,6 +23,7 @@ class TagsController < ApplicationController
       type: tag_params[:type],
       category: set_category(tag_params[:category][:id]))
     redirect_to new_tag_path
+    flash[:notice] = 'タグを作成しました。'
   end
 
   def update
@@ -30,11 +32,13 @@ class TagsController < ApplicationController
       type: tag_params[:type],
       category: Category.find(tag_params[:category][:id]))
     redirect_to new_tag_path
+    flash[:notice] = 'タグを更新しました。'
   end
 
   def destroy
     @tag.destroy
     redirect_to new_tag_path
+    flash[:notice] = 'タグを削除しました。'
   end
 
   private

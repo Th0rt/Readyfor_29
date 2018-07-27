@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
     @returns = @project.returns.order('price ASC' )
     @category = @project.category
     @tags = @project.tags
+    @total_user_max = @project.total_user_max(@returns)
   end
 
   def new
@@ -34,8 +35,10 @@ class ProjectsController < ApplicationController
     @project.category_add(project_params[:category_id])
     if @project.save
       redirect_to root_path
+      flash[:notice] = 'プロジェクトを作成しました。'
     else
       render action: :new
+      flash[:alert] = 'プロジェクトの作成に失敗しました。'
     end
   end
 
@@ -50,14 +53,19 @@ class ProjectsController < ApplicationController
       end
       @project.category_add(project_params[:category_id])
       redirect_to root_path
+      flash[:notice] = 'プロジェクトを更新しました。'
     else
       render action: :edit
+      flash[:alert] = 'プロジェクトの更新に失敗しました。'
     end
   end
 
   def destroy
     if @project.destroy
       redirect_to root_path
+      flash[:notice] = 'プロジェクトを削除しました。'
+    else
+      flash[:alert] = 'プロジェクトの削除に失敗しました。'
     end
   end
 
@@ -113,11 +121,5 @@ class ProjectsController < ApplicationController
       tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
-  end
-
-  def require_login
-    unless user_signed_in?
-      redirect_to root_path
-    end
   end
 end
