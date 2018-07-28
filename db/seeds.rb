@@ -16,6 +16,29 @@ for i in 1..3 do
   user.save! if user.valid?
 end
 
+# テストプロジェクト
+for i in 1..10 do
+  project = User.find(1).projects.new(
+    title:        "test_project#{i}",
+    content:      "text_project",
+    projectimage: File.open("./app/assets/images/sample.png"),
+    limit_date:   Date.today + 10,
+    goal:         100000,
+    next_goal:    150000,
+    project_type: "purchase",
+    likes_count:  0,
+  )
+  for i2 in 1..3 do
+    project.returns.new(
+      title:        "return#{i2}",
+      price:        1000 * i2,
+      stock:        0,
+      content:      "test-return",
+      arrival_date: Date.today + 30 * i2
+    )
+  end
+  project.save!
+end
 
 # カテゴリ
 initial_cateogry = %w(社会にいいこと 地域 ものづくり アート チャレンジ)
