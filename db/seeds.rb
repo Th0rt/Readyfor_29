@@ -6,13 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 # テストユーザー
-user = User.new(
-  nickname: 'test-user',
-  email:    'test@gmail.com',
-  password: '123456')
-user.save! if user.valid?
+for i in 1..3 do
+  user = User.new(
+    nickname: "test-user#{i}",
+    email:    "test#{i}@gmail.com",
+    password: '123456'
+  )
+  user.save! if user.valid?
+end
+
 
 # カテゴリ
 initial_cateogry = %w(社会にいいこと 地域 ものづくり アート チャレンジ)
