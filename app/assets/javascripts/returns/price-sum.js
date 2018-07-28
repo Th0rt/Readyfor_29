@@ -25,7 +25,9 @@ $(document).on('turbolinks:load', function () {
         return_id: return_id,
         return_number: return_number
       },
-      dataType: "json"
+      dataType: "json",
+      processData: false,
+      contentType: false
     })
       .done(function (returns) {
         if (returns.length !== 0) {
