@@ -14,10 +14,10 @@
           - else
             = render partial: 'returns/return-item',
                             locals:  { title: "選択したギフト",
-                            returns: @returns.where(id: params[:select_id]) }
+                            returns: @return }
             = render partial: 'returns/return-item',
                             locals:  { title: "その他のギフト",
-                            returns: @returns.where.not(id: params[:select_id]) }
+                            returns: @returns_not }
 
         .return-amount-of-money
           .return-count
@@ -32,7 +32,10 @@
               %table
                 %tr
                   %th 合計金額
-                  %td#return-sum 0円
+                  - if params[:select_id].nil?
+                    %td#return-sum 0円
+                  - else
+                    %td#return-sum #{@return.first.price}円
             .return-total__right-text
               %span を
             .clear
