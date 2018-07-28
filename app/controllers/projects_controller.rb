@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @user_project = Project.where(id: params[:id], user_id: current_user.id)
-    redirect_to root_path unless @user_project.present?
+    redirect_to root_path if @user_project.blank?
     @returns = @project.returns
   end
 
