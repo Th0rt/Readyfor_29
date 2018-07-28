@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_07_26_060832) do
     t.bigint "user_id"
     t.string "projectimage", default: "", null: false
     t.integer "total_support", default: 0, null: false
+    t.integer "category_id"
     t.index ["goal"], name: "index_projects_on_goal"
     t.index ["limit_date"], name: "index_projects_on_limit_date"
     t.index ["title"], name: "index_projects_on_title"
@@ -58,6 +59,15 @@ ActiveRecord::Schema.define(version: 2018_07_26_060832) do
     t.datetime "updated_at", null: false
     t.integer "total_user", default: 0, null: false
     t.index ["project_id"], name: "index_returns_on_project_id"
+  end
+
+  create_table "tag_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_tag_categories_on_category_id"
+    t.index ["tag_id"], name: "index_tag_categories_on_tag_id"
   end
 
   create_table "tag_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

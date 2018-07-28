@@ -37,6 +37,12 @@
               #{ project.remaining_time[:hour] } 時間
 
       .Entry__gauge.Gauge.is-top
-        .Gauge__obj.is-1{ style: "width: #{ project.achievement_rate }%;" }
-        .Gauge__txt
-          #{ project.achievement_rate } %
+        - if project.success? && project.next_goal
+          .Gauge__obj.is-0{ style: "width: #{ project.achievement_rate_next_goal }%;" }
+          .Gauge__obj.is-1{ style: "width: #{ project.strech_rate }%;" }
+          .Gauge__txt
+            #{ project.achievement_rate } %
+        - else
+          .Gauge__obj.is-1{ style: "width: #{ project.achievement_rate }%;" }
+          .Gauge__txt
+            #{ project.achievement_rate } %
