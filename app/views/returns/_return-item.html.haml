@@ -7,18 +7,19 @@
     .return-items.row
       .return-item-left.col-sm-4
 
-        #return-price.col
-          = image_tag "check.png", id: "return-check-image#{item.id}"
-          %span{id: "return-price-text#{item.id}"}= "#{item.price}円"
+        .return-price.col
+          = image_tag "check.png", id: "return-check-image#{ item.id }"
+          %span{ id: "return-price-text#{ item.id }" }= "#{ item.price }円"
 
         - if returns.count == 1
           .return-numbar.col
-            = select_tag "number[#{item.id}]",
-            options_for_select(return_count_options(), selected: 1), class: 'number-select'
+            = select_tag "number[#{ item.id }]",
+            options_for_select(return_count_options(), selected: 1),
+             class: 'number-select'
             %span 個
         - else
           .return-numbar.col
-            = select_tag "number[#{item.id}]",
+            = select_tag "number[#{ item.id }]",
             options_for_select(return_count_options()), class: 'number-select'
             %span 個
 
