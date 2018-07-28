@@ -66,7 +66,7 @@
             .progress-bar.progress-bar-danger.progress-level-of-achievement{ style: "width: #{ @project.achievement_rate }%;" }
               %p= "#{ @project.achievement_rate } %"
         = link_to payment_path(params[:id], 'payment/choice',
-               "#{@returns.first.id}", ''), class: 'btn-link' do
+               "#{@returns.first.id}", ''), class: 'btn-link', data: {turbolinks: false} do
           .btn-link__button.btn.btn-danger
             %p このプロジェクトを支援する
     .top-content__info-footer
@@ -125,7 +125,7 @@
               %span #{ content.arrival_date.year }年#{ content.arrival_date.month }月に発送予定です。
             .project-return__purchase
               = link_to payment_path(params[:id], 'payment/choice',
-              content.id, "?select_id=#{content.id}") do
+              content.id, "?select_id=#{content.id}"), data: {turbolinks: false} do
                 %button.project-select-button  このリターンを購入する
       - else
         = render partial: 'shared/return-list', locals: { return: @returns }
