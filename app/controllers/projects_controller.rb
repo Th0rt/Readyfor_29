@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :set_tags, only: [:new, :create, :edit, :update]
   before_action :set_returns, only: [:edit, :update]
-  before_action :set_categories, only: [:new, :edit]
+  before_action :set_categories, only: [:new, :create, :edit, :update]
   before_action :require_login, except: [:index, :show]
 
   def index
