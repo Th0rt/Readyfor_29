@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  validates :next_goal, numericality: { greater_than: :goal }
   belongs_to :user
   has_many :returns, dependent: :destroy
   accepts_nested_attributes_for :returns, allow_destroy: true
@@ -7,12 +8,17 @@ class Project < ApplicationRecord
   has_many :tags, through: :tag_projects
 
   mount_uploader :projectimage, ProjectimageUploader
+  has_many :likes, dependent: :destroy
   enum project_type: { purchase: 0, contribution: 1 }
 
   scope :active,     ->         { where('limit_date >= ?', Time.current) }
   scope :title,      -> title   { where('title like ?', title) }
   scope :content,    -> content { where('content like ?', content) }
   scope :owner_name, -> name    { joins(:user).where('users.nickname like ?', name) }
+  scope :order_new,  ->         { sort_by{ |project| project.created_at }.reverse }
+  # お気に入り機能が実装されるまでコメントアウト
+  # scope :order_like_count -> { sort_by{ |project| project.likes_count }.reverse }
+  scope :order_total_support, -> { sort_by{ |project| project.total_support }.reverse }
   scope :search,     -> keyword {
     title(keyword).or(content(keyword)).joins(:user).or(owner_name(keyword))
   }
@@ -24,10 +30,42 @@ class Project < ApplicationRecord
     @days_life = (days_life_date / 24 / 60 / 60).to_i
     @days_life >= 0
   end
+  
+  def success?
+    self.total_support >= self.goal
+  end
+
+  def category
+    self.tags.find_by(type: 'category')
+  end
+
+  def category_add(category_id)
+    return false if self.category
+    return false if category_id.blank?
+    self.tags << Category.find(category_id)
+  end
+
+  def category_delete
+    self.tag_projects.find_by(tag_id: self.category.id).delete
+  end
 
   def achievement_rate
     return 0 if self.total_support == 0
     ((self.total_support.to_f / self.goal.to_f) * 100).floor
+  end
+
+  def achievement_rate_next_goal
+    return 0 if self.total_support == 0
+    ((self.total_support.to_f / self.next_goal.to_f) * 100).floor
+  end
+
+  def strech_rate
+    ((self.goal.to_f / self.next_goal.to_f) * 100).floor
+  end
+  
+  # ユーザーがすでにいいねをしているか
+  def like_user(user_id)
+   likes.find_by(user_id: user_id)
   end
 
   def remaining_time

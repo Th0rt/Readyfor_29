@@ -11,18 +11,26 @@ class TagsController < ApplicationController
   end
 
   def new
-    @tags = Tag.all
+    @categories = Category.all
+    @tags = Tag.where.not(type: "Category")
+    @tags.each { |tag| tag.build_tag_category unless tag.category }
     @tag = Tag.new
   end
 
   def create
-    Tag.create(tag_params)
+    Tag.create(
+      name: tag_params[:name],
+      type: tag_params[:type],
+      category: set_category(tag_params[:category][:id]))
     redirect_to new_tag_path
     flash[:notice] = 'タグを作成しました。'
   end
 
   def update
-    @tag.update(tag_params)
+    @tag.update(
+      name: tag_params[:name],
+      type: tag_params[:type],
+      category: Category.find(tag_params[:category][:id]))
     redirect_to new_tag_path
     flash[:notice] = 'タグを更新しました。'
   end
@@ -36,10 +44,15 @@ class TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:tag).permit(:name, :type)
+    params.require(:tag).permit(:name, :type, category: [:id])
   end
 
   def set_tag
     @tag = Tag.find(params[:id])
+  end
+
+  def set_category(category_id)
+    return nil if category_id.blank?
+    Category.find(category_id)
   end
 end

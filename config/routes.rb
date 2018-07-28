@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:index, :show, :new, :create, :update, :destroy]
   resources :region, only: [:create, :update, :destroy]
+  resources :category, only: [:create, :update, :destroy]
 
   resources :users, only: [:show, :edit, :index, :update] do
     member do
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
+    resources :likes, only: [:create, :destroy]
     resources :returns, only: [:new, :create, :destroy] do
       resources :user_returns, only: [:create]
     end

@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2018_07_26_060832) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_likes_on_project_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
@@ -31,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_07_26_060832) do
     t.bigint "user_id"
     t.string "projectimage", default: "", null: false
     t.integer "total_support", default: 0, null: false
+    t.integer "category_id"
     t.index ["goal"], name: "index_projects_on_goal"
     t.index ["limit_date"], name: "index_projects_on_limit_date"
     t.index ["title"], name: "index_projects_on_title"
@@ -49,6 +59,15 @@ ActiveRecord::Schema.define(version: 2018_07_26_060832) do
     t.datetime "updated_at", null: false
     t.integer "total_user", default: 0, null: false
     t.index ["project_id"], name: "index_returns_on_project_id"
+  end
+
+  create_table "tag_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_tag_categories_on_category_id"
+    t.index ["tag_id"], name: "index_tag_categories_on_tag_id"
   end
 
   create_table "tag_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -98,6 +117,8 @@ ActiveRecord::Schema.define(version: 2018_07_26_060832) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "projects"
+  add_foreign_key "likes", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "returns", "projects"
   add_foreign_key "tag_projects", "projects"
