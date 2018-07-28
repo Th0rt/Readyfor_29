@@ -23,15 +23,16 @@
           .return-count
             %p
               追加するリターン :
-              %span 1,000円
-              × 1個
+          .return-price
+            #return-price-list
+          .clear
           %hr
           .return-total
             .return-total__table
               %table
                 %tr
                   %th 合計金額
-                  %td 1,000円
+                  %td#return-sum 0円
             .return-total__right-text
               %span を
             .clear
