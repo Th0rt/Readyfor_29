@@ -3,12 +3,12 @@
     %h1
       #{ title }
     = image_tag "down_arrow.png", id: "selected-btn"
-  - returns.each do |item|
+  - returns.each_with_index do |item, i|
     .return-items.row
       .return-item-left.col-sm-4
 
-        .return-price.col
-          = image_tag "check.png"
+        #return-price.col
+          = image_tag "check.png", id: "return-check-image#{item.id}"
           %span= item.price
           %span 円
 

@@ -38,6 +38,9 @@ $(document).on('turbolinks:load', function () {
               var html = buildHTML(returns[index], number);
               $('#return-price-list').append(html);
               sum += returns[index].price * number;
+              $(`#return-check-image${returns[index].id}`).addClass('return-check-image-show');
+            } else {
+              $(`#return-check-image${returns[index].id}`).removeClass('return-check-image-show');
             }
           });
 
