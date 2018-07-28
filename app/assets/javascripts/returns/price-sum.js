@@ -3,9 +3,11 @@ $(document).on('turbolinks:load', function () {
     // リターンのIDを取得
     var return_id_str = $(this).attr("id");
     var regExp = new RegExp("number_", "g");
-    var return_id = return_id_str.replace(regExp, "");
+    var return_id = parseInt(return_id_str.replace(regExp, ""), 10);
     // リターンの数量を取得
-    var return_number = $(this).val();
+    var return_number = parseInt($(this).val(), 10);
+
+    var sum = 0;
 
     // 対象リターンからpriceを取得する
     $.ajax({
@@ -16,12 +18,14 @@ $(document).on('turbolinks:load', function () {
       },
       dataType: "json"
     })
-      .done(function (datas) {
-        if (datas.length !== 0) {
-          datas.forEach(function (data) {
+      .done(function (returns) {
+        if (returns.length !== 0) {
+          returns.forEach(function (return_item) {
 
-            // 選択されているリターン
-            // リターンの合計値表示
+          });
+          // 全リターンのoptionオブジェクト取得
+          $('.number-select').each(function () {
+            console.log($(this).val());
           });
         }
       })
