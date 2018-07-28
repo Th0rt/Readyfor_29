@@ -20,13 +20,13 @@ $(document).on('turbolinks:load', function () {
     })
       .done(function (returns) {
         if (returns.length !== 0) {
-          returns.forEach(function (return_item) {
-
-          });
           // 全リターンのoptionオブジェクト取得
-          $('.number-select').each(function () {
+          $('.number-select').each(function (index) {
             console.log($(this).val());
+            sum += returns[index].price * parseInt($(this).val(), 10);
           });
+          // 合計金額表示
+          $('#return-sum').text(`${sum}円`);
         }
       })
       .fail(function () {
