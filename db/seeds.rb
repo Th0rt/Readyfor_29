@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# 初期カテゴリの作成
+
+initial_cateogry = %w(社会にいいこと 地域 ものづくり アート チャレンジ)
+
+initial_cateogry.each do |category|
+  Category.create(name: category)
+end
