@@ -7,7 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# 初期カテゴリの作成
+# テストユーザー
+user = User.new(
+  nickname: 'test-user',
+  email:    'test@gmail.com',
+  password: '123456')
+user.save! if user.valid?
 
 initial_cateogry = %w(社会にいいこと 地域 ものづくり アート チャレンジ)
 
