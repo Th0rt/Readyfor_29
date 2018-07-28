@@ -22,7 +22,7 @@ for i in 1..10 do
     title:        "test_project#{i}",
     content:      "text_project",
     projectimage: File.open("./app/assets/images/sample.png"),
-    limit_date:   Date.today + 10,
+    limit_date:   Time.zone.today + 10,
     goal:         100000,
     next_goal:    150000,
     project_type: "purchase",
@@ -34,7 +34,7 @@ for i in 1..10 do
       price:        1000 * i2,
       stock:        0,
       content:      "test-return",
-      arrival_date: Date.today + 30 * i2
+      arrival_date: Time.zone.today + 30 * i2
     )
   end
   project.save!
@@ -69,12 +69,12 @@ initial_tag_lists = [
 initial_tag_lists.each do |tag_list|
   category = Category.find_by(name: tag_list[:category_name])
   tag_list[:tag_name].each do |tag_name|
-    tag = category.tags.create(name: tag_name, type: '')
+    category.tags.create(name: tag_name, type: '')
   end
 end
 
 # 地域
-intial_region = %w(
+initial_region = %w(
   北海道 札幌 旭川 知床
   東北 青森県 岩手県 宮城県 秋田県 山形県 福島県
   関東 茨城県 栃木県 群馬県 埼玉県 千葉県 東京都 神奈川県
@@ -87,7 +87,7 @@ intial_region = %w(
   海外 アジア オセアニア 北米・中米 中近東 ヨーロッパ 南米 アフリカ
 )
 
-intial_region.each do |region|
+initial_region.each do |region|
   Region.create(name: region)
 end
 
