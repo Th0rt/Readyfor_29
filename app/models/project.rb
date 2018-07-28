@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  validates :next_goal, numericality: { greater_than: :goal }
   belongs_to :user
   has_many :returns, dependent: :destroy
   accepts_nested_attributes_for :returns, allow_destroy: true
