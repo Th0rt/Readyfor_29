@@ -34,6 +34,7 @@ for i in 1..10 do
       price:        1000 * i2,
       stock:        0,
       content:      "test-return",
+      returnimage:  File.open("./app/assets/images/sample.png"),
       arrival_date: Time.zone.today + 30 * i2
     )
   end
