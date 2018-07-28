@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:index, :show, :new, :create, :update, :destroy]
   resources :region, only: [:create, :update, :destroy]
+  resources :category, only: [:create, :update, :destroy]
 
   resources :users, only: [:show, :edit, :index, :update] do
     member do
