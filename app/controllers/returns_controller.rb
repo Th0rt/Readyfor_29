@@ -6,6 +6,11 @@ class ReturnsController < ApplicationController
   # 支払い選択
   def choice
     @returns = @project.returns
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   # 支払い情報入力
