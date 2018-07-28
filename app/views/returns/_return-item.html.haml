@@ -9,8 +9,7 @@
 
         #return-price.col
           = image_tag "check.png", id: "return-check-image#{item.id}"
-          %span= item.price
-          %span 円
+          %span{id: "return-price-text#{item.id}"}= "#{item.price}円"
 
         - if returns.count == 1
           .return-numbar.col
