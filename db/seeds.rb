@@ -52,7 +52,7 @@ initial_tag_lists = [
   { category_name: '社会にいいこと',
     tag_name:      %w(子供・教育 国際教育 医療・福祉 環境保護 人権 マイノリティ 動物 発展途上国)
   },
-  { category_name: '社会にいいこと',
+  { category_name: '地域',
     tag_name:      %w(地域文化 観光 まちづくり 災害 フード 特産品 地震 台風 歴史 飲食店)
   },
   { category_name: 'ものづくり',
