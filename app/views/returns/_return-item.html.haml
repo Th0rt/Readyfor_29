@@ -9,8 +9,10 @@
 
         .return-price.col
           - if !params[:select_id].nil? && params[:select_id] == item.id.to_s
-            = image_tag "check.png", id: "return-check-image#{ item.id }", class: 'return-check-image-show'
-            %span{ id: "return-price-text#{ item.id }", class: 'return-price-text-bule' }= "#{ item.price }円"
+            = image_tag "check.png", id: "return-check-image#{ item.id }",
+             class: 'return-check-image-show'
+            %span{ id: "return-price-text#{ item.id }",
+            class: 'return-price-text-bule' }= "#{ item.price }円"
           - else
             = image_tag "check.png", id: "return-check-image#{ item.id }"
             %span{ id: "return-price-text#{ item.id }" }= "#{ item.price }円"
