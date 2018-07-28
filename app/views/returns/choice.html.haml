@@ -25,6 +25,9 @@
               追加するリターン :
           .return-price
             #return-price-list
+              - unless params[:select_id].nil?
+                %p
+                  %span #{@return.first.price} × 1個
           .clear
           %hr
           .return-total
