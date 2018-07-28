@@ -37,7 +37,8 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless @project.user_id == current_user.id
+    @user_project = Project.where(id: params[:id], user_id: current_user.id)
+    redirect_to root_path unless @user_project.present?
     @returns = @project.returns
   end
 
