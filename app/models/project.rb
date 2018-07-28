@@ -7,6 +7,7 @@ class Project < ApplicationRecord
   has_many :tags, through: :tag_projects
 
   mount_uploader :projectimage, ProjectimageUploader
+  has_many :likes, dependent: :destroy
   enum project_type: { purchase: 0, contribution: 1 }
 
   scope :active,     ->         { where('limit_date >= ?', Time.current) }
@@ -30,6 +31,11 @@ class Project < ApplicationRecord
     ((self.total_support.to_f / self.goal.to_f) * 100).floor
   end
 
+  # ユーザーがすでにいいねをしているか
+  def like_user(user_id)
+   likes.find_by(user_id: user_id)
+  end
+
   def remaining_time
     remaining_time = {}
     total_sec = ( self.limit_date - Time.current ).to_i
@@ -51,6 +57,18 @@ class Project < ApplicationRecord
       end
     end
     return sum
+  end
+
+  # 対象プロジェクトの各リターンの中で支援者数が一番多い人数を返却
+  # returns : 対象プロジェクトのリターンオブジェクト
+  def total_user_max(returns)
+    total_user_max = 0
+    returns.each do |return_item|
+      if total_user_max < return_item.total_user
+        total_user_max = return_item.total_user
+      end
+    end
+    return total_user_max
   end
 
 end
