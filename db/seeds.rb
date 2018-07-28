@@ -14,6 +14,7 @@ user = User.new(
   password: '123456')
 user.save! if user.valid?
 
+# カテゴリ
 initial_cateogry = %w(社会にいいこと 地域 ものづくり アート チャレンジ)
 
 initial_cateogry.each do |category|
