@@ -17,11 +17,11 @@
           %tr
             %th カード番号
             %td
-              = number_field_tag :card, id: 'card-input-form', maxlength: 16
+              = number_field_tag :card, nil, maxlength: 16, id: 'card-input-form'
           %tr
             %th CVC番号
             %td
-              = number_field_tag :cvc, id: 'cvc-input-form', maxlength: 3
+              = number_field_tag :cvc, nil, maxlength: 3, id: 'cvc-input-form'
           %tr
             %th カード有効期限
             %td
