@@ -3,8 +3,14 @@ $(document).on('turbolinks:load', function () {
     if ($("#card-input-form").val() == '') {
       alert('クレジットカード番号を入力してください');
       return false;
+    } else if ($("#card-input-form").val().length < 16) {
+      alert('クレジットカード番号の16桁が入力されていません');
+      return false;
     } else if ($("#cvc-input-form").val() == '') {
       alert('CVCを入力してください');
+      return false;
+    } else if ($("#cvc-input-form").val().length < 3) {
+      alert('CVCの3桁が入力されていません');
       return false;
     } else {
       $("#card-input").submit();
