@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function () {
   $("#card-input").submit(function () {
-    if ($("input[name='card']").val() == '') {
+    if ($("#card-input-form").val() == '') {
       alert('クレジットカード番号を入力してください');
       return false;
-    } else if ($("input[name='cvc']").val() == '') {
+    } else if ($("#cvc-input-form").val() == '') {
       alert('CVCを入力してください');
       return false;
     } else {
