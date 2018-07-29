@@ -1,15 +1,15 @@
 $(document).on('turbolinks:load', function () {
   $("#bank-input").submit(function () {
-    if ($("input[name='bank_name']").val() == '') {
+    if ($("bank_name-form").val() == '') {
       alert('銀行名を入力してください');
       return false;
-    } else if ($("input[name='branch_office']").val() == '') {
+    } else if ($("branch_office-form").val() == '') {
       alert('支店名を入力してください');
       return false;
-    } else if ($("input[name='name']").val() == '') {
+    } else if ($("name-form").val() == '') {
       alert('口座氏名を入力してください');
       return false;
-    } else if ($("input[name='account_number']").val() == '') {
+    } else if ($("account_number-form").val() == '') {
       alert('口座番号を入力してください');
       return false;
     } else {
