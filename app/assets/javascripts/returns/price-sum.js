@@ -41,10 +41,10 @@ $(document).on('turbolinks:load', function () {
               $('#return-price-list').append(html);
               sum += returns[index].price * number;
               $(`#return-check-image${returns[index].id}`).addClass('return-check-image-show');
-              $(`#return-price-text${returns[index].id}`).addClass('return-price-text-bule');
+              $(`#return-price-text${returns[index].id}`).addClass('return-price-text-blue');
             } else {
               $(`#return-check-image${returns[index].id}`).removeClass('return-check-image-show');
-              $(`#return-price-text${returns[index].id}`).removeClass('return-price-text-bule');
+              $(`#return-price-text${returns[index].id}`).removeClass('return-price-text-blue');
             }
           });
 
