@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function () {
   function buildHTML(return_item, number) {
     var html = `<p>
                   <span>
-                    ${return_item.price} × ${number}個
+                    ${return_item.price}円 × ${number}個
                   </span>
                 </p>`;
     return html;
