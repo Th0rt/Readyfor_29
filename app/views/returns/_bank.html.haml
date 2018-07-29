@@ -11,19 +11,23 @@
         %tr
           %th 銀行名
           %td
-            = text_field_tag :bank_name, nil, id: 'bank_name-form'
+            = text_field_tag :bank_name, nil,
+             id: 'bank_name-form'
         %tr
           %th 支店名
           %td
-            = text_field_tag :branch_office, nil, id: 'branch_office-form'
+            = text_field_tag :branch_office, nil,
+             id: 'branch_office-form'
         %tr
           %th 口座氏名
           %td
-            = text_field_tag :name, nil, id: 'name-form'
+            = text_field_tag :name, nil,
+             id: 'name-form'
         %tr
           %th 口座番号
           %td
-            = number_field_tag :account_number, nil, maxlength: 7, id: 'account_number-form'
+            = number_field_tag :account_number, nil, maxlength: 7,
+             id: 'account_number-form'
       .about-settlement-system
         %h2 決済システムについて
         %p
