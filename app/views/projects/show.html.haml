@@ -73,7 +73,7 @@
       - if user_signed_in? && current_user.id == @project.user.id
         = link_to edit_project_path(id: params[:id]) do
           %span.btn.btn-primary プロジェクトを編集する
-        = link_to project_path, method: :delete  do
+        = link_to project_path, method: :delete do
           %span.btn.btn-primary.delete-btn プロジェクトを削除する
   .bottom-content
     .bottom-content__tab-btm
