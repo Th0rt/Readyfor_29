@@ -80,18 +80,10 @@
     .bottom-content__tab-btm
       .project-tabs.select
         %p プロジェクト概要
-      .project-tabs
-        %p 新着情報
-      .project-tabs
-        %p 応援コメント
     .bottom-content__tab-content
       .tab-content
         %p プロジェクト概要
         = @project.content
-      .tab-content.hide
-        %p 新着情報
-      .tab-content.hide
-        %p 応援コメント
     .return-content
       .return-content__link-btm
         #like-content
@@ -130,23 +122,3 @@
                 %button.project-select-button  このリターンを購入する
       - else
         = render partial: 'shared/return-list', locals: { return: @returns }
-    .clear
-    .show-projects
-      .clear
-      .project-lists
-        %p あなたにオススメのプロジェクト
-        .project-lists__list
-        .project-lists__list
-        .project-lists__list
-      .clear
-      .project-lists
-        %p 注目のプロジェクト
-        .project-lists__list
-        .project-lists__list
-        .project-lists__list
-      .clear
-      .project-lists
-        %p 新着プロジェクト
-        .project-lists__list
-        .project-lists__list
-        .project-lists__list
