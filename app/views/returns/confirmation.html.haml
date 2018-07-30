@@ -1,3 +1,5 @@
+%script{:src => "https://js.pay.jp/", :type => "text/javascript"}
+
 = form_for([@project, @return, @user_return], method: :post) do |f|
   .purchase-contents
     .top-content
@@ -9,6 +11,10 @@
           = render 'returns/bank-show'
         - else
           = render 'returns/credit-card-show'
+          = f.hidden_field :card, value: params[:card], id: 'card-value'
+          = f.hidden_field :cvc, value: params[:cvc], id: 'cvc-value'
+          = f.hidden_field :month, value: params[:month], id: 'month-value'
+          = f.hidden_field :year, value: params[:year], id: 'year-value'
 
       - params[:number].each do |key, value|
         = f.hidden_field "number[#{key}]", value: "#{value}"
