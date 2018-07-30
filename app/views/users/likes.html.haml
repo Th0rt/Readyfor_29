@@ -25,7 +25,7 @@
           = link_to "よくある質問リスト" , href: "#"
   .mypage-right
     .right-wrapper
-      %h2 購入履歴
+      %h2 お気に入りリスト
       .return-lists
         - if @user_likes.present?
           = render partial: 'users/likes', locals: {likes: @user_likes}
