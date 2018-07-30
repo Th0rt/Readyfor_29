@@ -102,7 +102,7 @@ class Project < ApplicationRecord
     return total_user_max
   end
 
-  def add_return?
+  def has_max_return?
     self.returns.length  <= 3
   end
 end
