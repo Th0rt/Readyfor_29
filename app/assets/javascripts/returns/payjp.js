@@ -19,18 +19,14 @@ $(document).on('turbolinks:load', function () {
     Payjp.setPublicKey('pk_test_0056da6ac88997ee48c98ac8');
     Payjp.createToken(card_info, function (s, response) {
       if (response.error) {
-        // form.find('.payment-errors').text(response.error.message);
-        form.prop("disabled", false);
         alert('決済エラーが発生しました。もう一度やり直してください。');
+        form.append($('<input type="hidden" name="payjpToken" />').val(''));
       }
       else {
         var token = response.id;
-
         form.append($('<input type="hidden" name="payjpToken" />').val(token));
-
-        console.log(token);
-        form.get(0).submit();
       }
+      form.get(0).submit();
     });
   });
 });
