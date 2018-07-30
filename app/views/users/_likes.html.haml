@@ -1,0 +1,12 @@
+%table
+  %tr
+    %th プロジェクト名(リンク)
+    %th 支援総額
+    %th いいね数
+    %th 残り日数
+  - likes.each do |like|
+    %tr
+      %td= link_to "#{like.project.title}", project_path(id: like.project.id)
+      %td= like.project.total_support
+      %td= like.project.likes_count
+      %td= "#{ like.project.remaining_time[:day] } 日"

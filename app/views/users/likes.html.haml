@@ -1,0 +1,33 @@
+.mypage-container
+  .mypage-left
+    .left-wrapper
+      = render 'shared/mypage_left'
+      %ul.filter-list
+        .filter-item
+          = link_to "購入履歴" ,user_path(id: current_user.id)
+        .filter-item
+          = link_to "購入履歴(月額)", user_path(id: current_user.id)
+        .filter-item.selected
+          = link_to "お気に入りリスト", likes_user_path(id: current_user.id)
+        .message-list
+          %i.fa.fa-inbox メッセージ
+        .filter-item
+          = link_to user_messages_path(user_id: current_user.id) do
+            %i.fa.fa-user
+            %span メッセージ一覧
+        .filter-item
+          = link_to new_user_message_path(user_id: current_user.id) do
+            %i.fa.fa-envelope
+            %span 新規メッセージ作成
+        .answer-list
+          %i.fa.fa-question-circle ヘルプ・問い合わせ
+        .filter-item
+          = link_to "よくある質問リスト" , href: "#"
+  .mypage-right
+    .right-wrapper
+      %h2 購入履歴
+      .return-lists
+        - if @user_likes.present?
+          = render partial: 'users/likes', locals: {likes: @user_likes}
+        - else
+          .return-list 表示できる履歴がありません
