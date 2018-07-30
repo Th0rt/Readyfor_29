@@ -6,6 +6,13 @@ class ReturnsController < ApplicationController
   # 支払い選択
   def choice
     @returns = @project.returns
+    @return = @returns.where(id: params[:select_id])
+    @returns_not = @returns.where.not(id: params[:select_id])
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   # 支払い情報入力
@@ -18,7 +25,12 @@ class ReturnsController < ApplicationController
   end
 
   def new
-    @return = Return.new
+    if @project.returns.length <= 3
+      @return = Return.new
+    else
+      flash[:notice] = "リターンは4個までしかつくれません"
+      redirect_to edit_project_path(id: params[:project_id])
+    end
   end
 
   def create

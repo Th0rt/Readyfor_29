@@ -36,9 +36,15 @@
           width: 10%;
           height: auto;
           margin-left: 30px;
+          visibility: hidden;
+        }
+        .return-check-image-show{
+          visibility: visible;
         }
         span{
           font-size: 26px;
+        }
+        .return-price-text-blue{
           color: #6499F8;
         }
       }

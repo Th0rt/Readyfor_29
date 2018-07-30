@@ -107,7 +107,8 @@
                 #return-image-show
                   = image_tag "#{r.object.returnimage}"
         .return-new-link
-          .btn.btn-primary.return-add-button
-            = link_to "リターンを追加",
-              new_project_return_path(project_id: params[:id])
+          - if @project.returns.length <= 3
+            .btn.btn-primary.return-add-button
+              = link_to "リターンを追加",
+                new_project_return_path(project_id: params[:id])
   .blank-content
