@@ -2,10 +2,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   case Rails.env
-    when "production"
-    rescue_from ActiveRecord::RecordNotFound, with: :render_404
-    rescue_from ActionController::RoutingError, with: :render_404
-    rescue_from Exception, with: :render_500
+  when "production"
+      rescue_from ActiveRecord::RecordNotFound, with: :render_404
+      rescue_from ActionController::RoutingError, with: :render_404
+      rescue_from Exception, with: :render_500
   end
 
   def render_404
