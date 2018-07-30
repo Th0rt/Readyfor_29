@@ -25,7 +25,12 @@ class ReturnsController < ApplicationController
   end
 
   def new
-    @return = Return.new
+    if @project.returns.length <= 3
+      @return = Return.new
+    else
+      flash[:notice] = "リターンは4個までしかつくれません"
+      redirect_to edit_project_path(id: params[:project_id])
+    end
   end
 
   def create
