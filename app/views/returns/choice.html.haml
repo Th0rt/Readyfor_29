@@ -14,29 +14,36 @@
           - else
             = render partial: 'returns/return-item',
                             locals:  { title: "選択したギフト",
-                            returns: @returns.where(id: params[:select_id]) }
+                            returns: @return }
             = render partial: 'returns/return-item',
                             locals:  { title: "その他のギフト",
-                            returns: @returns.where.not(id: params[:select_id]) }
+                            returns: @returns_not }
 
         .return-amount-of-money
           .return-count
             %p
               追加するリターン :
-              %span 1,000円
-              × 1個
+          .return-price
+            #return-price-list
+              - unless params[:select_id].nil?
+                %p
+                  %span #{@return.first.price}円 × 1個
+          .clear
           %hr
           .return-total
             .return-total__table
               %table
                 %tr
                   %th 合計金額
-                  %td 1,000円
+                  - if params[:select_id].nil?
+                    %td#return-sum 0円
+                  - else
+                    %td#return-sum #{@return.first.price}円
             .return-total__right-text
               %span を
             .clear
             .return-total__text
-              %p プロジェクト「開始3ヶ月、豪雨災害で水没した子どもの学び場「ホハル」再建へ」に支援します
+              %p プロジェクト「#{@project.title}」に支援します
 
       .payment-content
         %h1 支払い方法を選択してください

@@ -36,6 +36,28 @@ namespace :deploy do
   end
   before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
+
+  desc 'db_seed'
+  task :db_seed do
+    on roles(:db) do |host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
+    end
+  end
+
+  task :db_reset do
+    on roles(:app) do
+      within release_path do
+        with rails_env: fetch(:rails_env), DISABLE_DATABASE_ENVIRONMENT_CHECK: 1 do
+          execute :rake, "db:migrate:reset"
+        end
+      end
+    end
+  end
+
 end
 
 set :default_env, {

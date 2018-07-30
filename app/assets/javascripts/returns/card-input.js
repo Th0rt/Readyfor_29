@@ -1,13 +1,31 @@
 $(document).on('turbolinks:load', function () {
   $("#card-input").submit(function () {
-    if ($("input[name='card']").val() == '') {
+    if ($("#card-input-form").val() == '') {
       alert('クレジットカード番号を入力してください');
       return false;
-    } else if ($("input[name='cvc']").val() == '') {
+    } else if ($("#card-input-form").val().length < 16) {
+      alert('クレジットカード番号が16桁入力されていません');
+      return false;
+    } else if ($("#cvc-input-form").val() == '') {
       alert('CVCを入力してください');
+      return false;
+    } else if ($("#cvc-input-form").val().length < 3) {
+      alert('CVCが3桁入力されていません');
       return false;
     } else {
       $("#card-input").submit();
+    }
+  });
+
+  $('#card-input-form').on('keypress', function () {
+    if (this.value.length > 15) {
+      this.value = this.value.slice(0, 15);
+    }
+  });
+
+  $('#cvc-input-form').on('keypress', function () {
+    if (this.value.length > 2) {
+      this.value = this.value.slice(0, 2);
     }
   });
 });

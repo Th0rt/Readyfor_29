@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :projecs, through: :likes
   mount_uploader :avatar, AvatarUploader
+
+  def project_owner?(project)
+    self.projects.exists?(project.id)
+  end
 end
