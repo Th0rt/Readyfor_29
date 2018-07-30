@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def month
-    @returns = current_user.user_returns.where(created_at: Time.now.all_month).order('created_at DESC')
+    @returns = current_user.user_returns.where(created_at: Time.current.all_month).order('created_at DESC')
   end
 
   private

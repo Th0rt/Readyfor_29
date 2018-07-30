@@ -1,5 +1,5 @@
 module UsersHelper
   def this_month
-    Time.now.month
+    Time.current.month
   end
 end
