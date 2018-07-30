@@ -11,6 +11,6 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   def project_owner?(project)
-    self.id == project.user_id
+    self.projects.exists?(project.id)
   end
 end
