@@ -74,24 +74,17 @@
       - if user_signed_in? && current_user.id == @project.user.id
         = link_to edit_project_path(id: params[:id]) do
           %span.btn.btn-primary プロジェクトを編集する
-        = link_to project_path, method: :delete do
+        = link_to project_path, method: :delete ,
+          data: { confirm: "削除してよろしいですか？" } do
           %span.btn.btn-primary.delete-btn プロジェクトを削除する
   .bottom-content
     .bottom-content__tab-btm
       .project-tabs.select
         %p プロジェクト概要
-      .project-tabs
-        %p 新着情報
-      .project-tabs
-        %p 応援コメント
     .bottom-content__tab-content
       .tab-content
         %p プロジェクト概要
         = @project.content
-      .tab-content.hide
-        %p 新着情報
-      .tab-content.hide
-        %p 応援コメント
     .return-content
       .return-content__link-btm
         #like-content
@@ -131,23 +124,3 @@
                 %button.project-select-button  このリターンを購入する
       - else
         = render partial: 'shared/return-list', locals: { return: @returns }
-    .clear
-    .show-projects
-      .clear
-      .project-lists
-        %p あなたにオススメのプロジェクト
-        .project-lists__list
-        .project-lists__list
-        .project-lists__list
-      .clear
-      .project-lists
-        %p 注目のプロジェクト
-        .project-lists__list
-        .project-lists__list
-        .project-lists__list
-      .clear
-      .project-lists
-        %p 新着プロジェクト
-        .project-lists__list
-        .project-lists__list
-        .project-lists__list
