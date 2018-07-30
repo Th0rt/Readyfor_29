@@ -13,5 +13,4 @@ class User < ApplicationRecord
   def project_owner?(project)
     self.id == project.user_id
   end
-
 end
