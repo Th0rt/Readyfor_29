@@ -1,4 +1,4 @@
-%script{:src => "https://js.pay.jp/", :type => "text/javascript"}
+= javascript_include_tag "https://js.pay.jp/"
 
 = form_for([@project, @return, @user_return], method: :post) do |f|
   .purchase-contents
