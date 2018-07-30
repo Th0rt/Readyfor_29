@@ -1,6 +1,7 @@
 .bottom-content{
   width: 1000px;
-  margin: 10px auto 0;
+  margin: 10px auto 100px;
+  overflow: hidden;
   &__tab-btm{
     border-bottom: 1px solid;
     height: 50px;
