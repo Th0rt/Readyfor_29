@@ -2,11 +2,15 @@
   %tr
     %th プロジェクト名(リンク)
     %th 支援総額
-    %th いいね数
+    %th 総いいね数
+    %th 支援者数
+    %th 支援総額(円)
     %th 残り日数
   - likes.each do |like|
     %tr
       %td= link_to "#{like.project.title}", project_path(id: like.project.id)
       %td= like.project.total_support
       %td= like.project.likes_count
+      %td= like.like_project_supporters
+      %td= number_with_delimiter(like.project.total_support)
       %td #{ like.project.remaining_time[:day] } 日
