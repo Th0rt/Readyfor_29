@@ -75,21 +75,23 @@
         .hidden#user-edit-password
           = form_for(current_user) do |f|
             .field
+              .field-label.hidden
+                = f.label :current_password
+              %p 現在のパスワード:
+              .field-input
+                = f.password_field :current_password, autocomplete: "off", required: true
+            %br
+            .field
               %p 新しいパスワード:
               .field-input
-                = f.password_field :password, autocomplete: "off"
+                = f.password_field :password, autocomplete: "off", required: true
+            %br
             .field
               .field-label.hidden
                 = f.label :password_confirmation
               %p パスワードの確認:
               .field-input
-                = f.password_field :password_confirmation, autocomplete: "off"
-            .field
-              .field-label.hidden
-                = f.label :current_password
-              %p 現在のパスワード:
-              .field-input
-                = f.password_field :current_password, autocomplete: "off"
+                = f.password_field :password_confirmation, autocomplete: "off", required: true
               .actions
                 = f.submit "パスワードを変更", class: "btn"
       .user-edit-contents
