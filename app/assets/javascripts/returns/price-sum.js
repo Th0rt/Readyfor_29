@@ -32,6 +32,11 @@ $(document).on('turbolinks:load', function () {
       .done(function (returns) {
         if (returns.length !== 0) {
           $('#return-price-list').text("");
+          var len = [];
+
+          // returns.forEach(function (return_item, index) {
+          //   len
+          // });
 
           $('.number-select').each(function (index) {
             //リターンの数量
