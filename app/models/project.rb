@@ -30,7 +30,7 @@ class Project < ApplicationRecord
     @days_life = (days_life_date / 24 / 60 / 60).to_i
     @days_life >= 0
   end
-  
+
   def success?
     self.total_support >= self.goal
   end
@@ -62,7 +62,6 @@ class Project < ApplicationRecord
   def strech_rate
     ((self.goal.to_f / self.next_goal.to_f) * 100).floor
   end
-  
   # ユーザーがすでにいいねをしているか
   def like_user(user_id)
    likes.find_by(user_id: user_id)
@@ -103,4 +102,11 @@ class Project < ApplicationRecord
     return total_user_max
   end
 
+  def owner?(user)
+    self.user_id == user.id
+  end
+
+  def return_max
+    self.returns.length  <= 3
+  end
 end

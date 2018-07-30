@@ -1,5 +1,5 @@
 module ProjectsHelper
-    def add_return(user, project)
-      return true  if user.id == project.user_id && project.returns.length <= 3
-    end
+  def check_project_owner(project, user)
+    user_signed_in? && project.owner?(user)
+  end
 end
