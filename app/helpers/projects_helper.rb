@@ -1,5 +1,5 @@
 module ProjectsHelper
-  def check_project_owner(project, user)
-    user_signed_in? && project.owner?(user)
+  def check_owner(user,project)
+    user_signed_in? && user.project_owner?(project)
   end
 end
