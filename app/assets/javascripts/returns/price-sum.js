@@ -31,25 +31,28 @@ $(document).on('turbolinks:load', function () {
     })
       .done(function (returns) {
         if (returns.length !== 0) {
-          $('#return-price-list').text("");
-          var len = [];
+          var return_item_hashs = {};
 
-          // returns.forEach(function (return_item, index) {
-          //   len
-          // });
+          returns.forEach(function (return_item) {
+            return_item_hashs[return_item.id] = return_item;
+          });
+
+          $('#return-price-list').text("");
 
           $('.number-select').each(function (index) {
-            //リターンの数量
+            var return_id_str = $(this).attr("id");
+            var regExp = new RegExp("number_", "g");
+            var return_id = parseInt(return_id_str.replace(regExp, ""), 10);
             var number = parseInt($(this).val(), 10);
             if (number != 0) {
-              var html = buildHTML(returns[index], number);
+              var html = buildHTML(return_item_hashs[return_id], number);
               $('#return-price-list').append(html);
-              sum += returns[index].price * number;
-              $(`#return-check-image${returns[index].id}`).addClass('return-check-image-show');
-              $(`#return-price-text${returns[index].id}`).addClass('return-price-text-blue');
+              sum += return_item_hashs[return_id].price * number;
+              $(`#return-check-image${return_item_hashs[return_id].id}`).addClass('return-check-image-show');
+              $(`#return-price-text${return_item_hashs[return_id].id}`).addClass('return-price-text-blue');
             } else {
-              $(`#return-check-image${returns[index].id}`).removeClass('return-check-image-show');
-              $(`#return-price-text${returns[index].id}`).removeClass('return-price-text-blue');
+              $(`#return-check-image${return_item_hashs[return_id].id}`).removeClass('return-check-image-show');
+              $(`#return-price-text${return_item_hashs[return_id].id}`).removeClass('return-price-text-blue');
             }
           });
 
