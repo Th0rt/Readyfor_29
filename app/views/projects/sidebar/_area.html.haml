@@ -9,10 +9,10 @@
     %i.fa.fa-angle-right
     %ul.subdivision-links
       %li.nav-menu-item
-        = link_to "札幌", href: "#"
+        = link_to "札幌", tag_path(Tag.find_by(name: "札幌").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "旭川", href: "#"
+        = link_to "旭川", tag_path(Tag.find_by(name: "旭川").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
         = link_to "知床", href: "#"
