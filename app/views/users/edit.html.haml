@@ -63,7 +63,7 @@
               .field-input
                 = f.email_field :email, autofocus: true
               .actions
-                = f.submit "確認メールを送信", class: 'btn'
+                = f.submit "メールアドレスを変更", class: 'btn'
       .user-edit-contents
         .user-edit-main
           %p.title パスワード
@@ -114,7 +114,7 @@
               %p プロフィールを入力:
               %br
               .field-input
-                = f.text_field :profile, class: "content-form", placeholder: "プロフィールの内容を入力してください"
+                = f.text_area :profile, class: "content-form", placeholder: "プロフィールの内容を入力してください"
               .actions
                 %input.btn{ value: "更新する", type: "submit" }
       .user-edit-contents
