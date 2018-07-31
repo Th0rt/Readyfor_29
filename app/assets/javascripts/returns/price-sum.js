@@ -63,4 +63,19 @@ $(document).on('turbolinks:load', function () {
         alert('リターン価格の取得に失敗しました');
       });
   });
+
+  $('#choice-form').on('submit', function (e) {
+    e.preventDefault();
+
+    var sum_str = $('#return-sum').text();
+    var regExp = new RegExp("円", "g");
+    var sum = parseInt(sum_str.replace(regExp, ""), 10);
+
+    if (sum != 0) {
+      $('#choice-form').get(0).submit();
+    } else {
+      $('#choice-form').prop("disabled", true);
+      alert('合計金額が0円です。リターンの数量を選択してください。');
+    }
+  });
 });
