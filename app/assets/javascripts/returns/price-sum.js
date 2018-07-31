@@ -18,7 +18,6 @@ $(document).on('turbolinks:load', function () {
 
     var sum = 0;
 
-    // 対象リターンからpriceを取得する
     $.ajax({
       type: "GET",
       data: {
