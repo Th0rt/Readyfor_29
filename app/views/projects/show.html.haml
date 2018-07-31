@@ -63,8 +63,16 @@
             = @project.project_type_i18n
         .project-info__progress
           .progress
-            .progress-bar.progress-bar-danger.progress-level-of-achievement{ style: "width: #{ @project.achievement_rate }%;" }
-              %p= "#{ @project.achievement_rate } %"
+            .Entry__gauge.Gauge.is-top
+              - if @project.success? && @project.next_goal
+                .Gauge__obj.is-0{ style: "width: #{ @project.achievement_rate_next_goal }%;" }
+                .Gauge__obj.is-1{ style: "width: #{ @project.strech_rate }%;" }
+                .Gauge__txt
+                  #{ @project.achievement_rate } %
+              - else
+                .Gauge__obj.is-1{ style: "width: #{ @project.achievement_rate }%;" }
+                .Gauge__txt
+                  #{ @project.achievement_rate } %
         = link_to payment_path(params[:id], 'payment/choice',
                "#{@returns.first.id}", ''), class: 'btn-link',
                 data: {turbolinks: false} do
