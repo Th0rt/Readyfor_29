@@ -3,11 +3,11 @@
     .left-wrapper
       = render 'shared/mypage_left'
       %ul.filter-list
-        .filter-item.selected
-          = link_to "購入履歴" ,user_path(id: current_user.id)
+        .filter-item
+          = link_to "購入履歴", user_path(id: current_user.id)
         .filter-item
           = link_to "購入履歴(月額)", user_path(id: current_user.id)
-        .filter-item
+        .filter-item.selected
           = link_to "お気に入りリスト", likes_user_path(id: current_user.id)
         .message-list
           %i.fa.fa-inbox メッセージ
@@ -25,9 +25,9 @@
           = link_to "よくある質問リスト" , href: "#"
   .mypage-right
     .right-wrapper
-      %h2 購入履歴
+      %h2 お気に入りリスト
       .return-lists
-        - if @returns.present?
-          = render partial: 'users/returns', locals: {returns: @returns}
+        - if @user_likes.present?
+          = render partial: 'users/likes', locals: {likes: @user_likes}
         - else
           .return-list 表示できる履歴がありません
