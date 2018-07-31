@@ -1,11 +1,11 @@
 $(document).on('turbolinks:load', function () {
-  var form = $("#new_user_return");
+  var card_form = $("#card-form");
   var number = $('#card-value');
   var cvc = $('#cvc-value');
   var exp_month = $('#month-value');
   var exp_year = $('#year-value');
 
-  form.on('submit', function (e) {
+  card_form.on('submit', function (e) {
     e.preventDefault();
 
     var card_info = {
@@ -18,13 +18,13 @@ $(document).on('turbolinks:load', function () {
     Payjp.createToken(card_info, function (s, response) {
       if (response.error) {
         alert('決済エラーが発生しました。もう一度やり直してください。');
-        form.append($('<input type="hidden" name="payjpToken" />').val(''));
+        card_form.append($('<input type="hidden" name="payjpToken" />').val(''));
       }
       else {
         var token = response.id;
-        form.append($('<input type="hidden" name="payjpToken" />').val(token));
+        card_form.append($('<input type="hidden" name="payjpToken" />').val(token));
       }
-      form.get(0).submit();
+      card_form.get(0).submit();
     });
   });
 });
