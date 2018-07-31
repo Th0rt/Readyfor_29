@@ -5,7 +5,7 @@ class UserReturnsController < ApplicationController
 
     return_sum = Project.return_sum(user_return_params[:number])
 
-    if params[:mode] == :card
+    if params[:user_return][:mode] == 'card'
       # 決済処理
       unless params['payjpToken'] == ''
         if Payjp::Charge.create(currency: 'jpy', amount: return_sum, card: params['payjpToken'])
@@ -25,7 +25,7 @@ class UserReturnsController < ApplicationController
         flash[:alert] = '決済処理に失敗しました。もう一度やり直してください。'
         redirect_to project_path(params[:project_id])
       end
-    elsif params[:mode] == :bank
+    elsif params[:user_return][:mode] == 'bank'
       Return.total_user_sum(user_return_params[:number], current_user.id)
       UserReturn.import UserReturn.user_return_array(user_return_params[:number], user_return_params[:user_id], @return)
       @project.update(total_support: @project.total_support += return_sum)
