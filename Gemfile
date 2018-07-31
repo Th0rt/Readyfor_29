@@ -108,6 +108,4 @@ gem 'activerecord-import'
 gem 'payjp'
 
 # エディタ
-gem 'carrierwave'
-gem 'mini_magick'
 gem 'ckeditor'
