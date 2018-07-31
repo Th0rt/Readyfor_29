@@ -29,5 +29,6 @@ Rails.application.routes.draw do
     post 'payment/information/:id', to: 'returns#information'
     post 'payment/information/confirmation/:id', to: 'returns#confirmation'
   end
-  get '*path', controller: 'application', action: 'render_404'
+  get '*path', controller: 'application', action: 'render_404' unless Rails.env.development?
+
 end
