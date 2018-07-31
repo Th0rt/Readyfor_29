@@ -49,6 +49,6 @@ class ToppageController < ApplicationController
     @projects              = projects.active
     @projects_large_amount = @projects.order_total_support.first(4)
     @projects_new          = @projects.order_new.first(4)
-    @projects_nortable     = @projects.first(4)
+    @projects_nortable     = @projects.order('likes_count DESC').limit(4)
   end
 end

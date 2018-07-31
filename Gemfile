@@ -103,3 +103,6 @@ gem 'enum_help'
 
 # 1つのcreateで複数のレコード同時保存できる
 gem 'activerecord-import'
+
+# クレジットカード決済
+gem 'payjp'
