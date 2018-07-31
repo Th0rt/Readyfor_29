@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function () {
       exp_month: parseInt(exp_month.val(), 10),
       exp_year: parseInt(exp_year.val(), 10)
     };
-    Payjp.setPublicKey('pk_test_0056da6ac88997ee48c98ac8');
+    Payjp.setPublicKey('pk_test_73109378c09cd7848903ae5f');
     Payjp.createToken(card_info, function (s, response) {
       if (response.error) {
         alert('決済エラーが発生しました。もう一度やり直してください。');
