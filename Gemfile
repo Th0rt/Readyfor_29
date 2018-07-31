@@ -106,3 +106,8 @@ gem 'activerecord-import'
 
 # クレジットカード決済
 gem 'payjp'
+
+# エディタ
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ckeditor'
