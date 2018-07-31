@@ -26,13 +26,9 @@ class UserReturnsController < ApplicationController
         redirect_to project_path(params[:project_id])
       end
     elsif params[:mode] == :bank
-      # 初めてリターン購入した人ならばtotal_userに1足す
       Return.total_user_sum(user_return_params[:number], current_user.id)
-      # リターン購入分のレコード保存
       UserReturn.import UserReturn.user_return_array(user_return_params[:number], user_return_params[:user_id], @return)
-      # プロジェクトのtotal_supportに購入金額分を加算
       @project.update(total_support: @project.total_support += return_sum)
-      # 購入完了画面の表示
       render 'returns/done'
     end
   end
