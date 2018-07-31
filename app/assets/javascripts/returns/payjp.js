@@ -8,8 +8,6 @@ $(document).on('turbolinks:load', function () {
   form.on('submit', function (e) {
     e.preventDefault();
 
-    // form.prop("disabled", true);
-
     var card_info = {
       number: parseInt(number.val(), 10),
       cvc: parseInt(cvc.val(), 10),
