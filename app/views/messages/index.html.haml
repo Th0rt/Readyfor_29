@@ -8,7 +8,7 @@
         .filter-item
           = link_to "購入履歴(月額)", user_path(id: current_user.id)
         .filter-item
-          = link_to "お気に入りリスト", user_path(id: current_user.id)
+          = link_to "お気に入りリスト", likes_user_path(id: current_user.id)
         .message-list
           %i.fa.fa-inbox メッセージ
         .filter-item.selected

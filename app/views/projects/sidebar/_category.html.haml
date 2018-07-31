@@ -5,118 +5,115 @@
   %span#search-category カテゴリからさがす
 %ul.nav-menu-lists
   %li.nav-menu-item.show-links
-    = link_to "社会にいいこと", href: "#"
+    = link_to "社会にいいこと", tag_path(Tag.find_by(name: "社会にいいこと").id)
     %i.fa.fa-angle-right
     %ul.subdivision-links
       %li.nav-menu-item
-        = link_to "子ども・教育", href: "#"
+        = link_to "子供・教育", tag_path(Tag.find_by(name: "子供・教育").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "国際協力", href: "#"
+        = link_to "国際協力", tag_path(Tag.find_by(name: "国際協力").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "医療・福祉", href: "#"
+        = link_to "医療・福祉", tag_path(Tag.find_by(name: "医療・福祉").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "環境保護", href: "#"
+        = link_to "環境保護", tag_path(Tag.find_by(name: "環境保護").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "人権", href: "#"
+        = link_to "人権", tag_path(Tag.find_by(name: "人権").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "マイノリティ", href: "#"
+        = link_to "マイノリティ", tag_path(Tag.find_by(name: "マイノリティ").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "動物", href: "#"
+        = link_to "動物", tag_path(Tag.find_by(name: "動物").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "発展途上国", href: "#"
+        = link_to "発展途上国", tag_path(Tag.find_by(name: "発展途上国").id)
         %i.fa.fa-angle-right
   %li.nav-menu-item.show-links
-    = link_to "地域", href: "#"
+    = link_to "地域", tag_path(Tag.find_by(name: "地域").id)
     %i.fa.fa-angle-right
     %ul.subdivision-links
       %li.nav-menu-item
-        = link_to "地域文化", href: "#"
+        = link_to "地域文化", tag_path(Tag.find_by(name: "地域文化").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "観光", href: "#"
+        = link_to "観光", tag_path(Tag.find_by(name: "観光").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "まちづくり", href: "#"
+        = link_to "まちづくり", tag_path(Tag.find_by(name: "まちづくり").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "災害", href: "#"
+        = link_to "災害", tag_path(Tag.find_by(name: "災害").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "フード", href: "#"
+        = link_to "フード", tag_path(Tag.find_by(name: "フード").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "特産品", href: "#"
+        = link_to "特産品", tag_path(Tag.find_by(name: "特産品").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "カフェ・ゲストハウス", href: "#"
+        = link_to "地震", tag_path(Tag.find_by(name: "地震").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "地震", href: "#"
+        = link_to "台風", tag_path(Tag.find_by(name: "台風").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "台風", href: "#"
-        %i.fa.fa-angle-right
-      %li.nav-menu-item
-        = link_to "歴史", href: "#"
+        = link_to "歴史", tag_path(Tag.find_by(name: "歴史").id)
         %i.fa.fa-angle-right
   %li.nav-menu-item.show-links
-    = link_to "ものづくり", href: "#"
+    = link_to "ものづくり", tag_path(Tag.find_by(name: "ものづくり").id)
     %i.fa.fa-angle-right
     %ul.subdivision-links
       %li.nav-menu-item
-        = link_to "ガジェット", href: "#"
+        = link_to "ガジェット", tag_path(Tag.find_by(name: "ガジェット").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "テクノロジ", href: "#"
+        = link_to "テクノロジ", tag_path(Tag.find_by(name: "テクノロジ").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "web・アプリ", href: "#"
+        = link_to "web・アプリ", tag_path(Tag.find_by(name: "web・アプリ").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "IoT", href: "#"
+        = link_to "IoT", tag_path(Tag.find_by(name: "IoT").id)
         %i.fa.fa-angle-right
   %li.nav-menu-item.show-links
-    = link_to "アート", href: "#"
+    = link_to "アート", tag_path(Tag.find_by(name: "アート").id)
     %i.fa.fa-angle-right
     %ul.subdivision-links
       %li.nav-menu-item
-        = link_to "音楽", href: "#"
+        = link_to "音楽", tag_path(Tag.find_by(name: "音楽").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "本・漫画・写真", href: "#"
+        = link_to "本・漫画・写真", tag_path(Tag.find_by(name: "本・漫画・写真").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "伝統文化", href: "#"
+        = link_to "伝統文化", tag_path(Tag.find_by(name: "伝統文化").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "絵画・イラスト", href: "#"
+        = link_to "絵画・イラスト", tag_path(Tag.find_by(name: "絵画・イラスト").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "映画・映像", href: "#"
+        = link_to "映画・映像", tag_path(Tag.find_by(name: "映画・映像").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "ファッション", href: "#"
+        = link_to "ファッション", tag_path(Tag.find_by(name: "ファッション").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "舞台・パフォーマンス", href: "#"
+        = link_to "舞台・パフォーマンス", tag_path(Tag.find_by(name: "舞台・パフォーマンス").id)
         %i.fa.fa-angle-right
   %li.nav-menu-item.show-links
-    = link_to "チャレンジ", href: "#"
+    = link_to "チャレンジ", tag_path(Tag.find_by(name: "チャレンジ").id)
     %i.fa.fa-angle-right
     %ul.subdivision-links
       %li.nav-menu-item
-        = link_to "スポーツ", href: "#"
+        = link_to "スポーツ", tag_path(Tag.find_by(name: "スポーツ").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "起業・スタートアップ", href: "#"
+        = link_to "起業・スタートアップ", tag_path(Tag.find_by(name: "起業・スタートアップ").id)
         %i.fa.fa-angle-right
       %li.nav-menu-item
-        = link_to "旅", href: "#"
+        = link_to "旅", tag_path(Tag.find_by(name: "旅").id)
         %i.fa.fa-angle-right
