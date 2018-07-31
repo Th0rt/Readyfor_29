@@ -7,7 +7,7 @@ class UserReturnsController < ApplicationController
 
     if params[:user_return][:mode] == 'card'
       # 決済処理
-      unless params['payjpToken'] == ''
+      if params['payjpToken'].present?
         if Payjp::Charge.create(currency: 'jpy', amount: return_sum, card: params['payjpToken'])
           # 初めてリターン購入した人ならばtotal_userに1足す
           Return.total_user_sum(user_return_params[:number], current_user.id)
