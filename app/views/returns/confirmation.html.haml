@@ -9,12 +9,10 @@
       .returns-content
         - if params[:card].nil?
           = render 'returns/bank-show'
+          = f.hidden_field :mode, value: :bank
         - else
           = render 'returns/credit-card-show'
-          = f.hidden_field :card, value: params[:card], id: 'card-value'
-          = f.hidden_field :cvc, value: params[:cvc], id: 'cvc-value'
-          = f.hidden_field :month, value: params[:month], id: 'month-value'
-          = f.hidden_field :year, value: params[:year], id: 'year-value'
+          = f.hidden_field :mode, value: :card
 
       - params[:number].each do |key, value|
         = f.hidden_field "number[#{key}]", value: "#{value}"
