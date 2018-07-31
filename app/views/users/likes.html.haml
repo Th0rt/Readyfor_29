@@ -4,7 +4,7 @@
       = render 'shared/mypage_left'
       %ul.filter-list
         .filter-item
-          = link_to "購入履歴" ,user_path(id: current_user.id)
+          = link_to "購入履歴", user_path(id: current_user.id)
         .filter-item
           = link_to "購入履歴(月額)", user_path(id: current_user.id)
         .filter-item.selected
