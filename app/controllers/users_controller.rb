@@ -25,6 +25,10 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def month
+    @returns = current_user.user_returns.where(created_at: Time.current.all_month).order('created_at DESC')
+  end
+
   private
   def user_params
     params.require(:user).permit(:nickname, :email, :avatar, :profile, :password, :password_confirmation)
