@@ -1,47 +1,73 @@
-.bank-content
-  %h1 口座情報をご確認ください！
-  %table
-    %tr
-      %th 銀行名
-      %td
-        %p= params[:bank_name]
-    %tr
-      %th 支店名
-      %td
-        %p= params[:branch_office]
-    %tr
-      %th 口座氏名
-      %td
-        %p= params[:name]
-    %tr
-      %th 口座番号
-      %td
-        %p= params[:account_number]
+= form_for([@project, @return, @user_return], method: :post) do |f|
+  .purchase-progress-content
+    = image_tag "flow03.png", id: "progress-image"
 
-  %hr
+  .returns-content
+    .bank-content
+      %h1 口座情報をご確認ください！
+      %table
+        %tr
+          %th 銀行名
+          %td
+            %p= params[:bank_name]
+        %tr
+          %th 支店名
+          %td
+            %p= params[:branch_office]
+        %tr
+          %th 口座氏名
+          %td
+            %p= params[:name]
+        %tr
+          %th 口座番号
+          %td
+            %p= params[:account_number]
 
-  %h3 下記の振込先に「1000円」お振込ください。
-  %table
-    %tr
-      %th 銀行名
-      %td
-        %p みずほ銀行
-    %tr
-      %th 支店名
-      %td
-        %p 東京営業部
-    %tr
-      %th 口座氏名
-      %td
-        %p READYFOR株式会社
-    %tr
-      %th 口座番号
-      %td
-        %p 1234567
+      %hr
 
-  .about-settlement-system
-    %h2 決済システムについて
-    %p
-      GMOペイメントゲートウェイ株式会社を利用しています。
-      サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。
-      クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。
+      %h3 下記の振込先に「1000円」お振込ください。
+      %table
+        %tr
+          %th 銀行名
+          %td
+            %p みずほ銀行
+        %tr
+          %th 支店名
+          %td
+            %p 東京営業部
+        %tr
+          %th 口座氏名
+          %td
+            %p READYFOR株式会社
+        %tr
+          %th 口座番号
+          %td
+            %p 1234567
+
+      .about-settlement-system
+        %h2 決済システムについて
+        %p
+          GMOペイメントゲートウェイ株式会社を利用しています。
+          サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。
+          クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。
+
+  - params[:number].each do |key, value|
+    = f.hidden_field "number[#{key}]", value: "#{value}"
+
+  = f.hidden_field :mode, value: 'bank'
+
+  .progress-button-content
+    %h1
+      %i.fa.fa-question-circle.fa-lg.faq-link
+      支援についてわからないことがある場合、
+      = link_to "こちら", root_path
+      をご覧ください。
+    .progress-button
+      = link_to project_path(params[:project_id]) do
+        .progress-button__return
+          = image_tag 'left_arrow.png'
+          %p プロジェクトページに戻る
+      .progress-button__next
+        = f.submit ""
+        %p 次に進む
+        = image_tag 'right_arrow.png'

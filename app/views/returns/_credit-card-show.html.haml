@@ -1,30 +1,60 @@
-.credit-card-content
-  %h1 カード情報を確認してください！
+= form_for([@project, @return, @user_return], method: :post) do |f|
+  .purchase-progress-content
+    = image_tag "flow03.png", id: "progress-image"
 
-  .credit-card-available
-    %span
-      ご利用可能なクレジットカード :
-      = image_tag creditcard_img_url()
-  .credit-card-input
-    %table
-      %tr
-        %th カード番号
-        %td
-          %p= params[:card]
-      %tr
-        %th CVC番号
-        %td
-          %p= params[:cvc]
-      %tr
-        %th カード有効期限
-        %td
-          %span= params[:month]
-          %span /
-          %span= params[:year]
+  .returns-content
+    .credit-card-content
+      %h1 カード情報を確認してください！
 
-  .about-settlement-system
-    %h2 決済システムについて
-    %p
-      GMOペイメントゲートウェイ株式会社を利用しています。
-      サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。
-      クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。
+      .credit-card-available
+        %span
+          ご利用可能なクレジットカード :
+          = image_tag creditcard_img_url()
+      .credit-card-input
+        %table
+          %tr
+            %th カード番号
+            %td
+              %p= params[:card]
+          %tr
+            %th CVC番号
+            %td
+              %p= params[:cvc]
+          %tr
+            %th カード有効期限
+            %td
+              %span= params[:month]
+              %span /
+              %span= params[:year]
+
+      .about-settlement-system
+        %h2 決済システムについて
+        %p
+          GMOペイメントゲートウェイ株式会社を利用しています。
+          サイトはSSL暗号化通信に対処しておりますので、入力した情報は安全に送信されます。
+          クレジットカード情報が、プロジェクト実行者に開示されることは一切ありません。
+
+  - params[:number].each do |key, value|
+    = f.hidden_field "number[#{key}]", value: "#{value}"
+
+  = f.hidden_field :mode, value: 'card'
+  = f.hidden_field :card, value: params[:card], id: 'card-value'
+  = f.hidden_field :cvc, value: params[:cvc], id: 'cvc-value'
+  = f.hidden_field :month, value: params[:month], id: 'month-value'
+  = f.hidden_field :year, value: params[:year], id: 'year-value'
+
+  .progress-button-content
+    %h1
+      %i.fa.fa-question-circle.fa-lg.faq-link
+      支援についてわからないことがある場合、
+      = link_to "こちら", root_path
+      をご覧ください。
+    .progress-button
+      = link_to project_path(params[:project_id]) do
+        .progress-button__return
+          = image_tag 'left_arrow.png'
+          %p プロジェクトページに戻る
+      .progress-button__next
+        = f.submit ""
+        %p 次に進む
+        = image_tag 'right_arrow.png'
