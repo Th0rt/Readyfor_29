@@ -90,7 +90,8 @@
         #like-content
           = render partial: 'likes/like', locals:{ project: @project, like: @like }
         %p お気に入りリストに追加され、新着情報を受け取れます
-        = render partial: 'shared/return-list', locals: { returns: @returns }
+        - if @returns
+          = render partial: 'shared/return-list', locals: { returns: @returns }
         - if current_user&.project_owner?(@project) && @project.has_max_return?
           = link_to new_project_return_path(project_id: params[:id]) do
             %span.btn.btn-primary リターンを追加する
