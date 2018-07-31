@@ -114,7 +114,8 @@
               %p プロフィールを入力:
               %br
               .field-input
-                = f.text_area :profile, class: "content-form", placeholder: "プロフィールの内容を入力してください"
+                = f.text_area :profile, class: "content-form",
+                  placeholder: "プロフィールの内容を入力してください"
               .actions
                 %input.btn{ value: "更新する", type: "submit" }
       .user-edit-contents
