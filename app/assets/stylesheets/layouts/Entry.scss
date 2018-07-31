@@ -12,10 +12,6 @@
   }
 }
 
-.Entry:hover {
-  box-shadow: 0 2px 5px 0 rgba(194, 194, 194, 0.5);
-}
-
 .Entry__img img {
   width: 100%;
   height: auto;
@@ -114,12 +110,4 @@
 .Entry__info-founder-icon img {
   border-radius: 50%;
   vertical-align: bottom;
-}
-
-.Entry__condition-sum,
-.Entry__condition-remain,
-.Entry__condition-percent {
-  display: table-cell;
-  vertical-align: bottom;
-  line-height: 1;
 }
