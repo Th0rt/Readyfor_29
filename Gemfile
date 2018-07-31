@@ -106,3 +106,6 @@ gem 'activerecord-import'
 
 # クレジットカード決済
 gem 'payjp'
+
+# エディタ
+gem 'wysiwyg-rails'
