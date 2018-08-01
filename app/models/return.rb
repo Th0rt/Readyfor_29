@@ -25,7 +25,7 @@ class Return < ApplicationRecord
 
   def arrival_date_is_not_before_today
     return false unless arrival_date
-    if arrival_date < Date.today
+    if arrival_date < Time.zone.today
       errors.add(:arrival_date, 'に過去の日付は指定できません')
     end
   end
