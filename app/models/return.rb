@@ -1,4 +1,35 @@
 class Return < ApplicationRecord
+  validates :title,
+    presence: true,
+    length: { maximum: 30 }
+
+  validates :price,
+    presence: true,
+    numericality: { only_integer: true, greater_than_or_equal_to: 1 }
+
+  validates :content,
+    presence: true,
+    length: { maximum: 150 }
+
+  validates :stock,
+    presence: true,
+    numericality: { only_integer: true, greater_than_or_equal_to: 1 }
+
+  validates :returnimage,
+    presence: true
+
+  validates :arrival_date,
+    presence: true
+
+  validate :arrival_date_is_not_before_today
+
+  def arrival_date_is_not_before_today
+    return false unless arrival_date
+    if arrival_date < Date.today
+      errors.add(:arrival_date, 'に過去の日付は指定できません')
+    end
+  end
+
   belongs_to :project
   has_many :user_returns, dependent: :destroy
   has_many :users, through: :user_returns
