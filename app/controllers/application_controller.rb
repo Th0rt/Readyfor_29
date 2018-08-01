@@ -32,4 +32,12 @@ class ApplicationController < ActionController::Base
   def require_login
     redirect_to new_user_session_path unless user_signed_in?
   end
+
+  def generate_error_messages(object, prefix=nil, suffix=nil)
+    errors = object.errors.full_messages.join("<br>")
+    errors = "#{prefix}<br>#{errors}" if prefix.present?
+    errors = "#{errors}<br>#{suffix}" if suffix.present?
+    errors.html_safe
+  end
+
 end
