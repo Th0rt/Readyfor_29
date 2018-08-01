@@ -72,12 +72,13 @@
               .Gauge__obj.is-1{ style: "width: #{ @project.achievement_rate }%;" }
               .Gauge__txt
                 #{ @project.achievement_rate } %
-        - unless current_user&.project_owner?(@project)
-          = link_to payment_path(params[:id], 'payment/choice',
-                 "#{@returns.first.id}", ''), class: 'btn-link',
-                  data: {turbolinks: false} do
-            .btn-link__button.btn.btn-danger
-              %p このプロジェクトを支援する
+        - if @project.active?
+          - unless current_user&.project_owner?(@project)
+            = link_to payment_path(params[:id], 'payment/choice',
+                   "#{@returns.first.id}", ''), class: 'btn-link',
+                    data: {turbolinks: false} do
+              .btn-link__button.btn.btn-danger
+                %p このプロジェクトを支援する
     .top-content__info-footer
       - if current_user&.project_owner?(@project)
         = link_to edit_project_path(id: params[:id]) do
@@ -98,8 +99,9 @@
         #like-content
           = render partial: 'likes/like', locals:{ project: @project, like: @like }
         %p お気に入りリストに追加され、新着情報を受け取れます
-        - if @returns
-          = render partial: 'shared/return-list', locals: { returns: @returns }
-        - if current_user&.project_owner?(@project) && @project.has_max_return?
-          = link_to new_project_return_path(project_id: params[:id]) do
-            %span.btn.btn-primary リターンを追加する
+        - if @project.active?
+          - if @returns
+            = render partial: 'shared/return-list', locals: { returns: @returns }
+          - if current_user&.project_owner?(@project) && @project.has_max_return?
+            = link_to new_project_return_path(project_id: params[:id]) do
+              %span.btn.btn-primary リターンを追加する
