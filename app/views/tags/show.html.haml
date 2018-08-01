@@ -14,5 +14,6 @@
       %section.Grid.amount
         = render partial: 'toppage/partial/PcTopProjectList',
                   locals: { title: "「#{ @tag.name }」に関するプロジェクト",
-                             projects: @projects,
-                             max_display_projects: 8 }
+                             projects: @projects}
+      .page-main__footer
+        = paginate(@projects)

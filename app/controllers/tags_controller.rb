@@ -7,7 +7,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @projects = @tag.projects
+    @projects = @tag.projects.page(params[:page]).per(16)
   end
 
   def new

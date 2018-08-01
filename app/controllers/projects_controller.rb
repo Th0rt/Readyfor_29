@@ -6,12 +6,13 @@ class ProjectsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
-    @projects = Project.active
+    @projects_count = Project.active.count
+    @projects = Project.active.page(params[:page]).per(16)
     return false if project_search_params[:keyword].blank?
 
     keywords = project_search_params[:keyword].gsub(/(\S+)/, '%\0%').split(/\s/)
     keywords.each do |word|
-      @projects = @projects.search(word)
+      @projects = @projects.page(params[:page]).per(16)
     end
   end
 
