@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      tag: タグ
+    attributes:
+      tag:
+        name: タグ名
+        type: タイプ
