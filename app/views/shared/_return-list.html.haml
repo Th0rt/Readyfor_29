@@ -15,10 +15,10 @@
         %i.fa.fa-circle-o.fa-stack-2x
         %i.fa.fa-user.fa-stack-1x
       %span #{r.user_returns.count_return_users}人が支援中/
-      - unless r.return_active?
-        %span 在庫なし
-      - else
+      - if r.return_active?
         %span 残り#{ number_with_delimiter(r.stock) }個
+      - else
+        %span 在庫なし
     .project-return__arrival
       %span.fa-stack.fa-lg
         %i.fa.fa-circle-o.fa-stack-2x
