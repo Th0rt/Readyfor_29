@@ -1,8 +1,10 @@
 CKEDITOR.editorConfig = function (config) {
   config.toolbar_mini = [
+    ["Cut", "Copy", "Paste", "PasteText", "PasteFromWord", "Undo", "Redo"],
+    ["Find", "Replace", "SelectAll", "Scayt"],
     ["Link", "Image", "Table", "HorizontalRule"],
     ["Bold", "Underline", "Strike"],
-    ["FontSize", "TextColor"],
+    ["FontSize", "TextColor", "BGColor"],
     ["code"],
     ["Recommend"],
     ["document"]
