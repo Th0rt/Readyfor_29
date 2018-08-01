@@ -70,7 +70,7 @@
           = link_to "こちら", root_path
           をご覧ください。
         .progress-button
-          = link_to project_path(params[:project_id]) do
+          = link_to project_path(params[:project_id]), data: { confirm: "本当に戻ってよろしいですか？（入力項目が無効となります）" } do
             .progress-button__return
               = image_tag 'left_arrow.png'
               %p プロジェクトページに戻る
