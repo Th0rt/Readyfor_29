@@ -22,6 +22,12 @@ class Project < ApplicationRecord
   scope :search,     -> keyword {
     title(keyword).or(content(keyword)).joins(:user).or(owner_name(keyword))
   }
+  scope :one_more_push, -> {
+    select{ |project|
+     project.achievement_rate >= 40 && project.remaining_time[:day] <= 30
+    }
+    .sort_by{ |project| project.remaining_time }
+  }
 
   # 募集中かどうかを判定
   def active?
