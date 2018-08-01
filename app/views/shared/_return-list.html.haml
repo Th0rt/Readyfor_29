@@ -25,6 +25,7 @@
         %i.fa.fa-gift.fa-stack-1x
       %span #{ r.arrival_date.year }年#{ r.arrival_date.month }月に発送予定です。
     .project-return__purchase
-      = link_to payment_path(params[:id], 'payment/choice',
-      r.id, "?select_id=#{ r.id }"), data: {turbolinks: false} do
-        %button.project-select-button  このリターンを購入する
+      - unless current_user&.project_owner?(@project)
+        = link_to payment_path(params[:id], 'payment/choice',
+        r.id, "?select_id=#{ r.id }"), data: {turbolinks: false} do
+          %button.project-select-button  このリターンを購入する
