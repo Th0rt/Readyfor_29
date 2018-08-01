@@ -15,7 +15,8 @@
             class: 'return-price-text-blue' }= "#{ number_with_delimiter(item.price) }円"
           - else
             = image_tag "check.png", id: "return-check-image#{ item.id }"
-            %span{ id: "return-price-text#{ item.id }" }= "#{ number_with_delimiter(item.price) }円"
+            %span{ id: "return-price-text#{ item.id }" }
+              = "#{ number_with_delimiter(item.price) }円"
 
         - if returns.count == 1
           .return-numbar.col
