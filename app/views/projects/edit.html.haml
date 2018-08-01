@@ -36,13 +36,13 @@
           %label 目標金額(第一)
           .project-target-amount
             = f.number_field :goal, required: true, maxlength: 9,
-             class: 'price-input'
+             class: 'price-input', min: 10000, step: 1000
             %span 円
           %hr
           %label 目標金額(第二)
           .project-target-amount-next
             = f.number_field :next_goal, maxlength: 9,
-             class: 'price-input'
+             class: 'price-input', min: 10000, step: 1000
             %span 円
           .project-tags
             %label カテゴリー
@@ -84,7 +84,8 @@
                 %span 価格
                 %i.fa.fa-jpy
               .content-form
-                = r.number_field :price, required: true
+                = r.number_field :price, required: true,
+                  min: 1000, step: 1000
             .return-create__content.clearfix
               .content 説明
               .content-form
@@ -93,8 +94,7 @@
             .return-create__stock.box-size
               .content 在庫数
               .content-form
-                = r.number_field :stock, required: true,
-                  placeholder: "在庫数に制限がない場合は０としてください"
+                = r.number_field :stock, required: true, min: 1
             .return-create__arrival.box-size
               .content 発送予定日
               .content-form
