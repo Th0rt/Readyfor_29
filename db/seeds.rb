@@ -22,9 +22,10 @@ for i in 1..10 do
     title:        "test_project#{i}",
     content:      "text_project",
     projectimage: File.open("./app/assets/images/sample.png"),
-    limit_date:   Time.zone.today + 10,
+    limit_date:   Time.zone.today + rand(1..90),
     goal:         100000,
     next_goal:    150000,
+    total_support: rand(1..150000),
     project_type: "purchase",
     likes_count:  0,
   )
@@ -32,7 +33,7 @@ for i in 1..10 do
     project.returns.new(
       title:        "return#{i2}",
       price:        1000 * i2,
-      stock:        0,
+      stock:        10,
       content:      "test-return",
       returnimage:  File.open("./app/assets/images/sample.png"),
       arrival_date: Time.zone.today + 30 * i2
