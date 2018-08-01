@@ -16,15 +16,15 @@
     }
   }
   h2 {
-    margin:0px 0 10px 10px;
-    padding-top:10px;
+    margin:0px 0 15px 10px;
+    padding-top: 15px;
     font-size: 14px;
   }
   .box-size{
     width: 550px;
     height: 40px;
     background-color: blue;
-    margin:0 auto;
+    margin: 0 auto;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -76,9 +76,12 @@
       height: 280px;
     }
     .content-form {
+      height: 280px;
+      #create-return-image {
+        height: 20px;
+      }
       #return-image-show {
       font-size: 8px;
-      width: 100%;
       height: 260px;
       }
       img {
