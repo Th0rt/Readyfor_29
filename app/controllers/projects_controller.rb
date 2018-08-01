@@ -135,4 +135,29 @@ class ProjectsController < ApplicationController
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
   end
+
+  def sort_projects(projects, sort_query)
+    return false if sort_query.blank?
+
+    case sort_query
+    when 'notable'
+      projects.order('likes_count DESC')
+    when 'total_support'
+      projects.order('total_support DESC')
+    when 'one_more_push'
+      projects.one_more_push
+    when 'new'
+      projects.order('created_at DESC')
+    when 'sccessful'
+      projects.select{ |p| p.success? }
+    when 'viewed'
+      view_history = cookie_find_or_create('project_view_history')
+      projects.select{ |p| view_history.include?(p.id) }
+    when 'end_soon'
+      projects.select{ |p| p.success? && p.remaining_time[:day] < 10}
+    when 'community'
+      projects
+    end
+
+  end
 end
