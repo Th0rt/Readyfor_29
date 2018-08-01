@@ -6,20 +6,18 @@ class ProjectsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
-    @projects = Project.active
+    @projects_count = Project.active.count
+    @projects = Project.active.page(params[:page]).per(16)
     return false if project_search_params[:keyword].blank?
 
     keywords = project_search_params[:keyword].gsub(/(\S+)/, '%\0%').split(/\s/)
     keywords.each do |word|
-      @projects = @projects.search(word)
+      @projects = @projects.page(params[:page]).per(16)
     end
   end
 
   def show
-    view_history = cookie_find_or_create("project_view_history")
-    view_history.delete_if { |id| id = @project.id }
-    view_history << @project.id
-    cookie_save("project_view_history", view_history)
+    save_project_id_to_cookie(@project)
     @like = @project.likes.find_by(user_id: current_user.id) if user_signed_in?
     @returns = @project.returns.order('price ASC' )
     @category = @project.category
@@ -129,5 +127,12 @@ class ProjectsController < ApplicationController
       tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
+  end
+
+  def save_project_id_to_cookie(project)
+    view_history = cookie_find_or_create("project_view_history")
+    view_history.delete_if { |id| id == project.id }
+    view_history << project.id
+    cookie_save("project_view_history", view_history)
   end
 end
