@@ -27,7 +27,7 @@
             #return-price-list
               - unless params[:select_id].nil?
                 %p
-                  %span #{@return.first.price}円 × 1個
+                  %span #{ number_with_delimiter(@return.first.price) }円 × 1個
           .clear
           %hr
           .return-total
@@ -38,12 +38,12 @@
                   - if params[:select_id].nil?
                     %td#return-sum 0円
                   - else
-                    %td#return-sum #{@return.first.price}円
+                    %td#return-sum #{ number_with_delimiter(@return.first.price) }円
             .return-total__right-text
               %span を
             .clear
             .return-total__text
-              %p プロジェクト「#{@project.title}」に支援します
+              %p プロジェクト「#{ number_with_delimiter(@project.title) } 」に支援します
 
       .payment-content
         %h1 支払い方法を選択してください
