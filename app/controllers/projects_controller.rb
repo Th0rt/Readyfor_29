@@ -14,6 +14,9 @@ class ProjectsController < ApplicationController
         @projects = @projects.search(word)
       end
     end
+
+    if params[:sort]
+      @projects = sort_projects(@projects, params[:sort])
     end
   end
 
