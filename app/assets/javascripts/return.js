@@ -10,4 +10,7 @@ $(document).on('turbolinks:load', function(){
     }
     reader.readAsDataURL(file);
   });
+  $('.remove-new-return').on("click",function(){
+    $(this).parent().parent('.return-fields').html('');
+  })
 });
