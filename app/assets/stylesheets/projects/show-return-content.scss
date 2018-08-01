@@ -97,18 +97,21 @@
     }
     &__purchase {
       margin-top: 20px;
-      .project-select-button {
-        box-shadow: 0 2px rgba(0,0,0,0.2);
-      }
       button {
         width: 300px;
         height: 60px;
         display: block;
-        background-color: red;
-        color: white;
         border-radius: 10px;
         font-size: 22px;
 
+      }
+      .project-select-button {
+        box-shadow: 0 2px rgba(0,0,0,0.2);
+        background-color: red;
+        color: white;
+      }
+      .invalid-payment-btn {
+        color: black;
       }
     }
   }
