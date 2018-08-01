@@ -18,13 +18,17 @@ class ProjectsController < ApplicationController
     if params[:sort]
       @projects = sort_projects(@projects, params[:sort])
     end
+
+    if @projects.present?
+      @projects_count = @projects.count
+      @projects = @projects.page(params[:page]).per(16)
+    else
+      @projects_count = 0
+    end
   end
 
   def show
-    view_history = cookie_find_or_create("project_view_history")
-    view_history.delete_if { |id| id = @project.id }
-    view_history << @project.id
-    cookie_save("project_view_history", view_history)
+    save_project_id_to_cookie(@project)
     @like = @project.likes.find_by(user_id: current_user.id) if user_signed_in?
     @returns = @project.returns.order('price ASC' )
     @category = @project.category
@@ -152,12 +156,18 @@ class ProjectsController < ApplicationController
       projects.select{ |p| p.success? }
     when 'viewed'
       view_history = cookie_find_or_create('project_view_history')
-      projects.select{ |p| view_history.include?(p.id) }
+      projects.where(id: view_history)
     when 'end_soon'
       projects.select{ |p| p.success? && p.remaining_time[:day] < 10}
     when 'community'
       projects
     end
+  end
 
+  def save_project_id_to_cookie(project)
+    view_history = cookie_find_or_create("project_view_history")
+    view_history.delete_if { |id| id == project.id }
+    view_history << project.id
+    cookie_save("project_view_history", view_history)
   end
 end

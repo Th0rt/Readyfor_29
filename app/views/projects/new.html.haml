@@ -81,7 +81,7 @@
               .content タイトル
               .content-form
                 = r.text_field :title, required: true, autofocus: true,
-                  placeholder: "タイトルを入力してください。"
+                  placeholder: "タイトルを入力してください。(30文字以内)", maxlength: 30
             .return-create__price.box-size
               .content
                 %span 価格
@@ -92,7 +92,7 @@
               .content 説明
               .content-form
                 = r.text_area :content, required: true, autofocus: true,
-                  placeholder: "説明文を入力してください。"
+                  placeholder: "説明文を入力してください。(150文字以内)", maxlength: 150
             .return-create__stock.box-size
               .content 在庫数
               .content-form

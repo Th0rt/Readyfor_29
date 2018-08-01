@@ -7,7 +7,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @projects = @tag.projects
+    @projects = @tag.projects.page(params[:page]).per(16)
   end
 
   def new
@@ -18,27 +18,38 @@ class TagsController < ApplicationController
   end
 
   def create
-    Tag.create(
+    @tag = Tag.new(
       name: tag_params[:name],
       type: tag_params[:type],
       category: set_category(tag_params[:category][:id]))
+    if @tag.save
+      flash[:notice] = 'タグを作成しました。'
+    else
+      error_messages = @tag.errors.full_messages.join("\n")
+      flash[:alert] = "タグの作成に失敗しました。#{error_messages}"
+    end
     redirect_to new_tag_path
-    flash[:notice] = 'タグを作成しました。'
   end
 
   def update
-    @tag.update(
-      name: tag_params[:name],
-      type: tag_params[:type],
-      category: Category.find(tag_params[:category][:id]))
+    if @tag.update( name: tag_params[:name],
+                    type: tag_params[:type],
+                    category: Category.find(tag_params[:category][:id]))
+      flash[:notice] = 'タグを更新しました。'
+    else
+      error_messages = @tag.errors.full_messages.join("\n")
+      flash[:alert] = "タグの更新に失敗しました。#{error_messages}"
+    end
     redirect_to new_tag_path
-    flash[:notice] = 'タグを更新しました。'
   end
 
   def destroy
-    @tag.destroy
+    if @tag.destroy
+      flash[:notice] = 'タグを削除しました。'
+    else
+      flash[:alert] = 'タグの削除に失敗しました。'
+    end
     redirect_to new_tag_path
-    flash[:notice] = 'タグを削除しました。'
   end
 
   private
