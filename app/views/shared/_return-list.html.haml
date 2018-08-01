@@ -27,5 +27,5 @@
     .project-return__purchase
       - unless current_user&.project_owner?(@project)
         = link_to payment_path(params[:id], 'payment/choice',
-        r.id, "?select_id=#{ r.id }"), data: {turbolinks: false} do
+          r.id, "?select_id=#{ r.id }"), data: {turbolinks: false} do
           %button.project-select-button  このリターンを購入する
