@@ -7,11 +7,13 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.active
-    return false if project_search_params[:keyword].blank?
 
-    keywords = project_search_params[:keyword].gsub(/(\S+)/, '%\0%').split(/\s/)
-    keywords.each do |word|
-      @projects = @projects.search(word)
+    if project_search_params[:keyword]
+      keywords = project_search_params[:keyword].gsub(/(\S+)/, '%\0%').split(/\s/)
+      keywords.each do |word|
+        @projects = @projects.search(word)
+      end
+    end
     end
   end
 
