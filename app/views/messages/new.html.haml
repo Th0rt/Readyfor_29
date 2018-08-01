@@ -8,7 +8,7 @@
         .filter-item
           = link_to "購入履歴(月額)", user_path(id: current_user.id)
         .filter-item
-          = link_to "お気に入りリスト", user_path(id: current_user.id)
+          = link_to "お気に入りリスト", likes_user_path(id: current_user.id)
         .message-list
           %i.fa.fa-inbox メッセージ
         .filter-item
@@ -22,7 +22,8 @@
         .answer-list
           %i.fa.fa-question-circle ヘルプ・問い合わせ
         .filter-item
-          = link_to "よくある質問リスト" , href: "#"
+          = link_to  "https://readyfor.jp/faq" do
+            %i.fa.fa-question-circle よくある質問リスト
   .mypage-right
     .right-wrapper
       .message-tree-nav
