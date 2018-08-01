@@ -58,11 +58,10 @@
                 .tag--checkbox
                   = tag.label { tag.check_box + tag.text }
       .tab-content.hide
+        %h1 概要
         .tab-content__form-group
-          %hr
-          %label プロジェクト概要(仮エディター)
           .project-overview
-            = f.text_area :content, required: true
+            = f.cktext_area :content, ckeditor: { toolbar: 'mini' }
       .tab-content.hide
         .tab-content__form-group
           %h1 リターン
