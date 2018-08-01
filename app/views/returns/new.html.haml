@@ -15,7 +15,7 @@
             %i.fa.fa-jpy
           .content-form
             = f.number_field :price, required: true, maxlength: 9,
-             class: 'price-input'
+             class: 'price-input', min: 1000, step: 1000
         .return-create__content.clearfix
           .content 説明
           .content-form
@@ -25,8 +25,7 @@
         .return-create__stock.box-size
           .content 在庫数
           .content-form
-            = f.number_field :stock, required: true,
-              placeholder: "在庫数に制限がない場合は０としてください"
+            = f.number_field :stock, required: true, min: 1
 
         .return-create__arrival.box-size
           .content 発送予定日
