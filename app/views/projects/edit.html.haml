@@ -61,7 +61,7 @@
         %h1 概要
         .tab-content__form-group
           .project-overview
-            = f.cktext_area :content
+            = f.cktext_area :content, ckeditor: { toolbar: 'mini' }
       .tab-content.hide
         .tab-content__form-group
           %h1 リターン
