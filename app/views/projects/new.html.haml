@@ -89,8 +89,9 @@
                 %span 価格
                 %i.fa.fa-jpy
               .content-form
-                = r.number_field :price, required: true, min: 1000, step: 1000, maxlength: 9,
-                 class: 'price-input'
+                = r.number_field :price, required: true,
+                min: 1000, step: 1000, maxlength: 9,
+                class: 'price-input'
             .return-create__content.clearfix
               .content 説明
               .content-form
