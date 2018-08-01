@@ -9,6 +9,7 @@
     p{
       text-align: center;
       margin-top: 10px;
+      word-wrap: break-word;
     }
     .like-count-text{
       color: #D77976;
@@ -68,6 +69,7 @@
       height: 66px;
       h3 {
         font-size: 16px;
+        word-wrap: break-word;
       }
     }
     &__price {
