@@ -39,8 +39,8 @@ class ProjectsController < ApplicationController
       redirect_to root_path
       flash[:notice] = 'プロジェクトを作成しました。'
     else
+      flash.now[:alert] = generate_error_messages(@project, "プロジェクトの作成に失敗しました")
       render action: :new
-      flash[:alert] = 'プロジェクトの作成に失敗しました。'
     end
   end
 
@@ -59,8 +59,8 @@ class ProjectsController < ApplicationController
       redirect_to root_path
       flash[:notice] = 'プロジェクトを更新しました。'
     else
+      flash.now[:alert] = generate_error_messages(@project, "プロジェクトの更新に失敗しました")
       render action: :edit
-      flash[:alert] = 'プロジェクトの更新に失敗しました。'
     end
   end
 
