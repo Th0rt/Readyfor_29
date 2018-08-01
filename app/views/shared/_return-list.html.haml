@@ -15,10 +15,10 @@
         %i.fa.fa-circle-o.fa-stack-2x
         %i.fa.fa-user.fa-stack-1x
       %span #{r.user_returns.count_return_users}人が支援中/
-      - if r.stock === 0
-        %span 在庫制限なし
-      - else
+      - if r.return_active?
         %span 残り#{ number_with_delimiter(r.stock) }個
+      - else
+        %span 在庫なし
     .project-return__arrival
       %span.fa-stack.fa-lg
         %i.fa.fa-circle-o.fa-stack-2x
@@ -26,6 +26,9 @@
       %span #{ r.arrival_date.year }年#{ r.arrival_date.month }月に発送予定です。
     .project-return__purchase
       - unless current_user&.project_owner?(@project)
-        = link_to payment_path(params[:id], 'payment/choice',
-          r.id, "?select_id=#{ r.id }"), data: {turbolinks: false} do
-          %button.project-select-button  このリターンを購入する
+        - if r.return_active?
+          = link_to payment_path(params[:id], 'payment/choice',
+            r.id, "?select_id=#{ r.id }"), data: {turbolinks: false} do
+            %button.project-select-button  このリターンを購入する
+        - else
+          %button.invalid-payment-button 販売終了しました
