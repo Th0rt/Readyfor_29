@@ -16,10 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    view_history = cookie_find_or_create("project_view_history")
-    view_history.delete_if { |id| id = @project.id }
-    view_history << @project.id
-    cookie_save("project_view_history", view_history)
+    save_project_id_to_cookie(@project)
     @like = @project.likes.find_by(user_id: current_user.id) if user_signed_in?
     @returns = @project.returns.order('price ASC' )
     @category = @project.category
@@ -129,5 +126,12 @@ class ProjectsController < ApplicationController
       tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
+  end
+
+  def save_project_id_to_cookie(project)
+    view_history = cookie_find_or_create("project_view_history")
+    view_history.delete_if { |id| id == project.id }
+    view_history << project.id
+    cookie_save("project_view_history", view_history)
   end
 end
