@@ -22,9 +22,11 @@
               placeholder: "タイトルを入力してください。(30文字以内)", maxlength: 30
           %hr
           %label 画像
-          #project-image
-            = f.file_field :projectimage, required: true
-            %img{ id: 'project-img-show' }
+          .project-image
+            = f.file_field :projectimage, id: "project-image"
+          #project-img-default
+            = image_tag "#{f.object.projectimage}"
+          #project-img-show
           %hr
           %label 募集期間
           .project-period
