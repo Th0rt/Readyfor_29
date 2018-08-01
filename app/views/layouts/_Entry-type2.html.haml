@@ -14,7 +14,7 @@
           .Entry__numerical-info
             %dl.Entry__condition-amount
               %dt 支援総額
-              %dd #{ project.total_support} 円
+              %dd #{ number_with_delimiter(project.total_support)} 円
             %dl
               %dt 残り
               %dd
