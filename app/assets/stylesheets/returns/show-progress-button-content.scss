@@ -40,14 +40,21 @@
     &__next{
       float: right;
       position: relative;
-      input{
+      button{
         height: 55px;
         width: 257px;
         background-color: #B22B30;
         text-align: left;
+      }
+      p{
         font-size: 16px;
+        line-height: 55px;
         color: white;
-        padding-left: 20px;
+        float: left;
+        margin-left: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
       img{
         float: right;
