@@ -26,9 +26,9 @@
     %li.nav-menu-item
       = link_to "もうすぐ終了のプロジェクト", projects_path(sort: 'end_soon')
       %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "コミュニティ型プロジェクト", projects_path(sort: 'community')
-      %i.fa.fa-angle-right
+    -# %li.nav-menu-item
+      -# = link_to "コミュニティ型プロジェクト", projects_path(sort: 'community')
+      -# %i.fa.fa-angle-right
 .nav-category
   = render 'projects/sidebar/category'
 .nav-area
