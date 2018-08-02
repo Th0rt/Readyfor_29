@@ -26,7 +26,7 @@ class Project < ApplicationRecord
     select{ |project|
      project.achievement_rate >= 40 && project.remaining_time[:day] <= 30
     }
-    .sort_by{ |project| project.remaining_time }
+    .sort_by{ |project| project.remaining_time.inject(:+) }
   }
 
   # 募集中かどうかを判定
