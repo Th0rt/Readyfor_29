@@ -9,7 +9,7 @@ class ToppageController < ApplicationController
 
 
     @projects_one_more_push = @projects.select{ |project| project.achievement_rate >= 40 && project.remaining_time[:day] <= 30 }
-                                       .sort_by{ |project| project.remaining_time }
+                                       .sort_by{ |project| project.remaining_time.inject(:+) }
                                        .first(4)
   end
 

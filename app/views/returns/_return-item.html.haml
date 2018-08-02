@@ -12,22 +12,29 @@
             = image_tag "check.png", id: "return-check-image#{ item.id }",
              class: 'return-check-image-show'
             %span{ id: "return-price-text#{ item.id }",
-            class: 'return-price-text-blue' }= "#{ item.price }円"
+            class: 'return-price-text-blue' }= "#{ number_with_delimiter(item.price) }円"
           - else
             = image_tag "check.png", id: "return-check-image#{ item.id }"
-            %span{ id: "return-price-text#{ item.id }" }= "#{ item.price }円"
+            %span{ id: "return-price-text#{ item.id }" }
+              = "#{ number_with_delimiter(item.price) }円"
 
         - if returns.count == 1
           .return-numbar.col
-            = select_tag "number[#{ item.id }]",
-            options_for_select(return_count_options(), selected: 1),
-             class: 'number-select'
-            %span 個
+            - if item.return_active?
+              = select_tag "number[#{ item.id }]",
+              options_for_select(return_count_options(), selected: 1),
+               class: 'number-select'
+              %span 個
+            - else
+              .number-none 販売終了しました
         - else
           .return-numbar.col
-            = select_tag "number[#{ item.id }]",
-            options_for_select(return_count_options()), class: 'number-select'
-            %span 個
+            - if item.return_active?
+              = select_tag "number[#{ item.id }]",
+              options_for_select(return_count_options()), class: 'number-select'
+              %span 個
+            - else
+              .number-none 販売終了しました
 
       .return-item-right.col-sm-8
         .return-item-right__text.col

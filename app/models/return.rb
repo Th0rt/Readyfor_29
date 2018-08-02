@@ -16,4 +16,8 @@ class Return < ApplicationRecord
       end
     end
   end
+
+  def return_active?
+    self.stock >= 1
+  end
 end
