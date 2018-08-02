@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
 
     if @projects.present?
       @projects_count = @projects.count
-      @projects = @projects.page(params[:page]).per(16)
+      @projects = Kaminari.paginate_array(@projects).page(params[:page]).per(16)
     else
       @projects_count = 0
     end
