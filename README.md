@@ -1,4 +1,4 @@
-# DB design
+# DB design clone
 
 ## ER diagram(image)
 https://cacoo.com/diagrams/6IJUA8gpARgsCE0O
