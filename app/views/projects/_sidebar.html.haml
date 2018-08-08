@@ -5,30 +5,30 @@
       %i.fa.fa-search.fa-stack-1x.fa-inverse
     %span#search-project プロジェクトをさがす
   %ul.nav-menu-lists
-    %li.nav-menu-item
-      = link_to  "注目のプロジェクト", href: "#"
+    %li.nav-menu-item.show-links
+      = link_to  "注目のプロジェクト", projects_path(sort: 'notable')
       %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "支援金額の多いプロジェクト", href: "#"
+    %li.nav-menu-item.show-links
+      = link_to "支援金額の多いプロジェクト", projects_path(sort: 'total_support')
       %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "あとひと押しのプロジェクト", href: "#"
+    %li.nav-menu-item.show-links
+      = link_to "あとひと押しのプロジェクト", projects_path(sort: 'one_more_push')
       %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "新着プロジェクト", href: "#"
+    %li.nav-menu-item.show-links
+      = link_to "新着プロジェクト", projects_path(sort: 'new')
       %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "成立済みのプロジェクト", href: "#"
+    %li.nav-menu-item.show-links
+      = link_to "成立済みのプロジェクト", projects_path(sort: 'sccessful')
       %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "最近見たプロジェクト", href: "#"
+    %li.nav-menu-item.show-links
+      = link_to "最近見たプロジェクト", projects_path(sort: 'viewed')
       %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "もうすぐ終了のプロジェクト", href: "#"
+    %li.nav-menu-item.show-links
+      = link_to "もうすぐ終了のプロジェクト", projects_path(sort: 'end_soon')
       %i.fa.fa-angle-right
-    %li.nav-menu-item
-      = link_to "コミュニティ型プロジェクト", href: "#"
-      %i.fa.fa-angle-right
+    -# %li.nav-menu-item
+      -# = link_to "コミュニティ型プロジェクト", projects_path(sort: 'community')
+      -# %i.fa.fa-angle-right
 .nav-category
   = render 'projects/sidebar/category'
 .nav-area

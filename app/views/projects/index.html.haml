@@ -8,4 +8,4 @@
                   locals: { title: "検索結果 #{ @projects_count }件",
                             projects: @projects }
       .page-main__footer
-        = paginate(@projects)
+        = paginate(@projects) if @projects.present?

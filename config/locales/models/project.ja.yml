@@ -1,4 +1,14 @@
 ja:
+  activerecord:
+    models:
+      project: プロジェクト
+    attributes:
+      project/returns:
+        title: リターンのタイトル
+        price: リターンの価格
+        stock: リターンの在庫数
+        arrival_date: リターンの発送時期
+        returnimage: リターンの画像
   enums:
     project:
       project_type:

@@ -6,13 +6,24 @@ class ProjectsController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
-    @projects_count = Project.active.count
-    @projects = Project.active.page(params[:page]).per(16)
-    return false if project_search_params[:keyword].blank?
+    @projects = Project.active
 
-    keywords = project_search_params[:keyword].gsub(/(\S+)/, '%\0%').split(/\s/)
-    keywords.each do |word|
-      @projects = @projects.page(params[:page]).per(16)
+    if project_search_params[:keyword]
+      keywords = project_search_params[:keyword].gsub(/(\S+)/, '%\0%').split(/\s/)
+      keywords.each do |word|
+        @projects = @projects.search(word)
+      end
+    end
+
+    if params[:sort]
+      @projects = sort_projects(@projects, params[:sort])
+    end
+
+    if @projects.present?
+      @projects_count = @projects.count
+      @projects = Kaminari.paginate_array(@projects).page(params[:page]).per(16)
+    else
+      @projects_count = 0
     end
   end
 
@@ -37,8 +48,8 @@ class ProjectsController < ApplicationController
       redirect_to root_path
       flash[:notice] = 'プロジェクトを作成しました。'
     else
+      flash.now[:alert] = generate_error_messages(@project, "プロジェクトの作成に失敗しました")
       render action: :new
-      flash[:alert] = 'プロジェクトの作成に失敗しました。'
     end
   end
 
@@ -57,8 +68,8 @@ class ProjectsController < ApplicationController
       redirect_to root_path
       flash[:notice] = 'プロジェクトを更新しました。'
     else
+      flash.now[:alert] = generate_error_messages(@project, "プロジェクトの更新に失敗しました")
       render action: :edit
-      flash[:alert] = 'プロジェクトの更新に失敗しました。'
     end
   end
 
@@ -127,6 +138,30 @@ class ProjectsController < ApplicationController
       tag_ids: [],
       returns_attributes: [:title, :price, :content, :stock, :arrival_date, :returnimage, :_destroy, :id]
     ).merge(testdata)
+  end
+
+  def sort_projects(projects, sort_query)
+    return false if sort_query.blank?
+
+    case sort_query
+    when 'notable'
+      projects.order('likes_count DESC')
+    when 'total_support'
+      projects.order('total_support DESC')
+    when 'one_more_push'
+      projects.one_more_push
+    when 'new'
+      projects.order('created_at DESC')
+    when 'sccessful'
+      projects.select{ |p| p.success? }
+    when 'viewed'
+      view_history = cookie_find_or_create('project_view_history')
+      projects.where(id: view_history)
+    when 'end_soon'
+      projects.select{ |p| p.success? && p.remaining_time[:day] < 10}
+    when 'community'
+      projects
+    end
   end
 
   def save_project_id_to_cookie(project)
